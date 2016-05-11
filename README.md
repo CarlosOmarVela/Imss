@@ -1,8 +1,8 @@
 /*
                File: IMSSOfflineDatabase
         Description: IMSSOffline Database
-             Author: GeneXus Java Generator version 10_3_4-93925
-       Generated on: September 25, 2015 13:49:16.70
+             Author: GeneXus Java Generator version 10_3_5-95299
+       Generated on: May 4, 2016 16:37:8.95
        Program type: Callable routine
           Main DBMS: postgresql
 */
@@ -40,8 +40,8 @@ public final  class imssofflinedatabase extends GXProcedure
 
    protected void GXStart( )
    {
-      /* Execute user event: e11052 */
-      e11052 ();
+      /* Execute user event: e11012 */
+      e11012 ();
       if ( returnInSub )
       {
          returnInSub = true;
@@ -50,7 +50,7 @@ public final  class imssofflinedatabase extends GXProcedure
       }
    }
 
-   public void e11052( )
+   public void e11012( )
    {
       /* Start Routine */
       GXt_char1 = AV4Matricula ;
@@ -93,26 +93,29 @@ public final  class imssofflinedatabase extends GXProcedure
       pr_default.execute(0, new Object[] {AV5UserMedico});
       while ( (pr_default.getStatus(0) != 101) )
       {
-         A312MedicoDebeMostarTerm = IMSSOFFLIN2_A312MedicoDebeMostarTerm[0] ;
-         A302MedicoDebeValidarDatos = IMSSOFFLIN2_A302MedicoDebeValidarDatos[0] ;
-         A300MedicoUltimaActualizacion = IMSSOFFLIN2_A300MedicoUltimaActualizacion[0] ;
-         A297MedicoMatricula = IMSSOFFLIN2_A297MedicoMatricula[0] ;
-         n297MedicoMatricula = IMSSOFFLIN2_n297MedicoMatricula[0] ;
-         A296MedicoApellidoMaterno = IMSSOFFLIN2_A296MedicoApellidoMaterno[0] ;
-         A295MedicoApellidoPaterno = IMSSOFFLIN2_A295MedicoApellidoPaterno[0] ;
-         A294MedicoSegundoNombre = IMSSOFFLIN2_A294MedicoSegundoNombre[0] ;
-         A293MedicoPrimerNombre = IMSSOFFLIN2_A293MedicoPrimerNombre[0] ;
-         A292UserMedico = IMSSOFFLIN2_A292UserMedico[0] ;
-         gxsyncline.add(GXutil.rtrim( A296MedicoApellidoMaterno));
-         gxsyncline.add(GXutil.rtrim( A295MedicoApellidoPaterno));
-         gxsyncline.add(GXutil.booltostr( A312MedicoDebeMostarTerm));
-         gxsyncline.add(GXutil.booltostr( A302MedicoDebeValidarDatos));
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A297MedicoMatricula, (byte)(10), (byte)(0), ".", "")));
-         gxsyncline.add(GXutil.rtrim( A293MedicoPrimerNombre));
-         gxsyncline.add(GXutil.rtrim( A294MedicoSegundoNombre));
-         gxsyncline.add(GXutil.timeToCharREST( A300MedicoUltimaActualizacion));
-         gxsyncline.add(GXutil.rtrim( A292UserMedico));
-         gxsynchashkey.add(GXutil.rtrim( A292UserMedico));
+         A341FecBajaMed = IMSSOFFLIN2_A341FecBajaMed[0] ;
+         n341FecBajaMed = IMSSOFFLIN2_n341FecBajaMed[0] ;
+         A303MedDebMosTerm = IMSSOFFLIN2_A303MedDebMosTerm[0] ;
+         n303MedDebMosTerm = IMSSOFFLIN2_n303MedDebMosTerm[0] ;
+         A295MedDebValDat = IMSSOFFLIN2_A295MedDebValDat[0] ;
+         A293MedUltAct = IMSSOFFLIN2_A293MedUltAct[0] ;
+         A340MedCedProf = IMSSOFFLIN2_A340MedCedProf[0] ;
+         A291MedApMat = IMSSOFFLIN2_A291MedApMat[0] ;
+         A290MedApPat = IMSSOFFLIN2_A290MedApPat[0] ;
+         A288MedNom = IMSSOFFLIN2_A288MedNom[0] ;
+         A64UserMed = IMSSOFFLIN2_A64UserMed[0] ;
+         A65MedMatricula = IMSSOFFLIN2_A65MedMatricula[0] ;
+         gxsyncline.add(GXutil.dateToCharREST( A341FecBajaMed));
+         gxsyncline.add(GXutil.rtrim( A291MedApMat));
+         gxsyncline.add(GXutil.rtrim( A290MedApPat));
+         gxsyncline.add(GXutil.rtrim( A340MedCedProf));
+         gxsyncline.add(GXutil.booltostr( A303MedDebMosTerm));
+         gxsyncline.add(GXutil.booltostr( A295MedDebValDat));
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A65MedMatricula, (byte)(10), (byte)(0), ".", "")));
+         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A65MedMatricula, (byte)(10), (byte)(0), ".", "")));
+         gxsyncline.add(GXutil.rtrim( A288MedNom));
+         gxsyncline.add(GXutil.timeToCharREST( A293MedUltAct));
+         gxsyncline.add(GXutil.rtrim( A64UserMed));
          gxlinehash = GXutil.getMD5Hash( gxsyncline.ToJavascriptSource()) ;
          gxsetline.add(gxsynchashkey.ToJavascriptSource());
          gxsetline.add(gxlinehash);
@@ -126,8 +129,7 @@ public final  class imssofflinedatabase extends GXProcedure
          /*  */
          gxsyncresponse.add(gxsyncline);
          gxsyncline = new com.genexus.internet.StringCollection() ;
-         /* Exiting from a For First loop. */
-         if (true) break;
+         pr_default.readNext(0);
       }
       pr_default.close(0);
       /* End Synchronize */
@@ -194,9 +196,9 @@ public final  class imssofflinedatabase extends GXProcedure
       gxsynchashkey = new com.genexus.internet.StringCollection() ;
       gxfinalsync = new com.genexus.GxUnknownObjectCollection() ;
       pr_default.dynParam(1, new Object[]{ new Object[]{
-                                           A75PacienteNSSAgregado ,
+                                           A133PacienteNSSAgregado ,
                                            AV3ColPacienteNSSAgregado ,
-                                           A81Matricula ,
+                                           A8Matricula ,
                                            AV4Matricula },
                                            new int[] {
                                            TypeConstants.STRING, TypeConstants.OBJECT_COLLECTION, TypeConstants.STRING, TypeConstants.STRING
@@ -206,13 +208,13 @@ public final  class imssofflinedatabase extends GXProcedure
       pr_default.execute(1, new Object[] {AV4Matricula});
       while ( (pr_default.getStatus(1) != 101) )
       {
-         A75PacienteNSSAgregado = IMSSOFFLIN3_A75PacienteNSSAgregado[0] ;
-         A81Matricula = IMSSOFFLIN3_A81Matricula[0] ;
+         A133PacienteNSSAgregado = IMSSOFFLIN3_A133PacienteNSSAgregado[0] ;
+         A8Matricula = IMSSOFFLIN3_A8Matricula[0] ;
          A3PacienteAgregado = IMSSOFFLIN3_A3PacienteAgregado[0] ;
          A2PacienteNSS = IMSSOFFLIN3_A2PacienteNSS[0] ;
-         A75PacienteNSSAgregado = IMSSOFFLIN3_A75PacienteNSSAgregado[0] ;
-         gxsyncline.add(GXutil.rtrim( A81Matricula));
-         gxsynchashkey.add(GXutil.rtrim( A81Matricula));
+         A133PacienteNSSAgregado = IMSSOFFLIN3_A133PacienteNSSAgregado[0] ;
+         gxsyncline.add(GXutil.rtrim( A8Matricula));
+         gxsynchashkey.add(GXutil.rtrim( A8Matricula));
          gxsyncline.add(GXutil.rtrim( A3PacienteAgregado));
          gxsynchashkey.add(GXutil.rtrim( A3PacienteAgregado));
          gxsyncline.add(GXutil.rtrim( A2PacienteNSS));
@@ -283,13 +285,13 @@ public final  class imssofflinedatabase extends GXProcedure
       return gxsyncresponse ;
    }
 
-   /*  Synchronize for table (Full)  CIE10 */
-   public com.genexus.GxUnknownObjectCollection gxSyncEvtCIE10( )
+   /*  Synchronize for table (Full)  DFParm */
+   public com.genexus.GxUnknownObjectCollection gxSyncEvtDFParm( )
    {
-      /* Begin Synchronize  CIE10 */
+      /* Begin Synchronize  DFParm */
       /* Synchronization Type By Row */
       gxsyncheader.add("GXTable");
-      gxsyncheader.add("CIE10");
+      gxsyncheader.add("DFParm");
       gxsyncresponse.add(gxsyncheader);
       gxsyncline = new com.genexus.internet.StringCollection() ;
       gxsynchashset = new com.genexus.GxUnknownObjectCollection() ;
@@ -300,13 +302,15 @@ public final  class imssofflinedatabase extends GXProcedure
       pr_default.execute(2);
       while ( (pr_default.getStatus(2) != 101) )
       {
-         A69CIECodigo = IMSSOFFLIN4_A69CIECodigo[0] ;
-         A10CIE10Descripcion = IMSSOFFLIN4_A10CIE10Descripcion[0] ;
-         A1CIE10Id = IMSSOFFLIN4_A1CIE10Id[0] ;
-         gxsyncline.add(A10CIE10Descripcion);
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A1CIE10Id, (byte)(6), (byte)(0), ".", "")));
-         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A1CIE10Id, (byte)(6), (byte)(0), ".", "")));
-         gxsyncline.add(A69CIECodigo);
+         A167DFParmIsMetaData = IMSSOFFLIN4_A167DFParmIsMetaData[0] ;
+         A166DFParmVal = IMSSOFFLIN4_A166DFParmVal[0] ;
+         A165DFParmName = IMSSOFFLIN4_A165DFParmName[0] ;
+         A25DFParmId = IMSSOFFLIN4_A25DFParmId[0] ;
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A25DFParmId, (byte)(6), (byte)(0), ".", "")));
+         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A25DFParmId, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline.add(GXutil.booltostr( A167DFParmIsMetaData));
+         gxsyncline.add(GXutil.rtrim( A165DFParmName));
+         gxsyncline.add(GXutil.rtrim( A166DFParmVal));
          gxlinehash = GXutil.getMD5Hash( gxsyncline.ToJavascriptSource()) ;
          gxsetline.add(gxsynchashkey.ToJavascriptSource());
          gxsetline.add(gxlinehash);
@@ -323,6 +327,96 @@ public final  class imssofflinedatabase extends GXProcedure
          pr_default.readNext(2);
       }
       pr_default.close(2);
+      /* End Synchronize */
+      gxtabledata = gxsyncresponse.toJSonString(false) ;
+      gxtablecurrenthash = GXutil.getMD5Hash( gxtabledata) ;
+      gxtablestoredhash = gxtablemdata.item(2) ;
+      if ( GXutil.strcmp(gxtablecurrenthash, gxtablestoredhash) == 0 )
+      {
+         gxsyncresponse.clear();
+         gxfinalsync.clear();
+         gxsyncstatus = (short)(0) ;
+      }
+      else
+      {
+         if ( gxischeck == 1 )
+         {
+            gxsyncstatus = (short)(1) ;
+         }
+         gxsyncheader.add(gxtablecurrenthash);
+         if ( gxischeck == 0 )
+         {
+            /* Store hashed rows */
+            gxdeviceidentifier = context.getWorkstationId( remoteHandle) ;
+            GXv_objcol_gxjsonable7[0] = gxsyncinsert ;
+            GXv_objcol_gxjsonable6[0] = gxsyncupdate ;
+            GXv_objcol_gxjsonable5[0] = gxsyncdelete ;
+            GXv_int8[0] = gxstatus ;
+            new gxrowlevelcache(remoteHandle, context).execute ( gxdeviceidentifier ,  "DFParm" ,  gxtablecurrenthash ,  gxtablestoredhash ,  gxsyncvalueset ,  gxsynchashset ,  GXv_objcol_gxjsonable7 ,  GXv_objcol_gxjsonable6 ,  GXv_objcol_gxjsonable5 ,  GXv_int8 );
+            imssofflinedatabase.this.gxsyncinsert = GXv_objcol_gxjsonable7[0] ;
+            imssofflinedatabase.this.gxsyncupdate = GXv_objcol_gxjsonable6[0] ;
+            imssofflinedatabase.this.gxsyncdelete = GXv_objcol_gxjsonable5[0] ;
+            imssofflinedatabase.this.gxstatus = GXv_int8[0] ;
+            if ( gxerrorstatus == 0 )
+            {
+               gxerrorstatus = gxstatus ;
+            }
+            if ( gxstatus == 0 )
+            {
+               gxfinalsync.add(gxsyncheader);
+               gxfinalsync.add(gxsyncinsert);
+               gxfinalsync.add(gxsyncupdate);
+               gxfinalsync.add(gxsyncdelete);
+            }
+         }
+      }
+      gxsynchashset = new com.genexus.GxUnknownObjectCollection() ;
+      gxsyncheader = new com.genexus.internet.StringCollection() ;
+      gxsyncresponse = gxfinalsync ;
+      gxsyncheaderpre = new com.genexus.internet.StringCollection() ;
+      return gxsyncresponse ;
+   }
+
+   /*  Synchronize for table (Full)  CIE10 */
+   public com.genexus.GxUnknownObjectCollection gxSyncEvtCIE10( )
+   {
+      /* Begin Synchronize  CIE10 */
+      /* Synchronization Type By Row */
+      gxsyncheader.add("GXTable");
+      gxsyncheader.add("CIE10");
+      gxsyncresponse.add(gxsyncheader);
+      gxsyncline = new com.genexus.internet.StringCollection() ;
+      gxsynchashset = new com.genexus.GxUnknownObjectCollection() ;
+      gxsyncvalueset = new com.genexus.GxUnknownObjectCollection() ;
+      gxsynchashkey = new com.genexus.internet.StringCollection() ;
+      gxfinalsync = new com.genexus.GxUnknownObjectCollection() ;
+      /* Using cursor IMSSOFFLIN5 */
+      pr_default.execute(3);
+      while ( (pr_default.getStatus(3) != 101) )
+      {
+         A76CIE10Descripcion = IMSSOFFLIN5_A76CIE10Descripcion[0] ;
+         A127CIECodigo = IMSSOFFLIN5_A127CIECodigo[0] ;
+         A1CIE10Id = IMSSOFFLIN5_A1CIE10Id[0] ;
+         gxsyncline.add(A76CIE10Descripcion);
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A1CIE10Id, (byte)(6), (byte)(0), ".", "")));
+         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A1CIE10Id, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline.add(A127CIECodigo);
+         gxlinehash = GXutil.getMD5Hash( gxsyncline.ToJavascriptSource()) ;
+         gxsetline.add(gxsynchashkey.ToJavascriptSource());
+         gxsetline.add(gxlinehash);
+         gxsetvalueline.add(gxsynchashkey.ToJavascriptSource());
+         gxsetvalueline.add(gxsyncline);
+         gxsynchashset.add(gxsetline);
+         gxsyncvalueset.add(gxsetvalueline);
+         gxsynchashkey = new com.genexus.internet.StringCollection() ;
+         gxsetline = new com.genexus.internet.StringCollection() ;
+         gxsetvalueline = new com.genexus.GxUnknownObjectCollection() ;
+         /*  */
+         gxsyncresponse.add(gxsyncline);
+         gxsyncline = new com.genexus.internet.StringCollection() ;
+         pr_default.readNext(3);
+      }
+      pr_default.close(3);
       /* End Synchronize */
       gxtabledata = gxsyncresponse.toJSonString(false) ;
       gxtablecurrenthash = GXutil.getMD5Hash( gxtabledata) ;
@@ -386,82 +480,82 @@ public final  class imssofflinedatabase extends GXProcedure
       gxsyncvalueset = new com.genexus.GxUnknownObjectCollection() ;
       gxsynchashkey = new com.genexus.internet.StringCollection() ;
       gxfinalsync = new com.genexus.GxUnknownObjectCollection() ;
-      pr_default.dynParam(3, new Object[]{ new Object[]{
-                                           A75PacienteNSSAgregado ,
+      pr_default.dynParam(4, new Object[]{ new Object[]{
+                                           A133PacienteNSSAgregado ,
                                            AV3ColPacienteNSSAgregado },
                                            new int[] {
                                            TypeConstants.STRING, TypeConstants.OBJECT_COLLECTION
                                            }
       });
-      /* Using cursor IMSSOFFLIN5 */
-      pr_default.execute(3);
-      while ( (pr_default.getStatus(3) != 101) )
+      /* Using cursor IMSSOFFLIN6 */
+      pr_default.execute(4);
+      while ( (pr_default.getStatus(4) != 101) )
       {
-         A75PacienteNSSAgregado = IMSSOFFLIN5_A75PacienteNSSAgregado[0] ;
-         A34MMatricula = IMSSOFFLIN5_A34MMatricula[0] ;
-         n34MMatricula = IMSSOFFLIN5_n34MMatricula[0] ;
-         A33MApMat = IMSSOFFLIN5_A33MApMat[0] ;
-         n33MApMat = IMSSOFFLIN5_n33MApMat[0] ;
-         A32MApPat = IMSSOFFLIN5_A32MApPat[0] ;
-         n32MApPat = IMSSOFFLIN5_n32MApPat[0] ;
-         A31MNombre = IMSSOFFLIN5_A31MNombre[0] ;
-         n31MNombre = IMSSOFFLIN5_n31MNombre[0] ;
-         A30MBMatricula = IMSSOFFLIN5_A30MBMatricula[0] ;
-         n30MBMatricula = IMSSOFFLIN5_n30MBMatricula[0] ;
-         A29MBApMat = IMSSOFFLIN5_A29MBApMat[0] ;
-         n29MBApMat = IMSSOFFLIN5_n29MBApMat[0] ;
-         A28MBApPat = IMSSOFFLIN5_A28MBApPat[0] ;
-         n28MBApPat = IMSSOFFLIN5_n28MBApPat[0] ;
-         A27MBNombre = IMSSOFFLIN5_A27MBNombre[0] ;
-         n27MBNombre = IMSSOFFLIN5_n27MBNombre[0] ;
-         A26JSMatricula = IMSSOFFLIN5_A26JSMatricula[0] ;
-         n26JSMatricula = IMSSOFFLIN5_n26JSMatricula[0] ;
-         A25JSApMat = IMSSOFFLIN5_A25JSApMat[0] ;
-         n25JSApMat = IMSSOFFLIN5_n25JSApMat[0] ;
-         A24JSApPat = IMSSOFFLIN5_A24JSApPat[0] ;
-         n24JSApPat = IMSSOFFLIN5_n24JSApPat[0] ;
-         A23JSNombre = IMSSOFFLIN5_A23JSNombre[0] ;
-         n23JSNombre = IMSSOFFLIN5_n23JSNombre[0] ;
-         A22DiagnosticoCirugiaFecha = IMSSOFFLIN5_A22DiagnosticoCirugiaFecha[0] ;
-         n22DiagnosticoCirugiaFecha = IMSSOFFLIN5_n22DiagnosticoCirugiaFecha[0] ;
-         A21DiagnosticoCirugia = IMSSOFFLIN5_A21DiagnosticoCirugia[0] ;
-         n21DiagnosticoCirugia = IMSSOFFLIN5_n21DiagnosticoCirugia[0] ;
-         A20Cama = IMSSOFFLIN5_A20Cama[0] ;
-         n20Cama = IMSSOFFLIN5_n20Cama[0] ;
-         A6ServicioId = IMSSOFFLIN5_A6ServicioId[0] ;
-         A19DiagnosticoResumen = IMSSOFFLIN5_A19DiagnosticoResumen[0] ;
-         n19DiagnosticoResumen = IMSSOFFLIN5_n19DiagnosticoResumen[0] ;
-         A18DiagnosticoComplemento = IMSSOFFLIN5_A18DiagnosticoComplemento[0] ;
-         n18DiagnosticoComplemento = IMSSOFFLIN5_n18DiagnosticoComplemento[0] ;
-         A35DiagnosticoFechaAlta = IMSSOFFLIN5_A35DiagnosticoFechaAlta[0] ;
-         n35DiagnosticoFechaAlta = IMSSOFFLIN5_n35DiagnosticoFechaAlta[0] ;
-         A17DiagnosticoFechaIngreso = IMSSOFFLIN5_A17DiagnosticoFechaIngreso[0] ;
-         n17DiagnosticoFechaIngreso = IMSSOFFLIN5_n17DiagnosticoFechaIngreso[0] ;
-         A1CIE10Id = IMSSOFFLIN5_A1CIE10Id[0] ;
-         A3PacienteAgregado = IMSSOFFLIN5_A3PacienteAgregado[0] ;
-         A2PacienteNSS = IMSSOFFLIN5_A2PacienteNSS[0] ;
-         A75PacienteNSSAgregado = IMSSOFFLIN5_A75PacienteNSSAgregado[0] ;
+         A133PacienteNSSAgregado = IMSSOFFLIN6_A133PacienteNSSAgregado[0] ;
+         A102MMatricula = IMSSOFFLIN6_A102MMatricula[0] ;
+         n102MMatricula = IMSSOFFLIN6_n102MMatricula[0] ;
+         A101MApMat = IMSSOFFLIN6_A101MApMat[0] ;
+         n101MApMat = IMSSOFFLIN6_n101MApMat[0] ;
+         A100MApPat = IMSSOFFLIN6_A100MApPat[0] ;
+         n100MApPat = IMSSOFFLIN6_n100MApPat[0] ;
+         A99MNombre = IMSSOFFLIN6_A99MNombre[0] ;
+         n99MNombre = IMSSOFFLIN6_n99MNombre[0] ;
+         A98MBMatricula = IMSSOFFLIN6_A98MBMatricula[0] ;
+         n98MBMatricula = IMSSOFFLIN6_n98MBMatricula[0] ;
+         A97MBApMat = IMSSOFFLIN6_A97MBApMat[0] ;
+         n97MBApMat = IMSSOFFLIN6_n97MBApMat[0] ;
+         A96MBApPat = IMSSOFFLIN6_A96MBApPat[0] ;
+         n96MBApPat = IMSSOFFLIN6_n96MBApPat[0] ;
+         A95MBNombre = IMSSOFFLIN6_A95MBNombre[0] ;
+         n95MBNombre = IMSSOFFLIN6_n95MBNombre[0] ;
+         A94JSMatricula = IMSSOFFLIN6_A94JSMatricula[0] ;
+         n94JSMatricula = IMSSOFFLIN6_n94JSMatricula[0] ;
+         A93JSApMat = IMSSOFFLIN6_A93JSApMat[0] ;
+         n93JSApMat = IMSSOFFLIN6_n93JSApMat[0] ;
+         A92JSApPat = IMSSOFFLIN6_A92JSApPat[0] ;
+         n92JSApPat = IMSSOFFLIN6_n92JSApPat[0] ;
+         A91JSNombre = IMSSOFFLIN6_A91JSNombre[0] ;
+         n91JSNombre = IMSSOFFLIN6_n91JSNombre[0] ;
+         A90DiagnosticoCirugiaFecha = IMSSOFFLIN6_A90DiagnosticoCirugiaFecha[0] ;
+         n90DiagnosticoCirugiaFecha = IMSSOFFLIN6_n90DiagnosticoCirugiaFecha[0] ;
+         A89DiagnosticoCirugia = IMSSOFFLIN6_A89DiagnosticoCirugia[0] ;
+         n89DiagnosticoCirugia = IMSSOFFLIN6_n89DiagnosticoCirugia[0] ;
+         A88Cama = IMSSOFFLIN6_A88Cama[0] ;
+         n88Cama = IMSSOFFLIN6_n88Cama[0] ;
+         A6ServicioId = IMSSOFFLIN6_A6ServicioId[0] ;
+         A86DiagnosticoComplemento = IMSSOFFLIN6_A86DiagnosticoComplemento[0] ;
+         n86DiagnosticoComplemento = IMSSOFFLIN6_n86DiagnosticoComplemento[0] ;
+         A87DiagnosticoResumen = IMSSOFFLIN6_A87DiagnosticoResumen[0] ;
+         n87DiagnosticoResumen = IMSSOFFLIN6_n87DiagnosticoResumen[0] ;
+         A103DiagnosticoFechaAlta = IMSSOFFLIN6_A103DiagnosticoFechaAlta[0] ;
+         n103DiagnosticoFechaAlta = IMSSOFFLIN6_n103DiagnosticoFechaAlta[0] ;
+         A85DiagnosticoFechaIngreso = IMSSOFFLIN6_A85DiagnosticoFechaIngreso[0] ;
+         n85DiagnosticoFechaIngreso = IMSSOFFLIN6_n85DiagnosticoFechaIngreso[0] ;
+         A1CIE10Id = IMSSOFFLIN6_A1CIE10Id[0] ;
+         A3PacienteAgregado = IMSSOFFLIN6_A3PacienteAgregado[0] ;
+         A2PacienteNSS = IMSSOFFLIN6_A2PacienteNSS[0] ;
+         A133PacienteNSSAgregado = IMSSOFFLIN6_A133PacienteNSSAgregado[0] ;
          gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A1CIE10Id, (byte)(6), (byte)(0), ".", "")));
          gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A1CIE10Id, (byte)(6), (byte)(0), ".", "")));
-         gxsyncline.add(GXutil.rtrim( A20Cama));
-         gxsyncline.add(A21DiagnosticoCirugia);
-         gxsyncline.add(GXutil.timeToCharREST( A22DiagnosticoCirugiaFecha));
-         gxsyncline.add(A18DiagnosticoComplemento);
-         gxsyncline.add(GXutil.timeToCharREST( A35DiagnosticoFechaAlta));
-         gxsyncline.add(GXutil.dateToCharREST( A17DiagnosticoFechaIngreso));
-         gxsyncline.add(A19DiagnosticoResumen);
-         gxsyncline.add(GXutil.rtrim( A25JSApMat));
-         gxsyncline.add(GXutil.rtrim( A24JSApPat));
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A26JSMatricula, (byte)(10), (byte)(0), ".", "")));
-         gxsyncline.add(GXutil.rtrim( A23JSNombre));
-         gxsyncline.add(GXutil.rtrim( A33MApMat));
-         gxsyncline.add(GXutil.rtrim( A32MApPat));
-         gxsyncline.add(GXutil.rtrim( A29MBApMat));
-         gxsyncline.add(GXutil.rtrim( A28MBApPat));
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A30MBMatricula, (byte)(10), (byte)(0), ".", "")));
-         gxsyncline.add(GXutil.rtrim( A27MBNombre));
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A34MMatricula, (byte)(10), (byte)(0), ".", "")));
-         gxsyncline.add(A31MNombre);
+         gxsyncline.add(GXutil.rtrim( A88Cama));
+         gxsyncline.add(A89DiagnosticoCirugia);
+         gxsyncline.add(GXutil.timeToCharREST( A90DiagnosticoCirugiaFecha));
+         gxsyncline.add(A86DiagnosticoComplemento);
+         gxsyncline.add(GXutil.timeToCharREST( A103DiagnosticoFechaAlta));
+         gxsyncline.add(GXutil.dateToCharREST( A85DiagnosticoFechaIngreso));
+         gxsyncline.add(A87DiagnosticoResumen);
+         gxsyncline.add(GXutil.rtrim( A93JSApMat));
+         gxsyncline.add(GXutil.rtrim( A92JSApPat));
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A94JSMatricula, (byte)(4), (byte)(0), ".", "")));
+         gxsyncline.add(GXutil.rtrim( A91JSNombre));
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A101MApMat, (byte)(4), (byte)(0), ".", "")));
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A100MApPat, (byte)(4), (byte)(0), ".", "")));
+         gxsyncline.add(GXutil.rtrim( A97MBApMat));
+         gxsyncline.add(GXutil.rtrim( A96MBApPat));
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A98MBMatricula, (byte)(4), (byte)(0), ".", "")));
+         gxsyncline.add(GXutil.rtrim( A95MBNombre));
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A102MMatricula, (byte)(4), (byte)(0), ".", "")));
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A99MNombre, (byte)(4), (byte)(0), ".", "")));
          gxsyncline.add(GXutil.rtrim( A3PacienteAgregado));
          gxsynchashkey.add(GXutil.rtrim( A3PacienteAgregado));
          gxsyncline.add(GXutil.rtrim( A2PacienteNSS));
@@ -480,9 +574,9 @@ public final  class imssofflinedatabase extends GXProcedure
          /*  */
          gxsyncresponse.add(gxsyncline);
          gxsyncline = new com.genexus.internet.StringCollection() ;
-         pr_default.readNext(3);
+         pr_default.readNext(4);
       }
-      pr_default.close(3);
+      pr_default.close(4);
       /* End Synchronize */
       gxtabledata = gxsyncresponse.toJSonString(false) ;
       gxtablecurrenthash = GXutil.getMD5Hash( gxtabledata) ;
@@ -546,19 +640,19 @@ public final  class imssofflinedatabase extends GXProcedure
       gxsyncvalueset = new com.genexus.GxUnknownObjectCollection() ;
       gxsynchashkey = new com.genexus.internet.StringCollection() ;
       gxfinalsync = new com.genexus.GxUnknownObjectCollection() ;
-      /* Using cursor IMSSOFFLIN6 */
-      pr_default.execute(4);
-      while ( (pr_default.getStatus(4) != 101) )
+      /* Using cursor IMSSOFFLIN7 */
+      pr_default.execute(5);
+      while ( (pr_default.getStatus(5) != 101) )
       {
-         A323nada = IMSSOFFLIN6_A323nada[0] ;
-         A311TextoDescripcion = IMSSOFFLIN6_A311TextoDescripcion[0] ;
-         A310TextoTitulo = IMSSOFFLIN6_A310TextoTitulo[0] ;
-         A309TextoId = IMSSOFFLIN6_A309TextoId[0] ;
-         gxsyncline.add(A311TextoDescripcion);
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A309TextoId, (byte)(4), (byte)(0), ".", "")));
-         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A309TextoId, (byte)(4), (byte)(0), ".", "")));
-         gxsyncline.add(A310TextoTitulo);
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A323nada, (byte)(4), (byte)(0), ".", "")));
+         A314nada = IMSSOFFLIN7_A314nada[0] ;
+         A302TextoDescripcion = IMSSOFFLIN7_A302TextoDescripcion[0] ;
+         A301TextoTitulo = IMSSOFFLIN7_A301TextoTitulo[0] ;
+         A67TextoId = IMSSOFFLIN7_A67TextoId[0] ;
+         gxsyncline.add(A302TextoDescripcion);
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A67TextoId, (byte)(4), (byte)(0), ".", "")));
+         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A67TextoId, (byte)(4), (byte)(0), ".", "")));
+         gxsyncline.add(A301TextoTitulo);
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A314nada, (byte)(4), (byte)(0), ".", "")));
          gxlinehash = GXutil.getMD5Hash( gxsyncline.ToJavascriptSource()) ;
          gxsetline.add(gxsynchashkey.ToJavascriptSource());
          gxsetline.add(gxlinehash);
@@ -572,9 +666,9 @@ public final  class imssofflinedatabase extends GXProcedure
          /*  */
          gxsyncresponse.add(gxsyncline);
          gxsyncline = new com.genexus.internet.StringCollection() ;
-         pr_default.readNext(4);
+         pr_default.readNext(5);
       }
-      pr_default.close(4);
+      pr_default.close(5);
       /* End Synchronize */
       gxtabledata = gxsyncresponse.toJSonString(false) ;
       gxtablecurrenthash = GXutil.getMD5Hash( gxtabledata) ;
@@ -625,98 +719,6 @@ public final  class imssofflinedatabase extends GXProcedure
       return gxsyncresponse ;
    }
 
-   /*  Synchronize for table (Full)  DFParm */
-   public com.genexus.GxUnknownObjectCollection gxSyncEvtDFParm( )
-   {
-      /* Begin Synchronize  DFParm */
-      /* Synchronization Type By Row */
-      gxsyncheader.add("GXTable");
-      gxsyncheader.add("DFParm");
-      gxsyncresponse.add(gxsyncheader);
-      gxsyncline = new com.genexus.internet.StringCollection() ;
-      gxsynchashset = new com.genexus.GxUnknownObjectCollection() ;
-      gxsyncvalueset = new com.genexus.GxUnknownObjectCollection() ;
-      gxsynchashkey = new com.genexus.internet.StringCollection() ;
-      gxfinalsync = new com.genexus.GxUnknownObjectCollection() ;
-      /* Using cursor IMSSOFFLIN7 */
-      pr_default.execute(5);
-      while ( (pr_default.getStatus(5) != 101) )
-      {
-         A169DFParmIsMetaData = IMSSOFFLIN7_A169DFParmIsMetaData[0] ;
-         A168DFParmVal = IMSSOFFLIN7_A168DFParmVal[0] ;
-         A167DFParmName = IMSSOFFLIN7_A167DFParmName[0] ;
-         A102DFParmId = IMSSOFFLIN7_A102DFParmId[0] ;
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A102DFParmId, (byte)(6), (byte)(0), ".", "")));
-         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A102DFParmId, (byte)(6), (byte)(0), ".", "")));
-         gxsyncline.add(GXutil.booltostr( A169DFParmIsMetaData));
-         gxsyncline.add(GXutil.rtrim( A167DFParmName));
-         gxsyncline.add(GXutil.rtrim( A168DFParmVal));
-         gxlinehash = GXutil.getMD5Hash( gxsyncline.ToJavascriptSource()) ;
-         gxsetline.add(gxsynchashkey.ToJavascriptSource());
-         gxsetline.add(gxlinehash);
-         gxsetvalueline.add(gxsynchashkey.ToJavascriptSource());
-         gxsetvalueline.add(gxsyncline);
-         gxsynchashset.add(gxsetline);
-         gxsyncvalueset.add(gxsetvalueline);
-         gxsynchashkey = new com.genexus.internet.StringCollection() ;
-         gxsetline = new com.genexus.internet.StringCollection() ;
-         gxsetvalueline = new com.genexus.GxUnknownObjectCollection() ;
-         /*  */
-         gxsyncresponse.add(gxsyncline);
-         gxsyncline = new com.genexus.internet.StringCollection() ;
-         pr_default.readNext(5);
-      }
-      pr_default.close(5);
-      /* End Synchronize */
-      gxtabledata = gxsyncresponse.toJSonString(false) ;
-      gxtablecurrenthash = GXutil.getMD5Hash( gxtabledata) ;
-      gxtablestoredhash = gxtablemdata.item(2) ;
-      if ( GXutil.strcmp(gxtablecurrenthash, gxtablestoredhash) == 0 )
-      {
-         gxsyncresponse.clear();
-         gxfinalsync.clear();
-         gxsyncstatus = (short)(0) ;
-      }
-      else
-      {
-         if ( gxischeck == 1 )
-         {
-            gxsyncstatus = (short)(1) ;
-         }
-         gxsyncheader.add(gxtablecurrenthash);
-         if ( gxischeck == 0 )
-         {
-            /* Store hashed rows */
-            gxdeviceidentifier = context.getWorkstationId( remoteHandle) ;
-            GXv_objcol_gxjsonable7[0] = gxsyncinsert ;
-            GXv_objcol_gxjsonable6[0] = gxsyncupdate ;
-            GXv_objcol_gxjsonable5[0] = gxsyncdelete ;
-            GXv_int8[0] = gxstatus ;
-            new gxrowlevelcache(remoteHandle, context).execute ( gxdeviceidentifier ,  "DFParm" ,  gxtablecurrenthash ,  gxtablestoredhash ,  gxsyncvalueset ,  gxsynchashset ,  GXv_objcol_gxjsonable7 ,  GXv_objcol_gxjsonable6 ,  GXv_objcol_gxjsonable5 ,  GXv_int8 );
-            imssofflinedatabase.this.gxsyncinsert = GXv_objcol_gxjsonable7[0] ;
-            imssofflinedatabase.this.gxsyncupdate = GXv_objcol_gxjsonable6[0] ;
-            imssofflinedatabase.this.gxsyncdelete = GXv_objcol_gxjsonable5[0] ;
-            imssofflinedatabase.this.gxstatus = GXv_int8[0] ;
-            if ( gxerrorstatus == 0 )
-            {
-               gxerrorstatus = gxstatus ;
-            }
-            if ( gxstatus == 0 )
-            {
-               gxfinalsync.add(gxsyncheader);
-               gxfinalsync.add(gxsyncinsert);
-               gxfinalsync.add(gxsyncupdate);
-               gxfinalsync.add(gxsyncdelete);
-            }
-         }
-      }
-      gxsynchashset = new com.genexus.GxUnknownObjectCollection() ;
-      gxsyncheader = new com.genexus.internet.StringCollection() ;
-      gxsyncresponse = gxfinalsync ;
-      gxsyncheaderpre = new com.genexus.internet.StringCollection() ;
-      return gxsyncresponse ;
-   }
-
    /*  Synchronize for table (Full)  DXAuxImagen */
    public com.genexus.GxUnknownObjectCollection gxSyncEvtDXAuxImagen( )
    {
@@ -731,7 +733,7 @@ public final  class imssofflinedatabase extends GXProcedure
       gxsynchashkey = new com.genexus.internet.StringCollection() ;
       gxfinalsync = new com.genexus.GxUnknownObjectCollection() ;
       pr_default.dynParam(6, new Object[]{ new Object[]{
-                                           A75PacienteNSSAgregado ,
+                                           A133PacienteNSSAgregado ,
                                            AV3ColPacienteNSSAgregado },
                                            new int[] {
                                            TypeConstants.STRING, TypeConstants.OBJECT_COLLECTION
@@ -741,28 +743,28 @@ public final  class imssofflinedatabase extends GXProcedure
       pr_default.execute(6);
       while ( (pr_default.getStatus(6) != 101) )
       {
-         A75PacienteNSSAgregado = IMSSOFFLIN8_A75PacienteNSSAgregado[0] ;
+         A133PacienteNSSAgregado = IMSSOFFLIN8_A133PacienteNSSAgregado[0] ;
          A40000DXAuxImagenImg_GXI = IMSSOFFLIN8_A40000DXAuxImagenImg_GXI[0] ;
-         A322DXAuxImagenExtension = IMSSOFFLIN8_A322DXAuxImagenExtension[0] ;
-         A73DXAuxImagenNombre = IMSSOFFLIN8_A73DXAuxImagenNombre[0] ;
-         A16DXAuxImagenUserAlta = IMSSOFFLIN8_A16DXAuxImagenUserAlta[0] ;
-         A15DXAuxImagenFechaAlta = IMSSOFFLIN8_A15DXAuxImagenFechaAlta[0] ;
-         A14DXAuxImagenImg = IMSSOFFLIN8_A14DXAuxImagenImg[0] ;
+         A84DXAuxImagenUserAlta = IMSSOFFLIN8_A84DXAuxImagenUserAlta[0] ;
+         A83DXAuxImagenFechaAlta = IMSSOFFLIN8_A83DXAuxImagenFechaAlta[0] ;
+         A82DXAuxImagenImg = IMSSOFFLIN8_A82DXAuxImagenImg[0] ;
+         A313DXAuxImagenExtension = IMSSOFFLIN8_A313DXAuxImagenExtension[0] ;
+         A132DXAuxImagenNombre = IMSSOFFLIN8_A132DXAuxImagenNombre[0] ;
          A5DXAuxImagenId = IMSSOFFLIN8_A5DXAuxImagenId[0] ;
          A1CIE10Id = IMSSOFFLIN8_A1CIE10Id[0] ;
          A3PacienteAgregado = IMSSOFFLIN8_A3PacienteAgregado[0] ;
          A2PacienteNSS = IMSSOFFLIN8_A2PacienteNSS[0] ;
-         A75PacienteNSSAgregado = IMSSOFFLIN8_A75PacienteNSSAgregado[0] ;
+         A133PacienteNSSAgregado = IMSSOFFLIN8_A133PacienteNSSAgregado[0] ;
          gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A1CIE10Id, (byte)(6), (byte)(0), ".", "")));
          gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A1CIE10Id, (byte)(6), (byte)(0), ".", "")));
-         gxsyncline.add(GXutil.rtrim( A322DXAuxImagenExtension));
-         gxsyncline.add(GXutil.timeToCharREST( A15DXAuxImagenFechaAlta));
+         gxsyncline.add(GXutil.rtrim( A313DXAuxImagenExtension));
+         gxsyncline.add(GXutil.timeToCharREST( A83DXAuxImagenFechaAlta));
          gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A5DXAuxImagenId, (byte)(4), (byte)(0), ".", "")));
          gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A5DXAuxImagenId, (byte)(4), (byte)(0), ".", "")));
-         gxsyncline.add((!(GXutil.strcmp("", A40000DXAuxImagenImg_GXI)==0) ? GXutil.getRelativeBlobFile( A40000DXAuxImagenImg_GXI) : GXutil.rtrim( A14DXAuxImagenImg)));
+         gxsyncline.add((!(GXutil.strcmp("", A40000DXAuxImagenImg_GXI)==0) ? GXutil.getRelativeBlobFile( A40000DXAuxImagenImg_GXI) : GXutil.rtrim( A82DXAuxImagenImg)));
          gxsyncline.add(A40000DXAuxImagenImg_GXI);
-         gxsyncline.add(GXutil.rtrim( A73DXAuxImagenNombre));
-         gxsyncline.add(GXutil.rtrim( A16DXAuxImagenUserAlta));
+         gxsyncline.add(GXutil.rtrim( A132DXAuxImagenNombre));
+         gxsyncline.add(GXutil.rtrim( A84DXAuxImagenUserAlta));
          gxsyncline.add(GXutil.rtrim( A3PacienteAgregado));
          gxsynchashkey.add(GXutil.rtrim( A3PacienteAgregado));
          gxsyncline.add(GXutil.rtrim( A2PacienteNSS));
@@ -841,16 +843,16 @@ public final  class imssofflinedatabase extends GXProcedure
       gxsyncheader.add("GXTable");
       gxsyncheader.add("DXAuxDocto");
       gxsyncresponse.add(gxsyncheader);
-	  gxsyncresponse_hash = new com.genexus.GxUnknownObjectCollection();
-	  gxsyncresponse_hash.add(gxsyncheader);	  
+      gxsyncresponse_hash = new com.genexus.GxUnknownObjectCollection() ;
+      gxsyncresponse_hash.add(gxsyncheader);
+      gxsyncline_hash = new com.genexus.internet.StringCollection() ;
       gxsyncline = new com.genexus.internet.StringCollection() ;
-	  gxsyncline_hash = new com.genexus.internet.StringCollection() ;
       gxsynchashset = new com.genexus.GxUnknownObjectCollection() ;
       gxsyncvalueset = new com.genexus.GxUnknownObjectCollection() ;
       gxsynchashkey = new com.genexus.internet.StringCollection() ;
       gxfinalsync = new com.genexus.GxUnknownObjectCollection() ;
       pr_default.dynParam(7, new Object[]{ new Object[]{
-                                           A75PacienteNSSAgregado ,
+                                           A133PacienteNSSAgregado ,
                                            AV3ColPacienteNSSAgregado },
                                            new int[] {
                                            TypeConstants.STRING, TypeConstants.OBJECT_COLLECTION
@@ -860,51 +862,40 @@ public final  class imssofflinedatabase extends GXProcedure
       pr_default.execute(7);
       while ( (pr_default.getStatus(7) != 101) )
       {
-         A75PacienteNSSAgregado = IMSSOFFLIN9_A75PacienteNSSAgregado[0] ;
-         A74DXAuxDoctoNombre = IMSSOFFLIN9_A74DXAuxDoctoNombre[0] ;
-         A82DXAuxDoctoExtension = IMSSOFFLIN9_A82DXAuxDoctoExtension[0] ;
-         A13DXAuxDoctoUserAlta = IMSSOFFLIN9_A13DXAuxDoctoUserAlta[0] ;
-         A12DXAuxDoctoFechaAlta = IMSSOFFLIN9_A12DXAuxDoctoFechaAlta[0] ;
-         A11DXAuxDoctoDocumento = IMSSOFFLIN9_A11DXAuxDoctoDocumento[0] ;
+         A133PacienteNSSAgregado = IMSSOFFLIN9_A133PacienteNSSAgregado[0] ;
+         A79DXAuxDoctoNombre = IMSSOFFLIN9_A79DXAuxDoctoNombre[0] ;
+         A78DXAuxDoctoExtension = IMSSOFFLIN9_A78DXAuxDoctoExtension[0] ;
+         A81DXAuxDoctoUserAlta = IMSSOFFLIN9_A81DXAuxDoctoUserAlta[0] ;
+         A80DXAuxDoctoFechaAlta = IMSSOFFLIN9_A80DXAuxDoctoFechaAlta[0] ;
+         A77DXAuxDoctoDocumento = IMSSOFFLIN9_A77DXAuxDoctoDocumento[0] ;
          A4DXAuxDoctoId = IMSSOFFLIN9_A4DXAuxDoctoId[0] ;
          A1CIE10Id = IMSSOFFLIN9_A1CIE10Id[0] ;
          A3PacienteAgregado = IMSSOFFLIN9_A3PacienteAgregado[0] ;
          A2PacienteNSS = IMSSOFFLIN9_A2PacienteNSS[0] ;
-         A75PacienteNSSAgregado = IMSSOFFLIN9_A75PacienteNSSAgregado[0] ;
+         A133PacienteNSSAgregado = IMSSOFFLIN9_A133PacienteNSSAgregado[0] ;
          gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A1CIE10Id, (byte)(6), (byte)(0), ".", "")));
-		 gxsyncline_hash.add(GXutil.ltrim( localUtil.ntoc( A1CIE10Id, (byte)(6), (byte)(0), ".", "")));
-         
+         gxsyncline_hash.add(GXutil.ltrim( localUtil.ntoc( A1CIE10Id, (byte)(6), (byte)(0), ".", "")));
          gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A1CIE10Id, (byte)(6), (byte)(0), ".", "")));
-         gxsyncline.add(GXutil.getRelativeBlobFile( A11DXAuxDoctoDocumento));
-		 //gxsyncline_hash path de Blobs no se agregan a la sincronizacion
-         
-         gxsyncline.add(GXutil.rtrim( A82DXAuxDoctoExtension));
-		 gxsyncline_hash.add(GXutil.rtrim( A82DXAuxDoctoExtension));
-         
-         gxsyncline.add(GXutil.timeToCharREST( A12DXAuxDoctoFechaAlta));
-		 gxsyncline_hash.add(GXutil.timeToCharREST( A12DXAuxDoctoFechaAlta));
-         
+         gxsyncline.add(GXutil.getRelativeBlobFile( A77DXAuxDoctoDocumento));
+         /* Blob file name not included in hash compute */
+         gxsyncline.add(GXutil.rtrim( A78DXAuxDoctoExtension));
+         gxsyncline_hash.add(GXutil.rtrim( A78DXAuxDoctoExtension));
+         gxsyncline.add(GXutil.timeToCharREST( A80DXAuxDoctoFechaAlta));
+         gxsyncline_hash.add(GXutil.timeToCharREST( A80DXAuxDoctoFechaAlta));
          gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A4DXAuxDoctoId, (byte)(4), (byte)(0), ".", "")));
-		 gxsyncline_hash.add(GXutil.ltrim( localUtil.ntoc( A4DXAuxDoctoId, (byte)(4), (byte)(0), ".", "")));
+         gxsyncline_hash.add(GXutil.ltrim( localUtil.ntoc( A4DXAuxDoctoId, (byte)(4), (byte)(0), ".", "")));
          gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A4DXAuxDoctoId, (byte)(4), (byte)(0), ".", "")));
-		 
-         gxsyncline.add(GXutil.rtrim( A74DXAuxDoctoNombre));
-		 gxsyncline_hash.add(GXutil.rtrim( A74DXAuxDoctoNombre));
-		 
-         gxsyncline.add(GXutil.rtrim( A13DXAuxDoctoUserAlta));
-		 gxsyncline_hash.add(GXutil.rtrim( A13DXAuxDoctoUserAlta));
-		 
+         gxsyncline.add(GXutil.rtrim( A79DXAuxDoctoNombre));
+         gxsyncline_hash.add(GXutil.rtrim( A79DXAuxDoctoNombre));
+         gxsyncline.add(GXutil.rtrim( A81DXAuxDoctoUserAlta));
+         gxsyncline_hash.add(GXutil.rtrim( A81DXAuxDoctoUserAlta));
          gxsyncline.add(GXutil.rtrim( A3PacienteAgregado));
-		 gxsyncline_hash.add(GXutil.rtrim( A3PacienteAgregado));
+         gxsyncline_hash.add(GXutil.rtrim( A3PacienteAgregado));
          gxsynchashkey.add(GXutil.rtrim( A3PacienteAgregado));
-		 
          gxsyncline.add(GXutil.rtrim( A2PacienteNSS));
-		 gxsyncline_hash.add(GXutil.rtrim( A2PacienteNSS));
+         gxsyncline_hash.add(GXutil.rtrim( A2PacienteNSS));
          gxsynchashkey.add(GXutil.rtrim( A2PacienteNSS));
-		 
-         //gxlinehash = GXutil.getMD5Hash( gxsyncline.ToJavascriptSource()) ;
-		 gxlinehash = GXutil.getMD5Hash( gxsyncline_hash.ToJavascriptSource()) ;
-		 
+         gxlinehash = GXutil.getMD5Hash( gxsyncline_hash.ToJavascriptSource()) ;
          gxsetline.add(gxsynchashkey.ToJavascriptSource());
          gxsetline.add(gxlinehash);
          gxsetvalueline.add(gxsynchashkey.ToJavascriptSource());
@@ -916,16 +907,15 @@ public final  class imssofflinedatabase extends GXProcedure
          gxsetvalueline = new com.genexus.GxUnknownObjectCollection() ;
          /*  */
          gxsyncresponse.add(gxsyncline);
-		 gxsyncresponse_hash.add(gxsyncline_hash);
+         gxsyncresponse_hash.add(gxsyncline_hash);
          gxsyncline = new com.genexus.internet.StringCollection() ;
-		 gxsyncline_hash = new com.genexus.internet.StringCollection() ;
+         gxsyncline_hash = new com.genexus.internet.StringCollection() ;
          pr_default.readNext(7);
       }
       pr_default.close(7);
       /* End Synchronize */
       gxtabledata = gxsyncresponse.toJSonString(false) ;
-      // gxtablecurrenthash = GXutil.getMD5Hash( gxtabledata) ;	  
-	  gxtablecurrenthash = GXutil.getMD5Hash( gxsyncresponse_hash.toJSonString(false)) ;
+      gxtablecurrenthash = GXutil.getMD5Hash( gxsyncresponse_hash.toJSonString(false)) ;
       gxtablestoredhash = gxtablemdata.item(2) ;
       if ( GXutil.strcmp(gxtablecurrenthash, gxtablestoredhash) == 0 )
       {
@@ -987,7 +977,7 @@ public final  class imssofflinedatabase extends GXProcedure
       gxsynchashkey = new com.genexus.internet.StringCollection() ;
       gxfinalsync = new com.genexus.GxUnknownObjectCollection() ;
       pr_default.dynParam(8, new Object[]{ new Object[]{
-                                           A75PacienteNSSAgregado ,
+                                           A133PacienteNSSAgregado ,
                                            AV3ColPacienteNSSAgregado },
                                            new int[] {
                                            TypeConstants.STRING, TypeConstants.OBJECT_COLLECTION
@@ -997,53 +987,76 @@ public final  class imssofflinedatabase extends GXProcedure
       pr_default.execute(8);
       while ( (pr_default.getStatus(8) != 101) )
       {
-         A321PacienteServicioId = IMSSOFFLIN10_A321PacienteServicioId[0] ;
-         A298PacienteDiagnosticoPhone = IMSSOFFLIN10_A298PacienteDiagnosticoPhone[0] ;
-         A291PacienteCie10Id = IMSSOFFLIN10_A291PacienteCie10Id[0] ;
-         A76PAcienteFechaIngreso = IMSSOFFLIN10_A76PAcienteFechaIngreso[0] ;
-         A75PacienteNSSAgregado = IMSSOFFLIN10_A75PacienteNSSAgregado[0] ;
-         A72PacienteCama = IMSSOFFLIN10_A72PacienteCama[0] ;
-         A71PacienteDiagnosticoResumido = IMSSOFFLIN10_A71PacienteDiagnosticoResumido[0] ;
-         A70PacienteDiagnostico = IMSSOFFLIN10_A70PacienteDiagnostico[0] ;
-         A68PacienteFechaNacimiento = IMSSOFFLIN10_A68PacienteFechaNacimiento[0] ;
-         A55PacienteNombreCompleto = IMSSOFFLIN10_A55PacienteNombreCompleto[0] ;
-         A54PacienteReferencia = IMSSOFFLIN10_A54PacienteReferencia[0] ;
-         n54PacienteReferencia = IMSSOFFLIN10_n54PacienteReferencia[0] ;
-         A53PacienteFamiliar = IMSSOFFLIN10_A53PacienteFamiliar[0] ;
-         n53PacienteFamiliar = IMSSOFFLIN10_n53PacienteFamiliar[0] ;
-         A52PacienteTelefono = IMSSOFFLIN10_A52PacienteTelefono[0] ;
-         n52PacienteTelefono = IMSSOFFLIN10_n52PacienteTelefono[0] ;
-         A51PacienteGenero = IMSSOFFLIN10_A51PacienteGenero[0] ;
-         n51PacienteGenero = IMSSOFFLIN10_n51PacienteGenero[0] ;
-         A50PacienteEdad = IMSSOFFLIN10_A50PacienteEdad[0] ;
-         A46PacienteApMat = IMSSOFFLIN10_A46PacienteApMat[0] ;
-         n46PacienteApMat = IMSSOFFLIN10_n46PacienteApMat[0] ;
-         A45PacienteApPat = IMSSOFFLIN10_A45PacienteApPat[0] ;
-         A44PacienteNombre = IMSSOFFLIN10_A44PacienteNombre[0] ;
+         A330ClavePresupuestal = IMSSOFFLIN10_A330ClavePresupuestal[0] ;
+         A328IDEE = IMSSOFFLIN10_A328IDEE[0] ;
+         n328IDEE = IMSSOFFLIN10_n328IDEE[0] ;
+         A325CURP = IMSSOFFLIN10_A325CURP[0] ;
+         n325CURP = IMSSOFFLIN10_n325CURP[0] ;
+         A327DhUMF = IMSSOFFLIN10_A327DhUMF[0] ;
+         n327DhUMF = IMSSOFFLIN10_n327DhUMF[0] ;
+         A326DhDeleg = IMSSOFFLIN10_A326DhDeleg[0] ;
+         n326DhDeleg = IMSSOFFLIN10_n326DhDeleg[0] ;
+         A324Consultorio = IMSSOFFLIN10_A324Consultorio[0] ;
+         n324Consultorio = IMSSOFFLIN10_n324Consultorio[0] ;
+         A323ConDerechoSm = IMSSOFFLIN10_A323ConDerechoSm[0] ;
+         n323ConDerechoSm = IMSSOFFLIN10_n323ConDerechoSm[0] ;
+         A322ConDerechoInc = IMSSOFFLIN10_A322ConDerechoInc[0] ;
+         n322ConDerechoInc = IMSSOFFLIN10_n322ConDerechoInc[0] ;
+         A312PacienteServicioId = IMSSOFFLIN10_A312PacienteServicioId[0] ;
+         A130PacienteCie10Id = IMSSOFFLIN10_A130PacienteCie10Id[0] ;
+         A133PacienteNSSAgregado = IMSSOFFLIN10_A133PacienteNSSAgregado[0] ;
+         A131PacienteCama = IMSSOFFLIN10_A131PacienteCama[0] ;
+         A287PacienteDiagnosticoPhone = IMSSOFFLIN10_A287PacienteDiagnosticoPhone[0] ;
+         A129PacienteDiagnosticoResumido = IMSSOFFLIN10_A129PacienteDiagnosticoResumido[0] ;
+         A128PacienteDiagnostico = IMSSOFFLIN10_A128PacienteDiagnostico[0] ;
+         A134PAcienteFechaIngreso = IMSSOFFLIN10_A134PAcienteFechaIngreso[0] ;
+         A124PacienteNombreCompleto = IMSSOFFLIN10_A124PacienteNombreCompleto[0] ;
+         A123PacienteReferencia = IMSSOFFLIN10_A123PacienteReferencia[0] ;
+         n123PacienteReferencia = IMSSOFFLIN10_n123PacienteReferencia[0] ;
+         A122PacienteFamiliar = IMSSOFFLIN10_A122PacienteFamiliar[0] ;
+         n122PacienteFamiliar = IMSSOFFLIN10_n122PacienteFamiliar[0] ;
+         A121PacienteTelefono = IMSSOFFLIN10_A121PacienteTelefono[0] ;
+         n121PacienteTelefono = IMSSOFFLIN10_n121PacienteTelefono[0] ;
+         A120PacienteGenero = IMSSOFFLIN10_A120PacienteGenero[0] ;
+         n120PacienteGenero = IMSSOFFLIN10_n120PacienteGenero[0] ;
+         A118PacienteEdad = IMSSOFFLIN10_A118PacienteEdad[0] ;
+         A119PacienteFechaNacimiento = IMSSOFFLIN10_A119PacienteFechaNacimiento[0] ;
+         A114PacienteApMat = IMSSOFFLIN10_A114PacienteApMat[0] ;
+         n114PacienteApMat = IMSSOFFLIN10_n114PacienteApMat[0] ;
+         A113PacienteApPat = IMSSOFFLIN10_A113PacienteApPat[0] ;
+         A112PacienteNombre = IMSSOFFLIN10_A112PacienteNombre[0] ;
          A3PacienteAgregado = IMSSOFFLIN10_A3PacienteAgregado[0] ;
          A2PacienteNSS = IMSSOFFLIN10_A2PacienteNSS[0] ;
-         gxsyncline.add(GXutil.dateToCharREST( A76PAcienteFechaIngreso));
+         gxsyncline.add(GXutil.rtrim( A325CURP));
+         gxsyncline.add(GXutil.rtrim( A330ClavePresupuestal));
+         gxsyncline.add(GXutil.rtrim( A322ConDerechoInc));
+         gxsyncline.add(GXutil.rtrim( A323ConDerechoSm));
+         gxsyncline.add(GXutil.rtrim( A324Consultorio));
+         gxsyncline.add(GXutil.rtrim( A326DhDeleg));
+         gxsyncline.add(GXutil.rtrim( A327DhUMF));
+         gxsyncline.add(GXutil.rtrim( A328IDEE));
+         gxsyncline.add(GXutil.dateToCharREST( A134PAcienteFechaIngreso));
          gxsyncline.add(GXutil.rtrim( A3PacienteAgregado));
          gxsynchashkey.add(GXutil.rtrim( A3PacienteAgregado));
-         gxsyncline.add(GXutil.rtrim( A46PacienteApMat));
-         gxsyncline.add(GXutil.rtrim( A45PacienteApPat));
-         gxsyncline.add(GXutil.rtrim( A72PacienteCama));
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A291PacienteCie10Id, (byte)(6), (byte)(0), ".", "")));
-         gxsyncline.add(A70PacienteDiagnostico);
-         gxsyncline.add(A298PacienteDiagnosticoPhone);
-         gxsyncline.add(A71PacienteDiagnosticoResumido);
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A50PacienteEdad, (byte)(3), (byte)(0), ".", "")));
-         gxsyncline.add(A53PacienteFamiliar);
-         gxsyncline.add(GXutil.dateToCharREST( A68PacienteFechaNacimiento));
-         gxsyncline.add(GXutil.rtrim( A51PacienteGenero));
+         gxsyncline.add(GXutil.rtrim( A114PacienteApMat));
+         gxsyncline.add(GXutil.rtrim( A113PacienteApPat));
+         gxsyncline.add(GXutil.rtrim( A131PacienteCama));
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A130PacienteCie10Id, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline.add(A128PacienteDiagnostico);
+         gxsyncline.add(A287PacienteDiagnosticoPhone);
+         gxsyncline.add(A129PacienteDiagnosticoResumido);
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A118PacienteEdad, (byte)(3), (byte)(0), ".", "")));
+         gxsyncline.add(A122PacienteFamiliar);
+         gxsyncline.add(GXutil.dateToCharREST( A119PacienteFechaNacimiento));
+         gxsyncline.add(GXutil.rtrim( A120PacienteGenero));
          gxsyncline.add(GXutil.rtrim( A2PacienteNSS));
          gxsynchashkey.add(GXutil.rtrim( A2PacienteNSS));
-         gxsyncline.add(A75PacienteNSSAgregado);
-         gxsyncline.add(GXutil.rtrim( A44PacienteNombre));
-         gxsyncline.add(GXutil.rtrim( A55PacienteNombreCompleto));
-         gxsyncline.add(GXutil.rtrim( A54PacienteReferencia));
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A321PacienteServicioId, (byte)(4), (byte)(0), ".", "")));
-         gxsyncline.add(GXutil.rtrim( A52PacienteTelefono));
+         gxsyncline.add(A133PacienteNSSAgregado);
+         gxsyncline.add(GXutil.rtrim( A112PacienteNombre));
+         gxsyncline.add(GXutil.rtrim( A124PacienteNombreCompleto));
+         gxsyncline.add(GXutil.rtrim( A123PacienteReferencia));
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A312PacienteServicioId, (byte)(4), (byte)(0), ".", "")));
+         gxsyncline.add(GXutil.rtrim( A121PacienteTelefono));
          gxlinehash = GXutil.getMD5Hash( gxsyncline.ToJavascriptSource()) ;
          gxsetline.add(gxsynchashkey.ToJavascriptSource());
          gxsetline.add(gxlinehash);
@@ -1110,13 +1123,13 @@ public final  class imssofflinedatabase extends GXProcedure
       return gxsyncresponse ;
    }
 
-   /*  Synchronize for table (Full)  DFForm */
-   public com.genexus.GxUnknownObjectCollection gxSyncEvtDFForm( )
+   /*  Synchronize for table (Full)  Extension */
+   public com.genexus.GxUnknownObjectCollection gxSyncEvtExtension( )
    {
-      /* Begin Synchronize  DFForm */
+      /* Begin Synchronize  Extension */
       /* Synchronization Type By Row */
       gxsyncheader.add("GXTable");
-      gxsyncheader.add("DFForm");
+      gxsyncheader.add("Extension");
       gxsyncresponse.add(gxsyncheader);
       gxsyncline = new com.genexus.internet.StringCollection() ;
       gxsynchashset = new com.genexus.GxUnknownObjectCollection() ;
@@ -1127,34 +1140,13 @@ public final  class imssofflinedatabase extends GXProcedure
       pr_default.execute(9);
       while ( (pr_default.getStatus(9) != 101) )
       {
-         A317DFFormDsc = IMSSOFFLIN11_A317DFFormDsc[0] ;
-         A303DFFormIsSD = IMSSOFFLIN11_A303DFFormIsSD[0] ;
-         A159DFFormRunDLT = IMSSOFFLIN11_A159DFFormRunDLT[0] ;
-         A236DFFormHelpURL = IMSSOFFLIN11_A236DFFormHelpURL[0] ;
-         A176DFFormPrefix = IMSSOFFLIN11_A176DFFormPrefix[0] ;
-         A235DFFormPmtHgh = IMSSOFFLIN11_A235DFFormPmtHgh[0] ;
-         n235DFFormPmtHgh = IMSSOFFLIN11_n235DFFormPmtHgh[0] ;
-         A234DFFormPmtWth = IMSSOFFLIN11_A234DFFormPmtWth[0] ;
-         n234DFFormPmtWth = IMSSOFFLIN11_n234DFFormPmtWth[0] ;
-         A237DFFormAct = IMSSOFFLIN11_A237DFFormAct[0] ;
-         A171DFFormName = IMSSOFFLIN11_A171DFFormName[0] ;
-         A115DFFormGuid = IMSSOFFLIN11_A115DFFormGuid[0] ;
-         A87DFFormVer = IMSSOFFLIN11_A87DFFormVer[0] ;
-         A86DFFormId = IMSSOFFLIN11_A86DFFormId[0] ;
-         gxsyncline.add(GXutil.booltostr( A237DFFormAct));
-         gxsyncline.add(A317DFFormDsc);
-         gxsyncline.add(A115DFFormGuid.toString());
-         gxsyncline.add(A236DFFormHelpURL);
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A86DFFormId, (byte)(6), (byte)(0), ".", "")));
-         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A86DFFormId, (byte)(6), (byte)(0), ".", "")));
-         gxsyncline.add(GXutil.booltostr( A303DFFormIsSD));
-         gxsyncline.add(GXutil.rtrim( A171DFFormName));
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A235DFFormPmtHgh, (byte)(6), (byte)(0), ".", "")));
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A234DFFormPmtWth, (byte)(6), (byte)(0), ".", "")));
-         gxsyncline.add(A176DFFormPrefix);
-         gxsyncline.add(GXutil.booltostr( A159DFFormRunDLT));
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A87DFFormVer, (byte)(6), (byte)(0), ".", "")));
-         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A87DFFormVer, (byte)(6), (byte)(0), ".", "")));
+         A297ExtensionNombre = IMSSOFFLIN11_A297ExtensionNombre[0] ;
+         A296ExtensionTipo = IMSSOFFLIN11_A296ExtensionTipo[0] ;
+         A66ExtensionId = IMSSOFFLIN11_A66ExtensionId[0] ;
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A66ExtensionId, (byte)(4), (byte)(0), ".", "")));
+         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A66ExtensionId, (byte)(4), (byte)(0), ".", "")));
+         gxsyncline.add(GXutil.rtrim( A297ExtensionNombre));
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A296ExtensionTipo, (byte)(4), (byte)(0), ".", "")));
          gxlinehash = GXutil.getMD5Hash( gxsyncline.ToJavascriptSource()) ;
          gxsetline.add(gxsynchashkey.ToJavascriptSource());
          gxsetline.add(gxlinehash);
@@ -1196,7 +1188,7 @@ public final  class imssofflinedatabase extends GXProcedure
             GXv_objcol_gxjsonable6[0] = gxsyncupdate ;
             GXv_objcol_gxjsonable5[0] = gxsyncdelete ;
             GXv_int8[0] = gxstatus ;
-            new gxrowlevelcache(remoteHandle, context).execute ( gxdeviceidentifier ,  "DFForm" ,  gxtablecurrenthash ,  gxtablestoredhash ,  gxsyncvalueset ,  gxsynchashset ,  GXv_objcol_gxjsonable7 ,  GXv_objcol_gxjsonable6 ,  GXv_objcol_gxjsonable5 ,  GXv_int8 );
+            new gxrowlevelcache(remoteHandle, context).execute ( gxdeviceidentifier ,  "Extension" ,  gxtablecurrenthash ,  gxtablestoredhash ,  gxsyncvalueset ,  gxsynchashset ,  GXv_objcol_gxjsonable7 ,  GXv_objcol_gxjsonable6 ,  GXv_objcol_gxjsonable5 ,  GXv_int8 );
             imssofflinedatabase.this.gxsyncinsert = GXv_objcol_gxjsonable7[0] ;
             imssofflinedatabase.this.gxsyncupdate = GXv_objcol_gxjsonable6[0] ;
             imssofflinedatabase.this.gxsyncdelete = GXv_objcol_gxjsonable5[0] ;
@@ -1235,7 +1227,7 @@ public final  class imssofflinedatabase extends GXProcedure
       gxsynchashkey = new com.genexus.internet.StringCollection() ;
       gxfinalsync = new com.genexus.GxUnknownObjectCollection() ;
       pr_default.dynParam(10, new Object[]{ new Object[]{
-                                           new Long(A90DFFormInstId) ,
+                                           new Long(A9DFFormInstId) ,
                                            AV2ColDFFormInstId },
                                            new int[] {
                                            TypeConstants.LONG, TypeConstants.OBJECT_COLLECTION
@@ -1245,19 +1237,19 @@ public final  class imssofflinedatabase extends GXProcedure
       pr_default.execute(10);
       while ( (pr_default.getStatus(10) != 101) )
       {
-         A85FormatoPacienteMedicoNombre = IMSSOFFLIN12_A85FormatoPacienteMedicoNombre[0] ;
-         A84FormatoPacienteMedicoMatricula = IMSSOFFLIN12_A84FormatoPacienteMedicoMatricula[0] ;
-         A90DFFormInstId = IMSSOFFLIN12_A90DFFormInstId[0] ;
-         A80FormatoPacienteAgregado = IMSSOFFLIN12_A80FormatoPacienteAgregado[0] ;
-         A79FormatoPacienteNSS = IMSSOFFLIN12_A79FormatoPacienteNSS[0] ;
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A90DFFormInstId, (byte)(10), (byte)(0), ".", "")));
-         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A90DFFormInstId, (byte)(10), (byte)(0), ".", "")));
-         gxsyncline.add(GXutil.rtrim( A80FormatoPacienteAgregado));
-         gxsynchashkey.add(GXutil.rtrim( A80FormatoPacienteAgregado));
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A84FormatoPacienteMedicoMatricula, (byte)(10), (byte)(0), ".", "")));
-         gxsyncline.add(A85FormatoPacienteMedicoNombre);
-         gxsyncline.add(GXutil.rtrim( A79FormatoPacienteNSS));
-         gxsynchashkey.add(GXutil.rtrim( A79FormatoPacienteNSS));
+         A136FormatoPacienteMedicoMatricula = IMSSOFFLIN12_A136FormatoPacienteMedicoMatricula[0] ;
+         A137FormatoPacienteMedicoNombre = IMSSOFFLIN12_A137FormatoPacienteMedicoNombre[0] ;
+         A9DFFormInstId = IMSSOFFLIN12_A9DFFormInstId[0] ;
+         A63FormatoPacienteAgregado = IMSSOFFLIN12_A63FormatoPacienteAgregado[0] ;
+         A62FormatoPacienteNSS = IMSSOFFLIN12_A62FormatoPacienteNSS[0] ;
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A9DFFormInstId, (byte)(10), (byte)(0), ".", "")));
+         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A9DFFormInstId, (byte)(10), (byte)(0), ".", "")));
+         gxsyncline.add(GXutil.rtrim( A63FormatoPacienteAgregado));
+         gxsynchashkey.add(GXutil.rtrim( A63FormatoPacienteAgregado));
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A136FormatoPacienteMedicoMatricula, (byte)(10), (byte)(0), ".", "")));
+         gxsyncline.add(A137FormatoPacienteMedicoNombre);
+         gxsyncline.add(GXutil.rtrim( A62FormatoPacienteNSS));
+         gxsynchashkey.add(GXutil.rtrim( A62FormatoPacienteNSS));
          gxlinehash = GXutil.getMD5Hash( gxsyncline.ToJavascriptSource()) ;
          gxsetline.add(gxsynchashkey.ToJavascriptSource());
          gxsetline.add(gxlinehash);
@@ -1324,13 +1316,13 @@ public final  class imssofflinedatabase extends GXProcedure
       return gxsyncresponse ;
    }
 
-   /*  Synchronize for table (Full)  Extension */
-   public com.genexus.GxUnknownObjectCollection gxSyncEvtExtension( )
+   /*  Synchronize for table (Full)  DFElemForm */
+   public com.genexus.GxUnknownObjectCollection gxSyncEvtDFElemForm( )
    {
-      /* Begin Synchronize  Extension */
+      /* Begin Synchronize  DFElemForm */
       /* Synchronization Type By Row */
       gxsyncheader.add("GXTable");
-      gxsyncheader.add("Extension");
+      gxsyncheader.add("DFElemForm");
       gxsyncresponse.add(gxsyncheader);
       gxsyncline = new com.genexus.internet.StringCollection() ;
       gxsynchashset = new com.genexus.GxUnknownObjectCollection() ;
@@ -1341,13 +1333,77 @@ public final  class imssofflinedatabase extends GXProcedure
       pr_default.execute(11);
       while ( (pr_default.getStatus(11) != 101) )
       {
-         A306ExtensionNombre = IMSSOFFLIN13_A306ExtensionNombre[0] ;
-         A305ExtensionTipo = IMSSOFFLIN13_A305ExtensionTipo[0] ;
-         A304ExtensionId = IMSSOFFLIN13_A304ExtensionId[0] ;
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A304ExtensionId, (byte)(4), (byte)(0), ".", "")));
-         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A304ExtensionId, (byte)(4), (byte)(0), ".", "")));
-         gxsyncline.add(GXutil.rtrim( A306ExtensionNombre));
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A305ExtensionTipo, (byte)(4), (byte)(0), ".", "")));
+         A304DFElemFormReq = IMSSOFFLIN13_A304DFElemFormReq[0] ;
+         A299DFElemFormLoadRule = IMSSOFFLIN13_A299DFElemFormLoadRule[0] ;
+         n299DFElemFormLoadRule = IMSSOFFLIN13_n299DFElemFormLoadRule[0] ;
+         A263DFElemFormMetadata = IMSSOFFLIN13_A263DFElemFormMetadata[0] ;
+         n263DFElemFormMetadata = IMSSOFFLIN13_n263DFElemFormMetadata[0] ;
+         A264DFElemFormShwNbr = IMSSOFFLIN13_A264DFElemFormShwNbr[0] ;
+         n264DFElemFormShwNbr = IMSSOFFLIN13_n264DFElemFormShwNbr[0] ;
+         A262DFElemFormDateSel = IMSSOFFLIN13_A262DFElemFormDateSel[0] ;
+         n262DFElemFormDateSel = IMSSOFFLIN13_n262DFElemFormDateSel[0] ;
+         A259DFElemFormHasPmpt = IMSSOFFLIN13_A259DFElemFormHasPmpt[0] ;
+         n259DFElemFormHasPmpt = IMSSOFFLIN13_n259DFElemFormHasPmpt[0] ;
+         A184DFElemFormIsFlt = IMSSOFFLIN13_A184DFElemFormIsFlt[0] ;
+         n184DFElemFormIsFlt = IMSSOFFLIN13_n184DFElemFormIsFlt[0] ;
+         A183DFElemFormCmpWth = IMSSOFFLIN13_A183DFElemFormCmpWth[0] ;
+         n183DFElemFormCmpWth = IMSSOFFLIN13_n183DFElemFormCmpWth[0] ;
+         A182DFElemFormLblWth = IMSSOFFLIN13_A182DFElemFormLblWth[0] ;
+         n182DFElemFormLblWth = IMSSOFFLIN13_n182DFElemFormLblWth[0] ;
+         A307DFElemFormPrtPic = IMSSOFFLIN13_A307DFElemFormPrtPic[0] ;
+         A282DFElemFormPrtShwNbr = IMSSOFFLIN13_A282DFElemFormPrtShwNbr[0] ;
+         A281DFElemFormPrtNumColSkip = IMSSOFFLIN13_A281DFElemFormPrtNumColSkip[0] ;
+         A273DFElemFormPrtNumRowSkip = IMSSOFFLIN13_A273DFElemFormPrtNumRowSkip[0] ;
+         A271DFElemFormPrtAddRows = IMSSOFFLIN13_A271DFElemFormPrtAddRows[0] ;
+         A270DFElemFormPrtName = IMSSOFFLIN13_A270DFElemFormPrtName[0] ;
+         A191DFElemFormIsVisPrt = IMSSOFFLIN13_A191DFElemFormIsVisPrt[0] ;
+         A190DFElemFormIsVis = IMSSOFFLIN13_A190DFElemFormIsVis[0] ;
+         A189DFElemFormIsColap = IMSSOFFLIN13_A189DFElemFormIsColap[0] ;
+         A188DFElemFormAllowIns = IMSSOFFLIN13_A188DFElemFormAllowIns[0] ;
+         n188DFElemFormAllowIns = IMSSOFFLIN13_n188DFElemFormAllowIns[0] ;
+         A187DFElemFormAllowUpd = IMSSOFFLIN13_A187DFElemFormAllowUpd[0] ;
+         n187DFElemFormAllowUpd = IMSSOFFLIN13_n187DFElemFormAllowUpd[0] ;
+         A186DFElemFormAllowDlt = IMSSOFFLIN13_A186DFElemFormAllowDlt[0] ;
+         n186DFElemFormAllowDlt = IMSSOFFLIN13_n186DFElemFormAllowDlt[0] ;
+         A181DFElemFormInhType = IMSSOFFLIN13_A181DFElemFormInhType[0] ;
+         A36DFElemFormPos = IMSSOFFLIN13_A36DFElemFormPos[0] ;
+         A185DFElemFormName = IMSSOFFLIN13_A185DFElemFormName[0] ;
+         A19DFElemVer = IMSSOFFLIN13_A19DFElemVer[0] ;
+         A18DFElemId = IMSSOFFLIN13_A18DFElemId[0] ;
+         A12DFFormVer = IMSSOFFLIN13_A12DFFormVer[0] ;
+         A11DFFormId = IMSSOFFLIN13_A11DFFormId[0] ;
+         gxsyncline.add(GXutil.booltostr( A186DFElemFormAllowDlt));
+         gxsyncline.add(GXutil.booltostr( A188DFElemFormAllowIns));
+         gxsyncline.add(GXutil.booltostr( A187DFElemFormAllowUpd));
+         gxsyncline.add(GXutil.rtrim( A183DFElemFormCmpWth));
+         gxsyncline.add(GXutil.booltostr( A262DFElemFormDateSel));
+         gxsyncline.add(GXutil.booltostr( A259DFElemFormHasPmpt));
+         gxsyncline.add(GXutil.rtrim( A181DFElemFormInhType));
+         gxsyncline.add(GXutil.booltostr( A189DFElemFormIsColap));
+         gxsyncline.add(GXutil.rtrim( A184DFElemFormIsFlt));
+         gxsyncline.add(GXutil.booltostr( A190DFElemFormIsVis));
+         gxsyncline.add(GXutil.booltostr( A191DFElemFormIsVisPrt));
+         gxsyncline.add(GXutil.rtrim( A182DFElemFormLblWth));
+         gxsyncline.add(A299DFElemFormLoadRule);
+         gxsyncline.add(A263DFElemFormMetadata);
+         gxsyncline.add(GXutil.rtrim( A185DFElemFormName));
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A36DFElemFormPos, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline.add(GXutil.booltostr( A271DFElemFormPrtAddRows));
+         gxsyncline.add(GXutil.rtrim( A270DFElemFormPrtName));
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A281DFElemFormPrtNumColSkip, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A273DFElemFormPrtNumRowSkip, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline.add(A307DFElemFormPrtPic);
+         gxsyncline.add(GXutil.booltostr( A282DFElemFormPrtShwNbr));
+         gxsyncline.add(GXutil.booltostr( A304DFElemFormReq));
+         gxsyncline.add(GXutil.booltostr( A264DFElemFormShwNbr));
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A18DFElemId, (byte)(6), (byte)(0), ".", "")));
+         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A18DFElemId, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A19DFElemVer, (byte)(6), (byte)(0), ".", "")));
+         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A19DFElemVer, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A11DFFormId, (byte)(6), (byte)(0), ".", "")));
+         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A11DFFormId, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A12DFFormVer, (byte)(6), (byte)(0), ".", "")));
+         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A12DFFormVer, (byte)(6), (byte)(0), ".", "")));
          gxlinehash = GXutil.getMD5Hash( gxsyncline.ToJavascriptSource()) ;
          gxsetline.add(gxsynchashkey.ToJavascriptSource());
          gxsetline.add(gxlinehash);
@@ -1364,160 +1420,6 @@ public final  class imssofflinedatabase extends GXProcedure
          pr_default.readNext(11);
       }
       pr_default.close(11);
-      /* End Synchronize */
-      gxtabledata = gxsyncresponse.toJSonString(false) ;
-      gxtablecurrenthash = GXutil.getMD5Hash( gxtabledata) ;
-      gxtablestoredhash = gxtablemdata.item(2) ;
-      if ( GXutil.strcmp(gxtablecurrenthash, gxtablestoredhash) == 0 )
-      {
-         gxsyncresponse.clear();
-         gxfinalsync.clear();
-         gxsyncstatus = (short)(0) ;
-      }
-      else
-      {
-         if ( gxischeck == 1 )
-         {
-            gxsyncstatus = (short)(1) ;
-         }
-         gxsyncheader.add(gxtablecurrenthash);
-         if ( gxischeck == 0 )
-         {
-            /* Store hashed rows */
-            gxdeviceidentifier = context.getWorkstationId( remoteHandle) ;
-            GXv_objcol_gxjsonable7[0] = gxsyncinsert ;
-            GXv_objcol_gxjsonable6[0] = gxsyncupdate ;
-            GXv_objcol_gxjsonable5[0] = gxsyncdelete ;
-            GXv_int8[0] = gxstatus ;
-            new gxrowlevelcache(remoteHandle, context).execute ( gxdeviceidentifier ,  "Extension" ,  gxtablecurrenthash ,  gxtablestoredhash ,  gxsyncvalueset ,  gxsynchashset ,  GXv_objcol_gxjsonable7 ,  GXv_objcol_gxjsonable6 ,  GXv_objcol_gxjsonable5 ,  GXv_int8 );
-            imssofflinedatabase.this.gxsyncinsert = GXv_objcol_gxjsonable7[0] ;
-            imssofflinedatabase.this.gxsyncupdate = GXv_objcol_gxjsonable6[0] ;
-            imssofflinedatabase.this.gxsyncdelete = GXv_objcol_gxjsonable5[0] ;
-            imssofflinedatabase.this.gxstatus = GXv_int8[0] ;
-            if ( gxerrorstatus == 0 )
-            {
-               gxerrorstatus = gxstatus ;
-            }
-            if ( gxstatus == 0 )
-            {
-               gxfinalsync.add(gxsyncheader);
-               gxfinalsync.add(gxsyncinsert);
-               gxfinalsync.add(gxsyncupdate);
-               gxfinalsync.add(gxsyncdelete);
-            }
-         }
-      }
-      gxsynchashset = new com.genexus.GxUnknownObjectCollection() ;
-      gxsyncheader = new com.genexus.internet.StringCollection() ;
-      gxsyncresponse = gxfinalsync ;
-      gxsyncheaderpre = new com.genexus.internet.StringCollection() ;
-      return gxsyncresponse ;
-   }
-
-   /*  Synchronize for table (Full)  DFElemForm */
-   public com.genexus.GxUnknownObjectCollection gxSyncEvtDFElemForm( )
-   {
-      /* Begin Synchronize  DFElemForm */
-      /* Synchronization Type By Row */
-      gxsyncheader.add("GXTable");
-      gxsyncheader.add("DFElemForm");
-      gxsyncresponse.add(gxsyncheader);
-      gxsyncline = new com.genexus.internet.StringCollection() ;
-      gxsynchashset = new com.genexus.GxUnknownObjectCollection() ;
-      gxsyncvalueset = new com.genexus.GxUnknownObjectCollection() ;
-      gxsynchashkey = new com.genexus.internet.StringCollection() ;
-      gxfinalsync = new com.genexus.GxUnknownObjectCollection() ;
-      /* Using cursor IMSSOFFLIN14 */
-      pr_default.execute(12);
-      while ( (pr_default.getStatus(12) != 101) )
-      {
-         A313DFElemFormReq = IMSSOFFLIN14_A313DFElemFormReq[0] ;
-         A316DFElemFormPrtPic = IMSSOFFLIN14_A316DFElemFormPrtPic[0] ;
-         A307DFElemFormLoadRule = IMSSOFFLIN14_A307DFElemFormLoadRule[0] ;
-         n307DFElemFormLoadRule = IMSSOFFLIN14_n307DFElemFormLoadRule[0] ;
-         A266DFElemFormMetadata = IMSSOFFLIN14_A266DFElemFormMetadata[0] ;
-         n266DFElemFormMetadata = IMSSOFFLIN14_n266DFElemFormMetadata[0] ;
-         A267DFElemFormShwNbr = IMSSOFFLIN14_A267DFElemFormShwNbr[0] ;
-         n267DFElemFormShwNbr = IMSSOFFLIN14_n267DFElemFormShwNbr[0] ;
-         A265DFElemFormDateSel = IMSSOFFLIN14_A265DFElemFormDateSel[0] ;
-         n265DFElemFormDateSel = IMSSOFFLIN14_n265DFElemFormDateSel[0] ;
-         A262DFElemFormHasPmpt = IMSSOFFLIN14_A262DFElemFormHasPmpt[0] ;
-         n262DFElemFormHasPmpt = IMSSOFFLIN14_n262DFElemFormHasPmpt[0] ;
-         A187DFElemFormIsFlt = IMSSOFFLIN14_A187DFElemFormIsFlt[0] ;
-         n187DFElemFormIsFlt = IMSSOFFLIN14_n187DFElemFormIsFlt[0] ;
-         A186DFElemFormCmpWth = IMSSOFFLIN14_A186DFElemFormCmpWth[0] ;
-         n186DFElemFormCmpWth = IMSSOFFLIN14_n186DFElemFormCmpWth[0] ;
-         A185DFElemFormLblWth = IMSSOFFLIN14_A185DFElemFormLblWth[0] ;
-         n185DFElemFormLblWth = IMSSOFFLIN14_n185DFElemFormLblWth[0] ;
-         A285DFElemFormPrtShwNbr = IMSSOFFLIN14_A285DFElemFormPrtShwNbr[0] ;
-         A284DFElemFormPrtNumColSkip = IMSSOFFLIN14_A284DFElemFormPrtNumColSkip[0] ;
-         A276DFElemFormPrtNumRowSkip = IMSSOFFLIN14_A276DFElemFormPrtNumRowSkip[0] ;
-         A274DFElemFormPrtAddRows = IMSSOFFLIN14_A274DFElemFormPrtAddRows[0] ;
-         A273DFElemFormPrtName = IMSSOFFLIN14_A273DFElemFormPrtName[0] ;
-         A194DFElemFormIsVisPrt = IMSSOFFLIN14_A194DFElemFormIsVisPrt[0] ;
-         A193DFElemFormIsVis = IMSSOFFLIN14_A193DFElemFormIsVis[0] ;
-         A192DFElemFormIsColap = IMSSOFFLIN14_A192DFElemFormIsColap[0] ;
-         A191DFElemFormAllowIns = IMSSOFFLIN14_A191DFElemFormAllowIns[0] ;
-         n191DFElemFormAllowIns = IMSSOFFLIN14_n191DFElemFormAllowIns[0] ;
-         A190DFElemFormAllowUpd = IMSSOFFLIN14_A190DFElemFormAllowUpd[0] ;
-         n190DFElemFormAllowUpd = IMSSOFFLIN14_n190DFElemFormAllowUpd[0] ;
-         A189DFElemFormAllowDlt = IMSSOFFLIN14_A189DFElemFormAllowDlt[0] ;
-         n189DFElemFormAllowDlt = IMSSOFFLIN14_n189DFElemFormAllowDlt[0] ;
-         A184DFElemFormInhType = IMSSOFFLIN14_A184DFElemFormInhType[0] ;
-         A116DFElemFormPos = IMSSOFFLIN14_A116DFElemFormPos[0] ;
-         A188DFElemFormName = IMSSOFFLIN14_A188DFElemFormName[0] ;
-         A89DFElemVer = IMSSOFFLIN14_A89DFElemVer[0] ;
-         A88DFElemId = IMSSOFFLIN14_A88DFElemId[0] ;
-         A87DFFormVer = IMSSOFFLIN14_A87DFFormVer[0] ;
-         A86DFFormId = IMSSOFFLIN14_A86DFFormId[0] ;
-         gxsyncline.add(GXutil.booltostr( A189DFElemFormAllowDlt));
-         gxsyncline.add(GXutil.booltostr( A191DFElemFormAllowIns));
-         gxsyncline.add(GXutil.booltostr( A190DFElemFormAllowUpd));
-         gxsyncline.add(GXutil.rtrim( A186DFElemFormCmpWth));
-         gxsyncline.add(GXutil.booltostr( A265DFElemFormDateSel));
-         gxsyncline.add(GXutil.booltostr( A262DFElemFormHasPmpt));
-         gxsyncline.add(GXutil.rtrim( A184DFElemFormInhType));
-         gxsyncline.add(GXutil.booltostr( A192DFElemFormIsColap));
-         gxsyncline.add(GXutil.rtrim( A187DFElemFormIsFlt));
-         gxsyncline.add(GXutil.booltostr( A193DFElemFormIsVis));
-         gxsyncline.add(GXutil.booltostr( A194DFElemFormIsVisPrt));
-         gxsyncline.add(GXutil.rtrim( A185DFElemFormLblWth));
-         gxsyncline.add(A307DFElemFormLoadRule);
-         gxsyncline.add(A266DFElemFormMetadata);
-         gxsyncline.add(GXutil.rtrim( A188DFElemFormName));
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A116DFElemFormPos, (byte)(6), (byte)(0), ".", "")));
-         gxsyncline.add(GXutil.booltostr( A274DFElemFormPrtAddRows));
-         gxsyncline.add(GXutil.rtrim( A273DFElemFormPrtName));
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A284DFElemFormPrtNumColSkip, (byte)(6), (byte)(0), ".", "")));
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A276DFElemFormPrtNumRowSkip, (byte)(6), (byte)(0), ".", "")));
-         gxsyncline.add(A316DFElemFormPrtPic);
-         gxsyncline.add(GXutil.booltostr( A285DFElemFormPrtShwNbr));
-         gxsyncline.add(GXutil.booltostr( A313DFElemFormReq));
-         gxsyncline.add(GXutil.booltostr( A267DFElemFormShwNbr));
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A88DFElemId, (byte)(6), (byte)(0), ".", "")));
-         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A88DFElemId, (byte)(6), (byte)(0), ".", "")));
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A89DFElemVer, (byte)(6), (byte)(0), ".", "")));
-         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A89DFElemVer, (byte)(6), (byte)(0), ".", "")));
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A86DFFormId, (byte)(6), (byte)(0), ".", "")));
-         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A86DFFormId, (byte)(6), (byte)(0), ".", "")));
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A87DFFormVer, (byte)(6), (byte)(0), ".", "")));
-         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A87DFFormVer, (byte)(6), (byte)(0), ".", "")));
-         gxlinehash = GXutil.getMD5Hash( gxsyncline.ToJavascriptSource()) ;
-         gxsetline.add(gxsynchashkey.ToJavascriptSource());
-         gxsetline.add(gxlinehash);
-         gxsetvalueline.add(gxsynchashkey.ToJavascriptSource());
-         gxsetvalueline.add(gxsyncline);
-         gxsynchashset.add(gxsetline);
-         gxsyncvalueset.add(gxsetvalueline);
-         gxsynchashkey = new com.genexus.internet.StringCollection() ;
-         gxsetline = new com.genexus.internet.StringCollection() ;
-         gxsetvalueline = new com.genexus.GxUnknownObjectCollection() ;
-         /*  */
-         gxsyncresponse.add(gxsyncline);
-         gxsyncline = new com.genexus.internet.StringCollection() ;
-         pr_default.readNext(12);
-      }
-      pr_default.close(12);
       /* End Synchronize */
       gxtabledata = gxsyncresponse.toJSonString(false) ;
       gxtablecurrenthash = GXutil.getMD5Hash( gxtabledata) ;
@@ -1576,44 +1478,54 @@ public final  class imssofflinedatabase extends GXProcedure
       gxsyncheader.add("GXTable");
       gxsyncheader.add("DFElemFormInst");
       gxsyncresponse.add(gxsyncheader);
+      gxsyncresponse_hash = new com.genexus.GxUnknownObjectCollection() ;
+      gxsyncresponse_hash.add(gxsyncheader);
+      gxsyncline_hash = new com.genexus.internet.StringCollection() ;
       gxsyncline = new com.genexus.internet.StringCollection() ;
       gxsynchashset = new com.genexus.GxUnknownObjectCollection() ;
       gxsyncvalueset = new com.genexus.GxUnknownObjectCollection() ;
       gxsynchashkey = new com.genexus.internet.StringCollection() ;
       gxfinalsync = new com.genexus.GxUnknownObjectCollection() ;
-      pr_default.dynParam(13, new Object[]{ new Object[]{
-                                           new Long(A90DFFormInstId) ,
+      pr_default.dynParam(12, new Object[]{ new Object[]{
+                                           new Long(A9DFFormInstId) ,
                                            AV2ColDFFormInstId },
                                            new int[] {
                                            TypeConstants.LONG, TypeConstants.OBJECT_COLLECTION
                                            }
       });
-      /* Using cursor IMSSOFFLIN15 */
-      pr_default.execute(13);
-      while ( (pr_default.getStatus(13) != 101) )
+      /* Using cursor IMSSOFFLIN14 */
+      pr_default.execute(12);
+      while ( (pr_default.getStatus(12) != 101) )
       {
-         A147DFElemFormInstFileName = IMSSOFFLIN15_A147DFElemFormInstFileName[0] ;
-         n147DFElemFormInstFileName = IMSSOFFLIN15_n147DFElemFormInstFileName[0] ;
-         A146DFElemFormInstFileType = IMSSOFFLIN15_A146DFElemFormInstFileType[0] ;
-         n146DFElemFormInstFileType = IMSSOFFLIN15_n146DFElemFormInstFileType[0] ;
-         A145DFElemFormInstBlob = IMSSOFFLIN15_A145DFElemFormInstBlob[0] ;
-         n145DFElemFormInstBlob = IMSSOFFLIN15_n145DFElemFormInstBlob[0] ;
-         A143DFElemFormInstVal = IMSSOFFLIN15_A143DFElemFormInstVal[0] ;
-         n143DFElemFormInstVal = IMSSOFFLIN15_n143DFElemFormInstVal[0] ;
-         A89DFElemVer = IMSSOFFLIN15_A89DFElemVer[0] ;
-         A88DFElemId = IMSSOFFLIN15_A88DFElemId[0] ;
-         A90DFFormInstId = IMSSOFFLIN15_A90DFFormInstId[0] ;
-         gxsyncline.add(GXutil.getRelativeBlobFile( A145DFElemFormInstBlob));
-         gxsyncline.add(GXutil.rtrim( A147DFElemFormInstFileName));
-         gxsyncline.add(GXutil.rtrim( A146DFElemFormInstFileType));
-         gxsyncline.add(A143DFElemFormInstVal);
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A88DFElemId, (byte)(6), (byte)(0), ".", "")));
-         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A88DFElemId, (byte)(6), (byte)(0), ".", "")));
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A89DFElemVer, (byte)(6), (byte)(0), ".", "")));
-         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A89DFElemVer, (byte)(6), (byte)(0), ".", "")));
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A90DFFormInstId, (byte)(10), (byte)(0), ".", "")));
-         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A90DFFormInstId, (byte)(10), (byte)(0), ".", "")));
-         gxlinehash = GXutil.getMD5Hash( gxsyncline.ToJavascriptSource()) ;
+         A145DFElemFormInstFileName = IMSSOFFLIN14_A145DFElemFormInstFileName[0] ;
+         n145DFElemFormInstFileName = IMSSOFFLIN14_n145DFElemFormInstFileName[0] ;
+         A144DFElemFormInstFileType = IMSSOFFLIN14_A144DFElemFormInstFileType[0] ;
+         n144DFElemFormInstFileType = IMSSOFFLIN14_n144DFElemFormInstFileType[0] ;
+         A143DFElemFormInstBlob = IMSSOFFLIN14_A143DFElemFormInstBlob[0] ;
+         n143DFElemFormInstBlob = IMSSOFFLIN14_n143DFElemFormInstBlob[0] ;
+         A141DFElemFormInstVal = IMSSOFFLIN14_A141DFElemFormInstVal[0] ;
+         n141DFElemFormInstVal = IMSSOFFLIN14_n141DFElemFormInstVal[0] ;
+         A19DFElemVer = IMSSOFFLIN14_A19DFElemVer[0] ;
+         A18DFElemId = IMSSOFFLIN14_A18DFElemId[0] ;
+         A9DFFormInstId = IMSSOFFLIN14_A9DFFormInstId[0] ;
+         gxsyncline.add(GXutil.getRelativeBlobFile( A143DFElemFormInstBlob));
+         /* Blob file name not included in hash compute */
+         gxsyncline.add(GXutil.rtrim( A145DFElemFormInstFileName));
+         gxsyncline_hash.add(GXutil.rtrim( A145DFElemFormInstFileName));
+         gxsyncline.add(GXutil.rtrim( A144DFElemFormInstFileType));
+         gxsyncline_hash.add(GXutil.rtrim( A144DFElemFormInstFileType));
+         gxsyncline.add(A141DFElemFormInstVal);
+         gxsyncline_hash.add(A141DFElemFormInstVal);
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A18DFElemId, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline_hash.add(GXutil.ltrim( localUtil.ntoc( A18DFElemId, (byte)(6), (byte)(0), ".", "")));
+         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A18DFElemId, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A19DFElemVer, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline_hash.add(GXutil.ltrim( localUtil.ntoc( A19DFElemVer, (byte)(6), (byte)(0), ".", "")));
+         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A19DFElemVer, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A9DFFormInstId, (byte)(10), (byte)(0), ".", "")));
+         gxsyncline_hash.add(GXutil.ltrim( localUtil.ntoc( A9DFFormInstId, (byte)(10), (byte)(0), ".", "")));
+         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A9DFFormInstId, (byte)(10), (byte)(0), ".", "")));
+         gxlinehash = GXutil.getMD5Hash( gxsyncline_hash.ToJavascriptSource()) ;
          gxsetline.add(gxsynchashkey.ToJavascriptSource());
          gxsetline.add(gxlinehash);
          gxsetvalueline.add(gxsynchashkey.ToJavascriptSource());
@@ -1625,13 +1537,15 @@ public final  class imssofflinedatabase extends GXProcedure
          gxsetvalueline = new com.genexus.GxUnknownObjectCollection() ;
          /*  */
          gxsyncresponse.add(gxsyncline);
+         gxsyncresponse_hash.add(gxsyncline_hash);
          gxsyncline = new com.genexus.internet.StringCollection() ;
-         pr_default.readNext(13);
+         gxsyncline_hash = new com.genexus.internet.StringCollection() ;
+         pr_default.readNext(12);
       }
-      pr_default.close(13);
+      pr_default.close(12);
       /* End Synchronize */
       gxtabledata = gxsyncresponse.toJSonString(false) ;
-      gxtablecurrenthash = GXutil.getMD5Hash( gxtabledata) ;
+      gxtablecurrenthash = GXutil.getMD5Hash( gxsyncresponse_hash.toJSonString(false)) ;
       gxtablestoredhash = gxtablemdata.item(2) ;
       if ( GXutil.strcmp(gxtablecurrenthash, gxtablestoredhash) == 0 )
       {
@@ -1687,53 +1601,67 @@ public final  class imssofflinedatabase extends GXProcedure
       gxsyncheader.add("GXTable");
       gxsyncheader.add("DFElemFormInstSubElem");
       gxsyncresponse.add(gxsyncheader);
+      gxsyncresponse_hash = new com.genexus.GxUnknownObjectCollection() ;
+      gxsyncresponse_hash.add(gxsyncheader);
+      gxsyncline_hash = new com.genexus.internet.StringCollection() ;
       gxsyncline = new com.genexus.internet.StringCollection() ;
       gxsynchashset = new com.genexus.GxUnknownObjectCollection() ;
       gxsyncvalueset = new com.genexus.GxUnknownObjectCollection() ;
       gxsynchashkey = new com.genexus.internet.StringCollection() ;
       gxfinalsync = new com.genexus.GxUnknownObjectCollection() ;
-      pr_default.dynParam(14, new Object[]{ new Object[]{
-                                           new Long(A90DFFormInstId) ,
+      pr_default.dynParam(13, new Object[]{ new Object[]{
+                                           new Long(A9DFFormInstId) ,
                                            AV2ColDFFormInstId },
                                            new int[] {
                                            TypeConstants.LONG, TypeConstants.OBJECT_COLLECTION
                                            }
       });
-      /* Using cursor IMSSOFFLIN16 */
-      pr_default.execute(14);
-      while ( (pr_default.getStatus(14) != 101) )
+      /* Using cursor IMSSOFFLIN15 */
+      pr_default.execute(13);
+      while ( (pr_default.getStatus(13) != 101) )
       {
-         A150DFElemFormInstSubElemFileName = IMSSOFFLIN16_A150DFElemFormInstSubElemFileName[0] ;
-         n150DFElemFormInstSubElemFileName = IMSSOFFLIN16_n150DFElemFormInstSubElemFileName[0] ;
-         A149DFElemFormInstSubElemFileType = IMSSOFFLIN16_A149DFElemFormInstSubElemFileType[0] ;
-         n149DFElemFormInstSubElemFileType = IMSSOFFLIN16_n149DFElemFormInstSubElemFileType[0] ;
-         A108DFSubElemFormElemId = IMSSOFFLIN16_A108DFSubElemFormElemId[0] ;
-         A109DFSubElemFormElemVer = IMSSOFFLIN16_A109DFSubElemFormElemVer[0] ;
-         A110DFElemFormInstSubElemRow = IMSSOFFLIN16_A110DFElemFormInstSubElemRow[0] ;
-         A144DFElemFormInstSubElemVal = IMSSOFFLIN16_A144DFElemFormInstSubElemVal[0] ;
-         n144DFElemFormInstSubElemVal = IMSSOFFLIN16_n144DFElemFormInstSubElemVal[0] ;
-         A148DFElemFormInstSubElemBlob = IMSSOFFLIN16_A148DFElemFormInstSubElemBlob[0] ;
-         n148DFElemFormInstSubElemBlob = IMSSOFFLIN16_n148DFElemFormInstSubElemBlob[0] ;
-         A107DFElemFormInstSubElemId = IMSSOFFLIN16_A107DFElemFormInstSubElemId[0] ;
-         A89DFElemVer = IMSSOFFLIN16_A89DFElemVer[0] ;
-         A88DFElemId = IMSSOFFLIN16_A88DFElemId[0] ;
-         A90DFFormInstId = IMSSOFFLIN16_A90DFFormInstId[0] ;
-         gxsyncline.add(GXutil.getRelativeBlobFile( A148DFElemFormInstSubElemBlob));
-         gxsyncline.add(GXutil.rtrim( A150DFElemFormInstSubElemFileName));
-         gxsyncline.add(GXutil.rtrim( A149DFElemFormInstSubElemFileType));
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A107DFElemFormInstSubElemId, (byte)(6), (byte)(0), ".", "")));
-         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A107DFElemFormInstSubElemId, (byte)(6), (byte)(0), ".", "")));
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A110DFElemFormInstSubElemRow, (byte)(6), (byte)(0), ".", "")));
-         gxsyncline.add(A144DFElemFormInstSubElemVal);
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A88DFElemId, (byte)(6), (byte)(0), ".", "")));
-         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A88DFElemId, (byte)(6), (byte)(0), ".", "")));
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A89DFElemVer, (byte)(6), (byte)(0), ".", "")));
-         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A89DFElemVer, (byte)(6), (byte)(0), ".", "")));
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A90DFFormInstId, (byte)(10), (byte)(0), ".", "")));
-         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A90DFFormInstId, (byte)(10), (byte)(0), ".", "")));
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A108DFSubElemFormElemId, (byte)(6), (byte)(0), ".", "")));
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A109DFSubElemFormElemVer, (byte)(6), (byte)(0), ".", "")));
-         gxlinehash = GXutil.getMD5Hash( gxsyncline.ToJavascriptSource()) ;
+         A148DFElemFormInstSubElemFileName = IMSSOFFLIN15_A148DFElemFormInstSubElemFileName[0] ;
+         n148DFElemFormInstSubElemFileName = IMSSOFFLIN15_n148DFElemFormInstSubElemFileName[0] ;
+         A147DFElemFormInstSubElemFileType = IMSSOFFLIN15_A147DFElemFormInstSubElemFileType[0] ;
+         n147DFElemFormInstSubElemFileType = IMSSOFFLIN15_n147DFElemFormInstSubElemFileType[0] ;
+         A37DFSubElemFormElemId = IMSSOFFLIN15_A37DFSubElemFormElemId[0] ;
+         A38DFSubElemFormElemVer = IMSSOFFLIN15_A38DFSubElemFormElemVer[0] ;
+         A69DFElemFormInstSubElemRow = IMSSOFFLIN15_A69DFElemFormInstSubElemRow[0] ;
+         A142DFElemFormInstSubElemVal = IMSSOFFLIN15_A142DFElemFormInstSubElemVal[0] ;
+         n142DFElemFormInstSubElemVal = IMSSOFFLIN15_n142DFElemFormInstSubElemVal[0] ;
+         A146DFElemFormInstSubElemBlob = IMSSOFFLIN15_A146DFElemFormInstSubElemBlob[0] ;
+         n146DFElemFormInstSubElemBlob = IMSSOFFLIN15_n146DFElemFormInstSubElemBlob[0] ;
+         A68DFElemFormInstSubElemId = IMSSOFFLIN15_A68DFElemFormInstSubElemId[0] ;
+         A19DFElemVer = IMSSOFFLIN15_A19DFElemVer[0] ;
+         A18DFElemId = IMSSOFFLIN15_A18DFElemId[0] ;
+         A9DFFormInstId = IMSSOFFLIN15_A9DFFormInstId[0] ;
+         gxsyncline.add(GXutil.getRelativeBlobFile( A146DFElemFormInstSubElemBlob));
+         /* Blob file name not included in hash compute */
+         gxsyncline.add(GXutil.rtrim( A148DFElemFormInstSubElemFileName));
+         gxsyncline_hash.add(GXutil.rtrim( A148DFElemFormInstSubElemFileName));
+         gxsyncline.add(GXutil.rtrim( A147DFElemFormInstSubElemFileType));
+         gxsyncline_hash.add(GXutil.rtrim( A147DFElemFormInstSubElemFileType));
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A68DFElemFormInstSubElemId, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline_hash.add(GXutil.ltrim( localUtil.ntoc( A68DFElemFormInstSubElemId, (byte)(6), (byte)(0), ".", "")));
+         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A68DFElemFormInstSubElemId, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A69DFElemFormInstSubElemRow, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline_hash.add(GXutil.ltrim( localUtil.ntoc( A69DFElemFormInstSubElemRow, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline.add(A142DFElemFormInstSubElemVal);
+         gxsyncline_hash.add(A142DFElemFormInstSubElemVal);
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A18DFElemId, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline_hash.add(GXutil.ltrim( localUtil.ntoc( A18DFElemId, (byte)(6), (byte)(0), ".", "")));
+         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A18DFElemId, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A19DFElemVer, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline_hash.add(GXutil.ltrim( localUtil.ntoc( A19DFElemVer, (byte)(6), (byte)(0), ".", "")));
+         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A19DFElemVer, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A9DFFormInstId, (byte)(10), (byte)(0), ".", "")));
+         gxsyncline_hash.add(GXutil.ltrim( localUtil.ntoc( A9DFFormInstId, (byte)(10), (byte)(0), ".", "")));
+         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A9DFFormInstId, (byte)(10), (byte)(0), ".", "")));
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A37DFSubElemFormElemId, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline_hash.add(GXutil.ltrim( localUtil.ntoc( A37DFSubElemFormElemId, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A38DFSubElemFormElemVer, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline_hash.add(GXutil.ltrim( localUtil.ntoc( A38DFSubElemFormElemVer, (byte)(6), (byte)(0), ".", "")));
+         gxlinehash = GXutil.getMD5Hash( gxsyncline_hash.ToJavascriptSource()) ;
          gxsetline.add(gxsynchashkey.ToJavascriptSource());
          gxsetline.add(gxlinehash);
          gxsetvalueline.add(gxsynchashkey.ToJavascriptSource());
@@ -1745,13 +1673,15 @@ public final  class imssofflinedatabase extends GXProcedure
          gxsetvalueline = new com.genexus.GxUnknownObjectCollection() ;
          /*  */
          gxsyncresponse.add(gxsyncline);
+         gxsyncresponse_hash.add(gxsyncline_hash);
          gxsyncline = new com.genexus.internet.StringCollection() ;
-         pr_default.readNext(14);
+         gxsyncline_hash = new com.genexus.internet.StringCollection() ;
+         pr_default.readNext(13);
       }
-      pr_default.close(14);
+      pr_default.close(13);
       /* End Synchronize */
       gxtabledata = gxsyncresponse.toJSonString(false) ;
-      gxtablecurrenthash = GXutil.getMD5Hash( gxtabledata) ;
+      gxtablecurrenthash = GXutil.getMD5Hash( gxsyncresponse_hash.toJSonString(false)) ;
       gxtablestoredhash = gxtablemdata.item(2) ;
       if ( GXutil.strcmp(gxtablecurrenthash, gxtablestoredhash) == 0 )
       {
@@ -1807,57 +1737,46 @@ public final  class imssofflinedatabase extends GXProcedure
       gxsyncheader.add("GXTable");
       gxsyncheader.add("DFTemp");
       gxsyncresponse.add(gxsyncheader);
-	  gxsyncresponse_hash = new com.genexus.GxUnknownObjectCollection();
-	  gxsyncresponse_hash.add(gxsyncheader);	  
+      gxsyncresponse_hash = new com.genexus.GxUnknownObjectCollection() ;
+      gxsyncresponse_hash.add(gxsyncheader);
+      gxsyncline_hash = new com.genexus.internet.StringCollection() ;
       gxsyncline = new com.genexus.internet.StringCollection() ;
-      gxsyncline_hash = new com.genexus.internet.StringCollection() ;	  
       gxsynchashset = new com.genexus.GxUnknownObjectCollection() ;
       gxsyncvalueset = new com.genexus.GxUnknownObjectCollection() ;
       gxsynchashkey = new com.genexus.internet.StringCollection() ;
       gxfinalsync = new com.genexus.GxUnknownObjectCollection() ;
-      /* Using cursor IMSSOFFLIN17 */
-      pr_default.execute(15);
-      while ( (pr_default.getStatus(15) != 101) )
+      /* Using cursor IMSSOFFLIN16 */
+      pr_default.execute(14);
+      while ( (pr_default.getStatus(14) != 101) )
       {
-         A290DFTempFm = IMSSOFFLIN17_A290DFTempFm[0] ;
-         A287DFTempOutFm = IMSSOFFLIN17_A287DFTempOutFm[0] ;
-         A281DFTempAddParmPrgName = IMSSOFFLIN17_A281DFTempAddParmPrgName[0] ;
-         A280DFTempBlob = IMSSOFFLIN17_A280DFTempBlob[0] ;
-         A286DFTempDsc = IMSSOFFLIN17_A286DFTempDsc[0] ;
-         A136DFTempName = IMSSOFFLIN17_A136DFTempName[0] ;
-         A87DFFormVer = IMSSOFFLIN17_A87DFFormVer[0] ;
-         A86DFFormId = IMSSOFFLIN17_A86DFFormId[0] ;
-		 
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A86DFFormId, (byte)(6), (byte)(0), ".", "")));
-		 gxsyncline_hash.add(GXutil.ltrim( localUtil.ntoc( A86DFFormId, (byte)(6), (byte)(0), ".", "")));		 
-         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A86DFFormId, (byte)(6), (byte)(0), ".", "")));
-
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A87DFFormVer, (byte)(6), (byte)(0), ".", "")));
-         gxsyncline_hash.add(GXutil.ltrim( localUtil.ntoc( A87DFFormVer, (byte)(6), (byte)(0), ".", "")));
-         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A87DFFormVer, (byte)(6), (byte)(0), ".", "")));
-		 
-         gxsyncline.add(A281DFTempAddParmPrgName);
-		 gxsyncline_hash.add(A281DFTempAddParmPrgName);
-		 
-		 //gxsyncline_hash path de Blobs no se agregan a la sincronizacion
-         gxsyncline.add(GXutil.getRelativeBlobFile( A280DFTempBlob));
-		 
-         gxsyncline.add(A286DFTempDsc);
-		 gxsyncline_hash.add(A286DFTempDsc);
-		 
-         gxsyncline.add(GXutil.rtrim( A290DFTempFm));
-		 gxsyncline_hash.add(GXutil.rtrim( A290DFTempFm));
-		 
-         gxsyncline.add(GXutil.rtrim( A136DFTempName));
-		 gxsyncline_hash.add(GXutil.rtrim( A136DFTempName));
-         gxsynchashkey.add(GXutil.rtrim( A136DFTempName));
-		 
-         gxsyncline.add(GXutil.rtrim( A287DFTempOutFm));
-		 gxsyncline_hash.add(GXutil.rtrim( A287DFTempOutFm));
-		 
-         //gxlinehash = GXutil.getMD5Hash( gxsyncline.ToJavascriptSource()) ;
-		 gxlinehash = GXutil.getMD5Hash( gxsyncline_hash.ToJavascriptSource()) ;
-		 
+         A284DFTempOutFm = IMSSOFFLIN16_A284DFTempOutFm[0] ;
+         A278DFTempAddParmPrgName = IMSSOFFLIN16_A278DFTempAddParmPrgName[0] ;
+         A277DFTempBlob = IMSSOFFLIN16_A277DFTempBlob[0] ;
+         A286DFTempFm = IMSSOFFLIN16_A286DFTempFm[0] ;
+         A283DFTempDsc = IMSSOFFLIN16_A283DFTempDsc[0] ;
+         A55DFTempName = IMSSOFFLIN16_A55DFTempName[0] ;
+         A12DFFormVer = IMSSOFFLIN16_A12DFFormVer[0] ;
+         A11DFFormId = IMSSOFFLIN16_A11DFFormId[0] ;
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A11DFFormId, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline_hash.add(GXutil.ltrim( localUtil.ntoc( A11DFFormId, (byte)(6), (byte)(0), ".", "")));
+         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A11DFFormId, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A12DFFormVer, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline_hash.add(GXutil.ltrim( localUtil.ntoc( A12DFFormVer, (byte)(6), (byte)(0), ".", "")));
+         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A12DFFormVer, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline.add(A278DFTempAddParmPrgName);
+         gxsyncline_hash.add(A278DFTempAddParmPrgName);
+         gxsyncline.add(GXutil.getRelativeBlobFile( A277DFTempBlob));
+         /* Blob file name not included in hash compute */
+         gxsyncline.add(A283DFTempDsc);
+         gxsyncline_hash.add(A283DFTempDsc);
+         gxsyncline.add(GXutil.rtrim( A286DFTempFm));
+         gxsyncline_hash.add(GXutil.rtrim( A286DFTempFm));
+         gxsyncline.add(GXutil.rtrim( A55DFTempName));
+         gxsyncline_hash.add(GXutil.rtrim( A55DFTempName));
+         gxsynchashkey.add(GXutil.rtrim( A55DFTempName));
+         gxsyncline.add(GXutil.rtrim( A284DFTempOutFm));
+         gxsyncline_hash.add(GXutil.rtrim( A284DFTempOutFm));
+         gxlinehash = GXutil.getMD5Hash( gxsyncline_hash.ToJavascriptSource()) ;
          gxsetline.add(gxsynchashkey.ToJavascriptSource());
          gxsetline.add(gxlinehash);
          gxsetvalueline.add(gxsynchashkey.ToJavascriptSource());
@@ -1869,16 +1788,15 @@ public final  class imssofflinedatabase extends GXProcedure
          gxsetvalueline = new com.genexus.GxUnknownObjectCollection() ;
          /*  */
          gxsyncresponse.add(gxsyncline);
-		 gxsyncresponse_hash.add(gxsyncline_hash);
+         gxsyncresponse_hash.add(gxsyncline_hash);
          gxsyncline = new com.genexus.internet.StringCollection() ;
-		 gxsyncline_hash = new com.genexus.internet.StringCollection() ;
-         pr_default.readNext(15);
+         gxsyncline_hash = new com.genexus.internet.StringCollection() ;
+         pr_default.readNext(14);
       }
-      pr_default.close(15);
+      pr_default.close(14);
       /* End Synchronize */
       gxtabledata = gxsyncresponse.toJSonString(false) ;
-      //gxtablecurrenthash = GXutil.getMD5Hash( gxtabledata) ;
-	  gxtablecurrenthash = GXutil.getMD5Hash( gxsyncresponse_hash.toJSonString(false)) ;
+      gxtablecurrenthash = GXutil.getMD5Hash( gxsyncresponse_hash.toJSonString(false)) ;
       gxtablestoredhash = gxtablemdata.item(2) ;
       if ( GXutil.strcmp(gxtablecurrenthash, gxtablestoredhash) == 0 )
       {
@@ -1926,6 +1844,117 @@ public final  class imssofflinedatabase extends GXProcedure
       return gxsyncresponse ;
    }
 
+   /*  Synchronize for table (Full)  DFForm */
+   public com.genexus.GxUnknownObjectCollection gxSyncEvtDFForm( )
+   {
+      /* Begin Synchronize  DFForm */
+      /* Synchronization Type By Row */
+      gxsyncheader.add("GXTable");
+      gxsyncheader.add("DFForm");
+      gxsyncresponse.add(gxsyncheader);
+      gxsyncline = new com.genexus.internet.StringCollection() ;
+      gxsynchashset = new com.genexus.GxUnknownObjectCollection() ;
+      gxsyncvalueset = new com.genexus.GxUnknownObjectCollection() ;
+      gxsynchashkey = new com.genexus.internet.StringCollection() ;
+      gxfinalsync = new com.genexus.GxUnknownObjectCollection() ;
+      /* Using cursor IMSSOFFLIN17 */
+      pr_default.execute(15);
+      while ( (pr_default.getStatus(15) != 101) )
+      {
+         A298DFFormIsSD = IMSSOFFLIN17_A298DFFormIsSD[0] ;
+         A157DFFormRunDLT = IMSSOFFLIN17_A157DFFormRunDLT[0] ;
+         A233DFFormHelpURL = IMSSOFFLIN17_A233DFFormHelpURL[0] ;
+         A173DFFormPrefix = IMSSOFFLIN17_A173DFFormPrefix[0] ;
+         A232DFFormPmtHgh = IMSSOFFLIN17_A232DFFormPmtHgh[0] ;
+         n232DFFormPmtHgh = IMSSOFFLIN17_n232DFFormPmtHgh[0] ;
+         A231DFFormPmtWth = IMSSOFFLIN17_A231DFFormPmtWth[0] ;
+         n231DFFormPmtWth = IMSSOFFLIN17_n231DFFormPmtWth[0] ;
+         A234DFFormAct = IMSSOFFLIN17_A234DFFormAct[0] ;
+         A308DFFormDsc = IMSSOFFLIN17_A308DFFormDsc[0] ;
+         A31DFFormName = IMSSOFFLIN17_A31DFFormName[0] ;
+         A30DFFormGuid = IMSSOFFLIN17_A30DFFormGuid[0] ;
+         A12DFFormVer = IMSSOFFLIN17_A12DFFormVer[0] ;
+         A11DFFormId = IMSSOFFLIN17_A11DFFormId[0] ;
+         gxsyncline.add(GXutil.booltostr( A234DFFormAct));
+         gxsyncline.add(A308DFFormDsc);
+         gxsyncline.add(A30DFFormGuid.toString());
+         gxsyncline.add(A233DFFormHelpURL);
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A11DFFormId, (byte)(6), (byte)(0), ".", "")));
+         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A11DFFormId, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline.add(GXutil.booltostr( A298DFFormIsSD));
+         gxsyncline.add(GXutil.rtrim( A31DFFormName));
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A232DFFormPmtHgh, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A231DFFormPmtWth, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline.add(A173DFFormPrefix);
+         gxsyncline.add(GXutil.booltostr( A157DFFormRunDLT));
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A12DFFormVer, (byte)(6), (byte)(0), ".", "")));
+         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A12DFFormVer, (byte)(6), (byte)(0), ".", "")));
+         gxlinehash = GXutil.getMD5Hash( gxsyncline.ToJavascriptSource()) ;
+         gxsetline.add(gxsynchashkey.ToJavascriptSource());
+         gxsetline.add(gxlinehash);
+         gxsetvalueline.add(gxsynchashkey.ToJavascriptSource());
+         gxsetvalueline.add(gxsyncline);
+         gxsynchashset.add(gxsetline);
+         gxsyncvalueset.add(gxsetvalueline);
+         gxsynchashkey = new com.genexus.internet.StringCollection() ;
+         gxsetline = new com.genexus.internet.StringCollection() ;
+         gxsetvalueline = new com.genexus.GxUnknownObjectCollection() ;
+         /*  */
+         gxsyncresponse.add(gxsyncline);
+         gxsyncline = new com.genexus.internet.StringCollection() ;
+         pr_default.readNext(15);
+      }
+      pr_default.close(15);
+      /* End Synchronize */
+      gxtabledata = gxsyncresponse.toJSonString(false) ;
+      gxtablecurrenthash = GXutil.getMD5Hash( gxtabledata) ;
+      gxtablestoredhash = gxtablemdata.item(2) ;
+      if ( GXutil.strcmp(gxtablecurrenthash, gxtablestoredhash) == 0 )
+      {
+         gxsyncresponse.clear();
+         gxfinalsync.clear();
+         gxsyncstatus = (short)(0) ;
+      }
+      else
+      {
+         if ( gxischeck == 1 )
+         {
+            gxsyncstatus = (short)(1) ;
+         }
+         gxsyncheader.add(gxtablecurrenthash);
+         if ( gxischeck == 0 )
+         {
+            /* Store hashed rows */
+            gxdeviceidentifier = context.getWorkstationId( remoteHandle) ;
+            GXv_objcol_gxjsonable7[0] = gxsyncinsert ;
+            GXv_objcol_gxjsonable6[0] = gxsyncupdate ;
+            GXv_objcol_gxjsonable5[0] = gxsyncdelete ;
+            GXv_int8[0] = gxstatus ;
+            new gxrowlevelcache(remoteHandle, context).execute ( gxdeviceidentifier ,  "DFForm" ,  gxtablecurrenthash ,  gxtablestoredhash ,  gxsyncvalueset ,  gxsynchashset ,  GXv_objcol_gxjsonable7 ,  GXv_objcol_gxjsonable6 ,  GXv_objcol_gxjsonable5 ,  GXv_int8 );
+            imssofflinedatabase.this.gxsyncinsert = GXv_objcol_gxjsonable7[0] ;
+            imssofflinedatabase.this.gxsyncupdate = GXv_objcol_gxjsonable6[0] ;
+            imssofflinedatabase.this.gxsyncdelete = GXv_objcol_gxjsonable5[0] ;
+            imssofflinedatabase.this.gxstatus = GXv_int8[0] ;
+            if ( gxerrorstatus == 0 )
+            {
+               gxerrorstatus = gxstatus ;
+            }
+            if ( gxstatus == 0 )
+            {
+               gxfinalsync.add(gxsyncheader);
+               gxfinalsync.add(gxsyncinsert);
+               gxfinalsync.add(gxsyncupdate);
+               gxfinalsync.add(gxsyncdelete);
+            }
+         }
+      }
+      gxsynchashset = new com.genexus.GxUnknownObjectCollection() ;
+      gxsyncheader = new com.genexus.internet.StringCollection() ;
+      gxsyncresponse = gxfinalsync ;
+      gxsyncheaderpre = new com.genexus.internet.StringCollection() ;
+      return gxsyncresponse ;
+   }
+
    /*  Synchronize for table (Full)  DFDomStaVals */
    public com.genexus.GxUnknownObjectCollection gxSyncEvtDFDomStaVals( )
    {
@@ -1943,17 +1972,17 @@ public final  class imssofflinedatabase extends GXProcedure
       pr_default.execute(16);
       while ( (pr_default.getStatus(16) != 101) )
       {
-         A225DFDomStaValOptDsc = IMSSOFFLIN18_A225DFDomStaValOptDsc[0] ;
-         A113DFDomStaValOptOrd = IMSSOFFLIN18_A113DFDomStaValOptOrd[0] ;
-         A112DFDomStaValOptCod = IMSSOFFLIN18_A112DFDomStaValOptCod[0] ;
-         A111DFDomId = IMSSOFFLIN18_A111DFDomId[0] ;
-         n111DFDomId = IMSSOFFLIN18_n111DFDomId[0] ;
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A111DFDomId, (byte)(6), (byte)(0), ".", "")));
-         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A111DFDomId, (byte)(6), (byte)(0), ".", "")));
-         gxsyncline.add(GXutil.rtrim( A112DFDomStaValOptCod));
-         gxsynchashkey.add(GXutil.rtrim( A112DFDomStaValOptCod));
-         gxsyncline.add(GXutil.rtrim( A225DFDomStaValOptDsc));
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A113DFDomStaValOptOrd, (byte)(6), (byte)(0), ".", "")));
+         A222DFDomStaValOptDsc = IMSSOFFLIN18_A222DFDomStaValOptDsc[0] ;
+         A34DFDomStaValOptOrd = IMSSOFFLIN18_A34DFDomStaValOptOrd[0] ;
+         A33DFDomStaValOptCod = IMSSOFFLIN18_A33DFDomStaValOptCod[0] ;
+         A32DFDomId = IMSSOFFLIN18_A32DFDomId[0] ;
+         n32DFDomId = IMSSOFFLIN18_n32DFDomId[0] ;
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A32DFDomId, (byte)(6), (byte)(0), ".", "")));
+         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A32DFDomId, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline.add(GXutil.rtrim( A33DFDomStaValOptCod));
+         gxsynchashkey.add(GXutil.rtrim( A33DFDomStaValOptCod));
+         gxsyncline.add(GXutil.rtrim( A222DFDomStaValOptDsc));
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A34DFDomStaValOptOrd, (byte)(6), (byte)(0), ".", "")));
          gxlinehash = GXutil.getMD5Hash( gxsyncline.ToJavascriptSource()) ;
          gxsetline.add(gxsynchashkey.ToJavascriptSource());
          gxsetline.add(gxlinehash);
@@ -2028,13 +2057,16 @@ public final  class imssofflinedatabase extends GXProcedure
       gxsyncheader.add("GXTable");
       gxsyncheader.add("DFFormInst");
       gxsyncresponse.add(gxsyncheader);
+      gxsyncresponse_hash = new com.genexus.GxUnknownObjectCollection() ;
+      gxsyncresponse_hash.add(gxsyncheader);
+      gxsyncline_hash = new com.genexus.internet.StringCollection() ;
       gxsyncline = new com.genexus.internet.StringCollection() ;
       gxsynchashset = new com.genexus.GxUnknownObjectCollection() ;
       gxsyncvalueset = new com.genexus.GxUnknownObjectCollection() ;
       gxsynchashkey = new com.genexus.internet.StringCollection() ;
       gxfinalsync = new com.genexus.GxUnknownObjectCollection() ;
       pr_default.dynParam(17, new Object[]{ new Object[]{
-                                           new Long(A90DFFormInstId) ,
+                                           new Long(A9DFFormInstId) ,
                                            AV2ColDFFormInstId },
                                            new int[] {
                                            TypeConstants.LONG, TypeConstants.OBJECT_COLLECTION
@@ -2044,22 +2076,28 @@ public final  class imssofflinedatabase extends GXProcedure
       pr_default.execute(17);
       while ( (pr_default.getStatus(17) != 101) )
       {
-         A200DFFormInstSignedPDF = IMSSOFFLIN19_A200DFFormInstSignedPDF[0] ;
-         n200DFFormInstSignedPDF = IMSSOFFLIN19_n200DFFormInstSignedPDF[0] ;
-         A201DFFormInstSignedBy = IMSSOFFLIN19_A201DFFormInstSignedBy[0] ;
-         n201DFFormInstSignedBy = IMSSOFFLIN19_n201DFFormInstSignedBy[0] ;
-         A157DFFormInstDT = IMSSOFFLIN19_A157DFFormInstDT[0] ;
-         A106DFFormInstFormVer = IMSSOFFLIN19_A106DFFormInstFormVer[0] ;
-         A105DFFormInstFormId = IMSSOFFLIN19_A105DFFormInstFormId[0] ;
-         A90DFFormInstId = IMSSOFFLIN19_A90DFFormInstId[0] ;
-         gxsyncline.add(GXutil.timeToCharREST( A157DFFormInstDT));
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A105DFFormInstFormId, (byte)(6), (byte)(0), ".", "")));
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A106DFFormInstFormVer, (byte)(6), (byte)(0), ".", "")));
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A90DFFormInstId, (byte)(10), (byte)(0), ".", "")));
-         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A90DFFormInstId, (byte)(10), (byte)(0), ".", "")));
-         gxsyncline.add(A201DFFormInstSignedBy);
-         gxsyncline.add(GXutil.getRelativeBlobFile( A200DFFormInstSignedPDF));
-         gxlinehash = GXutil.getMD5Hash( gxsyncline.ToJavascriptSource()) ;
+         A197DFFormInstSignedPDF = IMSSOFFLIN19_A197DFFormInstSignedPDF[0] ;
+         n197DFFormInstSignedPDF = IMSSOFFLIN19_n197DFFormInstSignedPDF[0] ;
+         A198DFFormInstSignedBy = IMSSOFFLIN19_A198DFFormInstSignedBy[0] ;
+         n198DFFormInstSignedBy = IMSSOFFLIN19_n198DFFormInstSignedBy[0] ;
+         A155DFFormInstDT = IMSSOFFLIN19_A155DFFormInstDT[0] ;
+         A29DFFormInstFormVer = IMSSOFFLIN19_A29DFFormInstFormVer[0] ;
+         A28DFFormInstFormId = IMSSOFFLIN19_A28DFFormInstFormId[0] ;
+         A9DFFormInstId = IMSSOFFLIN19_A9DFFormInstId[0] ;
+         gxsyncline.add(GXutil.timeToCharREST( A155DFFormInstDT));
+         gxsyncline_hash.add(GXutil.timeToCharREST( A155DFFormInstDT));
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A28DFFormInstFormId, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline_hash.add(GXutil.ltrim( localUtil.ntoc( A28DFFormInstFormId, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A29DFFormInstFormVer, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline_hash.add(GXutil.ltrim( localUtil.ntoc( A29DFFormInstFormVer, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A9DFFormInstId, (byte)(10), (byte)(0), ".", "")));
+         gxsyncline_hash.add(GXutil.ltrim( localUtil.ntoc( A9DFFormInstId, (byte)(10), (byte)(0), ".", "")));
+         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A9DFFormInstId, (byte)(10), (byte)(0), ".", "")));
+         gxsyncline.add(A198DFFormInstSignedBy);
+         gxsyncline_hash.add(A198DFFormInstSignedBy);
+         gxsyncline.add(GXutil.getRelativeBlobFile( A197DFFormInstSignedPDF));
+         /* Blob file name not included in hash compute */
+         gxlinehash = GXutil.getMD5Hash( gxsyncline_hash.ToJavascriptSource()) ;
          gxsetline.add(gxsynchashkey.ToJavascriptSource());
          gxsetline.add(gxlinehash);
          gxsetvalueline.add(gxsynchashkey.ToJavascriptSource());
@@ -2071,13 +2109,15 @@ public final  class imssofflinedatabase extends GXProcedure
          gxsetvalueline = new com.genexus.GxUnknownObjectCollection() ;
          /*  */
          gxsyncresponse.add(gxsyncline);
+         gxsyncresponse_hash.add(gxsyncline_hash);
          gxsyncline = new com.genexus.internet.StringCollection() ;
+         gxsyncline_hash = new com.genexus.internet.StringCollection() ;
          pr_default.readNext(17);
       }
       pr_default.close(17);
       /* End Synchronize */
       gxtabledata = gxsyncresponse.toJSonString(false) ;
-      gxtablecurrenthash = GXutil.getMD5Hash( gxtabledata) ;
+      gxtablecurrenthash = GXutil.getMD5Hash( gxsyncresponse_hash.toJSonString(false)) ;
       gxtablestoredhash = gxtablemdata.item(2) ;
       if ( GXutil.strcmp(gxtablecurrenthash, gxtablestoredhash) == 0 )
       {
@@ -2142,133 +2182,133 @@ public final  class imssofflinedatabase extends GXProcedure
       pr_default.execute(18);
       while ( (pr_default.getStatus(18) != 101) )
       {
-         A314DFElemReq = IMSSOFFLIN20_A314DFElemReq[0] ;
-         A315DFElemPrtPic = IMSSOFFLIN20_A315DFElemPrtPic[0] ;
-         A308DFElemLoadRule = IMSSOFFLIN20_A308DFElemLoadRule[0] ;
-         n308DFElemLoadRule = IMSSOFFLIN20_n308DFElemLoadRule[0] ;
-         A268DFElemMetadata = IMSSOFFLIN20_A268DFElemMetadata[0] ;
-         n268DFElemMetadata = IMSSOFFLIN20_n268DFElemMetadata[0] ;
-         A241DFElemIsColap = IMSSOFFLIN20_A241DFElemIsColap[0] ;
-         A283DFElemPrtShwNbr = IMSSOFFLIN20_A283DFElemPrtShwNbr[0] ;
-         A282DFElemPrtNumColSkip = IMSSOFFLIN20_A282DFElemPrtNumColSkip[0] ;
-         A277DFElemPrtNumRowSkip = IMSSOFFLIN20_A277DFElemPrtNumRowSkip[0] ;
-         A275DFElemPrtAddRows = IMSSOFFLIN20_A275DFElemPrtAddRows[0] ;
-         A272DFElemPrtName = IMSSOFFLIN20_A272DFElemPrtName[0] ;
-         A263DFElemIsVisPrt = IMSSOFFLIN20_A263DFElemIsVisPrt[0] ;
-         A240DFElemIsVis = IMSSOFFLIN20_A240DFElemIsVis[0] ;
-         A260DFElemLblWth = IMSSOFFLIN20_A260DFElemLblWth[0] ;
-         n260DFElemLblWth = IMSSOFFLIN20_n260DFElemLblWth[0] ;
-         A246DFElemCmpWth = IMSSOFFLIN20_A246DFElemCmpWth[0] ;
-         n246DFElemCmpWth = IMSSOFFLIN20_n246DFElemCmpWth[0] ;
-         A245DFElemIsFlt = IMSSOFFLIN20_A245DFElemIsFlt[0] ;
-         n245DFElemIsFlt = IMSSOFFLIN20_n245DFElemIsFlt[0] ;
-         A259DFElemFileType = IMSSOFFLIN20_A259DFElemFileType[0] ;
-         n259DFElemFileType = IMSSOFFLIN20_n259DFElemFileType[0] ;
-         A257DFElemRegexVal = IMSSOFFLIN20_A257DFElemRegexVal[0] ;
-         n257DFElemRegexVal = IMSSOFFLIN20_n257DFElemRegexVal[0] ;
-         A256DFElemAllowDlt = IMSSOFFLIN20_A256DFElemAllowDlt[0] ;
-         n256DFElemAllowDlt = IMSSOFFLIN20_n256DFElemAllowDlt[0] ;
-         A255DFElemAllowUpd = IMSSOFFLIN20_A255DFElemAllowUpd[0] ;
-         n255DFElemAllowUpd = IMSSOFFLIN20_n255DFElemAllowUpd[0] ;
-         A254DFElemAllowIns = IMSSOFFLIN20_A254DFElemAllowIns[0] ;
-         n254DFElemAllowIns = IMSSOFFLIN20_n254DFElemAllowIns[0] ;
-         A253DFElemUseBtns = IMSSOFFLIN20_A253DFElemUseBtns[0] ;
-         n253DFElemUseBtns = IMSSOFFLIN20_n253DFElemUseBtns[0] ;
-         A252DFElemIsOrd = IMSSOFFLIN20_A252DFElemIsOrd[0] ;
-         n252DFElemIsOrd = IMSSOFFLIN20_n252DFElemIsOrd[0] ;
-         A251DFElemMaxSuggRes = IMSSOFFLIN20_A251DFElemMaxSuggRes[0] ;
-         n251DFElemMaxSuggRes = IMSSOFFLIN20_n251DFElemMaxSuggRes[0] ;
-         A250DFElemForceSuggSel = IMSSOFFLIN20_A250DFElemForceSuggSel[0] ;
-         n250DFElemForceSuggSel = IMSSOFFLIN20_n250DFElemForceSuggSel[0] ;
-         A249DFElemMinCntCharSugg = IMSSOFFLIN20_A249DFElemMinCntCharSugg[0] ;
-         n249DFElemMinCntCharSugg = IMSSOFFLIN20_n249DFElemMinCntCharSugg[0] ;
-         A261DFElemDscPrgName = IMSSOFFLIN20_A261DFElemDscPrgName[0] ;
-         A248DFElemLoadPrgName = IMSSOFFLIN20_A248DFElemLoadPrgName[0] ;
-         n248DFElemLoadPrgName = IMSSOFFLIN20_n248DFElemLoadPrgName[0] ;
-         A270DFElemBtnPos = IMSSOFFLIN20_A270DFElemBtnPos[0] ;
-         n270DFElemBtnPos = IMSSOFFLIN20_n270DFElemBtnPos[0] ;
-         A271DFElemShwNbrLbl = IMSSOFFLIN20_A271DFElemShwNbrLbl[0] ;
-         n271DFElemShwNbrLbl = IMSSOFFLIN20_n271DFElemShwNbrLbl[0] ;
-         A269DFElemShwNbr = IMSSOFFLIN20_A269DFElemShwNbr[0] ;
-         n269DFElemShwNbr = IMSSOFFLIN20_n269DFElemShwNbr[0] ;
-         A264DFElemDateSel = IMSSOFFLIN20_A264DFElemDateSel[0] ;
-         n264DFElemDateSel = IMSSOFFLIN20_n264DFElemDateSel[0] ;
-         A247DFElemHasPmpt = IMSSOFFLIN20_A247DFElemHasPmpt[0] ;
-         n247DFElemHasPmpt = IMSSOFFLIN20_n247DFElemHasPmpt[0] ;
-         A183DFElemDftVal = IMSSOFFLIN20_A183DFElemDftVal[0] ;
-         n183DFElemDftVal = IMSSOFFLIN20_n183DFElemDftVal[0] ;
-         A244DFElemCntCols = IMSSOFFLIN20_A244DFElemCntCols[0] ;
-         n244DFElemCntCols = IMSSOFFLIN20_n244DFElemCntCols[0] ;
-         A243DFElemCntRows = IMSSOFFLIN20_A243DFElemCntRows[0] ;
-         n243DFElemCntRows = IMSSOFFLIN20_n243DFElemCntRows[0] ;
-         A242DFElemCntDec = IMSSOFFLIN20_A242DFElemCntDec[0] ;
-         n242DFElemCntDec = IMSSOFFLIN20_n242DFElemCntDec[0] ;
-         A258DFElemWth = IMSSOFFLIN20_A258DFElemWth[0] ;
-         n258DFElemWth = IMSSOFFLIN20_n258DFElemWth[0] ;
-         A239DFElemLen = IMSSOFFLIN20_A239DFElemLen[0] ;
-         n239DFElemLen = IMSSOFFLIN20_n239DFElemLen[0] ;
-         A199DFElemDsp = IMSSOFFLIN20_A199DFElemDsp[0] ;
-         n199DFElemDsp = IMSSOFFLIN20_n199DFElemDsp[0] ;
-         A181DFElemType = IMSSOFFLIN20_A181DFElemType[0] ;
-         A111DFDomId = IMSSOFFLIN20_A111DFDomId[0] ;
-         n111DFDomId = IMSSOFFLIN20_n111DFDomId[0] ;
-         A195DFElemClsName = IMSSOFFLIN20_A195DFElemClsName[0] ;
-         n195DFElemClsName = IMSSOFFLIN20_n195DFElemClsName[0] ;
-         A238DFElemDsc = IMSSOFFLIN20_A238DFElemDsc[0] ;
-         n238DFElemDsc = IMSSOFFLIN20_n238DFElemDsc[0] ;
-         A151DFElemName = IMSSOFFLIN20_A151DFElemName[0] ;
-         A114DFElemGuid = IMSSOFFLIN20_A114DFElemGuid[0] ;
-         A89DFElemVer = IMSSOFFLIN20_A89DFElemVer[0] ;
-         A88DFElemId = IMSSOFFLIN20_A88DFElemId[0] ;
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A111DFDomId, (byte)(6), (byte)(0), ".", "")));
-         gxsyncline.add(GXutil.booltostr( A256DFElemAllowDlt));
-         gxsyncline.add(GXutil.booltostr( A254DFElemAllowIns));
-         gxsyncline.add(GXutil.booltostr( A255DFElemAllowUpd));
-         gxsyncline.add(GXutil.rtrim( A270DFElemBtnPos));
-         gxsyncline.add(GXutil.rtrim( A195DFElemClsName));
-         gxsyncline.add(GXutil.rtrim( A246DFElemCmpWth));
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A244DFElemCntCols, (byte)(6), (byte)(0), ".", "")));
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A242DFElemCntDec, (byte)(6), (byte)(0), ".", "")));
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A243DFElemCntRows, (byte)(6), (byte)(0), ".", "")));
-         gxsyncline.add(GXutil.booltostr( A264DFElemDateSel));
-         gxsyncline.add(GXutil.rtrim( A183DFElemDftVal));
-         gxsyncline.add(A238DFElemDsc);
-         gxsyncline.add(A261DFElemDscPrgName);
-         gxsyncline.add(GXutil.rtrim( A199DFElemDsp));
-         gxsyncline.add(GXutil.rtrim( A259DFElemFileType));
-         gxsyncline.add(GXutil.booltostr( A250DFElemForceSuggSel));
-         gxsyncline.add(A114DFElemGuid.toString());
-         gxsyncline.add(GXutil.booltostr( A247DFElemHasPmpt));
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A88DFElemId, (byte)(6), (byte)(0), ".", "")));
-         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A88DFElemId, (byte)(6), (byte)(0), ".", "")));
-         gxsyncline.add(GXutil.booltostr( A241DFElemIsColap));
-         gxsyncline.add(GXutil.rtrim( A245DFElemIsFlt));
-         gxsyncline.add(GXutil.booltostr( A252DFElemIsOrd));
-         gxsyncline.add(GXutil.booltostr( A240DFElemIsVis));
-         gxsyncline.add(GXutil.booltostr( A263DFElemIsVisPrt));
-         gxsyncline.add(GXutil.rtrim( A260DFElemLblWth));
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A239DFElemLen, (byte)(6), (byte)(0), ".", "")));
-         gxsyncline.add(A248DFElemLoadPrgName);
-         gxsyncline.add(A308DFElemLoadRule);
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A251DFElemMaxSuggRes, (byte)(6), (byte)(0), ".", "")));
-         gxsyncline.add(A268DFElemMetadata);
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A249DFElemMinCntCharSugg, (byte)(6), (byte)(0), ".", "")));
-         gxsyncline.add(GXutil.rtrim( A151DFElemName));
-         gxsyncline.add(GXutil.booltostr( A275DFElemPrtAddRows));
-         gxsyncline.add(GXutil.rtrim( A272DFElemPrtName));
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A282DFElemPrtNumColSkip, (byte)(6), (byte)(0), ".", "")));
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A277DFElemPrtNumRowSkip, (byte)(6), (byte)(0), ".", "")));
-         gxsyncline.add(A315DFElemPrtPic);
-         gxsyncline.add(GXutil.booltostr( A283DFElemPrtShwNbr));
-         gxsyncline.add(GXutil.rtrim( A257DFElemRegexVal));
-         gxsyncline.add(GXutil.booltostr( A314DFElemReq));
-         gxsyncline.add(GXutil.booltostr( A269DFElemShwNbr));
-         gxsyncline.add(GXutil.rtrim( A271DFElemShwNbrLbl));
-         gxsyncline.add(GXutil.rtrim( A181DFElemType));
-         gxsyncline.add(GXutil.booltostr( A253DFElemUseBtns));
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A89DFElemVer, (byte)(6), (byte)(0), ".", "")));
-         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A89DFElemVer, (byte)(6), (byte)(0), ".", "")));
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A258DFElemWth, (byte)(6), (byte)(0), ".", "")));
+         A305DFElemReq = IMSSOFFLIN20_A305DFElemReq[0] ;
+         A300DFElemLoadRule = IMSSOFFLIN20_A300DFElemLoadRule[0] ;
+         n300DFElemLoadRule = IMSSOFFLIN20_n300DFElemLoadRule[0] ;
+         A265DFElemMetadata = IMSSOFFLIN20_A265DFElemMetadata[0] ;
+         n265DFElemMetadata = IMSSOFFLIN20_n265DFElemMetadata[0] ;
+         A238DFElemIsColap = IMSSOFFLIN20_A238DFElemIsColap[0] ;
+         A306DFElemPrtPic = IMSSOFFLIN20_A306DFElemPrtPic[0] ;
+         A280DFElemPrtShwNbr = IMSSOFFLIN20_A280DFElemPrtShwNbr[0] ;
+         A279DFElemPrtNumColSkip = IMSSOFFLIN20_A279DFElemPrtNumColSkip[0] ;
+         A274DFElemPrtNumRowSkip = IMSSOFFLIN20_A274DFElemPrtNumRowSkip[0] ;
+         A272DFElemPrtAddRows = IMSSOFFLIN20_A272DFElemPrtAddRows[0] ;
+         A269DFElemPrtName = IMSSOFFLIN20_A269DFElemPrtName[0] ;
+         A260DFElemIsVisPrt = IMSSOFFLIN20_A260DFElemIsVisPrt[0] ;
+         A237DFElemIsVis = IMSSOFFLIN20_A237DFElemIsVis[0] ;
+         A257DFElemLblWth = IMSSOFFLIN20_A257DFElemLblWth[0] ;
+         n257DFElemLblWth = IMSSOFFLIN20_n257DFElemLblWth[0] ;
+         A243DFElemCmpWth = IMSSOFFLIN20_A243DFElemCmpWth[0] ;
+         n243DFElemCmpWth = IMSSOFFLIN20_n243DFElemCmpWth[0] ;
+         A242DFElemIsFlt = IMSSOFFLIN20_A242DFElemIsFlt[0] ;
+         n242DFElemIsFlt = IMSSOFFLIN20_n242DFElemIsFlt[0] ;
+         A256DFElemFileType = IMSSOFFLIN20_A256DFElemFileType[0] ;
+         n256DFElemFileType = IMSSOFFLIN20_n256DFElemFileType[0] ;
+         A254DFElemRegexVal = IMSSOFFLIN20_A254DFElemRegexVal[0] ;
+         n254DFElemRegexVal = IMSSOFFLIN20_n254DFElemRegexVal[0] ;
+         A253DFElemAllowDlt = IMSSOFFLIN20_A253DFElemAllowDlt[0] ;
+         n253DFElemAllowDlt = IMSSOFFLIN20_n253DFElemAllowDlt[0] ;
+         A252DFElemAllowUpd = IMSSOFFLIN20_A252DFElemAllowUpd[0] ;
+         n252DFElemAllowUpd = IMSSOFFLIN20_n252DFElemAllowUpd[0] ;
+         A251DFElemAllowIns = IMSSOFFLIN20_A251DFElemAllowIns[0] ;
+         n251DFElemAllowIns = IMSSOFFLIN20_n251DFElemAllowIns[0] ;
+         A250DFElemUseBtns = IMSSOFFLIN20_A250DFElemUseBtns[0] ;
+         n250DFElemUseBtns = IMSSOFFLIN20_n250DFElemUseBtns[0] ;
+         A249DFElemIsOrd = IMSSOFFLIN20_A249DFElemIsOrd[0] ;
+         n249DFElemIsOrd = IMSSOFFLIN20_n249DFElemIsOrd[0] ;
+         A248DFElemMaxSuggRes = IMSSOFFLIN20_A248DFElemMaxSuggRes[0] ;
+         n248DFElemMaxSuggRes = IMSSOFFLIN20_n248DFElemMaxSuggRes[0] ;
+         A247DFElemForceSuggSel = IMSSOFFLIN20_A247DFElemForceSuggSel[0] ;
+         n247DFElemForceSuggSel = IMSSOFFLIN20_n247DFElemForceSuggSel[0] ;
+         A246DFElemMinCntCharSugg = IMSSOFFLIN20_A246DFElemMinCntCharSugg[0] ;
+         n246DFElemMinCntCharSugg = IMSSOFFLIN20_n246DFElemMinCntCharSugg[0] ;
+         A258DFElemDscPrgName = IMSSOFFLIN20_A258DFElemDscPrgName[0] ;
+         A245DFElemLoadPrgName = IMSSOFFLIN20_A245DFElemLoadPrgName[0] ;
+         n245DFElemLoadPrgName = IMSSOFFLIN20_n245DFElemLoadPrgName[0] ;
+         A267DFElemBtnPos = IMSSOFFLIN20_A267DFElemBtnPos[0] ;
+         n267DFElemBtnPos = IMSSOFFLIN20_n267DFElemBtnPos[0] ;
+         A268DFElemShwNbrLbl = IMSSOFFLIN20_A268DFElemShwNbrLbl[0] ;
+         n268DFElemShwNbrLbl = IMSSOFFLIN20_n268DFElemShwNbrLbl[0] ;
+         A266DFElemShwNbr = IMSSOFFLIN20_A266DFElemShwNbr[0] ;
+         n266DFElemShwNbr = IMSSOFFLIN20_n266DFElemShwNbr[0] ;
+         A261DFElemDateSel = IMSSOFFLIN20_A261DFElemDateSel[0] ;
+         n261DFElemDateSel = IMSSOFFLIN20_n261DFElemDateSel[0] ;
+         A244DFElemHasPmpt = IMSSOFFLIN20_A244DFElemHasPmpt[0] ;
+         n244DFElemHasPmpt = IMSSOFFLIN20_n244DFElemHasPmpt[0] ;
+         A180DFElemDftVal = IMSSOFFLIN20_A180DFElemDftVal[0] ;
+         n180DFElemDftVal = IMSSOFFLIN20_n180DFElemDftVal[0] ;
+         A241DFElemCntCols = IMSSOFFLIN20_A241DFElemCntCols[0] ;
+         n241DFElemCntCols = IMSSOFFLIN20_n241DFElemCntCols[0] ;
+         A240DFElemCntRows = IMSSOFFLIN20_A240DFElemCntRows[0] ;
+         n240DFElemCntRows = IMSSOFFLIN20_n240DFElemCntRows[0] ;
+         A239DFElemCntDec = IMSSOFFLIN20_A239DFElemCntDec[0] ;
+         n239DFElemCntDec = IMSSOFFLIN20_n239DFElemCntDec[0] ;
+         A255DFElemWth = IMSSOFFLIN20_A255DFElemWth[0] ;
+         n255DFElemWth = IMSSOFFLIN20_n255DFElemWth[0] ;
+         A236DFElemLen = IMSSOFFLIN20_A236DFElemLen[0] ;
+         n236DFElemLen = IMSSOFFLIN20_n236DFElemLen[0] ;
+         A196DFElemDsp = IMSSOFFLIN20_A196DFElemDsp[0] ;
+         n196DFElemDsp = IMSSOFFLIN20_n196DFElemDsp[0] ;
+         A178DFElemType = IMSSOFFLIN20_A178DFElemType[0] ;
+         A32DFDomId = IMSSOFFLIN20_A32DFDomId[0] ;
+         n32DFDomId = IMSSOFFLIN20_n32DFDomId[0] ;
+         A192DFElemClsName = IMSSOFFLIN20_A192DFElemClsName[0] ;
+         n192DFElemClsName = IMSSOFFLIN20_n192DFElemClsName[0] ;
+         A235DFElemDsc = IMSSOFFLIN20_A235DFElemDsc[0] ;
+         n235DFElemDsc = IMSSOFFLIN20_n235DFElemDsc[0] ;
+         A149DFElemName = IMSSOFFLIN20_A149DFElemName[0] ;
+         A35DFElemGuid = IMSSOFFLIN20_A35DFElemGuid[0] ;
+         A19DFElemVer = IMSSOFFLIN20_A19DFElemVer[0] ;
+         A18DFElemId = IMSSOFFLIN20_A18DFElemId[0] ;
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A32DFDomId, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline.add(GXutil.booltostr( A253DFElemAllowDlt));
+         gxsyncline.add(GXutil.booltostr( A251DFElemAllowIns));
+         gxsyncline.add(GXutil.booltostr( A252DFElemAllowUpd));
+         gxsyncline.add(GXutil.rtrim( A267DFElemBtnPos));
+         gxsyncline.add(GXutil.rtrim( A192DFElemClsName));
+         gxsyncline.add(GXutil.rtrim( A243DFElemCmpWth));
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A241DFElemCntCols, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A239DFElemCntDec, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A240DFElemCntRows, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline.add(GXutil.booltostr( A261DFElemDateSel));
+         gxsyncline.add(GXutil.rtrim( A180DFElemDftVal));
+         gxsyncline.add(A235DFElemDsc);
+         gxsyncline.add(A258DFElemDscPrgName);
+         gxsyncline.add(GXutil.rtrim( A196DFElemDsp));
+         gxsyncline.add(GXutil.rtrim( A256DFElemFileType));
+         gxsyncline.add(GXutil.booltostr( A247DFElemForceSuggSel));
+         gxsyncline.add(A35DFElemGuid.toString());
+         gxsyncline.add(GXutil.booltostr( A244DFElemHasPmpt));
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A18DFElemId, (byte)(6), (byte)(0), ".", "")));
+         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A18DFElemId, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline.add(GXutil.booltostr( A238DFElemIsColap));
+         gxsyncline.add(GXutil.rtrim( A242DFElemIsFlt));
+         gxsyncline.add(GXutil.booltostr( A249DFElemIsOrd));
+         gxsyncline.add(GXutil.booltostr( A237DFElemIsVis));
+         gxsyncline.add(GXutil.booltostr( A260DFElemIsVisPrt));
+         gxsyncline.add(GXutil.rtrim( A257DFElemLblWth));
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A236DFElemLen, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline.add(A245DFElemLoadPrgName);
+         gxsyncline.add(A300DFElemLoadRule);
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A248DFElemMaxSuggRes, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline.add(A265DFElemMetadata);
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A246DFElemMinCntCharSugg, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline.add(GXutil.rtrim( A149DFElemName));
+         gxsyncline.add(GXutil.booltostr( A272DFElemPrtAddRows));
+         gxsyncline.add(GXutil.rtrim( A269DFElemPrtName));
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A279DFElemPrtNumColSkip, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A274DFElemPrtNumRowSkip, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline.add(A306DFElemPrtPic);
+         gxsyncline.add(GXutil.booltostr( A280DFElemPrtShwNbr));
+         gxsyncline.add(GXutil.rtrim( A254DFElemRegexVal));
+         gxsyncline.add(GXutil.booltostr( A305DFElemReq));
+         gxsyncline.add(GXutil.booltostr( A266DFElemShwNbr));
+         gxsyncline.add(GXutil.rtrim( A268DFElemShwNbrLbl));
+         gxsyncline.add(GXutil.rtrim( A178DFElemType));
+         gxsyncline.add(GXutil.booltostr( A250DFElemUseBtns));
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A19DFElemVer, (byte)(6), (byte)(0), ".", "")));
+         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A19DFElemVer, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A255DFElemWth, (byte)(6), (byte)(0), ".", "")));
          gxlinehash = GXutil.getMD5Hash( gxsyncline.ToJavascriptSource()) ;
          gxsetline.add(gxsynchashkey.ToJavascriptSource());
          gxsetline.add(gxlinehash);
@@ -2335,13 +2375,13 @@ public final  class imssofflinedatabase extends GXProcedure
       return gxsyncresponse ;
    }
 
-   /*  Synchronize for table (Full)  DFFormRst */
-   public com.genexus.GxUnknownObjectCollection gxSyncEvtDFFormRst( )
+   /*  Synchronize for table (Full)  EspecialidadFormato */
+   public com.genexus.GxUnknownObjectCollection gxSyncEvtEspecialidadFormato( )
    {
-      /* Begin Synchronize  DFFormRst */
+      /* Begin Synchronize  EspecialidadFormato */
       /* Synchronization Type By Row */
       gxsyncheader.add("GXTable");
-      gxsyncheader.add("DFFormRst");
+      gxsyncheader.add("EspecialidadFormato");
       gxsyncresponse.add(gxsyncheader);
       gxsyncline = new com.genexus.internet.StringCollection() ;
       gxsynchashset = new com.genexus.GxUnknownObjectCollection() ;
@@ -2352,18 +2392,15 @@ public final  class imssofflinedatabase extends GXProcedure
       pr_default.execute(19);
       while ( (pr_default.getStatus(19) != 101) )
       {
-         A93DFFormRstVal = IMSSOFFLIN21_A93DFFormRstVal[0] ;
-         A92DFFormRstId = IMSSOFFLIN21_A92DFFormRstId[0] ;
-         A87DFFormVer = IMSSOFFLIN21_A87DFFormVer[0] ;
-         A86DFFormId = IMSSOFFLIN21_A86DFFormId[0] ;
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A86DFFormId, (byte)(6), (byte)(0), ".", "")));
-         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A86DFFormId, (byte)(6), (byte)(0), ".", "")));
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A92DFFormRstId, (byte)(6), (byte)(0), ".", "")));
-         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A92DFFormRstId, (byte)(6), (byte)(0), ".", "")));
-         gxsyncline.add(GXutil.rtrim( A93DFFormRstVal));
-         gxsynchashkey.add(GXutil.rtrim( A93DFFormRstVal));
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A87DFFormVer, (byte)(6), (byte)(0), ".", "")));
-         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A87DFFormVer, (byte)(6), (byte)(0), ".", "")));
+         A71cveEspecialidad = IMSSOFFLIN21_A71cveEspecialidad[0] ;
+         A12DFFormVer = IMSSOFFLIN21_A12DFFormVer[0] ;
+         A11DFFormId = IMSSOFFLIN21_A11DFFormId[0] ;
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A11DFFormId, (byte)(6), (byte)(0), ".", "")));
+         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A11DFFormId, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A12DFFormVer, (byte)(6), (byte)(0), ".", "")));
+         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A12DFFormVer, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline.add(GXutil.rtrim( A71cveEspecialidad));
+         gxsynchashkey.add(GXutil.rtrim( A71cveEspecialidad));
          gxlinehash = GXutil.getMD5Hash( gxsyncline.ToJavascriptSource()) ;
          gxsetline.add(gxsynchashkey.ToJavascriptSource());
          gxsetline.add(gxlinehash);
@@ -2405,7 +2442,7 @@ public final  class imssofflinedatabase extends GXProcedure
             GXv_objcol_gxjsonable6[0] = gxsyncupdate ;
             GXv_objcol_gxjsonable5[0] = gxsyncdelete ;
             GXv_int8[0] = gxstatus ;
-            new gxrowlevelcache(remoteHandle, context).execute ( gxdeviceidentifier ,  "DFFormRst" ,  gxtablecurrenthash ,  gxtablestoredhash ,  gxsyncvalueset ,  gxsynchashset ,  GXv_objcol_gxjsonable7 ,  GXv_objcol_gxjsonable6 ,  GXv_objcol_gxjsonable5 ,  GXv_int8 );
+            new gxrowlevelcache(remoteHandle, context).execute ( gxdeviceidentifier ,  "EspecialidadFormato" ,  gxtablecurrenthash ,  gxtablestoredhash ,  gxsyncvalueset ,  gxsynchashset ,  GXv_objcol_gxjsonable7 ,  GXv_objcol_gxjsonable6 ,  GXv_objcol_gxjsonable5 ,  GXv_int8 );
             imssofflinedatabase.this.gxsyncinsert = GXv_objcol_gxjsonable7[0] ;
             imssofflinedatabase.this.gxsyncupdate = GXv_objcol_gxjsonable6[0] ;
             imssofflinedatabase.this.gxsyncdelete = GXv_objcol_gxjsonable5[0] ;
@@ -2430,13 +2467,13 @@ public final  class imssofflinedatabase extends GXProcedure
       return gxsyncresponse ;
    }
 
-   /*  Synchronize for table (Full)  DFUserRst */
-   public com.genexus.GxUnknownObjectCollection gxSyncEvtDFUserRst( )
+   /*  Synchronize for table (Full)  PacienteDiagnostico */
+   public com.genexus.GxUnknownObjectCollection gxSyncEvtPacienteDiagnostico( )
    {
-      /* Begin Synchronize  DFUserRst */
+      /* Begin Synchronize  PacienteDiagnostico */
       /* Synchronization Type By Row */
       gxsyncheader.add("GXTable");
-      gxsyncheader.add("DFUserRst");
+      gxsyncheader.add("PacienteDiagnostico");
       gxsyncresponse.add(gxsyncheader);
       gxsyncline = new com.genexus.internet.StringCollection() ;
       gxsynchashset = new com.genexus.GxUnknownObjectCollection() ;
@@ -2447,17 +2484,18 @@ public final  class imssofflinedatabase extends GXProcedure
       pr_default.execute(20);
       while ( (pr_default.getStatus(20) != 101) )
       {
-         A166DFUserRstPwdIni = IMSSOFFLIN22_A166DFUserRstPwdIni[0] ;
-         A101DFUserRstVal = IMSSOFFLIN22_A101DFUserRstVal[0] ;
-         A100DFUserRstId = IMSSOFFLIN22_A100DFUserRstId[0] ;
-         A99DFUserExtId = IMSSOFFLIN22_A99DFUserExtId[0] ;
-         gxsyncline.add(A99DFUserExtId);
-         gxsynchashkey.add(A99DFUserExtId);
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A100DFUserRstId, (byte)(6), (byte)(0), ".", "")));
-         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A100DFUserRstId, (byte)(6), (byte)(0), ".", "")));
-         gxsyncline.add(GXutil.booltostr( A166DFUserRstPwdIni));
-         gxsyncline.add(GXutil.rtrim( A101DFUserRstVal));
-         gxsynchashkey.add(GXutil.rtrim( A101DFUserRstVal));
+         A348PXDXFechaAsignacion = IMSSOFFLIN22_A348PXDXFechaAsignacion[0] ;
+         A347OcaSer = IMSSOFFLIN22_A347OcaSer[0] ;
+         A346TpoDX = IMSSOFFLIN22_A346TpoDX[0] ;
+         A345DX = IMSSOFFLIN22_A345DX[0] ;
+         A353IDEEPaciente = IMSSOFFLIN22_A353IDEEPaciente[0] ;
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A345DX, (byte)(6), (byte)(0), ".", "")));
+         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A345DX, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline.add(GXutil.rtrim( A353IDEEPaciente));
+         gxsynchashkey.add(GXutil.rtrim( A353IDEEPaciente));
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A347OcaSer, (byte)(4), (byte)(0), ".", "")));
+         gxsyncline.add(GXutil.timeToCharREST( A348PXDXFechaAsignacion));
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A346TpoDX, (byte)(4), (byte)(0), ".", "")));
          gxlinehash = GXutil.getMD5Hash( gxsyncline.ToJavascriptSource()) ;
          gxsetline.add(gxsynchashkey.ToJavascriptSource());
          gxsetline.add(gxlinehash);
@@ -2499,7 +2537,7 @@ public final  class imssofflinedatabase extends GXProcedure
             GXv_objcol_gxjsonable6[0] = gxsyncupdate ;
             GXv_objcol_gxjsonable5[0] = gxsyncdelete ;
             GXv_int8[0] = gxstatus ;
-            new gxrowlevelcache(remoteHandle, context).execute ( gxdeviceidentifier ,  "DFUserRst" ,  gxtablecurrenthash ,  gxtablestoredhash ,  gxsyncvalueset ,  gxsynchashset ,  GXv_objcol_gxjsonable7 ,  GXv_objcol_gxjsonable6 ,  GXv_objcol_gxjsonable5 ,  GXv_int8 );
+            new gxrowlevelcache(remoteHandle, context).execute ( gxdeviceidentifier ,  "PacienteDiagnostico" ,  gxtablecurrenthash ,  gxtablestoredhash ,  gxsyncvalueset ,  gxsynchashset ,  GXv_objcol_gxjsonable7 ,  GXv_objcol_gxjsonable6 ,  GXv_objcol_gxjsonable5 ,  GXv_int8 );
             imssofflinedatabase.this.gxsyncinsert = GXv_objcol_gxjsonable7[0] ;
             imssofflinedatabase.this.gxsyncupdate = GXv_objcol_gxjsonable6[0] ;
             imssofflinedatabase.this.gxsyncdelete = GXv_objcol_gxjsonable5[0] ;
@@ -2541,73 +2579,73 @@ public final  class imssofflinedatabase extends GXProcedure
       pr_default.execute(21);
       while ( (pr_default.getStatus(21) != 101) )
       {
-         A319DFDomPrtDsc = IMSSOFFLIN23_A319DFDomPrtDsc[0] ;
-         n319DFDomPrtDsc = IMSSOFFLIN23_n319DFDomPrtDsc[0] ;
-         A226DFDomLblWth = IMSSOFFLIN23_A226DFDomLblWth[0] ;
-         n226DFDomLblWth = IMSSOFFLIN23_n226DFDomLblWth[0] ;
-         A222DFDomCmpWth = IMSSOFFLIN23_A222DFDomCmpWth[0] ;
-         n222DFDomCmpWth = IMSSOFFLIN23_n222DFDomCmpWth[0] ;
-         A221DFDomIsFlt = IMSSOFFLIN23_A221DFDomIsFlt[0] ;
-         n221DFDomIsFlt = IMSSOFFLIN23_n221DFDomIsFlt[0] ;
-         A224DFDomFileType = IMSSOFFLIN23_A224DFDomFileType[0] ;
-         n224DFDomFileType = IMSSOFFLIN23_n224DFDomFileType[0] ;
-         A220DFDomRegexVal = IMSSOFFLIN23_A220DFDomRegexVal[0] ;
-         A216DFDomAllowDlt = IMSSOFFLIN23_A216DFDomAllowDlt[0] ;
-         n216DFDomAllowDlt = IMSSOFFLIN23_n216DFDomAllowDlt[0] ;
-         A215DFDomAllowUpd = IMSSOFFLIN23_A215DFDomAllowUpd[0] ;
-         n215DFDomAllowUpd = IMSSOFFLIN23_n215DFDomAllowUpd[0] ;
-         A214DFDomAllowIns = IMSSOFFLIN23_A214DFDomAllowIns[0] ;
-         n214DFDomAllowIns = IMSSOFFLIN23_n214DFDomAllowIns[0] ;
-         A213DFDomUseBtns = IMSSOFFLIN23_A213DFDomUseBtns[0] ;
-         n213DFDomUseBtns = IMSSOFFLIN23_n213DFDomUseBtns[0] ;
-         A212DFDomIsOrd = IMSSOFFLIN23_A212DFDomIsOrd[0] ;
-         n212DFDomIsOrd = IMSSOFFLIN23_n212DFDomIsOrd[0] ;
-         A210DFDomMaxSuggRes = IMSSOFFLIN23_A210DFDomMaxSuggRes[0] ;
-         n210DFDomMaxSuggRes = IMSSOFFLIN23_n210DFDomMaxSuggRes[0] ;
-         A209DFDomForceSuggSel = IMSSOFFLIN23_A209DFDomForceSuggSel[0] ;
-         n209DFDomForceSuggSel = IMSSOFFLIN23_n209DFDomForceSuggSel[0] ;
-         A208DFDomMinCntCharSugg = IMSSOFFLIN23_A208DFDomMinCntCharSugg[0] ;
-         n208DFDomMinCntCharSugg = IMSSOFFLIN23_n208DFDomMinCntCharSugg[0] ;
-         A211DFDomDftVal = IMSSOFFLIN23_A211DFDomDftVal[0] ;
-         n211DFDomDftVal = IMSSOFFLIN23_n211DFDomDftVal[0] ;
-         A219DFDomCntCols = IMSSOFFLIN23_A219DFDomCntCols[0] ;
-         A218DFDomCntRows = IMSSOFFLIN23_A218DFDomCntRows[0] ;
-         A217DFDomCntDec = IMSSOFFLIN23_A217DFDomCntDec[0] ;
-         A223DFDomWth = IMSSOFFLIN23_A223DFDomWth[0] ;
-         A207DFDomLen = IMSSOFFLIN23_A207DFDomLen[0] ;
-         A198DFDomDsp = IMSSOFFLIN23_A198DFDomDsp[0] ;
-         n198DFDomDsp = IMSSOFFLIN23_n198DFDomDsp[0] ;
-         A197DFDomType = IMSSOFFLIN23_A197DFDomType[0] ;
-         A227DFDomGUID = IMSSOFFLIN23_A227DFDomGUID[0] ;
-         A206DFDomDsc = IMSSOFFLIN23_A206DFDomDsc[0] ;
-         A111DFDomId = IMSSOFFLIN23_A111DFDomId[0] ;
-         n111DFDomId = IMSSOFFLIN23_n111DFDomId[0] ;
-         gxsyncline.add(GXutil.booltostr( A216DFDomAllowDlt));
-         gxsyncline.add(GXutil.booltostr( A214DFDomAllowIns));
-         gxsyncline.add(GXutil.booltostr( A215DFDomAllowUpd));
-         gxsyncline.add(GXutil.rtrim( A222DFDomCmpWth));
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A219DFDomCntCols, (byte)(6), (byte)(0), ".", "")));
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A217DFDomCntDec, (byte)(6), (byte)(0), ".", "")));
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A218DFDomCntRows, (byte)(6), (byte)(0), ".", "")));
-         gxsyncline.add(GXutil.rtrim( A211DFDomDftVal));
-         gxsyncline.add(GXutil.rtrim( A206DFDomDsc));
-         gxsyncline.add(GXutil.rtrim( A198DFDomDsp));
-         gxsyncline.add(GXutil.rtrim( A224DFDomFileType));
-         gxsyncline.add(GXutil.booltostr( A209DFDomForceSuggSel));
-         gxsyncline.add(A227DFDomGUID.toString());
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A111DFDomId, (byte)(6), (byte)(0), ".", "")));
-         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A111DFDomId, (byte)(6), (byte)(0), ".", "")));
-         gxsyncline.add(GXutil.rtrim( A221DFDomIsFlt));
-         gxsyncline.add(GXutil.booltostr( A212DFDomIsOrd));
-         gxsyncline.add(GXutil.rtrim( A226DFDomLblWth));
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A207DFDomLen, (byte)(6), (byte)(0), ".", "")));
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A210DFDomMaxSuggRes, (byte)(6), (byte)(0), ".", "")));
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A208DFDomMinCntCharSugg, (byte)(6), (byte)(0), ".", "")));
-         gxsyncline.add(GXutil.booltostr( A319DFDomPrtDsc));
-         gxsyncline.add(GXutil.rtrim( A220DFDomRegexVal));
-         gxsyncline.add(GXutil.rtrim( A197DFDomType));
-         gxsyncline.add(GXutil.booltostr( A213DFDomUseBtns));
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A223DFDomWth, (byte)(6), (byte)(0), ".", "")));
+         A310DFDomPrtDsc = IMSSOFFLIN23_A310DFDomPrtDsc[0] ;
+         n310DFDomPrtDsc = IMSSOFFLIN23_n310DFDomPrtDsc[0] ;
+         A223DFDomLblWth = IMSSOFFLIN23_A223DFDomLblWth[0] ;
+         n223DFDomLblWth = IMSSOFFLIN23_n223DFDomLblWth[0] ;
+         A219DFDomCmpWth = IMSSOFFLIN23_A219DFDomCmpWth[0] ;
+         n219DFDomCmpWth = IMSSOFFLIN23_n219DFDomCmpWth[0] ;
+         A218DFDomIsFlt = IMSSOFFLIN23_A218DFDomIsFlt[0] ;
+         n218DFDomIsFlt = IMSSOFFLIN23_n218DFDomIsFlt[0] ;
+         A221DFDomFileType = IMSSOFFLIN23_A221DFDomFileType[0] ;
+         n221DFDomFileType = IMSSOFFLIN23_n221DFDomFileType[0] ;
+         A217DFDomRegexVal = IMSSOFFLIN23_A217DFDomRegexVal[0] ;
+         A213DFDomAllowDlt = IMSSOFFLIN23_A213DFDomAllowDlt[0] ;
+         n213DFDomAllowDlt = IMSSOFFLIN23_n213DFDomAllowDlt[0] ;
+         A212DFDomAllowUpd = IMSSOFFLIN23_A212DFDomAllowUpd[0] ;
+         n212DFDomAllowUpd = IMSSOFFLIN23_n212DFDomAllowUpd[0] ;
+         A211DFDomAllowIns = IMSSOFFLIN23_A211DFDomAllowIns[0] ;
+         n211DFDomAllowIns = IMSSOFFLIN23_n211DFDomAllowIns[0] ;
+         A210DFDomUseBtns = IMSSOFFLIN23_A210DFDomUseBtns[0] ;
+         n210DFDomUseBtns = IMSSOFFLIN23_n210DFDomUseBtns[0] ;
+         A209DFDomIsOrd = IMSSOFFLIN23_A209DFDomIsOrd[0] ;
+         n209DFDomIsOrd = IMSSOFFLIN23_n209DFDomIsOrd[0] ;
+         A207DFDomMaxSuggRes = IMSSOFFLIN23_A207DFDomMaxSuggRes[0] ;
+         n207DFDomMaxSuggRes = IMSSOFFLIN23_n207DFDomMaxSuggRes[0] ;
+         A206DFDomForceSuggSel = IMSSOFFLIN23_A206DFDomForceSuggSel[0] ;
+         n206DFDomForceSuggSel = IMSSOFFLIN23_n206DFDomForceSuggSel[0] ;
+         A205DFDomMinCntCharSugg = IMSSOFFLIN23_A205DFDomMinCntCharSugg[0] ;
+         n205DFDomMinCntCharSugg = IMSSOFFLIN23_n205DFDomMinCntCharSugg[0] ;
+         A208DFDomDftVal = IMSSOFFLIN23_A208DFDomDftVal[0] ;
+         n208DFDomDftVal = IMSSOFFLIN23_n208DFDomDftVal[0] ;
+         A216DFDomCntCols = IMSSOFFLIN23_A216DFDomCntCols[0] ;
+         A215DFDomCntRows = IMSSOFFLIN23_A215DFDomCntRows[0] ;
+         A214DFDomCntDec = IMSSOFFLIN23_A214DFDomCntDec[0] ;
+         A220DFDomWth = IMSSOFFLIN23_A220DFDomWth[0] ;
+         A204DFDomLen = IMSSOFFLIN23_A204DFDomLen[0] ;
+         A195DFDomDsp = IMSSOFFLIN23_A195DFDomDsp[0] ;
+         n195DFDomDsp = IMSSOFFLIN23_n195DFDomDsp[0] ;
+         A194DFDomType = IMSSOFFLIN23_A194DFDomType[0] ;
+         A224DFDomGUID = IMSSOFFLIN23_A224DFDomGUID[0] ;
+         A203DFDomDsc = IMSSOFFLIN23_A203DFDomDsc[0] ;
+         A32DFDomId = IMSSOFFLIN23_A32DFDomId[0] ;
+         n32DFDomId = IMSSOFFLIN23_n32DFDomId[0] ;
+         gxsyncline.add(GXutil.booltostr( A213DFDomAllowDlt));
+         gxsyncline.add(GXutil.booltostr( A211DFDomAllowIns));
+         gxsyncline.add(GXutil.booltostr( A212DFDomAllowUpd));
+         gxsyncline.add(GXutil.rtrim( A219DFDomCmpWth));
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A216DFDomCntCols, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A214DFDomCntDec, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A215DFDomCntRows, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline.add(GXutil.rtrim( A208DFDomDftVal));
+         gxsyncline.add(GXutil.rtrim( A203DFDomDsc));
+         gxsyncline.add(GXutil.rtrim( A195DFDomDsp));
+         gxsyncline.add(GXutil.rtrim( A221DFDomFileType));
+         gxsyncline.add(GXutil.booltostr( A206DFDomForceSuggSel));
+         gxsyncline.add(A224DFDomGUID.toString());
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A32DFDomId, (byte)(6), (byte)(0), ".", "")));
+         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A32DFDomId, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline.add(GXutil.rtrim( A218DFDomIsFlt));
+         gxsyncline.add(GXutil.booltostr( A209DFDomIsOrd));
+         gxsyncline.add(GXutil.rtrim( A223DFDomLblWth));
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A204DFDomLen, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A207DFDomMaxSuggRes, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A205DFDomMinCntCharSugg, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline.add(GXutil.booltostr( A310DFDomPrtDsc));
+         gxsyncline.add(GXutil.rtrim( A217DFDomRegexVal));
+         gxsyncline.add(GXutil.rtrim( A194DFDomType));
+         gxsyncline.add(GXutil.booltostr( A210DFDomUseBtns));
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A220DFDomWth, (byte)(6), (byte)(0), ".", "")));
          gxlinehash = GXutil.getMD5Hash( gxsyncline.ToJavascriptSource()) ;
          gxsetline.add(gxsynchashkey.ToJavascriptSource());
          gxsetline.add(gxlinehash);
@@ -2674,13 +2712,13 @@ public final  class imssofflinedatabase extends GXProcedure
       return gxsyncresponse ;
    }
 
-   /*  Synchronize for table (Full)  DFSubElemForm */
-   public com.genexus.GxUnknownObjectCollection gxSyncEvtDFSubElemForm( )
+   /*  Synchronize for table (Full)  DFFormRst */
+   public com.genexus.GxUnknownObjectCollection gxSyncEvtDFFormRst( )
    {
-      /* Begin Synchronize  DFSubElemForm */
+      /* Begin Synchronize  DFFormRst */
       /* Synchronization Type By Row */
       gxsyncheader.add("GXTable");
-      gxsyncheader.add("DFSubElemForm");
+      gxsyncheader.add("DFFormRst");
       gxsyncresponse.add(gxsyncheader);
       gxsyncline = new com.genexus.internet.StringCollection() ;
       gxsynchashset = new com.genexus.GxUnknownObjectCollection() ;
@@ -2691,27 +2729,18 @@ public final  class imssofflinedatabase extends GXProcedure
       pr_default.execute(22);
       while ( (pr_default.getStatus(22) != 101) )
       {
-         A117DFSubElemFormPos = IMSSOFFLIN24_A117DFSubElemFormPos[0] ;
-         n117DFSubElemFormPos = IMSSOFFLIN24_n117DFSubElemFormPos[0] ;
-         A109DFSubElemFormElemVer = IMSSOFFLIN24_A109DFSubElemFormElemVer[0] ;
-         A108DFSubElemFormElemId = IMSSOFFLIN24_A108DFSubElemFormElemId[0] ;
-         A89DFElemVer = IMSSOFFLIN24_A89DFElemVer[0] ;
-         A88DFElemId = IMSSOFFLIN24_A88DFElemId[0] ;
-         A87DFFormVer = IMSSOFFLIN24_A87DFFormVer[0] ;
-         A86DFFormId = IMSSOFFLIN24_A86DFFormId[0] ;
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A88DFElemId, (byte)(6), (byte)(0), ".", "")));
-         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A88DFElemId, (byte)(6), (byte)(0), ".", "")));
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A89DFElemVer, (byte)(6), (byte)(0), ".", "")));
-         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A89DFElemVer, (byte)(6), (byte)(0), ".", "")));
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A86DFFormId, (byte)(6), (byte)(0), ".", "")));
-         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A86DFFormId, (byte)(6), (byte)(0), ".", "")));
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A87DFFormVer, (byte)(6), (byte)(0), ".", "")));
-         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A87DFFormVer, (byte)(6), (byte)(0), ".", "")));
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A108DFSubElemFormElemId, (byte)(6), (byte)(0), ".", "")));
-         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A108DFSubElemFormElemId, (byte)(6), (byte)(0), ".", "")));
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A109DFSubElemFormElemVer, (byte)(6), (byte)(0), ".", "")));
-         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A109DFSubElemFormElemVer, (byte)(6), (byte)(0), ".", "")));
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A117DFSubElemFormPos, (byte)(6), (byte)(0), ".", "")));
+         A14DFFormRstVal = IMSSOFFLIN24_A14DFFormRstVal[0] ;
+         A13DFFormRstId = IMSSOFFLIN24_A13DFFormRstId[0] ;
+         A12DFFormVer = IMSSOFFLIN24_A12DFFormVer[0] ;
+         A11DFFormId = IMSSOFFLIN24_A11DFFormId[0] ;
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A11DFFormId, (byte)(6), (byte)(0), ".", "")));
+         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A11DFFormId, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A13DFFormRstId, (byte)(6), (byte)(0), ".", "")));
+         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A13DFFormRstId, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline.add(GXutil.rtrim( A14DFFormRstVal));
+         gxsynchashkey.add(GXutil.rtrim( A14DFFormRstVal));
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A12DFFormVer, (byte)(6), (byte)(0), ".", "")));
+         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A12DFFormVer, (byte)(6), (byte)(0), ".", "")));
          gxlinehash = GXutil.getMD5Hash( gxsyncline.ToJavascriptSource()) ;
          gxsetline.add(gxsynchashkey.ToJavascriptSource());
          gxsetline.add(gxlinehash);
@@ -2728,6 +2757,204 @@ public final  class imssofflinedatabase extends GXProcedure
          pr_default.readNext(22);
       }
       pr_default.close(22);
+      /* End Synchronize */
+      gxtabledata = gxsyncresponse.toJSonString(false) ;
+      gxtablecurrenthash = GXutil.getMD5Hash( gxtabledata) ;
+      gxtablestoredhash = gxtablemdata.item(2) ;
+      if ( GXutil.strcmp(gxtablecurrenthash, gxtablestoredhash) == 0 )
+      {
+         gxsyncresponse.clear();
+         gxfinalsync.clear();
+         gxsyncstatus = (short)(0) ;
+      }
+      else
+      {
+         if ( gxischeck == 1 )
+         {
+            gxsyncstatus = (short)(1) ;
+         }
+         gxsyncheader.add(gxtablecurrenthash);
+         if ( gxischeck == 0 )
+         {
+            /* Store hashed rows */
+            gxdeviceidentifier = context.getWorkstationId( remoteHandle) ;
+            GXv_objcol_gxjsonable7[0] = gxsyncinsert ;
+            GXv_objcol_gxjsonable6[0] = gxsyncupdate ;
+            GXv_objcol_gxjsonable5[0] = gxsyncdelete ;
+            GXv_int8[0] = gxstatus ;
+            new gxrowlevelcache(remoteHandle, context).execute ( gxdeviceidentifier ,  "DFFormRst" ,  gxtablecurrenthash ,  gxtablestoredhash ,  gxsyncvalueset ,  gxsynchashset ,  GXv_objcol_gxjsonable7 ,  GXv_objcol_gxjsonable6 ,  GXv_objcol_gxjsonable5 ,  GXv_int8 );
+            imssofflinedatabase.this.gxsyncinsert = GXv_objcol_gxjsonable7[0] ;
+            imssofflinedatabase.this.gxsyncupdate = GXv_objcol_gxjsonable6[0] ;
+            imssofflinedatabase.this.gxsyncdelete = GXv_objcol_gxjsonable5[0] ;
+            imssofflinedatabase.this.gxstatus = GXv_int8[0] ;
+            if ( gxerrorstatus == 0 )
+            {
+               gxerrorstatus = gxstatus ;
+            }
+            if ( gxstatus == 0 )
+            {
+               gxfinalsync.add(gxsyncheader);
+               gxfinalsync.add(gxsyncinsert);
+               gxfinalsync.add(gxsyncupdate);
+               gxfinalsync.add(gxsyncdelete);
+            }
+         }
+      }
+      gxsynchashset = new com.genexus.GxUnknownObjectCollection() ;
+      gxsyncheader = new com.genexus.internet.StringCollection() ;
+      gxsyncresponse = gxfinalsync ;
+      gxsyncheaderpre = new com.genexus.internet.StringCollection() ;
+      return gxsyncresponse ;
+   }
+
+   /*  Synchronize for table (Full)  DFUserRst */
+   public com.genexus.GxUnknownObjectCollection gxSyncEvtDFUserRst( )
+   {
+      /* Begin Synchronize  DFUserRst */
+      /* Synchronization Type By Row */
+      gxsyncheader.add("GXTable");
+      gxsyncheader.add("DFUserRst");
+      gxsyncresponse.add(gxsyncheader);
+      gxsyncline = new com.genexus.internet.StringCollection() ;
+      gxsynchashset = new com.genexus.GxUnknownObjectCollection() ;
+      gxsyncvalueset = new com.genexus.GxUnknownObjectCollection() ;
+      gxsynchashkey = new com.genexus.internet.StringCollection() ;
+      gxfinalsync = new com.genexus.GxUnknownObjectCollection() ;
+      /* Using cursor IMSSOFFLIN25 */
+      pr_default.execute(23);
+      while ( (pr_default.getStatus(23) != 101) )
+      {
+         A164DFUserRstPwdIni = IMSSOFFLIN25_A164DFUserRstPwdIni[0] ;
+         A24DFUserRstVal = IMSSOFFLIN25_A24DFUserRstVal[0] ;
+         A23DFUserRstId = IMSSOFFLIN25_A23DFUserRstId[0] ;
+         A22DFUserExtId = IMSSOFFLIN25_A22DFUserExtId[0] ;
+         gxsyncline.add(A22DFUserExtId);
+         gxsynchashkey.add(A22DFUserExtId);
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A23DFUserRstId, (byte)(6), (byte)(0), ".", "")));
+         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A23DFUserRstId, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline.add(GXutil.booltostr( A164DFUserRstPwdIni));
+         gxsyncline.add(GXutil.rtrim( A24DFUserRstVal));
+         gxsynchashkey.add(GXutil.rtrim( A24DFUserRstVal));
+         gxlinehash = GXutil.getMD5Hash( gxsyncline.ToJavascriptSource()) ;
+         gxsetline.add(gxsynchashkey.ToJavascriptSource());
+         gxsetline.add(gxlinehash);
+         gxsetvalueline.add(gxsynchashkey.ToJavascriptSource());
+         gxsetvalueline.add(gxsyncline);
+         gxsynchashset.add(gxsetline);
+         gxsyncvalueset.add(gxsetvalueline);
+         gxsynchashkey = new com.genexus.internet.StringCollection() ;
+         gxsetline = new com.genexus.internet.StringCollection() ;
+         gxsetvalueline = new com.genexus.GxUnknownObjectCollection() ;
+         /*  */
+         gxsyncresponse.add(gxsyncline);
+         gxsyncline = new com.genexus.internet.StringCollection() ;
+         pr_default.readNext(23);
+      }
+      pr_default.close(23);
+      /* End Synchronize */
+      gxtabledata = gxsyncresponse.toJSonString(false) ;
+      gxtablecurrenthash = GXutil.getMD5Hash( gxtabledata) ;
+      gxtablestoredhash = gxtablemdata.item(2) ;
+      if ( GXutil.strcmp(gxtablecurrenthash, gxtablestoredhash) == 0 )
+      {
+         gxsyncresponse.clear();
+         gxfinalsync.clear();
+         gxsyncstatus = (short)(0) ;
+      }
+      else
+      {
+         if ( gxischeck == 1 )
+         {
+            gxsyncstatus = (short)(1) ;
+         }
+         gxsyncheader.add(gxtablecurrenthash);
+         if ( gxischeck == 0 )
+         {
+            /* Store hashed rows */
+            gxdeviceidentifier = context.getWorkstationId( remoteHandle) ;
+            GXv_objcol_gxjsonable7[0] = gxsyncinsert ;
+            GXv_objcol_gxjsonable6[0] = gxsyncupdate ;
+            GXv_objcol_gxjsonable5[0] = gxsyncdelete ;
+            GXv_int8[0] = gxstatus ;
+            new gxrowlevelcache(remoteHandle, context).execute ( gxdeviceidentifier ,  "DFUserRst" ,  gxtablecurrenthash ,  gxtablestoredhash ,  gxsyncvalueset ,  gxsynchashset ,  GXv_objcol_gxjsonable7 ,  GXv_objcol_gxjsonable6 ,  GXv_objcol_gxjsonable5 ,  GXv_int8 );
+            imssofflinedatabase.this.gxsyncinsert = GXv_objcol_gxjsonable7[0] ;
+            imssofflinedatabase.this.gxsyncupdate = GXv_objcol_gxjsonable6[0] ;
+            imssofflinedatabase.this.gxsyncdelete = GXv_objcol_gxjsonable5[0] ;
+            imssofflinedatabase.this.gxstatus = GXv_int8[0] ;
+            if ( gxerrorstatus == 0 )
+            {
+               gxerrorstatus = gxstatus ;
+            }
+            if ( gxstatus == 0 )
+            {
+               gxfinalsync.add(gxsyncheader);
+               gxfinalsync.add(gxsyncinsert);
+               gxfinalsync.add(gxsyncupdate);
+               gxfinalsync.add(gxsyncdelete);
+            }
+         }
+      }
+      gxsynchashset = new com.genexus.GxUnknownObjectCollection() ;
+      gxsyncheader = new com.genexus.internet.StringCollection() ;
+      gxsyncresponse = gxfinalsync ;
+      gxsyncheaderpre = new com.genexus.internet.StringCollection() ;
+      return gxsyncresponse ;
+   }
+
+   /*  Synchronize for table (Full)  DFSubElemForm */
+   public com.genexus.GxUnknownObjectCollection gxSyncEvtDFSubElemForm( )
+   {
+      /* Begin Synchronize  DFSubElemForm */
+      /* Synchronization Type By Row */
+      gxsyncheader.add("GXTable");
+      gxsyncheader.add("DFSubElemForm");
+      gxsyncresponse.add(gxsyncheader);
+      gxsyncline = new com.genexus.internet.StringCollection() ;
+      gxsynchashset = new com.genexus.GxUnknownObjectCollection() ;
+      gxsyncvalueset = new com.genexus.GxUnknownObjectCollection() ;
+      gxsynchashkey = new com.genexus.internet.StringCollection() ;
+      gxfinalsync = new com.genexus.GxUnknownObjectCollection() ;
+      /* Using cursor IMSSOFFLIN26 */
+      pr_default.execute(24);
+      while ( (pr_default.getStatus(24) != 101) )
+      {
+         A39DFSubElemFormPos = IMSSOFFLIN26_A39DFSubElemFormPos[0] ;
+         n39DFSubElemFormPos = IMSSOFFLIN26_n39DFSubElemFormPos[0] ;
+         A38DFSubElemFormElemVer = IMSSOFFLIN26_A38DFSubElemFormElemVer[0] ;
+         A37DFSubElemFormElemId = IMSSOFFLIN26_A37DFSubElemFormElemId[0] ;
+         A19DFElemVer = IMSSOFFLIN26_A19DFElemVer[0] ;
+         A18DFElemId = IMSSOFFLIN26_A18DFElemId[0] ;
+         A12DFFormVer = IMSSOFFLIN26_A12DFFormVer[0] ;
+         A11DFFormId = IMSSOFFLIN26_A11DFFormId[0] ;
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A18DFElemId, (byte)(6), (byte)(0), ".", "")));
+         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A18DFElemId, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A19DFElemVer, (byte)(6), (byte)(0), ".", "")));
+         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A19DFElemVer, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A11DFFormId, (byte)(6), (byte)(0), ".", "")));
+         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A11DFFormId, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A12DFFormVer, (byte)(6), (byte)(0), ".", "")));
+         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A12DFFormVer, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A37DFSubElemFormElemId, (byte)(6), (byte)(0), ".", "")));
+         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A37DFSubElemFormElemId, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A38DFSubElemFormElemVer, (byte)(6), (byte)(0), ".", "")));
+         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A38DFSubElemFormElemVer, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A39DFSubElemFormPos, (byte)(6), (byte)(0), ".", "")));
+         gxlinehash = GXutil.getMD5Hash( gxsyncline.ToJavascriptSource()) ;
+         gxsetline.add(gxsynchashkey.ToJavascriptSource());
+         gxsetline.add(gxlinehash);
+         gxsetvalueline.add(gxsynchashkey.ToJavascriptSource());
+         gxsetvalueline.add(gxsyncline);
+         gxsynchashset.add(gxsetline);
+         gxsyncvalueset.add(gxsetvalueline);
+         gxsynchashkey = new com.genexus.internet.StringCollection() ;
+         gxsetline = new com.genexus.internet.StringCollection() ;
+         gxsetvalueline = new com.genexus.GxUnknownObjectCollection() ;
+         /*  */
+         gxsyncresponse.add(gxsyncline);
+         gxsyncline = new com.genexus.internet.StringCollection() ;
+         pr_default.readNext(24);
+      }
+      pr_default.close(24);
       /* End Synchronize */
       gxtabledata = gxsyncresponse.toJSonString(false) ;
       gxtablecurrenthash = GXutil.getMD5Hash( gxtabledata) ;
@@ -2791,31 +3018,31 @@ public final  class imssofflinedatabase extends GXProcedure
       gxsyncvalueset = new com.genexus.GxUnknownObjectCollection() ;
       gxsynchashkey = new com.genexus.internet.StringCollection() ;
       gxfinalsync = new com.genexus.GxUnknownObjectCollection() ;
-      /* Using cursor IMSSOFFLIN25 */
-      pr_default.execute(23);
-      while ( (pr_default.getStatus(23) != 101) )
+      /* Using cursor IMSSOFFLIN27 */
+      pr_default.execute(25);
+      while ( (pr_default.getStatus(25) != 101) )
       {
-         A120DFFilElemFormElemVer = IMSSOFFLIN25_A120DFFilElemFormElemVer[0] ;
-         A119DFFilElemFormElemId = IMSSOFFLIN25_A119DFFilElemFormElemId[0] ;
-         A121DFFilElemFormPos = IMSSOFFLIN25_A121DFFilElemFormPos[0] ;
-         A118DFFilElemFormId = IMSSOFFLIN25_A118DFFilElemFormId[0] ;
-         A89DFElemVer = IMSSOFFLIN25_A89DFElemVer[0] ;
-         A88DFElemId = IMSSOFFLIN25_A88DFElemId[0] ;
-         A87DFFormVer = IMSSOFFLIN25_A87DFFormVer[0] ;
-         A86DFFormId = IMSSOFFLIN25_A86DFFormId[0] ;
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A88DFElemId, (byte)(6), (byte)(0), ".", "")));
-         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A88DFElemId, (byte)(6), (byte)(0), ".", "")));
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A89DFElemVer, (byte)(6), (byte)(0), ".", "")));
-         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A89DFElemVer, (byte)(6), (byte)(0), ".", "")));
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A119DFFilElemFormElemId, (byte)(6), (byte)(0), ".", "")));
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A120DFFilElemFormElemVer, (byte)(6), (byte)(0), ".", "")));
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A118DFFilElemFormId, (byte)(6), (byte)(0), ".", "")));
-         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A118DFFilElemFormId, (byte)(6), (byte)(0), ".", "")));
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A121DFFilElemFormPos, (byte)(4), (byte)(0), ".", "")));
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A86DFFormId, (byte)(6), (byte)(0), ".", "")));
-         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A86DFFormId, (byte)(6), (byte)(0), ".", "")));
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A87DFFormVer, (byte)(6), (byte)(0), ".", "")));
-         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A87DFFormVer, (byte)(6), (byte)(0), ".", "")));
+         A42DFFilElemFormElemVer = IMSSOFFLIN27_A42DFFilElemFormElemVer[0] ;
+         A41DFFilElemFormElemId = IMSSOFFLIN27_A41DFFilElemFormElemId[0] ;
+         A43DFFilElemFormPos = IMSSOFFLIN27_A43DFFilElemFormPos[0] ;
+         A40DFFilElemFormId = IMSSOFFLIN27_A40DFFilElemFormId[0] ;
+         A19DFElemVer = IMSSOFFLIN27_A19DFElemVer[0] ;
+         A18DFElemId = IMSSOFFLIN27_A18DFElemId[0] ;
+         A12DFFormVer = IMSSOFFLIN27_A12DFFormVer[0] ;
+         A11DFFormId = IMSSOFFLIN27_A11DFFormId[0] ;
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A18DFElemId, (byte)(6), (byte)(0), ".", "")));
+         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A18DFElemId, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A19DFElemVer, (byte)(6), (byte)(0), ".", "")));
+         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A19DFElemVer, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A41DFFilElemFormElemId, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A42DFFilElemFormElemVer, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A40DFFilElemFormId, (byte)(6), (byte)(0), ".", "")));
+         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A40DFFilElemFormId, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A43DFFilElemFormPos, (byte)(4), (byte)(0), ".", "")));
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A11DFFormId, (byte)(6), (byte)(0), ".", "")));
+         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A11DFFormId, (byte)(6), (byte)(0), ".", "")));
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A12DFFormVer, (byte)(6), (byte)(0), ".", "")));
+         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A12DFFormVer, (byte)(6), (byte)(0), ".", "")));
          gxlinehash = GXutil.getMD5Hash( gxsyncline.ToJavascriptSource()) ;
          gxsetline.add(gxsynchashkey.ToJavascriptSource());
          gxsetline.add(gxlinehash);
@@ -2829,9 +3056,9 @@ public final  class imssofflinedatabase extends GXProcedure
          /*  */
          gxsyncresponse.add(gxsyncline);
          gxsyncline = new com.genexus.internet.StringCollection() ;
-         pr_default.readNext(23);
+         pr_default.readNext(25);
       }
-      pr_default.close(23);
+      pr_default.close(25);
       /* End Synchronize */
       gxtabledata = gxsyncresponse.toJSonString(false) ;
       gxtablecurrenthash = GXutil.getMD5Hash( gxtabledata) ;
@@ -2895,16 +3122,16 @@ public final  class imssofflinedatabase extends GXProcedure
       gxsyncvalueset = new com.genexus.GxUnknownObjectCollection() ;
       gxsynchashkey = new com.genexus.internet.StringCollection() ;
       gxfinalsync = new com.genexus.GxUnknownObjectCollection() ;
-      /* Using cursor IMSSOFFLIN26 */
-      pr_default.execute(24);
-      while ( (pr_default.getStatus(24) != 101) )
+      /* Using cursor IMSSOFFLIN28 */
+      pr_default.execute(26);
+      while ( (pr_default.getStatus(26) != 101) )
       {
-         A288HospitalId = IMSSOFFLIN26_A288HospitalId[0] ;
-         n288HospitalId = IMSSOFFLIN26_n288HospitalId[0] ;
-         A36ServicioDescripcion = IMSSOFFLIN26_A36ServicioDescripcion[0] ;
-         A6ServicioId = IMSSOFFLIN26_A6ServicioId[0] ;
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A288HospitalId, (byte)(4), (byte)(0), ".", "")));
-         gxsyncline.add(GXutil.rtrim( A36ServicioDescripcion));
+         A7HospitalId = IMSSOFFLIN28_A7HospitalId[0] ;
+         n7HospitalId = IMSSOFFLIN28_n7HospitalId[0] ;
+         A104ServicioDescripcion = IMSSOFFLIN28_A104ServicioDescripcion[0] ;
+         A6ServicioId = IMSSOFFLIN28_A6ServicioId[0] ;
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A7HospitalId, (byte)(4), (byte)(0), ".", "")));
+         gxsyncline.add(GXutil.rtrim( A104ServicioDescripcion));
          gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A6ServicioId, (byte)(4), (byte)(0), ".", "")));
          gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A6ServicioId, (byte)(4), (byte)(0), ".", "")));
          gxlinehash = GXutil.getMD5Hash( gxsyncline.ToJavascriptSource()) ;
@@ -2920,9 +3147,9 @@ public final  class imssofflinedatabase extends GXProcedure
          /*  */
          gxsyncresponse.add(gxsyncline);
          gxsyncline = new com.genexus.internet.StringCollection() ;
-         pr_default.readNext(24);
+         pr_default.readNext(26);
       }
-      pr_default.close(24);
+      pr_default.close(26);
       /* End Synchronize */
       gxtabledata = gxsyncresponse.toJSonString(false) ;
       gxtablecurrenthash = GXutil.getMD5Hash( gxtabledata) ;
@@ -2973,44 +3200,36 @@ public final  class imssofflinedatabase extends GXProcedure
       return gxsyncresponse ;
    }
 
-   /*  Synchronize for table (Partial)  DFUpl */
-   public com.genexus.GxUnknownObjectCollection gxSyncEvtDFUpl( )
+   /*  Synchronize for table (Partial)  SIC_ESPECIALIDAD */
+   public com.genexus.GxUnknownObjectCollection gxSyncEvtSIC_ESPECIALIDAD( )
    {
-      /* Begin Synchronize  DFUpl */
+      /* Begin Synchronize  SIC_ESPECIALIDAD */
       /* Synchronization Type By Row */
       gxsyncheader.add("GXTable");
-      gxsyncheader.add("DFUpl");
+      gxsyncheader.add("SIC_ESPECIALIDAD");
       gxsyncresponse.add(gxsyncheader);
       gxsyncline = new com.genexus.internet.StringCollection() ;
       gxsynchashset = new com.genexus.GxUnknownObjectCollection() ;
       gxsyncvalueset = new com.genexus.GxUnknownObjectCollection() ;
       gxsynchashkey = new com.genexus.internet.StringCollection() ;
       gxfinalsync = new com.genexus.GxUnknownObjectCollection() ;
-      pr_default.dynParam(25, new Object[]{ new Object[]{
-                                           new Long(A90DFFormInstId) ,
-                                           AV2ColDFFormInstId },
-                                           new int[] {
-                                           TypeConstants.LONG, TypeConstants.OBJECT_COLLECTION
-                                           }
-      });
-      /* Using cursor IMSSOFFLIN27 */
-      pr_default.execute(25);
-      while ( (pr_default.getStatus(25) != 101) )
+      /* Using cursor IMSSOFFLIN29 */
+      pr_default.execute(27);
+      while ( (pr_default.getStatus(27) != 101) )
       {
-         A105DFFormInstFormId = IMSSOFFLIN27_A105DFFormInstFormId[0] ;
-         A141DFUplFileExt = IMSSOFFLIN27_A141DFUplFileExt[0] ;
-         A142DFUplFileName = IMSSOFFLIN27_A142DFUplFileName[0] ;
-         A140DFUplFile = IMSSOFFLIN27_A140DFUplFile[0] ;
-         A91DFUplKey = IMSSOFFLIN27_A91DFUplKey[0] ;
-         A90DFFormInstId = IMSSOFFLIN27_A90DFFormInstId[0] ;
-         A105DFFormInstFormId = IMSSOFFLIN27_A105DFFormInstFormId[0] ;
-         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A90DFFormInstId, (byte)(10), (byte)(0), ".", "")));
-         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A90DFFormInstId, (byte)(10), (byte)(0), ".", "")));
-         gxsyncline.add(GXutil.getRelativeBlobFile( A140DFUplFile));
-         gxsyncline.add(GXutil.rtrim( A141DFUplFileExt));
-         gxsyncline.add(GXutil.rtrim( A142DFUplFileName));
-         gxsyncline.add(GXutil.rtrim( A91DFUplKey));
-         gxsynchashkey.add(GXutil.rtrim( A91DFUplKey));
+         A12DFFormVer = IMSSOFFLIN29_A12DFFormVer[0] ;
+         A11DFFormId = IMSSOFFLIN29_A11DFFormId[0] ;
+         A321fecBajaEspecialidad = IMSSOFFLIN29_A321fecBajaEspecialidad[0] ;
+         n321fecBajaEspecialidad = IMSSOFFLIN29_n321fecBajaEspecialidad[0] ;
+         A320desEspecialidad = IMSSOFFLIN29_A320desEspecialidad[0] ;
+         A71cveEspecialidad = IMSSOFFLIN29_A71cveEspecialidad[0] ;
+         A321fecBajaEspecialidad = IMSSOFFLIN29_A321fecBajaEspecialidad[0] ;
+         n321fecBajaEspecialidad = IMSSOFFLIN29_n321fecBajaEspecialidad[0] ;
+         A320desEspecialidad = IMSSOFFLIN29_A320desEspecialidad[0] ;
+         gxsyncline.add(GXutil.rtrim( A71cveEspecialidad));
+         gxsynchashkey.add(GXutil.rtrim( A71cveEspecialidad));
+         gxsyncline.add(A320desEspecialidad);
+         gxsyncline.add(GXutil.dateToCharREST( A321fecBajaEspecialidad));
          gxlinehash = GXutil.getMD5Hash( gxsyncline.ToJavascriptSource()) ;
          gxsetline.add(gxsynchashkey.ToJavascriptSource());
          gxsetline.add(gxlinehash);
@@ -3024,12 +3243,126 @@ public final  class imssofflinedatabase extends GXProcedure
          /*  */
          gxsyncresponse.add(gxsyncline);
          gxsyncline = new com.genexus.internet.StringCollection() ;
-         pr_default.readNext(25);
+         pr_default.readNext(27);
       }
-      pr_default.close(25);
+      pr_default.close(27);
       /* End Synchronize */
       gxtabledata = gxsyncresponse.toJSonString(false) ;
       gxtablecurrenthash = GXutil.getMD5Hash( gxtabledata) ;
+      gxtablestoredhash = gxtablemdata.item(2) ;
+      if ( GXutil.strcmp(gxtablecurrenthash, gxtablestoredhash) == 0 )
+      {
+         gxsyncresponse.clear();
+         gxfinalsync.clear();
+         gxsyncstatus = (short)(0) ;
+      }
+      else
+      {
+         if ( gxischeck == 1 )
+         {
+            gxsyncstatus = (short)(1) ;
+         }
+         gxsyncheader.add(gxtablecurrenthash);
+         if ( gxischeck == 0 )
+         {
+            /* Store hashed rows */
+            gxdeviceidentifier = context.getWorkstationId( remoteHandle) ;
+            GXv_objcol_gxjsonable7[0] = gxsyncinsert ;
+            GXv_objcol_gxjsonable6[0] = gxsyncupdate ;
+            GXv_objcol_gxjsonable5[0] = gxsyncdelete ;
+            GXv_int8[0] = gxstatus ;
+            new gxrowlevelcache(remoteHandle, context).execute ( gxdeviceidentifier ,  "SIC_ESPECIALIDAD" ,  gxtablecurrenthash ,  gxtablestoredhash ,  gxsyncvalueset ,  gxsynchashset ,  GXv_objcol_gxjsonable7 ,  GXv_objcol_gxjsonable6 ,  GXv_objcol_gxjsonable5 ,  GXv_int8 );
+            imssofflinedatabase.this.gxsyncinsert = GXv_objcol_gxjsonable7[0] ;
+            imssofflinedatabase.this.gxsyncupdate = GXv_objcol_gxjsonable6[0] ;
+            imssofflinedatabase.this.gxsyncdelete = GXv_objcol_gxjsonable5[0] ;
+            imssofflinedatabase.this.gxstatus = GXv_int8[0] ;
+            if ( gxerrorstatus == 0 )
+            {
+               gxerrorstatus = gxstatus ;
+            }
+            if ( gxstatus == 0 )
+            {
+               gxfinalsync.add(gxsyncheader);
+               gxfinalsync.add(gxsyncinsert);
+               gxfinalsync.add(gxsyncupdate);
+               gxfinalsync.add(gxsyncdelete);
+            }
+         }
+      }
+      gxsynchashset = new com.genexus.GxUnknownObjectCollection() ;
+      gxsyncheader = new com.genexus.internet.StringCollection() ;
+      gxsyncresponse = gxfinalsync ;
+      gxsyncheaderpre = new com.genexus.internet.StringCollection() ;
+      return gxsyncresponse ;
+   }
+
+   /*  Synchronize for table (Partial)  DFUpl */
+   public com.genexus.GxUnknownObjectCollection gxSyncEvtDFUpl( )
+   {
+      /* Begin Synchronize  DFUpl */
+      /* Synchronization Type By Row */
+      gxsyncheader.add("GXTable");
+      gxsyncheader.add("DFUpl");
+      gxsyncresponse.add(gxsyncheader);
+      gxsyncresponse_hash = new com.genexus.GxUnknownObjectCollection() ;
+      gxsyncresponse_hash.add(gxsyncheader);
+      gxsyncline_hash = new com.genexus.internet.StringCollection() ;
+      gxsyncline = new com.genexus.internet.StringCollection() ;
+      gxsynchashset = new com.genexus.GxUnknownObjectCollection() ;
+      gxsyncvalueset = new com.genexus.GxUnknownObjectCollection() ;
+      gxsynchashkey = new com.genexus.internet.StringCollection() ;
+      gxfinalsync = new com.genexus.GxUnknownObjectCollection() ;
+      pr_default.dynParam(28, new Object[]{ new Object[]{
+                                           new Long(A9DFFormInstId) ,
+                                           AV2ColDFFormInstId },
+                                           new int[] {
+                                           TypeConstants.LONG, TypeConstants.OBJECT_COLLECTION
+                                           }
+      });
+      /* Using cursor IMSSOFFLIN30 */
+      pr_default.execute(28);
+      while ( (pr_default.getStatus(28) != 101) )
+      {
+         A28DFFormInstFormId = IMSSOFFLIN30_A28DFFormInstFormId[0] ;
+         A139DFUplFileExt = IMSSOFFLIN30_A139DFUplFileExt[0] ;
+         A140DFUplFileName = IMSSOFFLIN30_A140DFUplFileName[0] ;
+         A138DFUplFile = IMSSOFFLIN30_A138DFUplFile[0] ;
+         A10DFUplKey = IMSSOFFLIN30_A10DFUplKey[0] ;
+         A9DFFormInstId = IMSSOFFLIN30_A9DFFormInstId[0] ;
+         A28DFFormInstFormId = IMSSOFFLIN30_A28DFFormInstFormId[0] ;
+         gxsyncline.add(GXutil.ltrim( localUtil.ntoc( A9DFFormInstId, (byte)(10), (byte)(0), ".", "")));
+         gxsyncline_hash.add(GXutil.ltrim( localUtil.ntoc( A9DFFormInstId, (byte)(10), (byte)(0), ".", "")));
+         gxsynchashkey.add(GXutil.ltrim( localUtil.ntoc( A9DFFormInstId, (byte)(10), (byte)(0), ".", "")));
+         gxsyncline.add(GXutil.getRelativeBlobFile( A138DFUplFile));
+         /* Blob file name not included in hash compute */
+         gxsyncline.add(GXutil.rtrim( A139DFUplFileExt));
+         gxsyncline_hash.add(GXutil.rtrim( A139DFUplFileExt));
+         gxsyncline.add(GXutil.rtrim( A140DFUplFileName));
+         gxsyncline_hash.add(GXutil.rtrim( A140DFUplFileName));
+         gxsyncline.add(GXutil.rtrim( A10DFUplKey));
+         gxsyncline_hash.add(GXutil.rtrim( A10DFUplKey));
+         gxsynchashkey.add(GXutil.rtrim( A10DFUplKey));
+         gxlinehash = GXutil.getMD5Hash( gxsyncline_hash.ToJavascriptSource()) ;
+         gxsetline.add(gxsynchashkey.ToJavascriptSource());
+         gxsetline.add(gxlinehash);
+         gxsetvalueline.add(gxsynchashkey.ToJavascriptSource());
+         gxsetvalueline.add(gxsyncline);
+         gxsynchashset.add(gxsetline);
+         gxsyncvalueset.add(gxsetvalueline);
+         gxsynchashkey = new com.genexus.internet.StringCollection() ;
+         gxsetline = new com.genexus.internet.StringCollection() ;
+         gxsetvalueline = new com.genexus.GxUnknownObjectCollection() ;
+         /*  */
+         gxsyncresponse.add(gxsyncline);
+         gxsyncresponse_hash.add(gxsyncline_hash);
+         gxsyncline = new com.genexus.internet.StringCollection() ;
+         gxsyncline_hash = new com.genexus.internet.StringCollection() ;
+         pr_default.readNext(28);
+      }
+      pr_default.close(28);
+      /* End Synchronize */
+      gxtabledata = gxsyncresponse.toJSonString(false) ;
+      gxtablecurrenthash = GXutil.getMD5Hash( gxsyncresponse_hash.toJSonString(false)) ;
       gxtablestoredhash = gxtablemdata.item(2) ;
       if ( GXutil.strcmp(gxtablecurrenthash, gxtablestoredhash) == 0 )
       {
@@ -3106,19 +3439,19 @@ public final  class imssofflinedatabase extends GXProcedure
       gxsyncheaderline = new com.genexus.internet.StringCollection() ;
       gxsyncheaderline.add("GXMetada");
       gxsyncheaderline.add("0.9");
-      gxsyncheaderline.add("gapIsTKixqezqirArD/QzQ==");
+      gxsyncheaderline.add("HMliKjjJzk+W2RG6VATtSQ==");
       gxallsyncresponse.add(gxsyncheaderline);
       gxsyncline = new com.genexus.internet.StringCollection() ;
       gxsynchashset = new com.genexus.GxUnknownObjectCollection() ;
       gxsyncresponse = new com.genexus.GxUnknownObjectCollection() ;
       gxsourcever = gxhttpr.getHeader("GXSynchronizerVersion") ;
-      if ( GXutil.strcmp(gxsourcever, "gapIsTKixqezqirArD/QzQ==") != 0 )
+      if ( GXutil.strcmp(gxsourcever, "HMliKjjJzk+W2RG6VATtSQ==") != 0 )
       {
          gxerrorstatus = (short)(3) ;
       }
       if ( gxerrorstatus == 0 )
       {
-         if ( gxtablehashlist.size() < 26 )
+         if ( gxtablehashlist.size() < 29 )
          {
             gxtablehashlist = new com.genexus.GxUnknownObjectCollection() ;
             gxtablemdata = new com.genexus.internet.StringCollection() ;
@@ -3127,6 +3460,10 @@ public final  class imssofflinedatabase extends GXProcedure
             gxtablehashlist.add(gxtablemdata);
             gxtablemdata = new com.genexus.internet.StringCollection() ;
             gxtablemdata.add("PacienteMedicoOffline");
+            gxtablemdata.add("");
+            gxtablehashlist.add(gxtablemdata);
+            gxtablemdata = new com.genexus.internet.StringCollection() ;
+            gxtablemdata.add("DFParm");
             gxtablemdata.add("");
             gxtablehashlist.add(gxtablemdata);
             gxtablemdata = new com.genexus.internet.StringCollection() ;
@@ -3142,10 +3479,6 @@ public final  class imssofflinedatabase extends GXProcedure
             gxtablemdata.add("");
             gxtablehashlist.add(gxtablemdata);
             gxtablemdata = new com.genexus.internet.StringCollection() ;
-            gxtablemdata.add("DFParm");
-            gxtablemdata.add("");
-            gxtablehashlist.add(gxtablemdata);
-            gxtablemdata = new com.genexus.internet.StringCollection() ;
             gxtablemdata.add("DXAuxImagen");
             gxtablemdata.add("");
             gxtablehashlist.add(gxtablemdata);
@@ -3158,15 +3491,11 @@ public final  class imssofflinedatabase extends GXProcedure
             gxtablemdata.add("");
             gxtablehashlist.add(gxtablemdata);
             gxtablemdata = new com.genexus.internet.StringCollection() ;
-            gxtablemdata.add("DFForm");
+            gxtablemdata.add("Extension");
             gxtablemdata.add("");
             gxtablehashlist.add(gxtablemdata);
             gxtablemdata = new com.genexus.internet.StringCollection() ;
             gxtablemdata.add("FormatoPaciente");
-            gxtablemdata.add("");
-            gxtablehashlist.add(gxtablemdata);
-            gxtablemdata = new com.genexus.internet.StringCollection() ;
-            gxtablemdata.add("Extension");
             gxtablemdata.add("");
             gxtablehashlist.add(gxtablemdata);
             gxtablemdata = new com.genexus.internet.StringCollection() ;
@@ -3186,6 +3515,10 @@ public final  class imssofflinedatabase extends GXProcedure
             gxtablemdata.add("");
             gxtablehashlist.add(gxtablemdata);
             gxtablemdata = new com.genexus.internet.StringCollection() ;
+            gxtablemdata.add("DFForm");
+            gxtablemdata.add("");
+            gxtablehashlist.add(gxtablemdata);
+            gxtablemdata = new com.genexus.internet.StringCollection() ;
             gxtablemdata.add("DFDomStaVals");
             gxtablemdata.add("");
             gxtablehashlist.add(gxtablemdata);
@@ -3198,15 +3531,23 @@ public final  class imssofflinedatabase extends GXProcedure
             gxtablemdata.add("");
             gxtablehashlist.add(gxtablemdata);
             gxtablemdata = new com.genexus.internet.StringCollection() ;
+            gxtablemdata.add("EspecialidadFormato");
+            gxtablemdata.add("");
+            gxtablehashlist.add(gxtablemdata);
+            gxtablemdata = new com.genexus.internet.StringCollection() ;
+            gxtablemdata.add("PacienteDiagnostico");
+            gxtablemdata.add("");
+            gxtablehashlist.add(gxtablemdata);
+            gxtablemdata = new com.genexus.internet.StringCollection() ;
+            gxtablemdata.add("DFDom");
+            gxtablemdata.add("");
+            gxtablehashlist.add(gxtablemdata);
+            gxtablemdata = new com.genexus.internet.StringCollection() ;
             gxtablemdata.add("DFFormRst");
             gxtablemdata.add("");
             gxtablehashlist.add(gxtablemdata);
             gxtablemdata = new com.genexus.internet.StringCollection() ;
             gxtablemdata.add("DFUserRst");
-            gxtablemdata.add("");
-            gxtablehashlist.add(gxtablemdata);
-            gxtablemdata = new com.genexus.internet.StringCollection() ;
-            gxtablemdata.add("DFDom");
             gxtablemdata.add("");
             gxtablehashlist.add(gxtablemdata);
             gxtablemdata = new com.genexus.internet.StringCollection() ;
@@ -3219,6 +3560,10 @@ public final  class imssofflinedatabase extends GXProcedure
             gxtablehashlist.add(gxtablemdata);
             gxtablemdata = new com.genexus.internet.StringCollection() ;
             gxtablemdata.add("Servicio");
+            gxtablemdata.add("");
+            gxtablehashlist.add(gxtablemdata);
+            gxtablemdata = new com.genexus.internet.StringCollection() ;
+            gxtablemdata.add("SIC_ESPECIALIDAD");
             gxtablemdata.add("");
             gxtablehashlist.add(gxtablemdata);
             gxtablemdata = new com.genexus.internet.StringCollection() ;
@@ -3242,6 +3587,15 @@ public final  class imssofflinedatabase extends GXProcedure
             else if ( GXutil.strcmp("PacienteMedicoOffline", gxtablemdata.item(1)) == 0 )
             {
                gxSyncEvtPacienteMedicoOffline( ) ;
+               if ( gxischeck == 0 )
+               {
+                  gxallsyncresponse.add(gxsyncresponse);
+                  gxsyncresponse = new com.genexus.GxUnknownObjectCollection() ;
+               }
+            }
+            else if ( GXutil.strcmp("DFParm", gxtablemdata.item(1)) == 0 )
+            {
+               gxSyncEvtDFParm( ) ;
                if ( gxischeck == 0 )
                {
                   gxallsyncresponse.add(gxsyncresponse);
@@ -3275,15 +3629,6 @@ public final  class imssofflinedatabase extends GXProcedure
                   gxsyncresponse = new com.genexus.GxUnknownObjectCollection() ;
                }
             }
-            else if ( GXutil.strcmp("DFParm", gxtablemdata.item(1)) == 0 )
-            {
-               gxSyncEvtDFParm( ) ;
-               if ( gxischeck == 0 )
-               {
-                  gxallsyncresponse.add(gxsyncresponse);
-                  gxsyncresponse = new com.genexus.GxUnknownObjectCollection() ;
-               }
-            }
             else if ( GXutil.strcmp("DXAuxImagen", gxtablemdata.item(1)) == 0 )
             {
                gxSyncEvtDXAuxImagen( ) ;
@@ -3311,9 +3656,9 @@ public final  class imssofflinedatabase extends GXProcedure
                   gxsyncresponse = new com.genexus.GxUnknownObjectCollection() ;
                }
             }
-            else if ( GXutil.strcmp("DFForm", gxtablemdata.item(1)) == 0 )
+            else if ( GXutil.strcmp("Extension", gxtablemdata.item(1)) == 0 )
             {
-               gxSyncEvtDFForm( ) ;
+               gxSyncEvtExtension( ) ;
                if ( gxischeck == 0 )
                {
                   gxallsyncresponse.add(gxsyncresponse);
@@ -3323,15 +3668,6 @@ public final  class imssofflinedatabase extends GXProcedure
             else if ( GXutil.strcmp("FormatoPaciente", gxtablemdata.item(1)) == 0 )
             {
                gxSyncEvtFormatoPaciente( ) ;
-               if ( gxischeck == 0 )
-               {
-                  gxallsyncresponse.add(gxsyncresponse);
-                  gxsyncresponse = new com.genexus.GxUnknownObjectCollection() ;
-               }
-            }
-            else if ( GXutil.strcmp("Extension", gxtablemdata.item(1)) == 0 )
-            {
-               gxSyncEvtExtension( ) ;
                if ( gxischeck == 0 )
                {
                   gxallsyncresponse.add(gxsyncresponse);
@@ -3374,6 +3710,15 @@ public final  class imssofflinedatabase extends GXProcedure
                   gxsyncresponse = new com.genexus.GxUnknownObjectCollection() ;
                }
             }
+            else if ( GXutil.strcmp("DFForm", gxtablemdata.item(1)) == 0 )
+            {
+               gxSyncEvtDFForm( ) ;
+               if ( gxischeck == 0 )
+               {
+                  gxallsyncresponse.add(gxsyncresponse);
+                  gxsyncresponse = new com.genexus.GxUnknownObjectCollection() ;
+               }
+            }
             else if ( GXutil.strcmp("DFDomStaVals", gxtablemdata.item(1)) == 0 )
             {
                gxSyncEvtDFDomStaVals( ) ;
@@ -3401,6 +3746,33 @@ public final  class imssofflinedatabase extends GXProcedure
                   gxsyncresponse = new com.genexus.GxUnknownObjectCollection() ;
                }
             }
+            else if ( GXutil.strcmp("EspecialidadFormato", gxtablemdata.item(1)) == 0 )
+            {
+               gxSyncEvtEspecialidadFormato( ) ;
+               if ( gxischeck == 0 )
+               {
+                  gxallsyncresponse.add(gxsyncresponse);
+                  gxsyncresponse = new com.genexus.GxUnknownObjectCollection() ;
+               }
+            }
+            else if ( GXutil.strcmp("PacienteDiagnostico", gxtablemdata.item(1)) == 0 )
+            {
+               gxSyncEvtPacienteDiagnostico( ) ;
+               if ( gxischeck == 0 )
+               {
+                  gxallsyncresponse.add(gxsyncresponse);
+                  gxsyncresponse = new com.genexus.GxUnknownObjectCollection() ;
+               }
+            }
+            else if ( GXutil.strcmp("DFDom", gxtablemdata.item(1)) == 0 )
+            {
+               gxSyncEvtDFDom( ) ;
+               if ( gxischeck == 0 )
+               {
+                  gxallsyncresponse.add(gxsyncresponse);
+                  gxsyncresponse = new com.genexus.GxUnknownObjectCollection() ;
+               }
+            }
             else if ( GXutil.strcmp("DFFormRst", gxtablemdata.item(1)) == 0 )
             {
                gxSyncEvtDFFormRst( ) ;
@@ -3413,15 +3785,6 @@ public final  class imssofflinedatabase extends GXProcedure
             else if ( GXutil.strcmp("DFUserRst", gxtablemdata.item(1)) == 0 )
             {
                gxSyncEvtDFUserRst( ) ;
-               if ( gxischeck == 0 )
-               {
-                  gxallsyncresponse.add(gxsyncresponse);
-                  gxsyncresponse = new com.genexus.GxUnknownObjectCollection() ;
-               }
-            }
-            else if ( GXutil.strcmp("DFDom", gxtablemdata.item(1)) == 0 )
-            {
-               gxSyncEvtDFDom( ) ;
                if ( gxischeck == 0 )
                {
                   gxallsyncresponse.add(gxsyncresponse);
@@ -3449,6 +3812,15 @@ public final  class imssofflinedatabase extends GXProcedure
             else if ( GXutil.strcmp("Servicio", gxtablemdata.item(1)) == 0 )
             {
                gxSyncEvtServicio( ) ;
+               if ( gxischeck == 0 )
+               {
+                  gxallsyncresponse.add(gxsyncresponse);
+                  gxsyncresponse = new com.genexus.GxUnknownObjectCollection() ;
+               }
+            }
+            else if ( GXutil.strcmp("SIC_ESPECIALIDAD", gxtablemdata.item(1)) == 0 )
+            {
+               gxSyncEvtSIC_ESPECIALIDAD( ) ;
                if ( gxischeck == 0 )
                {
                   gxallsyncresponse.add(gxsyncresponse);
@@ -3520,22 +3892,25 @@ public final  class imssofflinedatabase extends GXProcedure
       gxsynchashset = new com.genexus.GxUnknownObjectCollection();
       gxsyncvalueset = new com.genexus.GxUnknownObjectCollection();
       scmdbuf = "" ;
-      IMSSOFFLIN2_A312MedicoDebeMostarTerm = new boolean[] {false} ;
-      IMSSOFFLIN2_A302MedicoDebeValidarDatos = new boolean[] {false} ;
-      IMSSOFFLIN2_A300MedicoUltimaActualizacion = new java.util.Date[] {GXutil.nullDate()} ;
-      IMSSOFFLIN2_A297MedicoMatricula = new long[1] ;
-      IMSSOFFLIN2_n297MedicoMatricula = new boolean[] {false} ;
-      IMSSOFFLIN2_A296MedicoApellidoMaterno = new String[] {""} ;
-      IMSSOFFLIN2_A295MedicoApellidoPaterno = new String[] {""} ;
-      IMSSOFFLIN2_A294MedicoSegundoNombre = new String[] {""} ;
-      IMSSOFFLIN2_A293MedicoPrimerNombre = new String[] {""} ;
-      IMSSOFFLIN2_A292UserMedico = new String[] {""} ;
-      A300MedicoUltimaActualizacion = GXutil.resetTime( GXutil.nullDate() );
-      A296MedicoApellidoMaterno = "" ;
-      A295MedicoApellidoPaterno = "" ;
-      A294MedicoSegundoNombre = "" ;
-      A293MedicoPrimerNombre = "" ;
-      A292UserMedico = "" ;
+      IMSSOFFLIN2_A341FecBajaMed = new java.util.Date[] {GXutil.nullDate()} ;
+      IMSSOFFLIN2_n341FecBajaMed = new boolean[] {false} ;
+      IMSSOFFLIN2_A303MedDebMosTerm = new boolean[] {false} ;
+      IMSSOFFLIN2_n303MedDebMosTerm = new boolean[] {false} ;
+      IMSSOFFLIN2_A295MedDebValDat = new boolean[] {false} ;
+      IMSSOFFLIN2_A293MedUltAct = new java.util.Date[] {GXutil.nullDate()} ;
+      IMSSOFFLIN2_A340MedCedProf = new String[] {""} ;
+      IMSSOFFLIN2_A291MedApMat = new String[] {""} ;
+      IMSSOFFLIN2_A290MedApPat = new String[] {""} ;
+      IMSSOFFLIN2_A288MedNom = new String[] {""} ;
+      IMSSOFFLIN2_A64UserMed = new String[] {""} ;
+      IMSSOFFLIN2_A65MedMatricula = new long[1] ;
+      A341FecBajaMed = GXutil.nullDate() ;
+      A293MedUltAct = GXutil.resetTime( GXutil.nullDate() );
+      A340MedCedProf = "" ;
+      A291MedApMat = "" ;
+      A290MedApPat = "" ;
+      A288MedNom = "" ;
+      A64UserMed = "" ;
       gxlinehash = "" ;
       gxsetline = new com.genexus.internet.StringCollection();
       gxsetvalueline = new com.genexus.GxUnknownObjectCollection();
@@ -3548,497 +3923,538 @@ public final  class imssofflinedatabase extends GXProcedure
       gxsyncdelete = new com.genexus.GxUnknownObjectCollection();
       gxtablehashlist = new com.genexus.GxUnknownObjectCollection();
       gxsyncheaderpre = new com.genexus.internet.StringCollection();
-      A75PacienteNSSAgregado = "" ;
-      A81Matricula = "" ;
-      IMSSOFFLIN3_A75PacienteNSSAgregado = new String[] {""} ;
-      IMSSOFFLIN3_A81Matricula = new String[] {""} ;
+      A133PacienteNSSAgregado = "" ;
+      A8Matricula = "" ;
+      IMSSOFFLIN3_A133PacienteNSSAgregado = new String[] {""} ;
+      IMSSOFFLIN3_A8Matricula = new String[] {""} ;
       IMSSOFFLIN3_A3PacienteAgregado = new String[] {""} ;
       IMSSOFFLIN3_A2PacienteNSS = new String[] {""} ;
       A3PacienteAgregado = "" ;
       A2PacienteNSS = "" ;
-      IMSSOFFLIN4_A69CIECodigo = new String[] {""} ;
-      IMSSOFFLIN4_A10CIE10Descripcion = new String[] {""} ;
-      IMSSOFFLIN4_A1CIE10Id = new int[1] ;
-      A69CIECodigo = "" ;
-      A10CIE10Descripcion = "" ;
-      IMSSOFFLIN5_A75PacienteNSSAgregado = new String[] {""} ;
-      IMSSOFFLIN5_A34MMatricula = new long[1] ;
-      IMSSOFFLIN5_n34MMatricula = new boolean[] {false} ;
-      IMSSOFFLIN5_A33MApMat = new String[] {""} ;
-      IMSSOFFLIN5_n33MApMat = new boolean[] {false} ;
-      IMSSOFFLIN5_A32MApPat = new String[] {""} ;
-      IMSSOFFLIN5_n32MApPat = new boolean[] {false} ;
-      IMSSOFFLIN5_A31MNombre = new String[] {""} ;
-      IMSSOFFLIN5_n31MNombre = new boolean[] {false} ;
-      IMSSOFFLIN5_A30MBMatricula = new long[1] ;
-      IMSSOFFLIN5_n30MBMatricula = new boolean[] {false} ;
-      IMSSOFFLIN5_A29MBApMat = new String[] {""} ;
-      IMSSOFFLIN5_n29MBApMat = new boolean[] {false} ;
-      IMSSOFFLIN5_A28MBApPat = new String[] {""} ;
-      IMSSOFFLIN5_n28MBApPat = new boolean[] {false} ;
-      IMSSOFFLIN5_A27MBNombre = new String[] {""} ;
-      IMSSOFFLIN5_n27MBNombre = new boolean[] {false} ;
-      IMSSOFFLIN5_A26JSMatricula = new long[1] ;
-      IMSSOFFLIN5_n26JSMatricula = new boolean[] {false} ;
-      IMSSOFFLIN5_A25JSApMat = new String[] {""} ;
-      IMSSOFFLIN5_n25JSApMat = new boolean[] {false} ;
-      IMSSOFFLIN5_A24JSApPat = new String[] {""} ;
-      IMSSOFFLIN5_n24JSApPat = new boolean[] {false} ;
-      IMSSOFFLIN5_A23JSNombre = new String[] {""} ;
-      IMSSOFFLIN5_n23JSNombre = new boolean[] {false} ;
-      IMSSOFFLIN5_A22DiagnosticoCirugiaFecha = new java.util.Date[] {GXutil.nullDate()} ;
-      IMSSOFFLIN5_n22DiagnosticoCirugiaFecha = new boolean[] {false} ;
-      IMSSOFFLIN5_A21DiagnosticoCirugia = new String[] {""} ;
-      IMSSOFFLIN5_n21DiagnosticoCirugia = new boolean[] {false} ;
-      IMSSOFFLIN5_A20Cama = new String[] {""} ;
-      IMSSOFFLIN5_n20Cama = new boolean[] {false} ;
-      IMSSOFFLIN5_A6ServicioId = new short[1] ;
-      IMSSOFFLIN5_A19DiagnosticoResumen = new String[] {""} ;
-      IMSSOFFLIN5_n19DiagnosticoResumen = new boolean[] {false} ;
-      IMSSOFFLIN5_A18DiagnosticoComplemento = new String[] {""} ;
-      IMSSOFFLIN5_n18DiagnosticoComplemento = new boolean[] {false} ;
-      IMSSOFFLIN5_A35DiagnosticoFechaAlta = new java.util.Date[] {GXutil.nullDate()} ;
-      IMSSOFFLIN5_n35DiagnosticoFechaAlta = new boolean[] {false} ;
-      IMSSOFFLIN5_A17DiagnosticoFechaIngreso = new java.util.Date[] {GXutil.nullDate()} ;
-      IMSSOFFLIN5_n17DiagnosticoFechaIngreso = new boolean[] {false} ;
+      IMSSOFFLIN4_A167DFParmIsMetaData = new boolean[] {false} ;
+      IMSSOFFLIN4_A166DFParmVal = new String[] {""} ;
+      IMSSOFFLIN4_A165DFParmName = new String[] {""} ;
+      IMSSOFFLIN4_A25DFParmId = new int[1] ;
+      A166DFParmVal = "" ;
+      A165DFParmName = "" ;
+      IMSSOFFLIN5_A76CIE10Descripcion = new String[] {""} ;
+      IMSSOFFLIN5_A127CIECodigo = new String[] {""} ;
       IMSSOFFLIN5_A1CIE10Id = new int[1] ;
-      IMSSOFFLIN5_A3PacienteAgregado = new String[] {""} ;
-      IMSSOFFLIN5_A2PacienteNSS = new String[] {""} ;
-      A33MApMat = "" ;
-      A32MApPat = "" ;
-      A31MNombre = "" ;
-      A29MBApMat = "" ;
-      A28MBApPat = "" ;
-      A27MBNombre = "" ;
-      A25JSApMat = "" ;
-      A24JSApPat = "" ;
-      A23JSNombre = "" ;
-      A22DiagnosticoCirugiaFecha = GXutil.resetTime( GXutil.nullDate() );
-      A21DiagnosticoCirugia = "" ;
-      A20Cama = "" ;
-      A19DiagnosticoResumen = "" ;
-      A18DiagnosticoComplemento = "" ;
-      A35DiagnosticoFechaAlta = GXutil.resetTime( GXutil.nullDate() );
-      A17DiagnosticoFechaIngreso = GXutil.nullDate() ;
-      IMSSOFFLIN6_A323nada = new short[1] ;
-      IMSSOFFLIN6_A311TextoDescripcion = new String[] {""} ;
-      IMSSOFFLIN6_A310TextoTitulo = new String[] {""} ;
-      IMSSOFFLIN6_A309TextoId = new short[1] ;
-      A311TextoDescripcion = "" ;
-      A310TextoTitulo = "" ;
-      IMSSOFFLIN7_A169DFParmIsMetaData = new boolean[] {false} ;
-      IMSSOFFLIN7_A168DFParmVal = new String[] {""} ;
-      IMSSOFFLIN7_A167DFParmName = new String[] {""} ;
-      IMSSOFFLIN7_A102DFParmId = new int[1] ;
-      A168DFParmVal = "" ;
-      A167DFParmName = "" ;
-      IMSSOFFLIN8_A75PacienteNSSAgregado = new String[] {""} ;
+      A76CIE10Descripcion = "" ;
+      A127CIECodigo = "" ;
+      IMSSOFFLIN6_A133PacienteNSSAgregado = new String[] {""} ;
+      IMSSOFFLIN6_A102MMatricula = new short[1] ;
+      IMSSOFFLIN6_n102MMatricula = new boolean[] {false} ;
+      IMSSOFFLIN6_A101MApMat = new short[1] ;
+      IMSSOFFLIN6_n101MApMat = new boolean[] {false} ;
+      IMSSOFFLIN6_A100MApPat = new short[1] ;
+      IMSSOFFLIN6_n100MApPat = new boolean[] {false} ;
+      IMSSOFFLIN6_A99MNombre = new short[1] ;
+      IMSSOFFLIN6_n99MNombre = new boolean[] {false} ;
+      IMSSOFFLIN6_A98MBMatricula = new short[1] ;
+      IMSSOFFLIN6_n98MBMatricula = new boolean[] {false} ;
+      IMSSOFFLIN6_A97MBApMat = new String[] {""} ;
+      IMSSOFFLIN6_n97MBApMat = new boolean[] {false} ;
+      IMSSOFFLIN6_A96MBApPat = new String[] {""} ;
+      IMSSOFFLIN6_n96MBApPat = new boolean[] {false} ;
+      IMSSOFFLIN6_A95MBNombre = new String[] {""} ;
+      IMSSOFFLIN6_n95MBNombre = new boolean[] {false} ;
+      IMSSOFFLIN6_A94JSMatricula = new short[1] ;
+      IMSSOFFLIN6_n94JSMatricula = new boolean[] {false} ;
+      IMSSOFFLIN6_A93JSApMat = new String[] {""} ;
+      IMSSOFFLIN6_n93JSApMat = new boolean[] {false} ;
+      IMSSOFFLIN6_A92JSApPat = new String[] {""} ;
+      IMSSOFFLIN6_n92JSApPat = new boolean[] {false} ;
+      IMSSOFFLIN6_A91JSNombre = new String[] {""} ;
+      IMSSOFFLIN6_n91JSNombre = new boolean[] {false} ;
+      IMSSOFFLIN6_A90DiagnosticoCirugiaFecha = new java.util.Date[] {GXutil.nullDate()} ;
+      IMSSOFFLIN6_n90DiagnosticoCirugiaFecha = new boolean[] {false} ;
+      IMSSOFFLIN6_A89DiagnosticoCirugia = new String[] {""} ;
+      IMSSOFFLIN6_n89DiagnosticoCirugia = new boolean[] {false} ;
+      IMSSOFFLIN6_A88Cama = new String[] {""} ;
+      IMSSOFFLIN6_n88Cama = new boolean[] {false} ;
+      IMSSOFFLIN6_A6ServicioId = new short[1] ;
+      IMSSOFFLIN6_A86DiagnosticoComplemento = new String[] {""} ;
+      IMSSOFFLIN6_n86DiagnosticoComplemento = new boolean[] {false} ;
+      IMSSOFFLIN6_A87DiagnosticoResumen = new String[] {""} ;
+      IMSSOFFLIN6_n87DiagnosticoResumen = new boolean[] {false} ;
+      IMSSOFFLIN6_A103DiagnosticoFechaAlta = new java.util.Date[] {GXutil.nullDate()} ;
+      IMSSOFFLIN6_n103DiagnosticoFechaAlta = new boolean[] {false} ;
+      IMSSOFFLIN6_A85DiagnosticoFechaIngreso = new java.util.Date[] {GXutil.nullDate()} ;
+      IMSSOFFLIN6_n85DiagnosticoFechaIngreso = new boolean[] {false} ;
+      IMSSOFFLIN6_A1CIE10Id = new int[1] ;
+      IMSSOFFLIN6_A3PacienteAgregado = new String[] {""} ;
+      IMSSOFFLIN6_A2PacienteNSS = new String[] {""} ;
+      A97MBApMat = "" ;
+      A96MBApPat = "" ;
+      A95MBNombre = "" ;
+      A93JSApMat = "" ;
+      A92JSApPat = "" ;
+      A91JSNombre = "" ;
+      A90DiagnosticoCirugiaFecha = GXutil.resetTime( GXutil.nullDate() );
+      A89DiagnosticoCirugia = "" ;
+      A88Cama = "" ;
+      A86DiagnosticoComplemento = "" ;
+      A87DiagnosticoResumen = "" ;
+      A103DiagnosticoFechaAlta = GXutil.resetTime( GXutil.nullDate() );
+      A85DiagnosticoFechaIngreso = GXutil.nullDate() ;
+      IMSSOFFLIN7_A314nada = new short[1] ;
+      IMSSOFFLIN7_A302TextoDescripcion = new String[] {""} ;
+      IMSSOFFLIN7_A301TextoTitulo = new String[] {""} ;
+      IMSSOFFLIN7_A67TextoId = new short[1] ;
+      A302TextoDescripcion = "" ;
+      A301TextoTitulo = "" ;
+      IMSSOFFLIN8_A133PacienteNSSAgregado = new String[] {""} ;
       IMSSOFFLIN8_A40000DXAuxImagenImg_GXI = new String[] {""} ;
-      IMSSOFFLIN8_A322DXAuxImagenExtension = new String[] {""} ;
-      IMSSOFFLIN8_A73DXAuxImagenNombre = new String[] {""} ;
-      IMSSOFFLIN8_A16DXAuxImagenUserAlta = new String[] {""} ;
-      IMSSOFFLIN8_A15DXAuxImagenFechaAlta = new java.util.Date[] {GXutil.nullDate()} ;
-      IMSSOFFLIN8_A14DXAuxImagenImg = new String[] {""} ;
+      IMSSOFFLIN8_A84DXAuxImagenUserAlta = new String[] {""} ;
+      IMSSOFFLIN8_A83DXAuxImagenFechaAlta = new java.util.Date[] {GXutil.nullDate()} ;
+      IMSSOFFLIN8_A82DXAuxImagenImg = new String[] {""} ;
+      IMSSOFFLIN8_A313DXAuxImagenExtension = new String[] {""} ;
+      IMSSOFFLIN8_A132DXAuxImagenNombre = new String[] {""} ;
       IMSSOFFLIN8_A5DXAuxImagenId = new short[1] ;
       IMSSOFFLIN8_A1CIE10Id = new int[1] ;
       IMSSOFFLIN8_A3PacienteAgregado = new String[] {""} ;
       IMSSOFFLIN8_A2PacienteNSS = new String[] {""} ;
       A40000DXAuxImagenImg_GXI = "" ;
-      A322DXAuxImagenExtension = "" ;
-      A73DXAuxImagenNombre = "" ;
-      A16DXAuxImagenUserAlta = "" ;
-      A15DXAuxImagenFechaAlta = GXutil.resetTime( GXutil.nullDate() );
-      A14DXAuxImagenImg = "" ;
-      IMSSOFFLIN9_A75PacienteNSSAgregado = new String[] {""} ;
-      IMSSOFFLIN9_A74DXAuxDoctoNombre = new String[] {""} ;
-      IMSSOFFLIN9_A82DXAuxDoctoExtension = new String[] {""} ;
-      IMSSOFFLIN9_A13DXAuxDoctoUserAlta = new String[] {""} ;
-      IMSSOFFLIN9_A12DXAuxDoctoFechaAlta = new java.util.Date[] {GXutil.nullDate()} ;
-      IMSSOFFLIN9_A11DXAuxDoctoDocumento = new String[] {""} ;
+      A84DXAuxImagenUserAlta = "" ;
+      A83DXAuxImagenFechaAlta = GXutil.resetTime( GXutil.nullDate() );
+      A82DXAuxImagenImg = "" ;
+      A313DXAuxImagenExtension = "" ;
+      A132DXAuxImagenNombre = "" ;
+      gxsyncline_hash = new com.genexus.internet.StringCollection();
+      gxsyncresponse_hash = new com.genexus.GxUnknownObjectCollection();
+      IMSSOFFLIN9_A133PacienteNSSAgregado = new String[] {""} ;
+      IMSSOFFLIN9_A79DXAuxDoctoNombre = new String[] {""} ;
+      IMSSOFFLIN9_A78DXAuxDoctoExtension = new String[] {""} ;
+      IMSSOFFLIN9_A81DXAuxDoctoUserAlta = new String[] {""} ;
+      IMSSOFFLIN9_A80DXAuxDoctoFechaAlta = new java.util.Date[] {GXutil.nullDate()} ;
+      IMSSOFFLIN9_A77DXAuxDoctoDocumento = new String[] {""} ;
       IMSSOFFLIN9_A4DXAuxDoctoId = new short[1] ;
       IMSSOFFLIN9_A1CIE10Id = new int[1] ;
       IMSSOFFLIN9_A3PacienteAgregado = new String[] {""} ;
       IMSSOFFLIN9_A2PacienteNSS = new String[] {""} ;
-      A74DXAuxDoctoNombre = "" ;
-      A82DXAuxDoctoExtension = "" ;
-      A13DXAuxDoctoUserAlta = "" ;
-      A12DXAuxDoctoFechaAlta = GXutil.resetTime( GXutil.nullDate() );
-      A11DXAuxDoctoDocumento = "" ;
-      IMSSOFFLIN10_A321PacienteServicioId = new short[1] ;
-      IMSSOFFLIN10_A298PacienteDiagnosticoPhone = new String[] {""} ;
-      IMSSOFFLIN10_A291PacienteCie10Id = new int[1] ;
-      IMSSOFFLIN10_A76PAcienteFechaIngreso = new java.util.Date[] {GXutil.nullDate()} ;
-      IMSSOFFLIN10_A75PacienteNSSAgregado = new String[] {""} ;
-      IMSSOFFLIN10_A72PacienteCama = new String[] {""} ;
-      IMSSOFFLIN10_A71PacienteDiagnosticoResumido = new String[] {""} ;
-      IMSSOFFLIN10_A70PacienteDiagnostico = new String[] {""} ;
-      IMSSOFFLIN10_A68PacienteFechaNacimiento = new java.util.Date[] {GXutil.nullDate()} ;
-      IMSSOFFLIN10_A55PacienteNombreCompleto = new String[] {""} ;
-      IMSSOFFLIN10_A54PacienteReferencia = new String[] {""} ;
-      IMSSOFFLIN10_n54PacienteReferencia = new boolean[] {false} ;
-      IMSSOFFLIN10_A53PacienteFamiliar = new String[] {""} ;
-      IMSSOFFLIN10_n53PacienteFamiliar = new boolean[] {false} ;
-      IMSSOFFLIN10_A52PacienteTelefono = new String[] {""} ;
-      IMSSOFFLIN10_n52PacienteTelefono = new boolean[] {false} ;
-      IMSSOFFLIN10_A51PacienteGenero = new String[] {""} ;
-      IMSSOFFLIN10_n51PacienteGenero = new boolean[] {false} ;
-      IMSSOFFLIN10_A50PacienteEdad = new short[1] ;
-      IMSSOFFLIN10_A46PacienteApMat = new String[] {""} ;
-      IMSSOFFLIN10_n46PacienteApMat = new boolean[] {false} ;
-      IMSSOFFLIN10_A45PacienteApPat = new String[] {""} ;
-      IMSSOFFLIN10_A44PacienteNombre = new String[] {""} ;
+      A79DXAuxDoctoNombre = "" ;
+      A78DXAuxDoctoExtension = "" ;
+      A81DXAuxDoctoUserAlta = "" ;
+      A80DXAuxDoctoFechaAlta = GXutil.resetTime( GXutil.nullDate() );
+      A77DXAuxDoctoDocumento = "" ;
+      IMSSOFFLIN10_A330ClavePresupuestal = new String[] {""} ;
+      IMSSOFFLIN10_A328IDEE = new String[] {""} ;
+      IMSSOFFLIN10_n328IDEE = new boolean[] {false} ;
+      IMSSOFFLIN10_A325CURP = new String[] {""} ;
+      IMSSOFFLIN10_n325CURP = new boolean[] {false} ;
+      IMSSOFFLIN10_A327DhUMF = new String[] {""} ;
+      IMSSOFFLIN10_n327DhUMF = new boolean[] {false} ;
+      IMSSOFFLIN10_A326DhDeleg = new String[] {""} ;
+      IMSSOFFLIN10_n326DhDeleg = new boolean[] {false} ;
+      IMSSOFFLIN10_A324Consultorio = new String[] {""} ;
+      IMSSOFFLIN10_n324Consultorio = new boolean[] {false} ;
+      IMSSOFFLIN10_A323ConDerechoSm = new String[] {""} ;
+      IMSSOFFLIN10_n323ConDerechoSm = new boolean[] {false} ;
+      IMSSOFFLIN10_A322ConDerechoInc = new String[] {""} ;
+      IMSSOFFLIN10_n322ConDerechoInc = new boolean[] {false} ;
+      IMSSOFFLIN10_A312PacienteServicioId = new short[1] ;
+      IMSSOFFLIN10_A130PacienteCie10Id = new int[1] ;
+      IMSSOFFLIN10_A133PacienteNSSAgregado = new String[] {""} ;
+      IMSSOFFLIN10_A131PacienteCama = new String[] {""} ;
+      IMSSOFFLIN10_A287PacienteDiagnosticoPhone = new String[] {""} ;
+      IMSSOFFLIN10_A129PacienteDiagnosticoResumido = new String[] {""} ;
+      IMSSOFFLIN10_A128PacienteDiagnostico = new String[] {""} ;
+      IMSSOFFLIN10_A134PAcienteFechaIngreso = new java.util.Date[] {GXutil.nullDate()} ;
+      IMSSOFFLIN10_A124PacienteNombreCompleto = new String[] {""} ;
+      IMSSOFFLIN10_A123PacienteReferencia = new String[] {""} ;
+      IMSSOFFLIN10_n123PacienteReferencia = new boolean[] {false} ;
+      IMSSOFFLIN10_A122PacienteFamiliar = new String[] {""} ;
+      IMSSOFFLIN10_n122PacienteFamiliar = new boolean[] {false} ;
+      IMSSOFFLIN10_A121PacienteTelefono = new String[] {""} ;
+      IMSSOFFLIN10_n121PacienteTelefono = new boolean[] {false} ;
+      IMSSOFFLIN10_A120PacienteGenero = new String[] {""} ;
+      IMSSOFFLIN10_n120PacienteGenero = new boolean[] {false} ;
+      IMSSOFFLIN10_A118PacienteEdad = new short[1] ;
+      IMSSOFFLIN10_A119PacienteFechaNacimiento = new java.util.Date[] {GXutil.nullDate()} ;
+      IMSSOFFLIN10_A114PacienteApMat = new String[] {""} ;
+      IMSSOFFLIN10_n114PacienteApMat = new boolean[] {false} ;
+      IMSSOFFLIN10_A113PacienteApPat = new String[] {""} ;
+      IMSSOFFLIN10_A112PacienteNombre = new String[] {""} ;
       IMSSOFFLIN10_A3PacienteAgregado = new String[] {""} ;
       IMSSOFFLIN10_A2PacienteNSS = new String[] {""} ;
-      A298PacienteDiagnosticoPhone = "" ;
-      A76PAcienteFechaIngreso = GXutil.nullDate() ;
-      A72PacienteCama = "" ;
-      A71PacienteDiagnosticoResumido = "" ;
-      A70PacienteDiagnostico = "" ;
-      A68PacienteFechaNacimiento = GXutil.nullDate() ;
-      A55PacienteNombreCompleto = "" ;
-      A54PacienteReferencia = "" ;
-      A53PacienteFamiliar = "" ;
-      A52PacienteTelefono = "" ;
-      A51PacienteGenero = "" ;
-      A46PacienteApMat = "" ;
-      A45PacienteApPat = "" ;
-      A44PacienteNombre = "" ;
-      IMSSOFFLIN11_A317DFFormDsc = new String[] {""} ;
-      IMSSOFFLIN11_A303DFFormIsSD = new boolean[] {false} ;
-      IMSSOFFLIN11_A159DFFormRunDLT = new boolean[] {false} ;
-      IMSSOFFLIN11_A236DFFormHelpURL = new String[] {""} ;
-      IMSSOFFLIN11_A176DFFormPrefix = new String[] {""} ;
-      IMSSOFFLIN11_A235DFFormPmtHgh = new int[1] ;
-      IMSSOFFLIN11_n235DFFormPmtHgh = new boolean[] {false} ;
-      IMSSOFFLIN11_A234DFFormPmtWth = new int[1] ;
-      IMSSOFFLIN11_n234DFFormPmtWth = new boolean[] {false} ;
-      IMSSOFFLIN11_A237DFFormAct = new boolean[] {false} ;
-      IMSSOFFLIN11_A171DFFormName = new String[] {""} ;
-      IMSSOFFLIN11_A115DFFormGuid = new java.util.UUID[] {java.util.UUID.fromString("00000000-0000-0000-0000-000000000000")} ;
-      IMSSOFFLIN11_A87DFFormVer = new int[1] ;
-      IMSSOFFLIN11_A86DFFormId = new int[1] ;
-      A317DFFormDsc = "" ;
-      A236DFFormHelpURL = "" ;
-      A176DFFormPrefix = "" ;
-      A171DFFormName = "" ;
-      A115DFFormGuid = java.util.UUID.fromString("00000000-0000-0000-0000-000000000000") ;
-      IMSSOFFLIN12_A85FormatoPacienteMedicoNombre = new String[] {""} ;
-      IMSSOFFLIN12_A84FormatoPacienteMedicoMatricula = new long[1] ;
-      IMSSOFFLIN12_A90DFFormInstId = new long[1] ;
-      IMSSOFFLIN12_A80FormatoPacienteAgregado = new String[] {""} ;
-      IMSSOFFLIN12_A79FormatoPacienteNSS = new String[] {""} ;
-      A85FormatoPacienteMedicoNombre = "" ;
-      A80FormatoPacienteAgregado = "" ;
-      A79FormatoPacienteNSS = "" ;
-      IMSSOFFLIN13_A306ExtensionNombre = new String[] {""} ;
-      IMSSOFFLIN13_A305ExtensionTipo = new short[1] ;
-      IMSSOFFLIN13_A304ExtensionId = new short[1] ;
-      A306ExtensionNombre = "" ;
-      IMSSOFFLIN14_A313DFElemFormReq = new boolean[] {false} ;
-      IMSSOFFLIN14_A316DFElemFormPrtPic = new String[] {""} ;
-      IMSSOFFLIN14_A307DFElemFormLoadRule = new String[] {""} ;
-      IMSSOFFLIN14_n307DFElemFormLoadRule = new boolean[] {false} ;
-      IMSSOFFLIN14_A266DFElemFormMetadata = new String[] {""} ;
-      IMSSOFFLIN14_n266DFElemFormMetadata = new boolean[] {false} ;
-      IMSSOFFLIN14_A267DFElemFormShwNbr = new boolean[] {false} ;
-      IMSSOFFLIN14_n267DFElemFormShwNbr = new boolean[] {false} ;
-      IMSSOFFLIN14_A265DFElemFormDateSel = new boolean[] {false} ;
-      IMSSOFFLIN14_n265DFElemFormDateSel = new boolean[] {false} ;
-      IMSSOFFLIN14_A262DFElemFormHasPmpt = new boolean[] {false} ;
-      IMSSOFFLIN14_n262DFElemFormHasPmpt = new boolean[] {false} ;
-      IMSSOFFLIN14_A187DFElemFormIsFlt = new String[] {""} ;
-      IMSSOFFLIN14_n187DFElemFormIsFlt = new boolean[] {false} ;
-      IMSSOFFLIN14_A186DFElemFormCmpWth = new String[] {""} ;
-      IMSSOFFLIN14_n186DFElemFormCmpWth = new boolean[] {false} ;
-      IMSSOFFLIN14_A185DFElemFormLblWth = new String[] {""} ;
-      IMSSOFFLIN14_n185DFElemFormLblWth = new boolean[] {false} ;
-      IMSSOFFLIN14_A285DFElemFormPrtShwNbr = new boolean[] {false} ;
-      IMSSOFFLIN14_A284DFElemFormPrtNumColSkip = new int[1] ;
-      IMSSOFFLIN14_A276DFElemFormPrtNumRowSkip = new int[1] ;
-      IMSSOFFLIN14_A274DFElemFormPrtAddRows = new boolean[] {false} ;
-      IMSSOFFLIN14_A273DFElemFormPrtName = new String[] {""} ;
-      IMSSOFFLIN14_A194DFElemFormIsVisPrt = new boolean[] {false} ;
-      IMSSOFFLIN14_A193DFElemFormIsVis = new boolean[] {false} ;
-      IMSSOFFLIN14_A192DFElemFormIsColap = new boolean[] {false} ;
-      IMSSOFFLIN14_A191DFElemFormAllowIns = new boolean[] {false} ;
-      IMSSOFFLIN14_n191DFElemFormAllowIns = new boolean[] {false} ;
-      IMSSOFFLIN14_A190DFElemFormAllowUpd = new boolean[] {false} ;
-      IMSSOFFLIN14_n190DFElemFormAllowUpd = new boolean[] {false} ;
-      IMSSOFFLIN14_A189DFElemFormAllowDlt = new boolean[] {false} ;
-      IMSSOFFLIN14_n189DFElemFormAllowDlt = new boolean[] {false} ;
-      IMSSOFFLIN14_A184DFElemFormInhType = new String[] {""} ;
-      IMSSOFFLIN14_A116DFElemFormPos = new int[1] ;
-      IMSSOFFLIN14_A188DFElemFormName = new String[] {""} ;
-      IMSSOFFLIN14_A89DFElemVer = new int[1] ;
-      IMSSOFFLIN14_A88DFElemId = new int[1] ;
-      IMSSOFFLIN14_A87DFFormVer = new int[1] ;
-      IMSSOFFLIN14_A86DFFormId = new int[1] ;
-      A316DFElemFormPrtPic = "" ;
-      A307DFElemFormLoadRule = "" ;
-      A266DFElemFormMetadata = "" ;
-      A187DFElemFormIsFlt = "" ;
-      A186DFElemFormCmpWth = "" ;
-      A185DFElemFormLblWth = "" ;
-      A273DFElemFormPrtName = "" ;
-      A184DFElemFormInhType = "" ;
-      A188DFElemFormName = "" ;
-      IMSSOFFLIN15_A147DFElemFormInstFileName = new String[] {""} ;
-      IMSSOFFLIN15_n147DFElemFormInstFileName = new boolean[] {false} ;
-      IMSSOFFLIN15_A146DFElemFormInstFileType = new String[] {""} ;
-      IMSSOFFLIN15_n146DFElemFormInstFileType = new boolean[] {false} ;
-      IMSSOFFLIN15_A145DFElemFormInstBlob = new String[] {""} ;
-      IMSSOFFLIN15_n145DFElemFormInstBlob = new boolean[] {false} ;
-      IMSSOFFLIN15_A143DFElemFormInstVal = new String[] {""} ;
-      IMSSOFFLIN15_n143DFElemFormInstVal = new boolean[] {false} ;
-      IMSSOFFLIN15_A89DFElemVer = new int[1] ;
-      IMSSOFFLIN15_A88DFElemId = new int[1] ;
-      IMSSOFFLIN15_A90DFFormInstId = new long[1] ;
-      A147DFElemFormInstFileName = "" ;
-      A146DFElemFormInstFileType = "" ;
-      A145DFElemFormInstBlob = "" ;
-      A143DFElemFormInstVal = "" ;
-      IMSSOFFLIN16_A150DFElemFormInstSubElemFileName = new String[] {""} ;
-      IMSSOFFLIN16_n150DFElemFormInstSubElemFileName = new boolean[] {false} ;
-      IMSSOFFLIN16_A149DFElemFormInstSubElemFileType = new String[] {""} ;
-      IMSSOFFLIN16_n149DFElemFormInstSubElemFileType = new boolean[] {false} ;
-      IMSSOFFLIN16_A108DFSubElemFormElemId = new int[1] ;
-      IMSSOFFLIN16_A109DFSubElemFormElemVer = new int[1] ;
-      IMSSOFFLIN16_A110DFElemFormInstSubElemRow = new int[1] ;
-      IMSSOFFLIN16_A144DFElemFormInstSubElemVal = new String[] {""} ;
-      IMSSOFFLIN16_n144DFElemFormInstSubElemVal = new boolean[] {false} ;
-      IMSSOFFLIN16_A148DFElemFormInstSubElemBlob = new String[] {""} ;
-      IMSSOFFLIN16_n148DFElemFormInstSubElemBlob = new boolean[] {false} ;
-      IMSSOFFLIN16_A107DFElemFormInstSubElemId = new int[1] ;
-      IMSSOFFLIN16_A89DFElemVer = new int[1] ;
-      IMSSOFFLIN16_A88DFElemId = new int[1] ;
-      IMSSOFFLIN16_A90DFFormInstId = new long[1] ;
-      A150DFElemFormInstSubElemFileName = "" ;
-      A149DFElemFormInstSubElemFileType = "" ;
-      A144DFElemFormInstSubElemVal = "" ;
-      A148DFElemFormInstSubElemBlob = "" ;
-      IMSSOFFLIN17_A290DFTempFm = new String[] {""} ;
-      IMSSOFFLIN17_A287DFTempOutFm = new String[] {""} ;
-      IMSSOFFLIN17_A281DFTempAddParmPrgName = new String[] {""} ;
-      IMSSOFFLIN17_A280DFTempBlob = new String[] {""} ;
-      IMSSOFFLIN17_A286DFTempDsc = new String[] {""} ;
-      IMSSOFFLIN17_A136DFTempName = new String[] {""} ;
-      IMSSOFFLIN17_A87DFFormVer = new int[1] ;
-      IMSSOFFLIN17_A86DFFormId = new int[1] ;
-      A290DFTempFm = "" ;
-      A287DFTempOutFm = "" ;
-      A281DFTempAddParmPrgName = "" ;
-      A280DFTempBlob = "" ;
-      A286DFTempDsc = "" ;
-      A136DFTempName = "" ;
-      IMSSOFFLIN18_A225DFDomStaValOptDsc = new String[] {""} ;
-      IMSSOFFLIN18_A113DFDomStaValOptOrd = new int[1] ;
-      IMSSOFFLIN18_A112DFDomStaValOptCod = new String[] {""} ;
-      IMSSOFFLIN18_A111DFDomId = new int[1] ;
-      IMSSOFFLIN18_n111DFDomId = new boolean[] {false} ;
-      A225DFDomStaValOptDsc = "" ;
-      A112DFDomStaValOptCod = "" ;
-      IMSSOFFLIN19_A200DFFormInstSignedPDF = new String[] {""} ;
-      IMSSOFFLIN19_n200DFFormInstSignedPDF = new boolean[] {false} ;
-      IMSSOFFLIN19_A201DFFormInstSignedBy = new String[] {""} ;
-      IMSSOFFLIN19_n201DFFormInstSignedBy = new boolean[] {false} ;
-      IMSSOFFLIN19_A157DFFormInstDT = new java.util.Date[] {GXutil.nullDate()} ;
-      IMSSOFFLIN19_A106DFFormInstFormVer = new int[1] ;
-      IMSSOFFLIN19_A105DFFormInstFormId = new int[1] ;
-      IMSSOFFLIN19_A90DFFormInstId = new long[1] ;
-      A200DFFormInstSignedPDF = "" ;
-      A201DFFormInstSignedBy = "" ;
-      A157DFFormInstDT = GXutil.resetTime( GXutil.nullDate() );
-      IMSSOFFLIN20_A314DFElemReq = new boolean[] {false} ;
-      IMSSOFFLIN20_A315DFElemPrtPic = new String[] {""} ;
-      IMSSOFFLIN20_A308DFElemLoadRule = new String[] {""} ;
-      IMSSOFFLIN20_n308DFElemLoadRule = new boolean[] {false} ;
-      IMSSOFFLIN20_A268DFElemMetadata = new String[] {""} ;
-      IMSSOFFLIN20_n268DFElemMetadata = new boolean[] {false} ;
-      IMSSOFFLIN20_A241DFElemIsColap = new boolean[] {false} ;
-      IMSSOFFLIN20_A283DFElemPrtShwNbr = new boolean[] {false} ;
-      IMSSOFFLIN20_A282DFElemPrtNumColSkip = new int[1] ;
-      IMSSOFFLIN20_A277DFElemPrtNumRowSkip = new int[1] ;
-      IMSSOFFLIN20_A275DFElemPrtAddRows = new boolean[] {false} ;
-      IMSSOFFLIN20_A272DFElemPrtName = new String[] {""} ;
-      IMSSOFFLIN20_A263DFElemIsVisPrt = new boolean[] {false} ;
-      IMSSOFFLIN20_A240DFElemIsVis = new boolean[] {false} ;
-      IMSSOFFLIN20_A260DFElemLblWth = new String[] {""} ;
-      IMSSOFFLIN20_n260DFElemLblWth = new boolean[] {false} ;
-      IMSSOFFLIN20_A246DFElemCmpWth = new String[] {""} ;
-      IMSSOFFLIN20_n246DFElemCmpWth = new boolean[] {false} ;
-      IMSSOFFLIN20_A245DFElemIsFlt = new String[] {""} ;
-      IMSSOFFLIN20_n245DFElemIsFlt = new boolean[] {false} ;
-      IMSSOFFLIN20_A259DFElemFileType = new String[] {""} ;
-      IMSSOFFLIN20_n259DFElemFileType = new boolean[] {false} ;
-      IMSSOFFLIN20_A257DFElemRegexVal = new String[] {""} ;
-      IMSSOFFLIN20_n257DFElemRegexVal = new boolean[] {false} ;
-      IMSSOFFLIN20_A256DFElemAllowDlt = new boolean[] {false} ;
-      IMSSOFFLIN20_n256DFElemAllowDlt = new boolean[] {false} ;
-      IMSSOFFLIN20_A255DFElemAllowUpd = new boolean[] {false} ;
-      IMSSOFFLIN20_n255DFElemAllowUpd = new boolean[] {false} ;
-      IMSSOFFLIN20_A254DFElemAllowIns = new boolean[] {false} ;
-      IMSSOFFLIN20_n254DFElemAllowIns = new boolean[] {false} ;
-      IMSSOFFLIN20_A253DFElemUseBtns = new boolean[] {false} ;
-      IMSSOFFLIN20_n253DFElemUseBtns = new boolean[] {false} ;
-      IMSSOFFLIN20_A252DFElemIsOrd = new boolean[] {false} ;
-      IMSSOFFLIN20_n252DFElemIsOrd = new boolean[] {false} ;
-      IMSSOFFLIN20_A251DFElemMaxSuggRes = new int[1] ;
-      IMSSOFFLIN20_n251DFElemMaxSuggRes = new boolean[] {false} ;
-      IMSSOFFLIN20_A250DFElemForceSuggSel = new boolean[] {false} ;
-      IMSSOFFLIN20_n250DFElemForceSuggSel = new boolean[] {false} ;
-      IMSSOFFLIN20_A249DFElemMinCntCharSugg = new int[1] ;
-      IMSSOFFLIN20_n249DFElemMinCntCharSugg = new boolean[] {false} ;
-      IMSSOFFLIN20_A261DFElemDscPrgName = new String[] {""} ;
-      IMSSOFFLIN20_A248DFElemLoadPrgName = new String[] {""} ;
-      IMSSOFFLIN20_n248DFElemLoadPrgName = new boolean[] {false} ;
-      IMSSOFFLIN20_A270DFElemBtnPos = new String[] {""} ;
-      IMSSOFFLIN20_n270DFElemBtnPos = new boolean[] {false} ;
-      IMSSOFFLIN20_A271DFElemShwNbrLbl = new String[] {""} ;
-      IMSSOFFLIN20_n271DFElemShwNbrLbl = new boolean[] {false} ;
-      IMSSOFFLIN20_A269DFElemShwNbr = new boolean[] {false} ;
-      IMSSOFFLIN20_n269DFElemShwNbr = new boolean[] {false} ;
-      IMSSOFFLIN20_A264DFElemDateSel = new boolean[] {false} ;
-      IMSSOFFLIN20_n264DFElemDateSel = new boolean[] {false} ;
-      IMSSOFFLIN20_A247DFElemHasPmpt = new boolean[] {false} ;
-      IMSSOFFLIN20_n247DFElemHasPmpt = new boolean[] {false} ;
-      IMSSOFFLIN20_A183DFElemDftVal = new String[] {""} ;
-      IMSSOFFLIN20_n183DFElemDftVal = new boolean[] {false} ;
-      IMSSOFFLIN20_A244DFElemCntCols = new int[1] ;
-      IMSSOFFLIN20_n244DFElemCntCols = new boolean[] {false} ;
-      IMSSOFFLIN20_A243DFElemCntRows = new int[1] ;
-      IMSSOFFLIN20_n243DFElemCntRows = new boolean[] {false} ;
-      IMSSOFFLIN20_A242DFElemCntDec = new int[1] ;
-      IMSSOFFLIN20_n242DFElemCntDec = new boolean[] {false} ;
-      IMSSOFFLIN20_A258DFElemWth = new int[1] ;
-      IMSSOFFLIN20_n258DFElemWth = new boolean[] {false} ;
-      IMSSOFFLIN20_A239DFElemLen = new int[1] ;
-      IMSSOFFLIN20_n239DFElemLen = new boolean[] {false} ;
-      IMSSOFFLIN20_A199DFElemDsp = new String[] {""} ;
-      IMSSOFFLIN20_n199DFElemDsp = new boolean[] {false} ;
-      IMSSOFFLIN20_A181DFElemType = new String[] {""} ;
-      IMSSOFFLIN20_A111DFDomId = new int[1] ;
-      IMSSOFFLIN20_n111DFDomId = new boolean[] {false} ;
-      IMSSOFFLIN20_A195DFElemClsName = new String[] {""} ;
-      IMSSOFFLIN20_n195DFElemClsName = new boolean[] {false} ;
-      IMSSOFFLIN20_A238DFElemDsc = new String[] {""} ;
-      IMSSOFFLIN20_n238DFElemDsc = new boolean[] {false} ;
-      IMSSOFFLIN20_A151DFElemName = new String[] {""} ;
-      IMSSOFFLIN20_A114DFElemGuid = new java.util.UUID[] {java.util.UUID.fromString("00000000-0000-0000-0000-000000000000")} ;
-      IMSSOFFLIN20_A89DFElemVer = new int[1] ;
-      IMSSOFFLIN20_A88DFElemId = new int[1] ;
-      A315DFElemPrtPic = "" ;
-      A308DFElemLoadRule = "" ;
-      A268DFElemMetadata = "" ;
-      A272DFElemPrtName = "" ;
-      A260DFElemLblWth = "" ;
-      A246DFElemCmpWth = "" ;
-      A245DFElemIsFlt = "" ;
-      A259DFElemFileType = "" ;
-      A257DFElemRegexVal = "" ;
-      A261DFElemDscPrgName = "" ;
-      A248DFElemLoadPrgName = "" ;
-      A270DFElemBtnPos = "" ;
-      A271DFElemShwNbrLbl = "" ;
-      A183DFElemDftVal = "" ;
-      A199DFElemDsp = "" ;
-      A181DFElemType = "" ;
-      A195DFElemClsName = "" ;
-      A238DFElemDsc = "" ;
-      A151DFElemName = "" ;
-      A114DFElemGuid = java.util.UUID.fromString("00000000-0000-0000-0000-000000000000") ;
-      IMSSOFFLIN21_A93DFFormRstVal = new String[] {""} ;
-      IMSSOFFLIN21_A92DFFormRstId = new int[1] ;
-      IMSSOFFLIN21_A87DFFormVer = new int[1] ;
-      IMSSOFFLIN21_A86DFFormId = new int[1] ;
-      A93DFFormRstVal = "" ;
-      IMSSOFFLIN22_A166DFUserRstPwdIni = new boolean[] {false} ;
-      IMSSOFFLIN22_A101DFUserRstVal = new String[] {""} ;
-      IMSSOFFLIN22_A100DFUserRstId = new int[1] ;
-      IMSSOFFLIN22_A99DFUserExtId = new String[] {""} ;
-      A101DFUserRstVal = "" ;
-      A99DFUserExtId = "" ;
-      IMSSOFFLIN23_A319DFDomPrtDsc = new boolean[] {false} ;
-      IMSSOFFLIN23_n319DFDomPrtDsc = new boolean[] {false} ;
-      IMSSOFFLIN23_A226DFDomLblWth = new String[] {""} ;
-      IMSSOFFLIN23_n226DFDomLblWth = new boolean[] {false} ;
-      IMSSOFFLIN23_A222DFDomCmpWth = new String[] {""} ;
-      IMSSOFFLIN23_n222DFDomCmpWth = new boolean[] {false} ;
-      IMSSOFFLIN23_A221DFDomIsFlt = new String[] {""} ;
-      IMSSOFFLIN23_n221DFDomIsFlt = new boolean[] {false} ;
-      IMSSOFFLIN23_A224DFDomFileType = new String[] {""} ;
-      IMSSOFFLIN23_n224DFDomFileType = new boolean[] {false} ;
-      IMSSOFFLIN23_A220DFDomRegexVal = new String[] {""} ;
-      IMSSOFFLIN23_A216DFDomAllowDlt = new boolean[] {false} ;
-      IMSSOFFLIN23_n216DFDomAllowDlt = new boolean[] {false} ;
-      IMSSOFFLIN23_A215DFDomAllowUpd = new boolean[] {false} ;
-      IMSSOFFLIN23_n215DFDomAllowUpd = new boolean[] {false} ;
-      IMSSOFFLIN23_A214DFDomAllowIns = new boolean[] {false} ;
-      IMSSOFFLIN23_n214DFDomAllowIns = new boolean[] {false} ;
-      IMSSOFFLIN23_A213DFDomUseBtns = new boolean[] {false} ;
-      IMSSOFFLIN23_n213DFDomUseBtns = new boolean[] {false} ;
-      IMSSOFFLIN23_A212DFDomIsOrd = new boolean[] {false} ;
-      IMSSOFFLIN23_n212DFDomIsOrd = new boolean[] {false} ;
-      IMSSOFFLIN23_A210DFDomMaxSuggRes = new int[1] ;
-      IMSSOFFLIN23_n210DFDomMaxSuggRes = new boolean[] {false} ;
-      IMSSOFFLIN23_A209DFDomForceSuggSel = new boolean[] {false} ;
-      IMSSOFFLIN23_n209DFDomForceSuggSel = new boolean[] {false} ;
-      IMSSOFFLIN23_A208DFDomMinCntCharSugg = new int[1] ;
-      IMSSOFFLIN23_n208DFDomMinCntCharSugg = new boolean[] {false} ;
-      IMSSOFFLIN23_A211DFDomDftVal = new String[] {""} ;
-      IMSSOFFLIN23_n211DFDomDftVal = new boolean[] {false} ;
-      IMSSOFFLIN23_A219DFDomCntCols = new int[1] ;
-      IMSSOFFLIN23_A218DFDomCntRows = new int[1] ;
-      IMSSOFFLIN23_A217DFDomCntDec = new int[1] ;
-      IMSSOFFLIN23_A223DFDomWth = new int[1] ;
-      IMSSOFFLIN23_A207DFDomLen = new int[1] ;
-      IMSSOFFLIN23_A198DFDomDsp = new String[] {""} ;
-      IMSSOFFLIN23_n198DFDomDsp = new boolean[] {false} ;
-      IMSSOFFLIN23_A197DFDomType = new String[] {""} ;
-      IMSSOFFLIN23_A227DFDomGUID = new java.util.UUID[] {java.util.UUID.fromString("00000000-0000-0000-0000-000000000000")} ;
-      IMSSOFFLIN23_A206DFDomDsc = new String[] {""} ;
-      IMSSOFFLIN23_A111DFDomId = new int[1] ;
-      IMSSOFFLIN23_n111DFDomId = new boolean[] {false} ;
-      A226DFDomLblWth = "" ;
-      A222DFDomCmpWth = "" ;
-      A221DFDomIsFlt = "" ;
-      A224DFDomFileType = "" ;
-      A220DFDomRegexVal = "" ;
-      A211DFDomDftVal = "" ;
-      A198DFDomDsp = "" ;
-      A197DFDomType = "" ;
-      A227DFDomGUID = java.util.UUID.fromString("00000000-0000-0000-0000-000000000000") ;
-      A206DFDomDsc = "" ;
-      IMSSOFFLIN24_A117DFSubElemFormPos = new int[1] ;
-      IMSSOFFLIN24_n117DFSubElemFormPos = new boolean[] {false} ;
-      IMSSOFFLIN24_A109DFSubElemFormElemVer = new int[1] ;
-      IMSSOFFLIN24_A108DFSubElemFormElemId = new int[1] ;
-      IMSSOFFLIN24_A89DFElemVer = new int[1] ;
-      IMSSOFFLIN24_A88DFElemId = new int[1] ;
-      IMSSOFFLIN24_A87DFFormVer = new int[1] ;
-      IMSSOFFLIN24_A86DFFormId = new int[1] ;
-      IMSSOFFLIN25_A120DFFilElemFormElemVer = new int[1] ;
-      IMSSOFFLIN25_A119DFFilElemFormElemId = new int[1] ;
-      IMSSOFFLIN25_A121DFFilElemFormPos = new short[1] ;
-      IMSSOFFLIN25_A118DFFilElemFormId = new int[1] ;
-      IMSSOFFLIN25_A89DFElemVer = new int[1] ;
-      IMSSOFFLIN25_A88DFElemId = new int[1] ;
-      IMSSOFFLIN25_A87DFFormVer = new int[1] ;
-      IMSSOFFLIN25_A86DFFormId = new int[1] ;
-      IMSSOFFLIN26_A288HospitalId = new short[1] ;
-      IMSSOFFLIN26_n288HospitalId = new boolean[] {false} ;
-      IMSSOFFLIN26_A36ServicioDescripcion = new String[] {""} ;
-      IMSSOFFLIN26_A6ServicioId = new short[1] ;
-      A36ServicioDescripcion = "" ;
-      IMSSOFFLIN27_A105DFFormInstFormId = new int[1] ;
-      IMSSOFFLIN27_A141DFUplFileExt = new String[] {""} ;
-      IMSSOFFLIN27_A142DFUplFileName = new String[] {""} ;
-      IMSSOFFLIN27_A140DFUplFile = new String[] {""} ;
-      IMSSOFFLIN27_A91DFUplKey = new String[] {""} ;
-      IMSSOFFLIN27_A90DFFormInstId = new long[1] ;
-      A141DFUplFileExt = "" ;
-      A142DFUplFileName = "" ;
-      A140DFUplFile = "" ;
-      A91DFUplKey = "" ;
+      A330ClavePresupuestal = "" ;
+      A328IDEE = "" ;
+      A325CURP = "" ;
+      A327DhUMF = "" ;
+      A326DhDeleg = "" ;
+      A324Consultorio = "" ;
+      A323ConDerechoSm = "" ;
+      A322ConDerechoInc = "" ;
+      A131PacienteCama = "" ;
+      A287PacienteDiagnosticoPhone = "" ;
+      A129PacienteDiagnosticoResumido = "" ;
+      A128PacienteDiagnostico = "" ;
+      A134PAcienteFechaIngreso = GXutil.nullDate() ;
+      A124PacienteNombreCompleto = "" ;
+      A123PacienteReferencia = "" ;
+      A122PacienteFamiliar = "" ;
+      A121PacienteTelefono = "" ;
+      A120PacienteGenero = "" ;
+      A119PacienteFechaNacimiento = GXutil.nullDate() ;
+      A114PacienteApMat = "" ;
+      A113PacienteApPat = "" ;
+      A112PacienteNombre = "" ;
+      IMSSOFFLIN11_A297ExtensionNombre = new String[] {""} ;
+      IMSSOFFLIN11_A296ExtensionTipo = new short[1] ;
+      IMSSOFFLIN11_A66ExtensionId = new short[1] ;
+      A297ExtensionNombre = "" ;
+      IMSSOFFLIN12_A136FormatoPacienteMedicoMatricula = new long[1] ;
+      IMSSOFFLIN12_A137FormatoPacienteMedicoNombre = new String[] {""} ;
+      IMSSOFFLIN12_A9DFFormInstId = new long[1] ;
+      IMSSOFFLIN12_A63FormatoPacienteAgregado = new String[] {""} ;
+      IMSSOFFLIN12_A62FormatoPacienteNSS = new String[] {""} ;
+      A137FormatoPacienteMedicoNombre = "" ;
+      A63FormatoPacienteAgregado = "" ;
+      A62FormatoPacienteNSS = "" ;
+      IMSSOFFLIN13_A304DFElemFormReq = new boolean[] {false} ;
+      IMSSOFFLIN13_A299DFElemFormLoadRule = new String[] {""} ;
+      IMSSOFFLIN13_n299DFElemFormLoadRule = new boolean[] {false} ;
+      IMSSOFFLIN13_A263DFElemFormMetadata = new String[] {""} ;
+      IMSSOFFLIN13_n263DFElemFormMetadata = new boolean[] {false} ;
+      IMSSOFFLIN13_A264DFElemFormShwNbr = new boolean[] {false} ;
+      IMSSOFFLIN13_n264DFElemFormShwNbr = new boolean[] {false} ;
+      IMSSOFFLIN13_A262DFElemFormDateSel = new boolean[] {false} ;
+      IMSSOFFLIN13_n262DFElemFormDateSel = new boolean[] {false} ;
+      IMSSOFFLIN13_A259DFElemFormHasPmpt = new boolean[] {false} ;
+      IMSSOFFLIN13_n259DFElemFormHasPmpt = new boolean[] {false} ;
+      IMSSOFFLIN13_A184DFElemFormIsFlt = new String[] {""} ;
+      IMSSOFFLIN13_n184DFElemFormIsFlt = new boolean[] {false} ;
+      IMSSOFFLIN13_A183DFElemFormCmpWth = new String[] {""} ;
+      IMSSOFFLIN13_n183DFElemFormCmpWth = new boolean[] {false} ;
+      IMSSOFFLIN13_A182DFElemFormLblWth = new String[] {""} ;
+      IMSSOFFLIN13_n182DFElemFormLblWth = new boolean[] {false} ;
+      IMSSOFFLIN13_A307DFElemFormPrtPic = new String[] {""} ;
+      IMSSOFFLIN13_A282DFElemFormPrtShwNbr = new boolean[] {false} ;
+      IMSSOFFLIN13_A281DFElemFormPrtNumColSkip = new int[1] ;
+      IMSSOFFLIN13_A273DFElemFormPrtNumRowSkip = new int[1] ;
+      IMSSOFFLIN13_A271DFElemFormPrtAddRows = new boolean[] {false} ;
+      IMSSOFFLIN13_A270DFElemFormPrtName = new String[] {""} ;
+      IMSSOFFLIN13_A191DFElemFormIsVisPrt = new boolean[] {false} ;
+      IMSSOFFLIN13_A190DFElemFormIsVis = new boolean[] {false} ;
+      IMSSOFFLIN13_A189DFElemFormIsColap = new boolean[] {false} ;
+      IMSSOFFLIN13_A188DFElemFormAllowIns = new boolean[] {false} ;
+      IMSSOFFLIN13_n188DFElemFormAllowIns = new boolean[] {false} ;
+      IMSSOFFLIN13_A187DFElemFormAllowUpd = new boolean[] {false} ;
+      IMSSOFFLIN13_n187DFElemFormAllowUpd = new boolean[] {false} ;
+      IMSSOFFLIN13_A186DFElemFormAllowDlt = new boolean[] {false} ;
+      IMSSOFFLIN13_n186DFElemFormAllowDlt = new boolean[] {false} ;
+      IMSSOFFLIN13_A181DFElemFormInhType = new String[] {""} ;
+      IMSSOFFLIN13_A36DFElemFormPos = new int[1] ;
+      IMSSOFFLIN13_A185DFElemFormName = new String[] {""} ;
+      IMSSOFFLIN13_A19DFElemVer = new int[1] ;
+      IMSSOFFLIN13_A18DFElemId = new int[1] ;
+      IMSSOFFLIN13_A12DFFormVer = new int[1] ;
+      IMSSOFFLIN13_A11DFFormId = new int[1] ;
+      A299DFElemFormLoadRule = "" ;
+      A263DFElemFormMetadata = "" ;
+      A184DFElemFormIsFlt = "" ;
+      A183DFElemFormCmpWth = "" ;
+      A182DFElemFormLblWth = "" ;
+      A307DFElemFormPrtPic = "" ;
+      A270DFElemFormPrtName = "" ;
+      A181DFElemFormInhType = "" ;
+      A185DFElemFormName = "" ;
+      IMSSOFFLIN14_A145DFElemFormInstFileName = new String[] {""} ;
+      IMSSOFFLIN14_n145DFElemFormInstFileName = new boolean[] {false} ;
+      IMSSOFFLIN14_A144DFElemFormInstFileType = new String[] {""} ;
+      IMSSOFFLIN14_n144DFElemFormInstFileType = new boolean[] {false} ;
+      IMSSOFFLIN14_A143DFElemFormInstBlob = new String[] {""} ;
+      IMSSOFFLIN14_n143DFElemFormInstBlob = new boolean[] {false} ;
+      IMSSOFFLIN14_A141DFElemFormInstVal = new String[] {""} ;
+      IMSSOFFLIN14_n141DFElemFormInstVal = new boolean[] {false} ;
+      IMSSOFFLIN14_A19DFElemVer = new int[1] ;
+      IMSSOFFLIN14_A18DFElemId = new int[1] ;
+      IMSSOFFLIN14_A9DFFormInstId = new long[1] ;
+      A145DFElemFormInstFileName = "" ;
+      A144DFElemFormInstFileType = "" ;
+      A143DFElemFormInstBlob = "" ;
+      A141DFElemFormInstVal = "" ;
+      IMSSOFFLIN15_A148DFElemFormInstSubElemFileName = new String[] {""} ;
+      IMSSOFFLIN15_n148DFElemFormInstSubElemFileName = new boolean[] {false} ;
+      IMSSOFFLIN15_A147DFElemFormInstSubElemFileType = new String[] {""} ;
+      IMSSOFFLIN15_n147DFElemFormInstSubElemFileType = new boolean[] {false} ;
+      IMSSOFFLIN15_A37DFSubElemFormElemId = new int[1] ;
+      IMSSOFFLIN15_A38DFSubElemFormElemVer = new int[1] ;
+      IMSSOFFLIN15_A69DFElemFormInstSubElemRow = new int[1] ;
+      IMSSOFFLIN15_A142DFElemFormInstSubElemVal = new String[] {""} ;
+      IMSSOFFLIN15_n142DFElemFormInstSubElemVal = new boolean[] {false} ;
+      IMSSOFFLIN15_A146DFElemFormInstSubElemBlob = new String[] {""} ;
+      IMSSOFFLIN15_n146DFElemFormInstSubElemBlob = new boolean[] {false} ;
+      IMSSOFFLIN15_A68DFElemFormInstSubElemId = new int[1] ;
+      IMSSOFFLIN15_A19DFElemVer = new int[1] ;
+      IMSSOFFLIN15_A18DFElemId = new int[1] ;
+      IMSSOFFLIN15_A9DFFormInstId = new long[1] ;
+      A148DFElemFormInstSubElemFileName = "" ;
+      A147DFElemFormInstSubElemFileType = "" ;
+      A142DFElemFormInstSubElemVal = "" ;
+      A146DFElemFormInstSubElemBlob = "" ;
+      IMSSOFFLIN16_A284DFTempOutFm = new String[] {""} ;
+      IMSSOFFLIN16_A278DFTempAddParmPrgName = new String[] {""} ;
+      IMSSOFFLIN16_A277DFTempBlob = new String[] {""} ;
+      IMSSOFFLIN16_A286DFTempFm = new String[] {""} ;
+      IMSSOFFLIN16_A283DFTempDsc = new String[] {""} ;
+      IMSSOFFLIN16_A55DFTempName = new String[] {""} ;
+      IMSSOFFLIN16_A12DFFormVer = new int[1] ;
+      IMSSOFFLIN16_A11DFFormId = new int[1] ;
+      A284DFTempOutFm = "" ;
+      A278DFTempAddParmPrgName = "" ;
+      A277DFTempBlob = "" ;
+      A286DFTempFm = "" ;
+      A283DFTempDsc = "" ;
+      A55DFTempName = "" ;
+      IMSSOFFLIN17_A298DFFormIsSD = new boolean[] {false} ;
+      IMSSOFFLIN17_A157DFFormRunDLT = new boolean[] {false} ;
+      IMSSOFFLIN17_A233DFFormHelpURL = new String[] {""} ;
+      IMSSOFFLIN17_A173DFFormPrefix = new String[] {""} ;
+      IMSSOFFLIN17_A232DFFormPmtHgh = new int[1] ;
+      IMSSOFFLIN17_n232DFFormPmtHgh = new boolean[] {false} ;
+      IMSSOFFLIN17_A231DFFormPmtWth = new int[1] ;
+      IMSSOFFLIN17_n231DFFormPmtWth = new boolean[] {false} ;
+      IMSSOFFLIN17_A234DFFormAct = new boolean[] {false} ;
+      IMSSOFFLIN17_A308DFFormDsc = new String[] {""} ;
+      IMSSOFFLIN17_A31DFFormName = new String[] {""} ;
+      IMSSOFFLIN17_A30DFFormGuid = new java.util.UUID[] {java.util.UUID.fromString("00000000-0000-0000-0000-000000000000")} ;
+      IMSSOFFLIN17_A12DFFormVer = new int[1] ;
+      IMSSOFFLIN17_A11DFFormId = new int[1] ;
+      A233DFFormHelpURL = "" ;
+      A173DFFormPrefix = "" ;
+      A308DFFormDsc = "" ;
+      A31DFFormName = "" ;
+      A30DFFormGuid = java.util.UUID.fromString("00000000-0000-0000-0000-000000000000") ;
+      IMSSOFFLIN18_A222DFDomStaValOptDsc = new String[] {""} ;
+      IMSSOFFLIN18_A34DFDomStaValOptOrd = new int[1] ;
+      IMSSOFFLIN18_A33DFDomStaValOptCod = new String[] {""} ;
+      IMSSOFFLIN18_A32DFDomId = new int[1] ;
+      IMSSOFFLIN18_n32DFDomId = new boolean[] {false} ;
+      A222DFDomStaValOptDsc = "" ;
+      A33DFDomStaValOptCod = "" ;
+      IMSSOFFLIN19_A197DFFormInstSignedPDF = new String[] {""} ;
+      IMSSOFFLIN19_n197DFFormInstSignedPDF = new boolean[] {false} ;
+      IMSSOFFLIN19_A198DFFormInstSignedBy = new String[] {""} ;
+      IMSSOFFLIN19_n198DFFormInstSignedBy = new boolean[] {false} ;
+      IMSSOFFLIN19_A155DFFormInstDT = new java.util.Date[] {GXutil.nullDate()} ;
+      IMSSOFFLIN19_A29DFFormInstFormVer = new int[1] ;
+      IMSSOFFLIN19_A28DFFormInstFormId = new int[1] ;
+      IMSSOFFLIN19_A9DFFormInstId = new long[1] ;
+      A197DFFormInstSignedPDF = "" ;
+      A198DFFormInstSignedBy = "" ;
+      A155DFFormInstDT = GXutil.resetTime( GXutil.nullDate() );
+      IMSSOFFLIN20_A305DFElemReq = new boolean[] {false} ;
+      IMSSOFFLIN20_A300DFElemLoadRule = new String[] {""} ;
+      IMSSOFFLIN20_n300DFElemLoadRule = new boolean[] {false} ;
+      IMSSOFFLIN20_A265DFElemMetadata = new String[] {""} ;
+      IMSSOFFLIN20_n265DFElemMetadata = new boolean[] {false} ;
+      IMSSOFFLIN20_A238DFElemIsColap = new boolean[] {false} ;
+      IMSSOFFLIN20_A306DFElemPrtPic = new String[] {""} ;
+      IMSSOFFLIN20_A280DFElemPrtShwNbr = new boolean[] {false} ;
+      IMSSOFFLIN20_A279DFElemPrtNumColSkip = new int[1] ;
+      IMSSOFFLIN20_A274DFElemPrtNumRowSkip = new int[1] ;
+      IMSSOFFLIN20_A272DFElemPrtAddRows = new boolean[] {false} ;
+      IMSSOFFLIN20_A269DFElemPrtName = new String[] {""} ;
+      IMSSOFFLIN20_A260DFElemIsVisPrt = new boolean[] {false} ;
+      IMSSOFFLIN20_A237DFElemIsVis = new boolean[] {false} ;
+      IMSSOFFLIN20_A257DFElemLblWth = new String[] {""} ;
+      IMSSOFFLIN20_n257DFElemLblWth = new boolean[] {false} ;
+      IMSSOFFLIN20_A243DFElemCmpWth = new String[] {""} ;
+      IMSSOFFLIN20_n243DFElemCmpWth = new boolean[] {false} ;
+      IMSSOFFLIN20_A242DFElemIsFlt = new String[] {""} ;
+      IMSSOFFLIN20_n242DFElemIsFlt = new boolean[] {false} ;
+      IMSSOFFLIN20_A256DFElemFileType = new String[] {""} ;
+      IMSSOFFLIN20_n256DFElemFileType = new boolean[] {false} ;
+      IMSSOFFLIN20_A254DFElemRegexVal = new String[] {""} ;
+      IMSSOFFLIN20_n254DFElemRegexVal = new boolean[] {false} ;
+      IMSSOFFLIN20_A253DFElemAllowDlt = new boolean[] {false} ;
+      IMSSOFFLIN20_n253DFElemAllowDlt = new boolean[] {false} ;
+      IMSSOFFLIN20_A252DFElemAllowUpd = new boolean[] {false} ;
+      IMSSOFFLIN20_n252DFElemAllowUpd = new boolean[] {false} ;
+      IMSSOFFLIN20_A251DFElemAllowIns = new boolean[] {false} ;
+      IMSSOFFLIN20_n251DFElemAllowIns = new boolean[] {false} ;
+      IMSSOFFLIN20_A250DFElemUseBtns = new boolean[] {false} ;
+      IMSSOFFLIN20_n250DFElemUseBtns = new boolean[] {false} ;
+      IMSSOFFLIN20_A249DFElemIsOrd = new boolean[] {false} ;
+      IMSSOFFLIN20_n249DFElemIsOrd = new boolean[] {false} ;
+      IMSSOFFLIN20_A248DFElemMaxSuggRes = new int[1] ;
+      IMSSOFFLIN20_n248DFElemMaxSuggRes = new boolean[] {false} ;
+      IMSSOFFLIN20_A247DFElemForceSuggSel = new boolean[] {false} ;
+      IMSSOFFLIN20_n247DFElemForceSuggSel = new boolean[] {false} ;
+      IMSSOFFLIN20_A246DFElemMinCntCharSugg = new int[1] ;
+      IMSSOFFLIN20_n246DFElemMinCntCharSugg = new boolean[] {false} ;
+      IMSSOFFLIN20_A258DFElemDscPrgName = new String[] {""} ;
+      IMSSOFFLIN20_A245DFElemLoadPrgName = new String[] {""} ;
+      IMSSOFFLIN20_n245DFElemLoadPrgName = new boolean[] {false} ;
+      IMSSOFFLIN20_A267DFElemBtnPos = new String[] {""} ;
+      IMSSOFFLIN20_n267DFElemBtnPos = new boolean[] {false} ;
+      IMSSOFFLIN20_A268DFElemShwNbrLbl = new String[] {""} ;
+      IMSSOFFLIN20_n268DFElemShwNbrLbl = new boolean[] {false} ;
+      IMSSOFFLIN20_A266DFElemShwNbr = new boolean[] {false} ;
+      IMSSOFFLIN20_n266DFElemShwNbr = new boolean[] {false} ;
+      IMSSOFFLIN20_A261DFElemDateSel = new boolean[] {false} ;
+      IMSSOFFLIN20_n261DFElemDateSel = new boolean[] {false} ;
+      IMSSOFFLIN20_A244DFElemHasPmpt = new boolean[] {false} ;
+      IMSSOFFLIN20_n244DFElemHasPmpt = new boolean[] {false} ;
+      IMSSOFFLIN20_A180DFElemDftVal = new String[] {""} ;
+      IMSSOFFLIN20_n180DFElemDftVal = new boolean[] {false} ;
+      IMSSOFFLIN20_A241DFElemCntCols = new int[1] ;
+      IMSSOFFLIN20_n241DFElemCntCols = new boolean[] {false} ;
+      IMSSOFFLIN20_A240DFElemCntRows = new int[1] ;
+      IMSSOFFLIN20_n240DFElemCntRows = new boolean[] {false} ;
+      IMSSOFFLIN20_A239DFElemCntDec = new int[1] ;
+      IMSSOFFLIN20_n239DFElemCntDec = new boolean[] {false} ;
+      IMSSOFFLIN20_A255DFElemWth = new int[1] ;
+      IMSSOFFLIN20_n255DFElemWth = new boolean[] {false} ;
+      IMSSOFFLIN20_A236DFElemLen = new int[1] ;
+      IMSSOFFLIN20_n236DFElemLen = new boolean[] {false} ;
+      IMSSOFFLIN20_A196DFElemDsp = new String[] {""} ;
+      IMSSOFFLIN20_n196DFElemDsp = new boolean[] {false} ;
+      IMSSOFFLIN20_A178DFElemType = new String[] {""} ;
+      IMSSOFFLIN20_A32DFDomId = new int[1] ;
+      IMSSOFFLIN20_n32DFDomId = new boolean[] {false} ;
+      IMSSOFFLIN20_A192DFElemClsName = new String[] {""} ;
+      IMSSOFFLIN20_n192DFElemClsName = new boolean[] {false} ;
+      IMSSOFFLIN20_A235DFElemDsc = new String[] {""} ;
+      IMSSOFFLIN20_n235DFElemDsc = new boolean[] {false} ;
+      IMSSOFFLIN20_A149DFElemName = new String[] {""} ;
+      IMSSOFFLIN20_A35DFElemGuid = new java.util.UUID[] {java.util.UUID.fromString("00000000-0000-0000-0000-000000000000")} ;
+      IMSSOFFLIN20_A19DFElemVer = new int[1] ;
+      IMSSOFFLIN20_A18DFElemId = new int[1] ;
+      A300DFElemLoadRule = "" ;
+      A265DFElemMetadata = "" ;
+      A306DFElemPrtPic = "" ;
+      A269DFElemPrtName = "" ;
+      A257DFElemLblWth = "" ;
+      A243DFElemCmpWth = "" ;
+      A242DFElemIsFlt = "" ;
+      A256DFElemFileType = "" ;
+      A254DFElemRegexVal = "" ;
+      A258DFElemDscPrgName = "" ;
+      A245DFElemLoadPrgName = "" ;
+      A267DFElemBtnPos = "" ;
+      A268DFElemShwNbrLbl = "" ;
+      A180DFElemDftVal = "" ;
+      A196DFElemDsp = "" ;
+      A178DFElemType = "" ;
+      A192DFElemClsName = "" ;
+      A235DFElemDsc = "" ;
+      A149DFElemName = "" ;
+      A35DFElemGuid = java.util.UUID.fromString("00000000-0000-0000-0000-000000000000") ;
+      IMSSOFFLIN21_A71cveEspecialidad = new String[] {""} ;
+      IMSSOFFLIN21_A12DFFormVer = new int[1] ;
+      IMSSOFFLIN21_A11DFFormId = new int[1] ;
+      A71cveEspecialidad = "" ;
+      IMSSOFFLIN22_A348PXDXFechaAsignacion = new java.util.Date[] {GXutil.nullDate()} ;
+      IMSSOFFLIN22_A347OcaSer = new short[1] ;
+      IMSSOFFLIN22_A346TpoDX = new short[1] ;
+      IMSSOFFLIN22_A345DX = new int[1] ;
+      IMSSOFFLIN22_A353IDEEPaciente = new String[] {""} ;
+      A348PXDXFechaAsignacion = GXutil.resetTime( GXutil.nullDate() );
+      A353IDEEPaciente = "" ;
+      IMSSOFFLIN23_A310DFDomPrtDsc = new boolean[] {false} ;
+      IMSSOFFLIN23_n310DFDomPrtDsc = new boolean[] {false} ;
+      IMSSOFFLIN23_A223DFDomLblWth = new String[] {""} ;
+      IMSSOFFLIN23_n223DFDomLblWth = new boolean[] {false} ;
+      IMSSOFFLIN23_A219DFDomCmpWth = new String[] {""} ;
+      IMSSOFFLIN23_n219DFDomCmpWth = new boolean[] {false} ;
+      IMSSOFFLIN23_A218DFDomIsFlt = new String[] {""} ;
+      IMSSOFFLIN23_n218DFDomIsFlt = new boolean[] {false} ;
+      IMSSOFFLIN23_A221DFDomFileType = new String[] {""} ;
+      IMSSOFFLIN23_n221DFDomFileType = new boolean[] {false} ;
+      IMSSOFFLIN23_A217DFDomRegexVal = new String[] {""} ;
+      IMSSOFFLIN23_A213DFDomAllowDlt = new boolean[] {false} ;
+      IMSSOFFLIN23_n213DFDomAllowDlt = new boolean[] {false} ;
+      IMSSOFFLIN23_A212DFDomAllowUpd = new boolean[] {false} ;
+      IMSSOFFLIN23_n212DFDomAllowUpd = new boolean[] {false} ;
+      IMSSOFFLIN23_A211DFDomAllowIns = new boolean[] {false} ;
+      IMSSOFFLIN23_n211DFDomAllowIns = new boolean[] {false} ;
+      IMSSOFFLIN23_A210DFDomUseBtns = new boolean[] {false} ;
+      IMSSOFFLIN23_n210DFDomUseBtns = new boolean[] {false} ;
+      IMSSOFFLIN23_A209DFDomIsOrd = new boolean[] {false} ;
+      IMSSOFFLIN23_n209DFDomIsOrd = new boolean[] {false} ;
+      IMSSOFFLIN23_A207DFDomMaxSuggRes = new int[1] ;
+      IMSSOFFLIN23_n207DFDomMaxSuggRes = new boolean[] {false} ;
+      IMSSOFFLIN23_A206DFDomForceSuggSel = new boolean[] {false} ;
+      IMSSOFFLIN23_n206DFDomForceSuggSel = new boolean[] {false} ;
+      IMSSOFFLIN23_A205DFDomMinCntCharSugg = new int[1] ;
+      IMSSOFFLIN23_n205DFDomMinCntCharSugg = new boolean[] {false} ;
+      IMSSOFFLIN23_A208DFDomDftVal = new String[] {""} ;
+      IMSSOFFLIN23_n208DFDomDftVal = new boolean[] {false} ;
+      IMSSOFFLIN23_A216DFDomCntCols = new int[1] ;
+      IMSSOFFLIN23_A215DFDomCntRows = new int[1] ;
+      IMSSOFFLIN23_A214DFDomCntDec = new int[1] ;
+      IMSSOFFLIN23_A220DFDomWth = new int[1] ;
+      IMSSOFFLIN23_A204DFDomLen = new int[1] ;
+      IMSSOFFLIN23_A195DFDomDsp = new String[] {""} ;
+      IMSSOFFLIN23_n195DFDomDsp = new boolean[] {false} ;
+      IMSSOFFLIN23_A194DFDomType = new String[] {""} ;
+      IMSSOFFLIN23_A224DFDomGUID = new java.util.UUID[] {java.util.UUID.fromString("00000000-0000-0000-0000-000000000000")} ;
+      IMSSOFFLIN23_A203DFDomDsc = new String[] {""} ;
+      IMSSOFFLIN23_A32DFDomId = new int[1] ;
+      IMSSOFFLIN23_n32DFDomId = new boolean[] {false} ;
+      A223DFDomLblWth = "" ;
+      A219DFDomCmpWth = "" ;
+      A218DFDomIsFlt = "" ;
+      A221DFDomFileType = "" ;
+      A217DFDomRegexVal = "" ;
+      A208DFDomDftVal = "" ;
+      A195DFDomDsp = "" ;
+      A194DFDomType = "" ;
+      A224DFDomGUID = java.util.UUID.fromString("00000000-0000-0000-0000-000000000000") ;
+      A203DFDomDsc = "" ;
+      IMSSOFFLIN24_A14DFFormRstVal = new String[] {""} ;
+      IMSSOFFLIN24_A13DFFormRstId = new int[1] ;
+      IMSSOFFLIN24_A12DFFormVer = new int[1] ;
+      IMSSOFFLIN24_A11DFFormId = new int[1] ;
+      A14DFFormRstVal = "" ;
+      IMSSOFFLIN25_A164DFUserRstPwdIni = new boolean[] {false} ;
+      IMSSOFFLIN25_A24DFUserRstVal = new String[] {""} ;
+      IMSSOFFLIN25_A23DFUserRstId = new int[1] ;
+      IMSSOFFLIN25_A22DFUserExtId = new String[] {""} ;
+      A24DFUserRstVal = "" ;
+      A22DFUserExtId = "" ;
+      IMSSOFFLIN26_A39DFSubElemFormPos = new int[1] ;
+      IMSSOFFLIN26_n39DFSubElemFormPos = new boolean[] {false} ;
+      IMSSOFFLIN26_A38DFSubElemFormElemVer = new int[1] ;
+      IMSSOFFLIN26_A37DFSubElemFormElemId = new int[1] ;
+      IMSSOFFLIN26_A19DFElemVer = new int[1] ;
+      IMSSOFFLIN26_A18DFElemId = new int[1] ;
+      IMSSOFFLIN26_A12DFFormVer = new int[1] ;
+      IMSSOFFLIN26_A11DFFormId = new int[1] ;
+      IMSSOFFLIN27_A42DFFilElemFormElemVer = new int[1] ;
+      IMSSOFFLIN27_A41DFFilElemFormElemId = new int[1] ;
+      IMSSOFFLIN27_A43DFFilElemFormPos = new short[1] ;
+      IMSSOFFLIN27_A40DFFilElemFormId = new int[1] ;
+      IMSSOFFLIN27_A19DFElemVer = new int[1] ;
+      IMSSOFFLIN27_A18DFElemId = new int[1] ;
+      IMSSOFFLIN27_A12DFFormVer = new int[1] ;
+      IMSSOFFLIN27_A11DFFormId = new int[1] ;
+      IMSSOFFLIN28_A7HospitalId = new short[1] ;
+      IMSSOFFLIN28_n7HospitalId = new boolean[] {false} ;
+      IMSSOFFLIN28_A104ServicioDescripcion = new String[] {""} ;
+      IMSSOFFLIN28_A6ServicioId = new short[1] ;
+      A104ServicioDescripcion = "" ;
+      IMSSOFFLIN29_A12DFFormVer = new int[1] ;
+      IMSSOFFLIN29_A11DFFormId = new int[1] ;
+      IMSSOFFLIN29_A321fecBajaEspecialidad = new java.util.Date[] {GXutil.nullDate()} ;
+      IMSSOFFLIN29_n321fecBajaEspecialidad = new boolean[] {false} ;
+      IMSSOFFLIN29_A320desEspecialidad = new String[] {""} ;
+      IMSSOFFLIN29_A71cveEspecialidad = new String[] {""} ;
+      A321fecBajaEspecialidad = GXutil.nullDate() ;
+      A320desEspecialidad = "" ;
+      IMSSOFFLIN30_A28DFFormInstFormId = new int[1] ;
+      IMSSOFFLIN30_A139DFUplFileExt = new String[] {""} ;
+      IMSSOFFLIN30_A140DFUplFileName = new String[] {""} ;
+      IMSSOFFLIN30_A138DFUplFile = new String[] {""} ;
+      IMSSOFFLIN30_A10DFUplKey = new String[] {""} ;
+      IMSSOFFLIN30_A9DFFormInstId = new long[1] ;
+      A139DFUplFileExt = "" ;
+      A140DFUplFileName = "" ;
+      A138DFUplFile = "" ;
+      A10DFUplKey = "" ;
       GXv_objcol_gxjsonable7 = new com.genexus.GxUnknownObjectCollection [1] ;
       GXv_objcol_gxjsonable6 = new com.genexus.GxUnknownObjectCollection [1] ;
       GXv_objcol_gxjsonable5 = new com.genexus.GxUnknownObjectCollection [1] ;
@@ -4054,105 +4470,116 @@ public final  class imssofflinedatabase extends GXProcedure
       pr_default = new DataStoreProvider(context, remoteHandle, new com.imss.imssofflinedatabase__default(),
          new Object[] {
              new Object[] {
-            IMSSOFFLIN2_A312MedicoDebeMostarTerm, IMSSOFFLIN2_A302MedicoDebeValidarDatos, IMSSOFFLIN2_A300MedicoUltimaActualizacion, IMSSOFFLIN2_A297MedicoMatricula, IMSSOFFLIN2_n297MedicoMatricula, IMSSOFFLIN2_A296MedicoApellidoMaterno, IMSSOFFLIN2_A295MedicoApellidoPaterno, IMSSOFFLIN2_A294MedicoSegundoNombre, IMSSOFFLIN2_A293MedicoPrimerNombre, IMSSOFFLIN2_A292UserMedico
+            IMSSOFFLIN2_A341FecBajaMed, IMSSOFFLIN2_n341FecBajaMed, IMSSOFFLIN2_A303MedDebMosTerm, IMSSOFFLIN2_n303MedDebMosTerm, IMSSOFFLIN2_A295MedDebValDat, IMSSOFFLIN2_A293MedUltAct, IMSSOFFLIN2_A340MedCedProf, IMSSOFFLIN2_A291MedApMat, IMSSOFFLIN2_A290MedApPat, IMSSOFFLIN2_A288MedNom,
+            IMSSOFFLIN2_A64UserMed, IMSSOFFLIN2_A65MedMatricula
             }
             , new Object[] {
-            IMSSOFFLIN3_A75PacienteNSSAgregado, IMSSOFFLIN3_A81Matricula, IMSSOFFLIN3_A3PacienteAgregado, IMSSOFFLIN3_A2PacienteNSS
+            IMSSOFFLIN3_A133PacienteNSSAgregado, IMSSOFFLIN3_A8Matricula, IMSSOFFLIN3_A3PacienteAgregado, IMSSOFFLIN3_A2PacienteNSS
             }
             , new Object[] {
-            IMSSOFFLIN4_A69CIECodigo, IMSSOFFLIN4_A10CIE10Descripcion, IMSSOFFLIN4_A1CIE10Id
+            IMSSOFFLIN4_A167DFParmIsMetaData, IMSSOFFLIN4_A166DFParmVal, IMSSOFFLIN4_A165DFParmName, IMSSOFFLIN4_A25DFParmId
             }
             , new Object[] {
-            IMSSOFFLIN5_A75PacienteNSSAgregado, IMSSOFFLIN5_A34MMatricula, IMSSOFFLIN5_n34MMatricula, IMSSOFFLIN5_A33MApMat, IMSSOFFLIN5_n33MApMat, IMSSOFFLIN5_A32MApPat, IMSSOFFLIN5_n32MApPat, IMSSOFFLIN5_A31MNombre, IMSSOFFLIN5_n31MNombre, IMSSOFFLIN5_A30MBMatricula,
-            IMSSOFFLIN5_n30MBMatricula, IMSSOFFLIN5_A29MBApMat, IMSSOFFLIN5_n29MBApMat, IMSSOFFLIN5_A28MBApPat, IMSSOFFLIN5_n28MBApPat, IMSSOFFLIN5_A27MBNombre, IMSSOFFLIN5_n27MBNombre, IMSSOFFLIN5_A26JSMatricula, IMSSOFFLIN5_n26JSMatricula, IMSSOFFLIN5_A25JSApMat,
-            IMSSOFFLIN5_n25JSApMat, IMSSOFFLIN5_A24JSApPat, IMSSOFFLIN5_n24JSApPat, IMSSOFFLIN5_A23JSNombre, IMSSOFFLIN5_n23JSNombre, IMSSOFFLIN5_A22DiagnosticoCirugiaFecha, IMSSOFFLIN5_n22DiagnosticoCirugiaFecha, IMSSOFFLIN5_A21DiagnosticoCirugia, IMSSOFFLIN5_n21DiagnosticoCirugia, IMSSOFFLIN5_A20Cama,
-            IMSSOFFLIN5_n20Cama, IMSSOFFLIN5_A6ServicioId, IMSSOFFLIN5_A19DiagnosticoResumen, IMSSOFFLIN5_n19DiagnosticoResumen, IMSSOFFLIN5_A18DiagnosticoComplemento, IMSSOFFLIN5_n18DiagnosticoComplemento, IMSSOFFLIN5_A35DiagnosticoFechaAlta, IMSSOFFLIN5_n35DiagnosticoFechaAlta, IMSSOFFLIN5_A17DiagnosticoFechaIngreso, IMSSOFFLIN5_n17DiagnosticoFechaIngreso,
-            IMSSOFFLIN5_A1CIE10Id, IMSSOFFLIN5_A3PacienteAgregado, IMSSOFFLIN5_A2PacienteNSS
+            IMSSOFFLIN5_A76CIE10Descripcion, IMSSOFFLIN5_A127CIECodigo, IMSSOFFLIN5_A1CIE10Id
             }
             , new Object[] {
-            IMSSOFFLIN6_A323nada, IMSSOFFLIN6_A311TextoDescripcion, IMSSOFFLIN6_A310TextoTitulo, IMSSOFFLIN6_A309TextoId
+            IMSSOFFLIN6_A133PacienteNSSAgregado, IMSSOFFLIN6_A102MMatricula, IMSSOFFLIN6_n102MMatricula, IMSSOFFLIN6_A101MApMat, IMSSOFFLIN6_n101MApMat, IMSSOFFLIN6_A100MApPat, IMSSOFFLIN6_n100MApPat, IMSSOFFLIN6_A99MNombre, IMSSOFFLIN6_n99MNombre, IMSSOFFLIN6_A98MBMatricula,
+            IMSSOFFLIN6_n98MBMatricula, IMSSOFFLIN6_A97MBApMat, IMSSOFFLIN6_n97MBApMat, IMSSOFFLIN6_A96MBApPat, IMSSOFFLIN6_n96MBApPat, IMSSOFFLIN6_A95MBNombre, IMSSOFFLIN6_n95MBNombre, IMSSOFFLIN6_A94JSMatricula, IMSSOFFLIN6_n94JSMatricula, IMSSOFFLIN6_A93JSApMat,
+            IMSSOFFLIN6_n93JSApMat, IMSSOFFLIN6_A92JSApPat, IMSSOFFLIN6_n92JSApPat, IMSSOFFLIN6_A91JSNombre, IMSSOFFLIN6_n91JSNombre, IMSSOFFLIN6_A90DiagnosticoCirugiaFecha, IMSSOFFLIN6_n90DiagnosticoCirugiaFecha, IMSSOFFLIN6_A89DiagnosticoCirugia, IMSSOFFLIN6_n89DiagnosticoCirugia, IMSSOFFLIN6_A88Cama,
+            IMSSOFFLIN6_n88Cama, IMSSOFFLIN6_A6ServicioId, IMSSOFFLIN6_A86DiagnosticoComplemento, IMSSOFFLIN6_n86DiagnosticoComplemento, IMSSOFFLIN6_A87DiagnosticoResumen, IMSSOFFLIN6_n87DiagnosticoResumen, IMSSOFFLIN6_A103DiagnosticoFechaAlta, IMSSOFFLIN6_n103DiagnosticoFechaAlta, IMSSOFFLIN6_A85DiagnosticoFechaIngreso, IMSSOFFLIN6_n85DiagnosticoFechaIngreso,
+            IMSSOFFLIN6_A1CIE10Id, IMSSOFFLIN6_A3PacienteAgregado, IMSSOFFLIN6_A2PacienteNSS
             }
             , new Object[] {
-            IMSSOFFLIN7_A169DFParmIsMetaData, IMSSOFFLIN7_A168DFParmVal, IMSSOFFLIN7_A167DFParmName, IMSSOFFLIN7_A102DFParmId
+            IMSSOFFLIN7_A314nada, IMSSOFFLIN7_A302TextoDescripcion, IMSSOFFLIN7_A301TextoTitulo, IMSSOFFLIN7_A67TextoId
             }
             , new Object[] {
-            IMSSOFFLIN8_A75PacienteNSSAgregado, IMSSOFFLIN8_A40000DXAuxImagenImg_GXI, IMSSOFFLIN8_A322DXAuxImagenExtension, IMSSOFFLIN8_A73DXAuxImagenNombre, IMSSOFFLIN8_A16DXAuxImagenUserAlta, IMSSOFFLIN8_A15DXAuxImagenFechaAlta, IMSSOFFLIN8_A14DXAuxImagenImg, IMSSOFFLIN8_A5DXAuxImagenId, IMSSOFFLIN8_A1CIE10Id, IMSSOFFLIN8_A3PacienteAgregado,
+            IMSSOFFLIN8_A133PacienteNSSAgregado, IMSSOFFLIN8_A40000DXAuxImagenImg_GXI, IMSSOFFLIN8_A84DXAuxImagenUserAlta, IMSSOFFLIN8_A83DXAuxImagenFechaAlta, IMSSOFFLIN8_A82DXAuxImagenImg, IMSSOFFLIN8_A313DXAuxImagenExtension, IMSSOFFLIN8_A132DXAuxImagenNombre, IMSSOFFLIN8_A5DXAuxImagenId, IMSSOFFLIN8_A1CIE10Id, IMSSOFFLIN8_A3PacienteAgregado,
             IMSSOFFLIN8_A2PacienteNSS
             }
             , new Object[] {
-            IMSSOFFLIN9_A75PacienteNSSAgregado, IMSSOFFLIN9_A74DXAuxDoctoNombre, IMSSOFFLIN9_A82DXAuxDoctoExtension, IMSSOFFLIN9_A13DXAuxDoctoUserAlta, IMSSOFFLIN9_A12DXAuxDoctoFechaAlta, IMSSOFFLIN9_A11DXAuxDoctoDocumento, IMSSOFFLIN9_A4DXAuxDoctoId, IMSSOFFLIN9_A1CIE10Id, IMSSOFFLIN9_A3PacienteAgregado, IMSSOFFLIN9_A2PacienteNSS
+            IMSSOFFLIN9_A133PacienteNSSAgregado, IMSSOFFLIN9_A79DXAuxDoctoNombre, IMSSOFFLIN9_A78DXAuxDoctoExtension, IMSSOFFLIN9_A81DXAuxDoctoUserAlta, IMSSOFFLIN9_A80DXAuxDoctoFechaAlta, IMSSOFFLIN9_A77DXAuxDoctoDocumento, IMSSOFFLIN9_A4DXAuxDoctoId, IMSSOFFLIN9_A1CIE10Id, IMSSOFFLIN9_A3PacienteAgregado, IMSSOFFLIN9_A2PacienteNSS
             }
             , new Object[] {
-            IMSSOFFLIN10_A321PacienteServicioId, IMSSOFFLIN10_A298PacienteDiagnosticoPhone, IMSSOFFLIN10_A291PacienteCie10Id, IMSSOFFLIN10_A76PAcienteFechaIngreso, IMSSOFFLIN10_A75PacienteNSSAgregado, IMSSOFFLIN10_A72PacienteCama, IMSSOFFLIN10_A71PacienteDiagnosticoResumido, IMSSOFFLIN10_A70PacienteDiagnostico, IMSSOFFLIN10_A68PacienteFechaNacimiento, IMSSOFFLIN10_A55PacienteNombreCompleto,
-            IMSSOFFLIN10_A54PacienteReferencia, IMSSOFFLIN10_n54PacienteReferencia, IMSSOFFLIN10_A53PacienteFamiliar, IMSSOFFLIN10_n53PacienteFamiliar, IMSSOFFLIN10_A52PacienteTelefono, IMSSOFFLIN10_n52PacienteTelefono, IMSSOFFLIN10_A51PacienteGenero, IMSSOFFLIN10_n51PacienteGenero, IMSSOFFLIN10_A50PacienteEdad, IMSSOFFLIN10_A46PacienteApMat,
-            IMSSOFFLIN10_n46PacienteApMat, IMSSOFFLIN10_A45PacienteApPat, IMSSOFFLIN10_A44PacienteNombre, IMSSOFFLIN10_A3PacienteAgregado, IMSSOFFLIN10_A2PacienteNSS
+            IMSSOFFLIN10_A330ClavePresupuestal, IMSSOFFLIN10_A328IDEE, IMSSOFFLIN10_n328IDEE, IMSSOFFLIN10_A325CURP, IMSSOFFLIN10_n325CURP, IMSSOFFLIN10_A327DhUMF, IMSSOFFLIN10_n327DhUMF, IMSSOFFLIN10_A326DhDeleg, IMSSOFFLIN10_n326DhDeleg, IMSSOFFLIN10_A324Consultorio,
+            IMSSOFFLIN10_n324Consultorio, IMSSOFFLIN10_A323ConDerechoSm, IMSSOFFLIN10_n323ConDerechoSm, IMSSOFFLIN10_A322ConDerechoInc, IMSSOFFLIN10_n322ConDerechoInc, IMSSOFFLIN10_A312PacienteServicioId, IMSSOFFLIN10_A130PacienteCie10Id, IMSSOFFLIN10_A133PacienteNSSAgregado, IMSSOFFLIN10_A131PacienteCama, IMSSOFFLIN10_A287PacienteDiagnosticoPhone,
+            IMSSOFFLIN10_A129PacienteDiagnosticoResumido, IMSSOFFLIN10_A128PacienteDiagnostico, IMSSOFFLIN10_A134PAcienteFechaIngreso, IMSSOFFLIN10_A124PacienteNombreCompleto, IMSSOFFLIN10_A123PacienteReferencia, IMSSOFFLIN10_n123PacienteReferencia, IMSSOFFLIN10_A122PacienteFamiliar, IMSSOFFLIN10_n122PacienteFamiliar, IMSSOFFLIN10_A121PacienteTelefono, IMSSOFFLIN10_n121PacienteTelefono,
+            IMSSOFFLIN10_A120PacienteGenero, IMSSOFFLIN10_n120PacienteGenero, IMSSOFFLIN10_A118PacienteEdad, IMSSOFFLIN10_A119PacienteFechaNacimiento, IMSSOFFLIN10_A114PacienteApMat, IMSSOFFLIN10_n114PacienteApMat, IMSSOFFLIN10_A113PacienteApPat, IMSSOFFLIN10_A112PacienteNombre, IMSSOFFLIN10_A3PacienteAgregado, IMSSOFFLIN10_A2PacienteNSS
             }
             , new Object[] {
-            IMSSOFFLIN11_A317DFFormDsc, IMSSOFFLIN11_A303DFFormIsSD, IMSSOFFLIN11_A159DFFormRunDLT, IMSSOFFLIN11_A236DFFormHelpURL, IMSSOFFLIN11_A176DFFormPrefix, IMSSOFFLIN11_A235DFFormPmtHgh, IMSSOFFLIN11_n235DFFormPmtHgh, IMSSOFFLIN11_A234DFFormPmtWth, IMSSOFFLIN11_n234DFFormPmtWth, IMSSOFFLIN11_A237DFFormAct,
-            IMSSOFFLIN11_A171DFFormName, IMSSOFFLIN11_A115DFFormGuid, IMSSOFFLIN11_A87DFFormVer, IMSSOFFLIN11_A86DFFormId
+            IMSSOFFLIN11_A297ExtensionNombre, IMSSOFFLIN11_A296ExtensionTipo, IMSSOFFLIN11_A66ExtensionId
             }
             , new Object[] {
-            IMSSOFFLIN12_A85FormatoPacienteMedicoNombre, IMSSOFFLIN12_A84FormatoPacienteMedicoMatricula, IMSSOFFLIN12_A90DFFormInstId, IMSSOFFLIN12_A80FormatoPacienteAgregado, IMSSOFFLIN12_A79FormatoPacienteNSS
+            IMSSOFFLIN12_A136FormatoPacienteMedicoMatricula, IMSSOFFLIN12_A137FormatoPacienteMedicoNombre, IMSSOFFLIN12_A9DFFormInstId, IMSSOFFLIN12_A63FormatoPacienteAgregado, IMSSOFFLIN12_A62FormatoPacienteNSS
             }
             , new Object[] {
-            IMSSOFFLIN13_A306ExtensionNombre, IMSSOFFLIN13_A305ExtensionTipo, IMSSOFFLIN13_A304ExtensionId
+            IMSSOFFLIN13_A304DFElemFormReq, IMSSOFFLIN13_A299DFElemFormLoadRule, IMSSOFFLIN13_n299DFElemFormLoadRule, IMSSOFFLIN13_A263DFElemFormMetadata, IMSSOFFLIN13_n263DFElemFormMetadata, IMSSOFFLIN13_A264DFElemFormShwNbr, IMSSOFFLIN13_n264DFElemFormShwNbr, IMSSOFFLIN13_A262DFElemFormDateSel, IMSSOFFLIN13_n262DFElemFormDateSel, IMSSOFFLIN13_A259DFElemFormHasPmpt,
+            IMSSOFFLIN13_n259DFElemFormHasPmpt, IMSSOFFLIN13_A184DFElemFormIsFlt, IMSSOFFLIN13_n184DFElemFormIsFlt, IMSSOFFLIN13_A183DFElemFormCmpWth, IMSSOFFLIN13_n183DFElemFormCmpWth, IMSSOFFLIN13_A182DFElemFormLblWth, IMSSOFFLIN13_n182DFElemFormLblWth, IMSSOFFLIN13_A307DFElemFormPrtPic, IMSSOFFLIN13_A282DFElemFormPrtShwNbr, IMSSOFFLIN13_A281DFElemFormPrtNumColSkip,
+            IMSSOFFLIN13_A273DFElemFormPrtNumRowSkip, IMSSOFFLIN13_A271DFElemFormPrtAddRows, IMSSOFFLIN13_A270DFElemFormPrtName, IMSSOFFLIN13_A191DFElemFormIsVisPrt, IMSSOFFLIN13_A190DFElemFormIsVis, IMSSOFFLIN13_A189DFElemFormIsColap, IMSSOFFLIN13_A188DFElemFormAllowIns, IMSSOFFLIN13_n188DFElemFormAllowIns, IMSSOFFLIN13_A187DFElemFormAllowUpd, IMSSOFFLIN13_n187DFElemFormAllowUpd,
+            IMSSOFFLIN13_A186DFElemFormAllowDlt, IMSSOFFLIN13_n186DFElemFormAllowDlt, IMSSOFFLIN13_A181DFElemFormInhType, IMSSOFFLIN13_A36DFElemFormPos, IMSSOFFLIN13_A185DFElemFormName, IMSSOFFLIN13_A19DFElemVer, IMSSOFFLIN13_A18DFElemId, IMSSOFFLIN13_A12DFFormVer, IMSSOFFLIN13_A11DFFormId
             }
             , new Object[] {
-            IMSSOFFLIN14_A313DFElemFormReq, IMSSOFFLIN14_A316DFElemFormPrtPic, IMSSOFFLIN14_A307DFElemFormLoadRule, IMSSOFFLIN14_n307DFElemFormLoadRule, IMSSOFFLIN14_A266DFElemFormMetadata, IMSSOFFLIN14_n266DFElemFormMetadata, IMSSOFFLIN14_A267DFElemFormShwNbr, IMSSOFFLIN14_n267DFElemFormShwNbr, IMSSOFFLIN14_A265DFElemFormDateSel, IMSSOFFLIN14_n265DFElemFormDateSel,
-            IMSSOFFLIN14_A262DFElemFormHasPmpt, IMSSOFFLIN14_n262DFElemFormHasPmpt, IMSSOFFLIN14_A187DFElemFormIsFlt, IMSSOFFLIN14_n187DFElemFormIsFlt, IMSSOFFLIN14_A186DFElemFormCmpWth, IMSSOFFLIN14_n186DFElemFormCmpWth, IMSSOFFLIN14_A185DFElemFormLblWth, IMSSOFFLIN14_n185DFElemFormLblWth, IMSSOFFLIN14_A285DFElemFormPrtShwNbr, IMSSOFFLIN14_A284DFElemFormPrtNumColSkip,
-            IMSSOFFLIN14_A276DFElemFormPrtNumRowSkip, IMSSOFFLIN14_A274DFElemFormPrtAddRows, IMSSOFFLIN14_A273DFElemFormPrtName, IMSSOFFLIN14_A194DFElemFormIsVisPrt, IMSSOFFLIN14_A193DFElemFormIsVis, IMSSOFFLIN14_A192DFElemFormIsColap, IMSSOFFLIN14_A191DFElemFormAllowIns, IMSSOFFLIN14_n191DFElemFormAllowIns, IMSSOFFLIN14_A190DFElemFormAllowUpd, IMSSOFFLIN14_n190DFElemFormAllowUpd,
-            IMSSOFFLIN14_A189DFElemFormAllowDlt, IMSSOFFLIN14_n189DFElemFormAllowDlt, IMSSOFFLIN14_A184DFElemFormInhType, IMSSOFFLIN14_A116DFElemFormPos, IMSSOFFLIN14_A188DFElemFormName, IMSSOFFLIN14_A89DFElemVer, IMSSOFFLIN14_A88DFElemId, IMSSOFFLIN14_A87DFFormVer, IMSSOFFLIN14_A86DFFormId
+            IMSSOFFLIN14_A145DFElemFormInstFileName, IMSSOFFLIN14_n145DFElemFormInstFileName, IMSSOFFLIN14_A144DFElemFormInstFileType, IMSSOFFLIN14_n144DFElemFormInstFileType, IMSSOFFLIN14_A143DFElemFormInstBlob, IMSSOFFLIN14_n143DFElemFormInstBlob, IMSSOFFLIN14_A141DFElemFormInstVal, IMSSOFFLIN14_n141DFElemFormInstVal, IMSSOFFLIN14_A19DFElemVer, IMSSOFFLIN14_A18DFElemId,
+            IMSSOFFLIN14_A9DFFormInstId
             }
             , new Object[] {
-            IMSSOFFLIN15_A147DFElemFormInstFileName, IMSSOFFLIN15_n147DFElemFormInstFileName, IMSSOFFLIN15_A146DFElemFormInstFileType, IMSSOFFLIN15_n146DFElemFormInstFileType, IMSSOFFLIN15_A145DFElemFormInstBlob, IMSSOFFLIN15_n145DFElemFormInstBlob, IMSSOFFLIN15_A143DFElemFormInstVal, IMSSOFFLIN15_n143DFElemFormInstVal, IMSSOFFLIN15_A89DFElemVer, IMSSOFFLIN15_A88DFElemId,
-            IMSSOFFLIN15_A90DFFormInstId
+            IMSSOFFLIN15_A148DFElemFormInstSubElemFileName, IMSSOFFLIN15_n148DFElemFormInstSubElemFileName, IMSSOFFLIN15_A147DFElemFormInstSubElemFileType, IMSSOFFLIN15_n147DFElemFormInstSubElemFileType, IMSSOFFLIN15_A37DFSubElemFormElemId, IMSSOFFLIN15_A38DFSubElemFormElemVer, IMSSOFFLIN15_A69DFElemFormInstSubElemRow, IMSSOFFLIN15_A142DFElemFormInstSubElemVal, IMSSOFFLIN15_n142DFElemFormInstSubElemVal, IMSSOFFLIN15_A146DFElemFormInstSubElemBlob,
+            IMSSOFFLIN15_n146DFElemFormInstSubElemBlob, IMSSOFFLIN15_A68DFElemFormInstSubElemId, IMSSOFFLIN15_A19DFElemVer, IMSSOFFLIN15_A18DFElemId, IMSSOFFLIN15_A9DFFormInstId
             }
             , new Object[] {
-            IMSSOFFLIN16_A150DFElemFormInstSubElemFileName, IMSSOFFLIN16_n150DFElemFormInstSubElemFileName, IMSSOFFLIN16_A149DFElemFormInstSubElemFileType, IMSSOFFLIN16_n149DFElemFormInstSubElemFileType, IMSSOFFLIN16_A108DFSubElemFormElemId, IMSSOFFLIN16_A109DFSubElemFormElemVer, IMSSOFFLIN16_A110DFElemFormInstSubElemRow, IMSSOFFLIN16_A144DFElemFormInstSubElemVal, IMSSOFFLIN16_n144DFElemFormInstSubElemVal, IMSSOFFLIN16_A148DFElemFormInstSubElemBlob,
-            IMSSOFFLIN16_n148DFElemFormInstSubElemBlob, IMSSOFFLIN16_A107DFElemFormInstSubElemId, IMSSOFFLIN16_A89DFElemVer, IMSSOFFLIN16_A88DFElemId, IMSSOFFLIN16_A90DFFormInstId
+            IMSSOFFLIN16_A284DFTempOutFm, IMSSOFFLIN16_A278DFTempAddParmPrgName, IMSSOFFLIN16_A277DFTempBlob, IMSSOFFLIN16_A286DFTempFm, IMSSOFFLIN16_A283DFTempDsc, IMSSOFFLIN16_A55DFTempName, IMSSOFFLIN16_A12DFFormVer, IMSSOFFLIN16_A11DFFormId
             }
             , new Object[] {
-            IMSSOFFLIN17_A290DFTempFm, IMSSOFFLIN17_A287DFTempOutFm, IMSSOFFLIN17_A281DFTempAddParmPrgName, IMSSOFFLIN17_A280DFTempBlob, IMSSOFFLIN17_A286DFTempDsc, IMSSOFFLIN17_A136DFTempName, IMSSOFFLIN17_A87DFFormVer, IMSSOFFLIN17_A86DFFormId
+            IMSSOFFLIN17_A298DFFormIsSD, IMSSOFFLIN17_A157DFFormRunDLT, IMSSOFFLIN17_A233DFFormHelpURL, IMSSOFFLIN17_A173DFFormPrefix, IMSSOFFLIN17_A232DFFormPmtHgh, IMSSOFFLIN17_n232DFFormPmtHgh, IMSSOFFLIN17_A231DFFormPmtWth, IMSSOFFLIN17_n231DFFormPmtWth, IMSSOFFLIN17_A234DFFormAct, IMSSOFFLIN17_A308DFFormDsc,
+            IMSSOFFLIN17_A31DFFormName, IMSSOFFLIN17_A30DFFormGuid, IMSSOFFLIN17_A12DFFormVer, IMSSOFFLIN17_A11DFFormId
             }
             , new Object[] {
-            IMSSOFFLIN18_A225DFDomStaValOptDsc, IMSSOFFLIN18_A113DFDomStaValOptOrd, IMSSOFFLIN18_A112DFDomStaValOptCod, IMSSOFFLIN18_A111DFDomId
+            IMSSOFFLIN18_A222DFDomStaValOptDsc, IMSSOFFLIN18_A34DFDomStaValOptOrd, IMSSOFFLIN18_A33DFDomStaValOptCod, IMSSOFFLIN18_A32DFDomId
             }
             , new Object[] {
-            IMSSOFFLIN19_A200DFFormInstSignedPDF, IMSSOFFLIN19_n200DFFormInstSignedPDF, IMSSOFFLIN19_A201DFFormInstSignedBy, IMSSOFFLIN19_n201DFFormInstSignedBy, IMSSOFFLIN19_A157DFFormInstDT, IMSSOFFLIN19_A106DFFormInstFormVer, IMSSOFFLIN19_A105DFFormInstFormId, IMSSOFFLIN19_A90DFFormInstId
+            IMSSOFFLIN19_A197DFFormInstSignedPDF, IMSSOFFLIN19_n197DFFormInstSignedPDF, IMSSOFFLIN19_A198DFFormInstSignedBy, IMSSOFFLIN19_n198DFFormInstSignedBy, IMSSOFFLIN19_A155DFFormInstDT, IMSSOFFLIN19_A29DFFormInstFormVer, IMSSOFFLIN19_A28DFFormInstFormId, IMSSOFFLIN19_A9DFFormInstId
             }
             , new Object[] {
-            IMSSOFFLIN20_A314DFElemReq, IMSSOFFLIN20_A315DFElemPrtPic, IMSSOFFLIN20_A308DFElemLoadRule, IMSSOFFLIN20_n308DFElemLoadRule, IMSSOFFLIN20_A268DFElemMetadata, IMSSOFFLIN20_n268DFElemMetadata, IMSSOFFLIN20_A241DFElemIsColap, IMSSOFFLIN20_A283DFElemPrtShwNbr, IMSSOFFLIN20_A282DFElemPrtNumColSkip, IMSSOFFLIN20_A277DFElemPrtNumRowSkip,
-            IMSSOFFLIN20_A275DFElemPrtAddRows, IMSSOFFLIN20_A272DFElemPrtName, IMSSOFFLIN20_A263DFElemIsVisPrt, IMSSOFFLIN20_A240DFElemIsVis, IMSSOFFLIN20_A260DFElemLblWth, IMSSOFFLIN20_n260DFElemLblWth, IMSSOFFLIN20_A246DFElemCmpWth, IMSSOFFLIN20_n246DFElemCmpWth, IMSSOFFLIN20_A245DFElemIsFlt, IMSSOFFLIN20_n245DFElemIsFlt,
-            IMSSOFFLIN20_A259DFElemFileType, IMSSOFFLIN20_n259DFElemFileType, IMSSOFFLIN20_A257DFElemRegexVal, IMSSOFFLIN20_n257DFElemRegexVal, IMSSOFFLIN20_A256DFElemAllowDlt, IMSSOFFLIN20_n256DFElemAllowDlt, IMSSOFFLIN20_A255DFElemAllowUpd, IMSSOFFLIN20_n255DFElemAllowUpd, IMSSOFFLIN20_A254DFElemAllowIns, IMSSOFFLIN20_n254DFElemAllowIns,
-            IMSSOFFLIN20_A253DFElemUseBtns, IMSSOFFLIN20_n253DFElemUseBtns, IMSSOFFLIN20_A252DFElemIsOrd, IMSSOFFLIN20_n252DFElemIsOrd, IMSSOFFLIN20_A251DFElemMaxSuggRes, IMSSOFFLIN20_n251DFElemMaxSuggRes, IMSSOFFLIN20_A250DFElemForceSuggSel, IMSSOFFLIN20_n250DFElemForceSuggSel, IMSSOFFLIN20_A249DFElemMinCntCharSugg, IMSSOFFLIN20_n249DFElemMinCntCharSugg,
-            IMSSOFFLIN20_A261DFElemDscPrgName, IMSSOFFLIN20_A248DFElemLoadPrgName, IMSSOFFLIN20_n248DFElemLoadPrgName, IMSSOFFLIN20_A270DFElemBtnPos, IMSSOFFLIN20_n270DFElemBtnPos, IMSSOFFLIN20_A271DFElemShwNbrLbl, IMSSOFFLIN20_n271DFElemShwNbrLbl, IMSSOFFLIN20_A269DFElemShwNbr, IMSSOFFLIN20_n269DFElemShwNbr, IMSSOFFLIN20_A264DFElemDateSel,
-            IMSSOFFLIN20_n264DFElemDateSel, IMSSOFFLIN20_A247DFElemHasPmpt, IMSSOFFLIN20_n247DFElemHasPmpt, IMSSOFFLIN20_A183DFElemDftVal, IMSSOFFLIN20_n183DFElemDftVal, IMSSOFFLIN20_A244DFElemCntCols, IMSSOFFLIN20_n244DFElemCntCols, IMSSOFFLIN20_A243DFElemCntRows, IMSSOFFLIN20_n243DFElemCntRows, IMSSOFFLIN20_A242DFElemCntDec,
-            IMSSOFFLIN20_n242DFElemCntDec, IMSSOFFLIN20_A258DFElemWth, IMSSOFFLIN20_n258DFElemWth, IMSSOFFLIN20_A239DFElemLen, IMSSOFFLIN20_n239DFElemLen, IMSSOFFLIN20_A199DFElemDsp, IMSSOFFLIN20_n199DFElemDsp, IMSSOFFLIN20_A181DFElemType, IMSSOFFLIN20_A111DFDomId, IMSSOFFLIN20_n111DFDomId,
-            IMSSOFFLIN20_A195DFElemClsName, IMSSOFFLIN20_n195DFElemClsName, IMSSOFFLIN20_A238DFElemDsc, IMSSOFFLIN20_n238DFElemDsc, IMSSOFFLIN20_A151DFElemName, IMSSOFFLIN20_A114DFElemGuid, IMSSOFFLIN20_A89DFElemVer, IMSSOFFLIN20_A88DFElemId
+            IMSSOFFLIN20_A305DFElemReq, IMSSOFFLIN20_A300DFElemLoadRule, IMSSOFFLIN20_n300DFElemLoadRule, IMSSOFFLIN20_A265DFElemMetadata, IMSSOFFLIN20_n265DFElemMetadata, IMSSOFFLIN20_A238DFElemIsColap, IMSSOFFLIN20_A306DFElemPrtPic, IMSSOFFLIN20_A280DFElemPrtShwNbr, IMSSOFFLIN20_A279DFElemPrtNumColSkip, IMSSOFFLIN20_A274DFElemPrtNumRowSkip,
+            IMSSOFFLIN20_A272DFElemPrtAddRows, IMSSOFFLIN20_A269DFElemPrtName, IMSSOFFLIN20_A260DFElemIsVisPrt, IMSSOFFLIN20_A237DFElemIsVis, IMSSOFFLIN20_A257DFElemLblWth, IMSSOFFLIN20_n257DFElemLblWth, IMSSOFFLIN20_A243DFElemCmpWth, IMSSOFFLIN20_n243DFElemCmpWth, IMSSOFFLIN20_A242DFElemIsFlt, IMSSOFFLIN20_n242DFElemIsFlt,
+            IMSSOFFLIN20_A256DFElemFileType, IMSSOFFLIN20_n256DFElemFileType, IMSSOFFLIN20_A254DFElemRegexVal, IMSSOFFLIN20_n254DFElemRegexVal, IMSSOFFLIN20_A253DFElemAllowDlt, IMSSOFFLIN20_n253DFElemAllowDlt, IMSSOFFLIN20_A252DFElemAllowUpd, IMSSOFFLIN20_n252DFElemAllowUpd, IMSSOFFLIN20_A251DFElemAllowIns, IMSSOFFLIN20_n251DFElemAllowIns,
+            IMSSOFFLIN20_A250DFElemUseBtns, IMSSOFFLIN20_n250DFElemUseBtns, IMSSOFFLIN20_A249DFElemIsOrd, IMSSOFFLIN20_n249DFElemIsOrd, IMSSOFFLIN20_A248DFElemMaxSuggRes, IMSSOFFLIN20_n248DFElemMaxSuggRes, IMSSOFFLIN20_A247DFElemForceSuggSel, IMSSOFFLIN20_n247DFElemForceSuggSel, IMSSOFFLIN20_A246DFElemMinCntCharSugg, IMSSOFFLIN20_n246DFElemMinCntCharSugg,
+            IMSSOFFLIN20_A258DFElemDscPrgName, IMSSOFFLIN20_A245DFElemLoadPrgName, IMSSOFFLIN20_n245DFElemLoadPrgName, IMSSOFFLIN20_A267DFElemBtnPos, IMSSOFFLIN20_n267DFElemBtnPos, IMSSOFFLIN20_A268DFElemShwNbrLbl, IMSSOFFLIN20_n268DFElemShwNbrLbl, IMSSOFFLIN20_A266DFElemShwNbr, IMSSOFFLIN20_n266DFElemShwNbr, IMSSOFFLIN20_A261DFElemDateSel,
+            IMSSOFFLIN20_n261DFElemDateSel, IMSSOFFLIN20_A244DFElemHasPmpt, IMSSOFFLIN20_n244DFElemHasPmpt, IMSSOFFLIN20_A180DFElemDftVal, IMSSOFFLIN20_n180DFElemDftVal, IMSSOFFLIN20_A241DFElemCntCols, IMSSOFFLIN20_n241DFElemCntCols, IMSSOFFLIN20_A240DFElemCntRows, IMSSOFFLIN20_n240DFElemCntRows, IMSSOFFLIN20_A239DFElemCntDec,
+            IMSSOFFLIN20_n239DFElemCntDec, IMSSOFFLIN20_A255DFElemWth, IMSSOFFLIN20_n255DFElemWth, IMSSOFFLIN20_A236DFElemLen, IMSSOFFLIN20_n236DFElemLen, IMSSOFFLIN20_A196DFElemDsp, IMSSOFFLIN20_n196DFElemDsp, IMSSOFFLIN20_A178DFElemType, IMSSOFFLIN20_A32DFDomId, IMSSOFFLIN20_n32DFDomId,
+            IMSSOFFLIN20_A192DFElemClsName, IMSSOFFLIN20_n192DFElemClsName, IMSSOFFLIN20_A235DFElemDsc, IMSSOFFLIN20_n235DFElemDsc, IMSSOFFLIN20_A149DFElemName, IMSSOFFLIN20_A35DFElemGuid, IMSSOFFLIN20_A19DFElemVer, IMSSOFFLIN20_A18DFElemId
             }
             , new Object[] {
-            IMSSOFFLIN21_A93DFFormRstVal, IMSSOFFLIN21_A92DFFormRstId, IMSSOFFLIN21_A87DFFormVer, IMSSOFFLIN21_A86DFFormId
+            IMSSOFFLIN21_A71cveEspecialidad, IMSSOFFLIN21_A12DFFormVer, IMSSOFFLIN21_A11DFFormId
             }
             , new Object[] {
-            IMSSOFFLIN22_A166DFUserRstPwdIni, IMSSOFFLIN22_A101DFUserRstVal, IMSSOFFLIN22_A100DFUserRstId, IMSSOFFLIN22_A99DFUserExtId
+            IMSSOFFLIN22_A348PXDXFechaAsignacion, IMSSOFFLIN22_A347OcaSer, IMSSOFFLIN22_A346TpoDX, IMSSOFFLIN22_A345DX, IMSSOFFLIN22_A353IDEEPaciente
             }
             , new Object[] {
-            IMSSOFFLIN23_A319DFDomPrtDsc, IMSSOFFLIN23_n319DFDomPrtDsc, IMSSOFFLIN23_A226DFDomLblWth, IMSSOFFLIN23_n226DFDomLblWth, IMSSOFFLIN23_A222DFDomCmpWth, IMSSOFFLIN23_n222DFDomCmpWth, IMSSOFFLIN23_A221DFDomIsFlt, IMSSOFFLIN23_n221DFDomIsFlt, IMSSOFFLIN23_A224DFDomFileType, IMSSOFFLIN23_n224DFDomFileType,
-            IMSSOFFLIN23_A220DFDomRegexVal, IMSSOFFLIN23_A216DFDomAllowDlt, IMSSOFFLIN23_n216DFDomAllowDlt, IMSSOFFLIN23_A215DFDomAllowUpd, IMSSOFFLIN23_n215DFDomAllowUpd, IMSSOFFLIN23_A214DFDomAllowIns, IMSSOFFLIN23_n214DFDomAllowIns, IMSSOFFLIN23_A213DFDomUseBtns, IMSSOFFLIN23_n213DFDomUseBtns, IMSSOFFLIN23_A212DFDomIsOrd,
-            IMSSOFFLIN23_n212DFDomIsOrd, IMSSOFFLIN23_A210DFDomMaxSuggRes, IMSSOFFLIN23_n210DFDomMaxSuggRes, IMSSOFFLIN23_A209DFDomForceSuggSel, IMSSOFFLIN23_n209DFDomForceSuggSel, IMSSOFFLIN23_A208DFDomMinCntCharSugg, IMSSOFFLIN23_n208DFDomMinCntCharSugg, IMSSOFFLIN23_A211DFDomDftVal, IMSSOFFLIN23_n211DFDomDftVal, IMSSOFFLIN23_A219DFDomCntCols,
-            IMSSOFFLIN23_A218DFDomCntRows, IMSSOFFLIN23_A217DFDomCntDec, IMSSOFFLIN23_A223DFDomWth, IMSSOFFLIN23_A207DFDomLen, IMSSOFFLIN23_A198DFDomDsp, IMSSOFFLIN23_n198DFDomDsp, IMSSOFFLIN23_A197DFDomType, IMSSOFFLIN23_A227DFDomGUID, IMSSOFFLIN23_A206DFDomDsc, IMSSOFFLIN23_A111DFDomId
+            IMSSOFFLIN23_A310DFDomPrtDsc, IMSSOFFLIN23_n310DFDomPrtDsc, IMSSOFFLIN23_A223DFDomLblWth, IMSSOFFLIN23_n223DFDomLblWth, IMSSOFFLIN23_A219DFDomCmpWth, IMSSOFFLIN23_n219DFDomCmpWth, IMSSOFFLIN23_A218DFDomIsFlt, IMSSOFFLIN23_n218DFDomIsFlt, IMSSOFFLIN23_A221DFDomFileType, IMSSOFFLIN23_n221DFDomFileType,
+            IMSSOFFLIN23_A217DFDomRegexVal, IMSSOFFLIN23_A213DFDomAllowDlt, IMSSOFFLIN23_n213DFDomAllowDlt, IMSSOFFLIN23_A212DFDomAllowUpd, IMSSOFFLIN23_n212DFDomAllowUpd, IMSSOFFLIN23_A211DFDomAllowIns, IMSSOFFLIN23_n211DFDomAllowIns, IMSSOFFLIN23_A210DFDomUseBtns, IMSSOFFLIN23_n210DFDomUseBtns, IMSSOFFLIN23_A209DFDomIsOrd,
+            IMSSOFFLIN23_n209DFDomIsOrd, IMSSOFFLIN23_A207DFDomMaxSuggRes, IMSSOFFLIN23_n207DFDomMaxSuggRes, IMSSOFFLIN23_A206DFDomForceSuggSel, IMSSOFFLIN23_n206DFDomForceSuggSel, IMSSOFFLIN23_A205DFDomMinCntCharSugg, IMSSOFFLIN23_n205DFDomMinCntCharSugg, IMSSOFFLIN23_A208DFDomDftVal, IMSSOFFLIN23_n208DFDomDftVal, IMSSOFFLIN23_A216DFDomCntCols,
+            IMSSOFFLIN23_A215DFDomCntRows, IMSSOFFLIN23_A214DFDomCntDec, IMSSOFFLIN23_A220DFDomWth, IMSSOFFLIN23_A204DFDomLen, IMSSOFFLIN23_A195DFDomDsp, IMSSOFFLIN23_n195DFDomDsp, IMSSOFFLIN23_A194DFDomType, IMSSOFFLIN23_A224DFDomGUID, IMSSOFFLIN23_A203DFDomDsc, IMSSOFFLIN23_A32DFDomId
             }
             , new Object[] {
-            IMSSOFFLIN24_A117DFSubElemFormPos, IMSSOFFLIN24_n117DFSubElemFormPos, IMSSOFFLIN24_A109DFSubElemFormElemVer, IMSSOFFLIN24_A108DFSubElemFormElemId, IMSSOFFLIN24_A89DFElemVer, IMSSOFFLIN24_A88DFElemId, IMSSOFFLIN24_A87DFFormVer, IMSSOFFLIN24_A86DFFormId
+            IMSSOFFLIN24_A14DFFormRstVal, IMSSOFFLIN24_A13DFFormRstId, IMSSOFFLIN24_A12DFFormVer, IMSSOFFLIN24_A11DFFormId
             }
             , new Object[] {
-            IMSSOFFLIN25_A120DFFilElemFormElemVer, IMSSOFFLIN25_A119DFFilElemFormElemId, IMSSOFFLIN25_A121DFFilElemFormPos, IMSSOFFLIN25_A118DFFilElemFormId, IMSSOFFLIN25_A89DFElemVer, IMSSOFFLIN25_A88DFElemId, IMSSOFFLIN25_A87DFFormVer, IMSSOFFLIN25_A86DFFormId
+            IMSSOFFLIN25_A164DFUserRstPwdIni, IMSSOFFLIN25_A24DFUserRstVal, IMSSOFFLIN25_A23DFUserRstId, IMSSOFFLIN25_A22DFUserExtId
             }
             , new Object[] {
-            IMSSOFFLIN26_A288HospitalId, IMSSOFFLIN26_n288HospitalId, IMSSOFFLIN26_A36ServicioDescripcion, IMSSOFFLIN26_A6ServicioId
+            IMSSOFFLIN26_A39DFSubElemFormPos, IMSSOFFLIN26_n39DFSubElemFormPos, IMSSOFFLIN26_A38DFSubElemFormElemVer, IMSSOFFLIN26_A37DFSubElemFormElemId, IMSSOFFLIN26_A19DFElemVer, IMSSOFFLIN26_A18DFElemId, IMSSOFFLIN26_A12DFFormVer, IMSSOFFLIN26_A11DFFormId
             }
             , new Object[] {
-            IMSSOFFLIN27_A105DFFormInstFormId, IMSSOFFLIN27_A141DFUplFileExt, IMSSOFFLIN27_A142DFUplFileName, IMSSOFFLIN27_A140DFUplFile, IMSSOFFLIN27_A91DFUplKey, IMSSOFFLIN27_A90DFFormInstId
+            IMSSOFFLIN27_A42DFFilElemFormElemVer, IMSSOFFLIN27_A41DFFilElemFormElemId, IMSSOFFLIN27_A43DFFilElemFormPos, IMSSOFFLIN27_A40DFFilElemFormId, IMSSOFFLIN27_A19DFElemVer, IMSSOFFLIN27_A18DFElemId, IMSSOFFLIN27_A12DFFormVer, IMSSOFFLIN27_A11DFFormId
+            }
+            , new Object[] {
+            IMSSOFFLIN28_A7HospitalId, IMSSOFFLIN28_n7HospitalId, IMSSOFFLIN28_A104ServicioDescripcion, IMSSOFFLIN28_A6ServicioId
+            }
+            , new Object[] {
+            IMSSOFFLIN29_A12DFFormVer, IMSSOFFLIN29_A11DFFormId, IMSSOFFLIN29_A321fecBajaEspecialidad, IMSSOFFLIN29_n321fecBajaEspecialidad, IMSSOFFLIN29_A320desEspecialidad, IMSSOFFLIN29_A71cveEspecialidad
+            }
+            , new Object[] {
+            IMSSOFFLIN30_A28DFFormInstFormId, IMSSOFFLIN30_A139DFUplFileExt, IMSSOFFLIN30_A140DFUplFileName, IMSSOFFLIN30_A138DFUplFile, IMSSOFFLIN30_A10DFUplKey, IMSSOFFLIN30_A9DFFormInstId
             }
          }
       );
@@ -4164,363 +4591,388 @@ public final  class imssofflinedatabase extends GXProcedure
    protected short gxischeck ;
    protected short gxstatus ;
    protected short gxerrorstatus ;
+   protected short A102MMatricula ;
+   protected short A101MApMat ;
+   protected short A100MApPat ;
+   protected short A99MNombre ;
+   protected short A98MBMatricula ;
+   protected short A94JSMatricula ;
    protected short A6ServicioId ;
-   protected short A323nada ;
-   protected short A309TextoId ;
+   protected short A314nada ;
+   protected short A67TextoId ;
    protected short A5DXAuxImagenId ;
    protected short A4DXAuxDoctoId ;
-   protected short A321PacienteServicioId ;
-   protected short A50PacienteEdad ;
-   protected short A305ExtensionTipo ;
-   protected short A304ExtensionId ;
-   protected short A121DFFilElemFormPos ;
-   protected short A288HospitalId ;
+   protected short A312PacienteServicioId ;
+   protected short A118PacienteEdad ;
+   protected short A296ExtensionTipo ;
+   protected short A66ExtensionId ;
+   protected short A347OcaSer ;
+   protected short A346TpoDX ;
+   protected short A43DFFilElemFormPos ;
+   protected short A7HospitalId ;
    protected short GXv_int8[] ;
    protected short Gx_err ;
+   protected int A25DFParmId ;
    protected int A1CIE10Id ;
-   protected int A102DFParmId ;
-   protected int A291PacienteCie10Id ;
-   protected int A235DFFormPmtHgh ;
-   protected int A234DFFormPmtWth ;
-   protected int A87DFFormVer ;
-   protected int A86DFFormId ;
-   protected int A284DFElemFormPrtNumColSkip ;
-   protected int A276DFElemFormPrtNumRowSkip ;
-   protected int A116DFElemFormPos ;
-   protected int A89DFElemVer ;
-   protected int A88DFElemId ;
-   protected int A108DFSubElemFormElemId ;
-   protected int A109DFSubElemFormElemVer ;
-   protected int A110DFElemFormInstSubElemRow ;
-   protected int A107DFElemFormInstSubElemId ;
-   protected int A113DFDomStaValOptOrd ;
-   protected int A111DFDomId ;
-   protected int A106DFFormInstFormVer ;
-   protected int A105DFFormInstFormId ;
-   protected int A282DFElemPrtNumColSkip ;
-   protected int A277DFElemPrtNumRowSkip ;
-   protected int A251DFElemMaxSuggRes ;
-   protected int A249DFElemMinCntCharSugg ;
-   protected int A244DFElemCntCols ;
-   protected int A243DFElemCntRows ;
-   protected int A242DFElemCntDec ;
-   protected int A258DFElemWth ;
-   protected int A239DFElemLen ;
-   protected int A92DFFormRstId ;
-   protected int A100DFUserRstId ;
-   protected int A210DFDomMaxSuggRes ;
-   protected int A208DFDomMinCntCharSugg ;
-   protected int A219DFDomCntCols ;
-   protected int A218DFDomCntRows ;
-   protected int A217DFDomCntDec ;
-   protected int A223DFDomWth ;
-   protected int A207DFDomLen ;
-   protected int A117DFSubElemFormPos ;
-   protected int A120DFFilElemFormElemVer ;
-   protected int A119DFFilElemFormElemId ;
-   protected int A118DFFilElemFormId ;
-   protected long A297MedicoMatricula ;
+   protected int A130PacienteCie10Id ;
+   protected int A281DFElemFormPrtNumColSkip ;
+   protected int A273DFElemFormPrtNumRowSkip ;
+   protected int A36DFElemFormPos ;
+   protected int A19DFElemVer ;
+   protected int A18DFElemId ;
+   protected int A12DFFormVer ;
+   protected int A11DFFormId ;
+   protected int A37DFSubElemFormElemId ;
+   protected int A38DFSubElemFormElemVer ;
+   protected int A69DFElemFormInstSubElemRow ;
+   protected int A68DFElemFormInstSubElemId ;
+   protected int A232DFFormPmtHgh ;
+   protected int A231DFFormPmtWth ;
+   protected int A34DFDomStaValOptOrd ;
+   protected int A32DFDomId ;
+   protected int A29DFFormInstFormVer ;
+   protected int A28DFFormInstFormId ;
+   protected int A279DFElemPrtNumColSkip ;
+   protected int A274DFElemPrtNumRowSkip ;
+   protected int A248DFElemMaxSuggRes ;
+   protected int A246DFElemMinCntCharSugg ;
+   protected int A241DFElemCntCols ;
+   protected int A240DFElemCntRows ;
+   protected int A239DFElemCntDec ;
+   protected int A255DFElemWth ;
+   protected int A236DFElemLen ;
+   protected int A345DX ;
+   protected int A207DFDomMaxSuggRes ;
+   protected int A205DFDomMinCntCharSugg ;
+   protected int A216DFDomCntCols ;
+   protected int A215DFDomCntRows ;
+   protected int A214DFDomCntDec ;
+   protected int A220DFDomWth ;
+   protected int A204DFDomLen ;
+   protected int A13DFFormRstId ;
+   protected int A23DFUserRstId ;
+   protected int A39DFSubElemFormPos ;
+   protected int A42DFFilElemFormElemVer ;
+   protected int A41DFFilElemFormElemId ;
+   protected int A40DFFilElemFormId ;
+   protected long A65MedMatricula ;
    protected long GXV1 ;
-   protected long A34MMatricula ;
-   protected long A30MBMatricula ;
-   protected long A26JSMatricula ;
-   protected long A90DFFormInstId ;
-   protected long A84FormatoPacienteMedicoMatricula ;
+   protected long A9DFFormInstId ;
+   protected long A136FormatoPacienteMedicoMatricula ;
    protected String AV4Matricula ;
    protected String AV5UserMedico ;
    protected String GXt_char1 ;
    protected String GXv_char2[] ;
    protected String scmdbuf ;
-   protected String A296MedicoApellidoMaterno ;
-   protected String A295MedicoApellidoPaterno ;
-   protected String A294MedicoSegundoNombre ;
-   protected String A293MedicoPrimerNombre ;
-   protected String A292UserMedico ;
+   protected String A340MedCedProf ;
+   protected String A291MedApMat ;
+   protected String A290MedApPat ;
+   protected String A288MedNom ;
+   protected String A64UserMed ;
    protected String gxlinehash ;
    protected String gxtabledata ;
    protected String gxtablecurrenthash ;
    protected String gxtablestoredhash ;
    protected String gxdeviceidentifier ;
-   protected String A81Matricula ;
+   protected String A8Matricula ;
    protected String A3PacienteAgregado ;
    protected String A2PacienteNSS ;
-   protected String A33MApMat ;
-   protected String A32MApPat ;
-   protected String A29MBApMat ;
-   protected String A28MBApPat ;
-   protected String A27MBNombre ;
-   protected String A25JSApMat ;
-   protected String A24JSApPat ;
-   protected String A23JSNombre ;
-   protected String A20Cama ;
-   protected String A168DFParmVal ;
-   protected String A167DFParmName ;
-   protected String A322DXAuxImagenExtension ;
-   protected String A73DXAuxImagenNombre ;
-   protected String A16DXAuxImagenUserAlta ;
-   protected String A74DXAuxDoctoNombre ;
-   protected String A82DXAuxDoctoExtension ;
-   protected String A13DXAuxDoctoUserAlta ;
-   protected String A72PacienteCama ;
-   protected String A55PacienteNombreCompleto ;
-   protected String A54PacienteReferencia ;
-   protected String A52PacienteTelefono ;
-   protected String A51PacienteGenero ;
-   protected String A46PacienteApMat ;
-   protected String A45PacienteApPat ;
-   protected String A44PacienteNombre ;
-   protected String A171DFFormName ;
-   protected String A80FormatoPacienteAgregado ;
-   protected String A79FormatoPacienteNSS ;
-   protected String A306ExtensionNombre ;
-   protected String A187DFElemFormIsFlt ;
-   protected String A186DFElemFormCmpWth ;
-   protected String A185DFElemFormLblWth ;
-   protected String A273DFElemFormPrtName ;
-   protected String A184DFElemFormInhType ;
-   protected String A188DFElemFormName ;
-   protected String A147DFElemFormInstFileName ;
-   protected String A146DFElemFormInstFileType ;
-   protected String A150DFElemFormInstSubElemFileName ;
-   protected String A149DFElemFormInstSubElemFileType ;
-   protected String A290DFTempFm ;
-   protected String A287DFTempOutFm ;
-   protected String A136DFTempName ;
-   protected String A225DFDomStaValOptDsc ;
-   protected String A112DFDomStaValOptCod ;
-   protected String A272DFElemPrtName ;
-   protected String A260DFElemLblWth ;
-   protected String A246DFElemCmpWth ;
-   protected String A245DFElemIsFlt ;
-   protected String A259DFElemFileType ;
-   protected String A257DFElemRegexVal ;
-   protected String A270DFElemBtnPos ;
-   protected String A271DFElemShwNbrLbl ;
-   protected String A183DFElemDftVal ;
-   protected String A199DFElemDsp ;
-   protected String A181DFElemType ;
-   protected String A195DFElemClsName ;
-   protected String A151DFElemName ;
-   protected String A93DFFormRstVal ;
-   protected String A101DFUserRstVal ;
-   protected String A226DFDomLblWth ;
-   protected String A222DFDomCmpWth ;
-   protected String A221DFDomIsFlt ;
-   protected String A224DFDomFileType ;
-   protected String A220DFDomRegexVal ;
-   protected String A211DFDomDftVal ;
-   protected String A198DFDomDsp ;
-   protected String A197DFDomType ;
-   protected String A206DFDomDsc ;
-   protected String A36ServicioDescripcion ;
-   protected String A141DFUplFileExt ;
-   protected String A142DFUplFileName ;
-   protected String A91DFUplKey ;
+   protected String A166DFParmVal ;
+   protected String A165DFParmName ;
+   protected String A97MBApMat ;
+   protected String A96MBApPat ;
+   protected String A95MBNombre ;
+   protected String A93JSApMat ;
+   protected String A92JSApPat ;
+   protected String A91JSNombre ;
+   protected String A88Cama ;
+   protected String A84DXAuxImagenUserAlta ;
+   protected String A313DXAuxImagenExtension ;
+   protected String A132DXAuxImagenNombre ;
+   protected String A79DXAuxDoctoNombre ;
+   protected String A78DXAuxDoctoExtension ;
+   protected String A81DXAuxDoctoUserAlta ;
+   protected String A330ClavePresupuestal ;
+   protected String A328IDEE ;
+   protected String A325CURP ;
+   protected String A327DhUMF ;
+   protected String A326DhDeleg ;
+   protected String A324Consultorio ;
+   protected String A323ConDerechoSm ;
+   protected String A322ConDerechoInc ;
+   protected String A131PacienteCama ;
+   protected String A124PacienteNombreCompleto ;
+   protected String A123PacienteReferencia ;
+   protected String A121PacienteTelefono ;
+   protected String A120PacienteGenero ;
+   protected String A114PacienteApMat ;
+   protected String A113PacienteApPat ;
+   protected String A112PacienteNombre ;
+   protected String A297ExtensionNombre ;
+   protected String A63FormatoPacienteAgregado ;
+   protected String A62FormatoPacienteNSS ;
+   protected String A184DFElemFormIsFlt ;
+   protected String A183DFElemFormCmpWth ;
+   protected String A182DFElemFormLblWth ;
+   protected String A270DFElemFormPrtName ;
+   protected String A181DFElemFormInhType ;
+   protected String A185DFElemFormName ;
+   protected String A145DFElemFormInstFileName ;
+   protected String A144DFElemFormInstFileType ;
+   protected String A148DFElemFormInstSubElemFileName ;
+   protected String A147DFElemFormInstSubElemFileType ;
+   protected String A284DFTempOutFm ;
+   protected String A286DFTempFm ;
+   protected String A55DFTempName ;
+   protected String A31DFFormName ;
+   protected String A222DFDomStaValOptDsc ;
+   protected String A33DFDomStaValOptCod ;
+   protected String A269DFElemPrtName ;
+   protected String A257DFElemLblWth ;
+   protected String A243DFElemCmpWth ;
+   protected String A242DFElemIsFlt ;
+   protected String A256DFElemFileType ;
+   protected String A254DFElemRegexVal ;
+   protected String A267DFElemBtnPos ;
+   protected String A268DFElemShwNbrLbl ;
+   protected String A180DFElemDftVal ;
+   protected String A196DFElemDsp ;
+   protected String A178DFElemType ;
+   protected String A192DFElemClsName ;
+   protected String A149DFElemName ;
+   protected String A71cveEspecialidad ;
+   protected String A353IDEEPaciente ;
+   protected String A223DFDomLblWth ;
+   protected String A219DFDomCmpWth ;
+   protected String A218DFDomIsFlt ;
+   protected String A221DFDomFileType ;
+   protected String A217DFDomRegexVal ;
+   protected String A208DFDomDftVal ;
+   protected String A195DFDomDsp ;
+   protected String A194DFDomType ;
+   protected String A203DFDomDsc ;
+   protected String A14DFFormRstVal ;
+   protected String A24DFUserRstVal ;
+   protected String A104ServicioDescripcion ;
+   protected String A139DFUplFileExt ;
+   protected String A140DFUplFileName ;
+   protected String A10DFUplKey ;
    protected String gxsourcever ;
    protected String DEVICEID ;
    protected String QUERYID ;
    protected String RESULTSET ;
-   protected java.util.Date A300MedicoUltimaActualizacion ;
-   protected java.util.Date A22DiagnosticoCirugiaFecha ;
-   protected java.util.Date A35DiagnosticoFechaAlta ;
-   protected java.util.Date A15DXAuxImagenFechaAlta ;
-   protected java.util.Date A12DXAuxDoctoFechaAlta ;
-   protected java.util.Date A157DFFormInstDT ;
-   protected java.util.Date A17DiagnosticoFechaIngreso ;
-   protected java.util.Date A76PAcienteFechaIngreso ;
-   protected java.util.Date A68PacienteFechaNacimiento ;
+   protected java.util.Date A293MedUltAct ;
+   protected java.util.Date A90DiagnosticoCirugiaFecha ;
+   protected java.util.Date A103DiagnosticoFechaAlta ;
+   protected java.util.Date A83DXAuxImagenFechaAlta ;
+   protected java.util.Date A80DXAuxDoctoFechaAlta ;
+   protected java.util.Date A155DFFormInstDT ;
+   protected java.util.Date A348PXDXFechaAsignacion ;
+   protected java.util.Date A341FecBajaMed ;
+   protected java.util.Date A85DiagnosticoFechaIngreso ;
+   protected java.util.Date A134PAcienteFechaIngreso ;
+   protected java.util.Date A119PacienteFechaNacimiento ;
+   protected java.util.Date A321fecBajaEspecialidad ;
    protected boolean returnInSub ;
-   protected boolean A312MedicoDebeMostarTerm ;
-   protected boolean A302MedicoDebeValidarDatos ;
-   protected boolean n297MedicoMatricula ;
-   protected boolean n34MMatricula ;
-   protected boolean n33MApMat ;
-   protected boolean n32MApPat ;
-   protected boolean n31MNombre ;
-   protected boolean n30MBMatricula ;
-   protected boolean n29MBApMat ;
-   protected boolean n28MBApPat ;
-   protected boolean n27MBNombre ;
-   protected boolean n26JSMatricula ;
-   protected boolean n25JSApMat ;
-   protected boolean n24JSApPat ;
-   protected boolean n23JSNombre ;
-   protected boolean n22DiagnosticoCirugiaFecha ;
-   protected boolean n21DiagnosticoCirugia ;
-   protected boolean n20Cama ;
-   protected boolean n19DiagnosticoResumen ;
-   protected boolean n18DiagnosticoComplemento ;
-   protected boolean n35DiagnosticoFechaAlta ;
-   protected boolean n17DiagnosticoFechaIngreso ;
-   protected boolean A169DFParmIsMetaData ;
-   protected boolean n54PacienteReferencia ;
-   protected boolean n53PacienteFamiliar ;
-   protected boolean n52PacienteTelefono ;
-   protected boolean n51PacienteGenero ;
-   protected boolean n46PacienteApMat ;
-   protected boolean A303DFFormIsSD ;
-   protected boolean A159DFFormRunDLT ;
-   protected boolean n235DFFormPmtHgh ;
-   protected boolean n234DFFormPmtWth ;
-   protected boolean A237DFFormAct ;
-   protected boolean A313DFElemFormReq ;
-   protected boolean n307DFElemFormLoadRule ;
-   protected boolean n266DFElemFormMetadata ;
-   protected boolean A267DFElemFormShwNbr ;
-   protected boolean n267DFElemFormShwNbr ;
-   protected boolean A265DFElemFormDateSel ;
-   protected boolean n265DFElemFormDateSel ;
-   protected boolean A262DFElemFormHasPmpt ;
-   protected boolean n262DFElemFormHasPmpt ;
-   protected boolean n187DFElemFormIsFlt ;
-   protected boolean n186DFElemFormCmpWth ;
-   protected boolean n185DFElemFormLblWth ;
-   protected boolean A285DFElemFormPrtShwNbr ;
-   protected boolean A274DFElemFormPrtAddRows ;
-   protected boolean A194DFElemFormIsVisPrt ;
-   protected boolean A193DFElemFormIsVis ;
-   protected boolean A192DFElemFormIsColap ;
-   protected boolean A191DFElemFormAllowIns ;
-   protected boolean n191DFElemFormAllowIns ;
-   protected boolean A190DFElemFormAllowUpd ;
-   protected boolean n190DFElemFormAllowUpd ;
-   protected boolean A189DFElemFormAllowDlt ;
-   protected boolean n189DFElemFormAllowDlt ;
-   protected boolean n147DFElemFormInstFileName ;
-   protected boolean n146DFElemFormInstFileType ;
-   protected boolean n145DFElemFormInstBlob ;
-   protected boolean n143DFElemFormInstVal ;
-   protected boolean n150DFElemFormInstSubElemFileName ;
-   protected boolean n149DFElemFormInstSubElemFileType ;
-   protected boolean n144DFElemFormInstSubElemVal ;
-   protected boolean n148DFElemFormInstSubElemBlob ;
-   protected boolean n111DFDomId ;
-   protected boolean n200DFFormInstSignedPDF ;
-   protected boolean n201DFFormInstSignedBy ;
-   protected boolean A314DFElemReq ;
-   protected boolean n308DFElemLoadRule ;
-   protected boolean n268DFElemMetadata ;
-   protected boolean A241DFElemIsColap ;
-   protected boolean A283DFElemPrtShwNbr ;
-   protected boolean A275DFElemPrtAddRows ;
-   protected boolean A263DFElemIsVisPrt ;
-   protected boolean A240DFElemIsVis ;
-   protected boolean n260DFElemLblWth ;
-   protected boolean n246DFElemCmpWth ;
-   protected boolean n245DFElemIsFlt ;
-   protected boolean n259DFElemFileType ;
-   protected boolean n257DFElemRegexVal ;
-   protected boolean A256DFElemAllowDlt ;
-   protected boolean n256DFElemAllowDlt ;
-   protected boolean A255DFElemAllowUpd ;
-   protected boolean n255DFElemAllowUpd ;
-   protected boolean A254DFElemAllowIns ;
-   protected boolean n254DFElemAllowIns ;
-   protected boolean A253DFElemUseBtns ;
-   protected boolean n253DFElemUseBtns ;
-   protected boolean A252DFElemIsOrd ;
-   protected boolean n252DFElemIsOrd ;
-   protected boolean n251DFElemMaxSuggRes ;
-   protected boolean A250DFElemForceSuggSel ;
-   protected boolean n250DFElemForceSuggSel ;
-   protected boolean n249DFElemMinCntCharSugg ;
-   protected boolean n248DFElemLoadPrgName ;
-   protected boolean n270DFElemBtnPos ;
-   protected boolean n271DFElemShwNbrLbl ;
-   protected boolean A269DFElemShwNbr ;
-   protected boolean n269DFElemShwNbr ;
-   protected boolean A264DFElemDateSel ;
-   protected boolean n264DFElemDateSel ;
-   protected boolean A247DFElemHasPmpt ;
-   protected boolean n247DFElemHasPmpt ;
-   protected boolean n183DFElemDftVal ;
-   protected boolean n244DFElemCntCols ;
-   protected boolean n243DFElemCntRows ;
-   protected boolean n242DFElemCntDec ;
-   protected boolean n258DFElemWth ;
-   protected boolean n239DFElemLen ;
-   protected boolean n199DFElemDsp ;
-   protected boolean n195DFElemClsName ;
-   protected boolean n238DFElemDsc ;
-   protected boolean A166DFUserRstPwdIni ;
-   protected boolean A319DFDomPrtDsc ;
-   protected boolean n319DFDomPrtDsc ;
-   protected boolean n226DFDomLblWth ;
-   protected boolean n222DFDomCmpWth ;
-   protected boolean n221DFDomIsFlt ;
-   protected boolean n224DFDomFileType ;
-   protected boolean A216DFDomAllowDlt ;
-   protected boolean n216DFDomAllowDlt ;
-   protected boolean A215DFDomAllowUpd ;
-   protected boolean n215DFDomAllowUpd ;
-   protected boolean A214DFDomAllowIns ;
-   protected boolean n214DFDomAllowIns ;
-   protected boolean A213DFDomUseBtns ;
-   protected boolean n213DFDomUseBtns ;
-   protected boolean A212DFDomIsOrd ;
-   protected boolean n212DFDomIsOrd ;
-   protected boolean n210DFDomMaxSuggRes ;
-   protected boolean A209DFDomForceSuggSel ;
-   protected boolean n209DFDomForceSuggSel ;
-   protected boolean n208DFDomMinCntCharSugg ;
-   protected boolean n211DFDomDftVal ;
-   protected boolean n198DFDomDsp ;
-   protected boolean n117DFSubElemFormPos ;
-   protected boolean n288HospitalId ;
-   protected String A21DiagnosticoCirugia ;
-   protected String A19DiagnosticoResumen ;
-   protected String A18DiagnosticoComplemento ;
-   protected String A311TextoDescripcion ;
-   protected String A11DXAuxDoctoDocumento ;
-   protected String A145DFElemFormInstBlob ;
-   protected String A148DFElemFormInstSubElemBlob ;
-   protected String A280DFTempBlob ;
-   protected String A200DFFormInstSignedPDF ;
-   protected String A140DFUplFile ;
-   protected String A75PacienteNSSAgregado ;
-   protected String A69CIECodigo ;
-   protected String A10CIE10Descripcion ;
-   protected String A31MNombre ;
-   protected String A310TextoTitulo ;
+   protected boolean n341FecBajaMed ;
+   protected boolean A303MedDebMosTerm ;
+   protected boolean n303MedDebMosTerm ;
+   protected boolean A295MedDebValDat ;
+   protected boolean A167DFParmIsMetaData ;
+   protected boolean n102MMatricula ;
+   protected boolean n101MApMat ;
+   protected boolean n100MApPat ;
+   protected boolean n99MNombre ;
+   protected boolean n98MBMatricula ;
+   protected boolean n97MBApMat ;
+   protected boolean n96MBApPat ;
+   protected boolean n95MBNombre ;
+   protected boolean n94JSMatricula ;
+   protected boolean n93JSApMat ;
+   protected boolean n92JSApPat ;
+   protected boolean n91JSNombre ;
+   protected boolean n90DiagnosticoCirugiaFecha ;
+   protected boolean n89DiagnosticoCirugia ;
+   protected boolean n88Cama ;
+   protected boolean n86DiagnosticoComplemento ;
+   protected boolean n87DiagnosticoResumen ;
+   protected boolean n103DiagnosticoFechaAlta ;
+   protected boolean n85DiagnosticoFechaIngreso ;
+   protected boolean n328IDEE ;
+   protected boolean n325CURP ;
+   protected boolean n327DhUMF ;
+   protected boolean n326DhDeleg ;
+   protected boolean n324Consultorio ;
+   protected boolean n323ConDerechoSm ;
+   protected boolean n322ConDerechoInc ;
+   protected boolean n123PacienteReferencia ;
+   protected boolean n122PacienteFamiliar ;
+   protected boolean n121PacienteTelefono ;
+   protected boolean n120PacienteGenero ;
+   protected boolean n114PacienteApMat ;
+   protected boolean A304DFElemFormReq ;
+   protected boolean n299DFElemFormLoadRule ;
+   protected boolean n263DFElemFormMetadata ;
+   protected boolean A264DFElemFormShwNbr ;
+   protected boolean n264DFElemFormShwNbr ;
+   protected boolean A262DFElemFormDateSel ;
+   protected boolean n262DFElemFormDateSel ;
+   protected boolean A259DFElemFormHasPmpt ;
+   protected boolean n259DFElemFormHasPmpt ;
+   protected boolean n184DFElemFormIsFlt ;
+   protected boolean n183DFElemFormCmpWth ;
+   protected boolean n182DFElemFormLblWth ;
+   protected boolean A282DFElemFormPrtShwNbr ;
+   protected boolean A271DFElemFormPrtAddRows ;
+   protected boolean A191DFElemFormIsVisPrt ;
+   protected boolean A190DFElemFormIsVis ;
+   protected boolean A189DFElemFormIsColap ;
+   protected boolean A188DFElemFormAllowIns ;
+   protected boolean n188DFElemFormAllowIns ;
+   protected boolean A187DFElemFormAllowUpd ;
+   protected boolean n187DFElemFormAllowUpd ;
+   protected boolean A186DFElemFormAllowDlt ;
+   protected boolean n186DFElemFormAllowDlt ;
+   protected boolean n145DFElemFormInstFileName ;
+   protected boolean n144DFElemFormInstFileType ;
+   protected boolean n143DFElemFormInstBlob ;
+   protected boolean n141DFElemFormInstVal ;
+   protected boolean n148DFElemFormInstSubElemFileName ;
+   protected boolean n147DFElemFormInstSubElemFileType ;
+   protected boolean n142DFElemFormInstSubElemVal ;
+   protected boolean n146DFElemFormInstSubElemBlob ;
+   protected boolean A298DFFormIsSD ;
+   protected boolean A157DFFormRunDLT ;
+   protected boolean n232DFFormPmtHgh ;
+   protected boolean n231DFFormPmtWth ;
+   protected boolean A234DFFormAct ;
+   protected boolean n32DFDomId ;
+   protected boolean n197DFFormInstSignedPDF ;
+   protected boolean n198DFFormInstSignedBy ;
+   protected boolean A305DFElemReq ;
+   protected boolean n300DFElemLoadRule ;
+   protected boolean n265DFElemMetadata ;
+   protected boolean A238DFElemIsColap ;
+   protected boolean A280DFElemPrtShwNbr ;
+   protected boolean A272DFElemPrtAddRows ;
+   protected boolean A260DFElemIsVisPrt ;
+   protected boolean A237DFElemIsVis ;
+   protected boolean n257DFElemLblWth ;
+   protected boolean n243DFElemCmpWth ;
+   protected boolean n242DFElemIsFlt ;
+   protected boolean n256DFElemFileType ;
+   protected boolean n254DFElemRegexVal ;
+   protected boolean A253DFElemAllowDlt ;
+   protected boolean n253DFElemAllowDlt ;
+   protected boolean A252DFElemAllowUpd ;
+   protected boolean n252DFElemAllowUpd ;
+   protected boolean A251DFElemAllowIns ;
+   protected boolean n251DFElemAllowIns ;
+   protected boolean A250DFElemUseBtns ;
+   protected boolean n250DFElemUseBtns ;
+   protected boolean A249DFElemIsOrd ;
+   protected boolean n249DFElemIsOrd ;
+   protected boolean n248DFElemMaxSuggRes ;
+   protected boolean A247DFElemForceSuggSel ;
+   protected boolean n247DFElemForceSuggSel ;
+   protected boolean n246DFElemMinCntCharSugg ;
+   protected boolean n245DFElemLoadPrgName ;
+   protected boolean n267DFElemBtnPos ;
+   protected boolean n268DFElemShwNbrLbl ;
+   protected boolean A266DFElemShwNbr ;
+   protected boolean n266DFElemShwNbr ;
+   protected boolean A261DFElemDateSel ;
+   protected boolean n261DFElemDateSel ;
+   protected boolean A244DFElemHasPmpt ;
+   protected boolean n244DFElemHasPmpt ;
+   protected boolean n180DFElemDftVal ;
+   protected boolean n241DFElemCntCols ;
+   protected boolean n240DFElemCntRows ;
+   protected boolean n239DFElemCntDec ;
+   protected boolean n255DFElemWth ;
+   protected boolean n236DFElemLen ;
+   protected boolean n196DFElemDsp ;
+   protected boolean n192DFElemClsName ;
+   protected boolean n235DFElemDsc ;
+   protected boolean A310DFDomPrtDsc ;
+   protected boolean n310DFDomPrtDsc ;
+   protected boolean n223DFDomLblWth ;
+   protected boolean n219DFDomCmpWth ;
+   protected boolean n218DFDomIsFlt ;
+   protected boolean n221DFDomFileType ;
+   protected boolean A213DFDomAllowDlt ;
+   protected boolean n213DFDomAllowDlt ;
+   protected boolean A212DFDomAllowUpd ;
+   protected boolean n212DFDomAllowUpd ;
+   protected boolean A211DFDomAllowIns ;
+   protected boolean n211DFDomAllowIns ;
+   protected boolean A210DFDomUseBtns ;
+   protected boolean n210DFDomUseBtns ;
+   protected boolean A209DFDomIsOrd ;
+   protected boolean n209DFDomIsOrd ;
+   protected boolean n207DFDomMaxSuggRes ;
+   protected boolean A206DFDomForceSuggSel ;
+   protected boolean n206DFDomForceSuggSel ;
+   protected boolean n205DFDomMinCntCharSugg ;
+   protected boolean n208DFDomDftVal ;
+   protected boolean n195DFDomDsp ;
+   protected boolean A164DFUserRstPwdIni ;
+   protected boolean n39DFSubElemFormPos ;
+   protected boolean n7HospitalId ;
+   protected boolean n321fecBajaEspecialidad ;
+   protected String A89DiagnosticoCirugia ;
+   protected String A86DiagnosticoComplemento ;
+   protected String A87DiagnosticoResumen ;
+   protected String A302TextoDescripcion ;
+   protected String A77DXAuxDoctoDocumento ;
+   protected String A143DFElemFormInstBlob ;
+   protected String A146DFElemFormInstSubElemBlob ;
+   protected String A277DFTempBlob ;
+   protected String A197DFFormInstSignedPDF ;
+   protected String A138DFUplFile ;
+   protected String A133PacienteNSSAgregado ;
+   protected String A76CIE10Descripcion ;
+   protected String A127CIECodigo ;
+   protected String A301TextoTitulo ;
    protected String A40000DXAuxImagenImg_GXI ;
-   protected String A298PacienteDiagnosticoPhone ;
-   protected String A71PacienteDiagnosticoResumido ;
-   protected String A70PacienteDiagnostico ;
-   protected String A53PacienteFamiliar ;
-   protected String A317DFFormDsc ;
-   protected String A236DFFormHelpURL ;
-   protected String A176DFFormPrefix ;
-   protected String A85FormatoPacienteMedicoNombre ;
-   protected String A316DFElemFormPrtPic ;
-   protected String A307DFElemFormLoadRule ;
-   protected String A266DFElemFormMetadata ;
-   protected String A143DFElemFormInstVal ;
-   protected String A144DFElemFormInstSubElemVal ;
-   protected String A281DFTempAddParmPrgName ;
-   protected String A286DFTempDsc ;
-   protected String A201DFFormInstSignedBy ;
-   protected String A315DFElemPrtPic ;
-   protected String A308DFElemLoadRule ;
-   protected String A268DFElemMetadata ;
-   protected String A261DFElemDscPrgName ;
-   protected String A248DFElemLoadPrgName ;
-   protected String A238DFElemDsc ;
-   protected String A99DFUserExtId ;
-   protected String A14DXAuxImagenImg ;
-   protected java.util.UUID A115DFFormGuid ;
-   protected java.util.UUID A114DFElemGuid ;
-   protected java.util.UUID A227DFDomGUID ;
+   protected String A287PacienteDiagnosticoPhone ;
+   protected String A129PacienteDiagnosticoResumido ;
+   protected String A128PacienteDiagnostico ;
+   protected String A122PacienteFamiliar ;
+   protected String A137FormatoPacienteMedicoNombre ;
+   protected String A299DFElemFormLoadRule ;
+   protected String A263DFElemFormMetadata ;
+   protected String A307DFElemFormPrtPic ;
+   protected String A141DFElemFormInstVal ;
+   protected String A142DFElemFormInstSubElemVal ;
+   protected String A278DFTempAddParmPrgName ;
+   protected String A283DFTempDsc ;
+   protected String A233DFFormHelpURL ;
+   protected String A173DFFormPrefix ;
+   protected String A308DFFormDsc ;
+   protected String A198DFFormInstSignedBy ;
+   protected String A300DFElemLoadRule ;
+   protected String A265DFElemMetadata ;
+   protected String A306DFElemPrtPic ;
+   protected String A258DFElemDscPrgName ;
+   protected String A245DFElemLoadPrgName ;
+   protected String A235DFElemDsc ;
+   protected String A22DFUserExtId ;
+   protected String A320desEspecialidad ;
+   protected String A82DXAuxImagenImg ;
+   protected java.util.UUID A30DFFormGuid ;
+   protected java.util.UUID A35DFElemGuid ;
+   protected java.util.UUID A224DFDomGUID ;
    protected com.genexus.internet.HttpRequest gxhttpr ;
    protected com.genexus.internet.StringCollection gxsyncheader ;
    protected com.genexus.internet.StringCollection gxsyncline ;
-   protected com.genexus.internet.StringCollection gxsyncline_hash ;
    protected com.genexus.internet.StringCollection gxtablemdata ;
    protected com.genexus.internet.StringCollection gxsynchashkey ;
    protected com.genexus.internet.StringCollection gxsetline ;
    protected com.genexus.internet.StringCollection gxsyncheaderpre ;
+   protected com.genexus.internet.StringCollection gxsyncline_hash ;
    protected com.genexus.internet.StringCollection gxsyncheaderline ;
    protected com.genexus.GxUnknownObjectCollection gxsyncresponse ;
-   protected com.genexus.GxUnknownObjectCollection gxsyncresponse_hash ;
    protected com.genexus.GxUnknownObjectCollection gxfinalsync ;
    protected com.genexus.GxUnknownObjectCollection gxsynchashset ;
    protected com.genexus.GxUnknownObjectCollection gxsyncvalueset ;
@@ -4529,387 +4981,419 @@ public final  class imssofflinedatabase extends GXProcedure
    protected com.genexus.GxUnknownObjectCollection gxsyncupdate ;
    protected com.genexus.GxUnknownObjectCollection gxsyncdelete ;
    protected com.genexus.GxUnknownObjectCollection gxtablehashlist ;
+   protected com.genexus.GxUnknownObjectCollection gxsyncresponse_hash ;
    protected com.genexus.GxUnknownObjectCollection GXv_objcol_gxjsonable7[] ;
    protected com.genexus.GxUnknownObjectCollection GXv_objcol_gxjsonable6[] ;
    protected com.genexus.GxUnknownObjectCollection GXv_objcol_gxjsonable5[] ;
    protected com.genexus.GxUnknownObjectCollection gxallsyncresponse ;
    protected com.genexus.GxUnknownObjectCollection gxtableheadlist ;
    protected IDataStoreProvider pr_default ;
-   protected boolean[] IMSSOFFLIN2_A312MedicoDebeMostarTerm ;
-   protected boolean[] IMSSOFFLIN2_A302MedicoDebeValidarDatos ;
-   protected java.util.Date[] IMSSOFFLIN2_A300MedicoUltimaActualizacion ;
-   protected long[] IMSSOFFLIN2_A297MedicoMatricula ;
-   protected boolean[] IMSSOFFLIN2_n297MedicoMatricula ;
-   protected String[] IMSSOFFLIN2_A296MedicoApellidoMaterno ;
-   protected String[] IMSSOFFLIN2_A295MedicoApellidoPaterno ;
-   protected String[] IMSSOFFLIN2_A294MedicoSegundoNombre ;
-   protected String[] IMSSOFFLIN2_A293MedicoPrimerNombre ;
-   protected String[] IMSSOFFLIN2_A292UserMedico ;
-   protected String[] IMSSOFFLIN3_A75PacienteNSSAgregado ;
-   protected String[] IMSSOFFLIN3_A81Matricula ;
+   protected java.util.Date[] IMSSOFFLIN2_A341FecBajaMed ;
+   protected boolean[] IMSSOFFLIN2_n341FecBajaMed ;
+   protected boolean[] IMSSOFFLIN2_A303MedDebMosTerm ;
+   protected boolean[] IMSSOFFLIN2_n303MedDebMosTerm ;
+   protected boolean[] IMSSOFFLIN2_A295MedDebValDat ;
+   protected java.util.Date[] IMSSOFFLIN2_A293MedUltAct ;
+   protected String[] IMSSOFFLIN2_A340MedCedProf ;
+   protected String[] IMSSOFFLIN2_A291MedApMat ;
+   protected String[] IMSSOFFLIN2_A290MedApPat ;
+   protected String[] IMSSOFFLIN2_A288MedNom ;
+   protected String[] IMSSOFFLIN2_A64UserMed ;
+   protected long[] IMSSOFFLIN2_A65MedMatricula ;
+   protected String[] IMSSOFFLIN3_A133PacienteNSSAgregado ;
+   protected String[] IMSSOFFLIN3_A8Matricula ;
    protected String[] IMSSOFFLIN3_A3PacienteAgregado ;
    protected String[] IMSSOFFLIN3_A2PacienteNSS ;
-   protected String[] IMSSOFFLIN4_A69CIECodigo ;
-   protected String[] IMSSOFFLIN4_A10CIE10Descripcion ;
-   protected int[] IMSSOFFLIN4_A1CIE10Id ;
-   protected String[] IMSSOFFLIN5_A75PacienteNSSAgregado ;
-   protected long[] IMSSOFFLIN5_A34MMatricula ;
-   protected boolean[] IMSSOFFLIN5_n34MMatricula ;
-   protected String[] IMSSOFFLIN5_A33MApMat ;
-   protected boolean[] IMSSOFFLIN5_n33MApMat ;
-   protected String[] IMSSOFFLIN5_A32MApPat ;
-   protected boolean[] IMSSOFFLIN5_n32MApPat ;
-   protected String[] IMSSOFFLIN5_A31MNombre ;
-   protected boolean[] IMSSOFFLIN5_n31MNombre ;
-   protected long[] IMSSOFFLIN5_A30MBMatricula ;
-   protected boolean[] IMSSOFFLIN5_n30MBMatricula ;
-   protected String[] IMSSOFFLIN5_A29MBApMat ;
-   protected boolean[] IMSSOFFLIN5_n29MBApMat ;
-   protected String[] IMSSOFFLIN5_A28MBApPat ;
-   protected boolean[] IMSSOFFLIN5_n28MBApPat ;
-   protected String[] IMSSOFFLIN5_A27MBNombre ;
-   protected boolean[] IMSSOFFLIN5_n27MBNombre ;
-   protected long[] IMSSOFFLIN5_A26JSMatricula ;
-   protected boolean[] IMSSOFFLIN5_n26JSMatricula ;
-   protected String[] IMSSOFFLIN5_A25JSApMat ;
-   protected boolean[] IMSSOFFLIN5_n25JSApMat ;
-   protected String[] IMSSOFFLIN5_A24JSApPat ;
-   protected boolean[] IMSSOFFLIN5_n24JSApPat ;
-   protected String[] IMSSOFFLIN5_A23JSNombre ;
-   protected boolean[] IMSSOFFLIN5_n23JSNombre ;
-   protected java.util.Date[] IMSSOFFLIN5_A22DiagnosticoCirugiaFecha ;
-   protected boolean[] IMSSOFFLIN5_n22DiagnosticoCirugiaFecha ;
-   protected String[] IMSSOFFLIN5_A21DiagnosticoCirugia ;
-   protected boolean[] IMSSOFFLIN5_n21DiagnosticoCirugia ;
-   protected String[] IMSSOFFLIN5_A20Cama ;
-   protected boolean[] IMSSOFFLIN5_n20Cama ;
-   protected short[] IMSSOFFLIN5_A6ServicioId ;
-   protected String[] IMSSOFFLIN5_A19DiagnosticoResumen ;
-   protected boolean[] IMSSOFFLIN5_n19DiagnosticoResumen ;
-   protected String[] IMSSOFFLIN5_A18DiagnosticoComplemento ;
-   protected boolean[] IMSSOFFLIN5_n18DiagnosticoComplemento ;
-   protected java.util.Date[] IMSSOFFLIN5_A35DiagnosticoFechaAlta ;
-   protected boolean[] IMSSOFFLIN5_n35DiagnosticoFechaAlta ;
-   protected java.util.Date[] IMSSOFFLIN5_A17DiagnosticoFechaIngreso ;
-   protected boolean[] IMSSOFFLIN5_n17DiagnosticoFechaIngreso ;
+   protected boolean[] IMSSOFFLIN4_A167DFParmIsMetaData ;
+   protected String[] IMSSOFFLIN4_A166DFParmVal ;
+   protected String[] IMSSOFFLIN4_A165DFParmName ;
+   protected int[] IMSSOFFLIN4_A25DFParmId ;
+   protected String[] IMSSOFFLIN5_A76CIE10Descripcion ;
+   protected String[] IMSSOFFLIN5_A127CIECodigo ;
    protected int[] IMSSOFFLIN5_A1CIE10Id ;
-   protected String[] IMSSOFFLIN5_A3PacienteAgregado ;
-   protected String[] IMSSOFFLIN5_A2PacienteNSS ;
-   protected short[] IMSSOFFLIN6_A323nada ;
-   protected String[] IMSSOFFLIN6_A311TextoDescripcion ;
-   protected String[] IMSSOFFLIN6_A310TextoTitulo ;
-   protected short[] IMSSOFFLIN6_A309TextoId ;
-   protected boolean[] IMSSOFFLIN7_A169DFParmIsMetaData ;
-   protected String[] IMSSOFFLIN7_A168DFParmVal ;
-   protected String[] IMSSOFFLIN7_A167DFParmName ;
-   protected int[] IMSSOFFLIN7_A102DFParmId ;
-   protected String[] IMSSOFFLIN8_A75PacienteNSSAgregado ;
+   protected String[] IMSSOFFLIN6_A133PacienteNSSAgregado ;
+   protected short[] IMSSOFFLIN6_A102MMatricula ;
+   protected boolean[] IMSSOFFLIN6_n102MMatricula ;
+   protected short[] IMSSOFFLIN6_A101MApMat ;
+   protected boolean[] IMSSOFFLIN6_n101MApMat ;
+   protected short[] IMSSOFFLIN6_A100MApPat ;
+   protected boolean[] IMSSOFFLIN6_n100MApPat ;
+   protected short[] IMSSOFFLIN6_A99MNombre ;
+   protected boolean[] IMSSOFFLIN6_n99MNombre ;
+   protected short[] IMSSOFFLIN6_A98MBMatricula ;
+   protected boolean[] IMSSOFFLIN6_n98MBMatricula ;
+   protected String[] IMSSOFFLIN6_A97MBApMat ;
+   protected boolean[] IMSSOFFLIN6_n97MBApMat ;
+   protected String[] IMSSOFFLIN6_A96MBApPat ;
+   protected boolean[] IMSSOFFLIN6_n96MBApPat ;
+   protected String[] IMSSOFFLIN6_A95MBNombre ;
+   protected boolean[] IMSSOFFLIN6_n95MBNombre ;
+   protected short[] IMSSOFFLIN6_A94JSMatricula ;
+   protected boolean[] IMSSOFFLIN6_n94JSMatricula ;
+   protected String[] IMSSOFFLIN6_A93JSApMat ;
+   protected boolean[] IMSSOFFLIN6_n93JSApMat ;
+   protected String[] IMSSOFFLIN6_A92JSApPat ;
+   protected boolean[] IMSSOFFLIN6_n92JSApPat ;
+   protected String[] IMSSOFFLIN6_A91JSNombre ;
+   protected boolean[] IMSSOFFLIN6_n91JSNombre ;
+   protected java.util.Date[] IMSSOFFLIN6_A90DiagnosticoCirugiaFecha ;
+   protected boolean[] IMSSOFFLIN6_n90DiagnosticoCirugiaFecha ;
+   protected String[] IMSSOFFLIN6_A89DiagnosticoCirugia ;
+   protected boolean[] IMSSOFFLIN6_n89DiagnosticoCirugia ;
+   protected String[] IMSSOFFLIN6_A88Cama ;
+   protected boolean[] IMSSOFFLIN6_n88Cama ;
+   protected short[] IMSSOFFLIN6_A6ServicioId ;
+   protected String[] IMSSOFFLIN6_A86DiagnosticoComplemento ;
+   protected boolean[] IMSSOFFLIN6_n86DiagnosticoComplemento ;
+   protected String[] IMSSOFFLIN6_A87DiagnosticoResumen ;
+   protected boolean[] IMSSOFFLIN6_n87DiagnosticoResumen ;
+   protected java.util.Date[] IMSSOFFLIN6_A103DiagnosticoFechaAlta ;
+   protected boolean[] IMSSOFFLIN6_n103DiagnosticoFechaAlta ;
+   protected java.util.Date[] IMSSOFFLIN6_A85DiagnosticoFechaIngreso ;
+   protected boolean[] IMSSOFFLIN6_n85DiagnosticoFechaIngreso ;
+   protected int[] IMSSOFFLIN6_A1CIE10Id ;
+   protected String[] IMSSOFFLIN6_A3PacienteAgregado ;
+   protected String[] IMSSOFFLIN6_A2PacienteNSS ;
+   protected short[] IMSSOFFLIN7_A314nada ;
+   protected String[] IMSSOFFLIN7_A302TextoDescripcion ;
+   protected String[] IMSSOFFLIN7_A301TextoTitulo ;
+   protected short[] IMSSOFFLIN7_A67TextoId ;
+   protected String[] IMSSOFFLIN8_A133PacienteNSSAgregado ;
    protected String[] IMSSOFFLIN8_A40000DXAuxImagenImg_GXI ;
-   protected String[] IMSSOFFLIN8_A322DXAuxImagenExtension ;
-   protected String[] IMSSOFFLIN8_A73DXAuxImagenNombre ;
-   protected String[] IMSSOFFLIN8_A16DXAuxImagenUserAlta ;
-   protected java.util.Date[] IMSSOFFLIN8_A15DXAuxImagenFechaAlta ;
-   protected String[] IMSSOFFLIN8_A14DXAuxImagenImg ;
+   protected String[] IMSSOFFLIN8_A84DXAuxImagenUserAlta ;
+   protected java.util.Date[] IMSSOFFLIN8_A83DXAuxImagenFechaAlta ;
+   protected String[] IMSSOFFLIN8_A82DXAuxImagenImg ;
+   protected String[] IMSSOFFLIN8_A313DXAuxImagenExtension ;
+   protected String[] IMSSOFFLIN8_A132DXAuxImagenNombre ;
    protected short[] IMSSOFFLIN8_A5DXAuxImagenId ;
    protected int[] IMSSOFFLIN8_A1CIE10Id ;
    protected String[] IMSSOFFLIN8_A3PacienteAgregado ;
    protected String[] IMSSOFFLIN8_A2PacienteNSS ;
-   protected String[] IMSSOFFLIN9_A75PacienteNSSAgregado ;
-   protected String[] IMSSOFFLIN9_A74DXAuxDoctoNombre ;
-   protected String[] IMSSOFFLIN9_A82DXAuxDoctoExtension ;
-   protected String[] IMSSOFFLIN9_A13DXAuxDoctoUserAlta ;
-   protected java.util.Date[] IMSSOFFLIN9_A12DXAuxDoctoFechaAlta ;
-   protected String[] IMSSOFFLIN9_A11DXAuxDoctoDocumento ;
+   protected String[] IMSSOFFLIN9_A133PacienteNSSAgregado ;
+   protected String[] IMSSOFFLIN9_A79DXAuxDoctoNombre ;
+   protected String[] IMSSOFFLIN9_A78DXAuxDoctoExtension ;
+   protected String[] IMSSOFFLIN9_A81DXAuxDoctoUserAlta ;
+   protected java.util.Date[] IMSSOFFLIN9_A80DXAuxDoctoFechaAlta ;
+   protected String[] IMSSOFFLIN9_A77DXAuxDoctoDocumento ;
    protected short[] IMSSOFFLIN9_A4DXAuxDoctoId ;
    protected int[] IMSSOFFLIN9_A1CIE10Id ;
    protected String[] IMSSOFFLIN9_A3PacienteAgregado ;
    protected String[] IMSSOFFLIN9_A2PacienteNSS ;
-   protected short[] IMSSOFFLIN10_A321PacienteServicioId ;
-   protected String[] IMSSOFFLIN10_A298PacienteDiagnosticoPhone ;
-   protected int[] IMSSOFFLIN10_A291PacienteCie10Id ;
-   protected java.util.Date[] IMSSOFFLIN10_A76PAcienteFechaIngreso ;
-   protected String[] IMSSOFFLIN10_A75PacienteNSSAgregado ;
-   protected String[] IMSSOFFLIN10_A72PacienteCama ;
-   protected String[] IMSSOFFLIN10_A71PacienteDiagnosticoResumido ;
-   protected String[] IMSSOFFLIN10_A70PacienteDiagnostico ;
-   protected java.util.Date[] IMSSOFFLIN10_A68PacienteFechaNacimiento ;
-   protected String[] IMSSOFFLIN10_A55PacienteNombreCompleto ;
-   protected String[] IMSSOFFLIN10_A54PacienteReferencia ;
-   protected boolean[] IMSSOFFLIN10_n54PacienteReferencia ;
-   protected String[] IMSSOFFLIN10_A53PacienteFamiliar ;
-   protected boolean[] IMSSOFFLIN10_n53PacienteFamiliar ;
-   protected String[] IMSSOFFLIN10_A52PacienteTelefono ;
-   protected boolean[] IMSSOFFLIN10_n52PacienteTelefono ;
-   protected String[] IMSSOFFLIN10_A51PacienteGenero ;
-   protected boolean[] IMSSOFFLIN10_n51PacienteGenero ;
-   protected short[] IMSSOFFLIN10_A50PacienteEdad ;
-   protected String[] IMSSOFFLIN10_A46PacienteApMat ;
-   protected boolean[] IMSSOFFLIN10_n46PacienteApMat ;
-   protected String[] IMSSOFFLIN10_A45PacienteApPat ;
-   protected String[] IMSSOFFLIN10_A44PacienteNombre ;
+   protected String[] IMSSOFFLIN10_A330ClavePresupuestal ;
+   protected String[] IMSSOFFLIN10_A328IDEE ;
+   protected boolean[] IMSSOFFLIN10_n328IDEE ;
+   protected String[] IMSSOFFLIN10_A325CURP ;
+   protected boolean[] IMSSOFFLIN10_n325CURP ;
+   protected String[] IMSSOFFLIN10_A327DhUMF ;
+   protected boolean[] IMSSOFFLIN10_n327DhUMF ;
+   protected String[] IMSSOFFLIN10_A326DhDeleg ;
+   protected boolean[] IMSSOFFLIN10_n326DhDeleg ;
+   protected String[] IMSSOFFLIN10_A324Consultorio ;
+   protected boolean[] IMSSOFFLIN10_n324Consultorio ;
+   protected String[] IMSSOFFLIN10_A323ConDerechoSm ;
+   protected boolean[] IMSSOFFLIN10_n323ConDerechoSm ;
+   protected String[] IMSSOFFLIN10_A322ConDerechoInc ;
+   protected boolean[] IMSSOFFLIN10_n322ConDerechoInc ;
+   protected short[] IMSSOFFLIN10_A312PacienteServicioId ;
+   protected int[] IMSSOFFLIN10_A130PacienteCie10Id ;
+   protected String[] IMSSOFFLIN10_A133PacienteNSSAgregado ;
+   protected String[] IMSSOFFLIN10_A131PacienteCama ;
+   protected String[] IMSSOFFLIN10_A287PacienteDiagnosticoPhone ;
+   protected String[] IMSSOFFLIN10_A129PacienteDiagnosticoResumido ;
+   protected String[] IMSSOFFLIN10_A128PacienteDiagnostico ;
+   protected java.util.Date[] IMSSOFFLIN10_A134PAcienteFechaIngreso ;
+   protected String[] IMSSOFFLIN10_A124PacienteNombreCompleto ;
+   protected String[] IMSSOFFLIN10_A123PacienteReferencia ;
+   protected boolean[] IMSSOFFLIN10_n123PacienteReferencia ;
+   protected String[] IMSSOFFLIN10_A122PacienteFamiliar ;
+   protected boolean[] IMSSOFFLIN10_n122PacienteFamiliar ;
+   protected String[] IMSSOFFLIN10_A121PacienteTelefono ;
+   protected boolean[] IMSSOFFLIN10_n121PacienteTelefono ;
+   protected String[] IMSSOFFLIN10_A120PacienteGenero ;
+   protected boolean[] IMSSOFFLIN10_n120PacienteGenero ;
+   protected short[] IMSSOFFLIN10_A118PacienteEdad ;
+   protected java.util.Date[] IMSSOFFLIN10_A119PacienteFechaNacimiento ;
+   protected String[] IMSSOFFLIN10_A114PacienteApMat ;
+   protected boolean[] IMSSOFFLIN10_n114PacienteApMat ;
+   protected String[] IMSSOFFLIN10_A113PacienteApPat ;
+   protected String[] IMSSOFFLIN10_A112PacienteNombre ;
    protected String[] IMSSOFFLIN10_A3PacienteAgregado ;
    protected String[] IMSSOFFLIN10_A2PacienteNSS ;
-   protected String[] IMSSOFFLIN11_A317DFFormDsc ;
-   protected boolean[] IMSSOFFLIN11_A303DFFormIsSD ;
-   protected boolean[] IMSSOFFLIN11_A159DFFormRunDLT ;
-   protected String[] IMSSOFFLIN11_A236DFFormHelpURL ;
-   protected String[] IMSSOFFLIN11_A176DFFormPrefix ;
-   protected int[] IMSSOFFLIN11_A235DFFormPmtHgh ;
-   protected boolean[] IMSSOFFLIN11_n235DFFormPmtHgh ;
-   protected int[] IMSSOFFLIN11_A234DFFormPmtWth ;
-   protected boolean[] IMSSOFFLIN11_n234DFFormPmtWth ;
-   protected boolean[] IMSSOFFLIN11_A237DFFormAct ;
-   protected String[] IMSSOFFLIN11_A171DFFormName ;
-   protected java.util.UUID[] IMSSOFFLIN11_A115DFFormGuid ;
-   protected int[] IMSSOFFLIN11_A87DFFormVer ;
-   protected int[] IMSSOFFLIN11_A86DFFormId ;
-   protected String[] IMSSOFFLIN12_A85FormatoPacienteMedicoNombre ;
-   protected long[] IMSSOFFLIN12_A84FormatoPacienteMedicoMatricula ;
-   protected long[] IMSSOFFLIN12_A90DFFormInstId ;
-   protected String[] IMSSOFFLIN12_A80FormatoPacienteAgregado ;
-   protected String[] IMSSOFFLIN12_A79FormatoPacienteNSS ;
-   protected String[] IMSSOFFLIN13_A306ExtensionNombre ;
-   protected short[] IMSSOFFLIN13_A305ExtensionTipo ;
-   protected short[] IMSSOFFLIN13_A304ExtensionId ;
-   protected boolean[] IMSSOFFLIN14_A313DFElemFormReq ;
-   protected String[] IMSSOFFLIN14_A316DFElemFormPrtPic ;
-   protected String[] IMSSOFFLIN14_A307DFElemFormLoadRule ;
-   protected boolean[] IMSSOFFLIN14_n307DFElemFormLoadRule ;
-   protected String[] IMSSOFFLIN14_A266DFElemFormMetadata ;
-   protected boolean[] IMSSOFFLIN14_n266DFElemFormMetadata ;
-   protected boolean[] IMSSOFFLIN14_A267DFElemFormShwNbr ;
-   protected boolean[] IMSSOFFLIN14_n267DFElemFormShwNbr ;
-   protected boolean[] IMSSOFFLIN14_A265DFElemFormDateSel ;
-   protected boolean[] IMSSOFFLIN14_n265DFElemFormDateSel ;
-   protected boolean[] IMSSOFFLIN14_A262DFElemFormHasPmpt ;
-   protected boolean[] IMSSOFFLIN14_n262DFElemFormHasPmpt ;
-   protected String[] IMSSOFFLIN14_A187DFElemFormIsFlt ;
-   protected boolean[] IMSSOFFLIN14_n187DFElemFormIsFlt ;
-   protected String[] IMSSOFFLIN14_A186DFElemFormCmpWth ;
-   protected boolean[] IMSSOFFLIN14_n186DFElemFormCmpWth ;
-   protected String[] IMSSOFFLIN14_A185DFElemFormLblWth ;
-   protected boolean[] IMSSOFFLIN14_n185DFElemFormLblWth ;
-   protected boolean[] IMSSOFFLIN14_A285DFElemFormPrtShwNbr ;
-   protected int[] IMSSOFFLIN14_A284DFElemFormPrtNumColSkip ;
-   protected int[] IMSSOFFLIN14_A276DFElemFormPrtNumRowSkip ;
-   protected boolean[] IMSSOFFLIN14_A274DFElemFormPrtAddRows ;
-   protected String[] IMSSOFFLIN14_A273DFElemFormPrtName ;
-   protected boolean[] IMSSOFFLIN14_A194DFElemFormIsVisPrt ;
-   protected boolean[] IMSSOFFLIN14_A193DFElemFormIsVis ;
-   protected boolean[] IMSSOFFLIN14_A192DFElemFormIsColap ;
-   protected boolean[] IMSSOFFLIN14_A191DFElemFormAllowIns ;
-   protected boolean[] IMSSOFFLIN14_n191DFElemFormAllowIns ;
-   protected boolean[] IMSSOFFLIN14_A190DFElemFormAllowUpd ;
-   protected boolean[] IMSSOFFLIN14_n190DFElemFormAllowUpd ;
-   protected boolean[] IMSSOFFLIN14_A189DFElemFormAllowDlt ;
-   protected boolean[] IMSSOFFLIN14_n189DFElemFormAllowDlt ;
-   protected String[] IMSSOFFLIN14_A184DFElemFormInhType ;
-   protected int[] IMSSOFFLIN14_A116DFElemFormPos ;
-   protected String[] IMSSOFFLIN14_A188DFElemFormName ;
-   protected int[] IMSSOFFLIN14_A89DFElemVer ;
-   protected int[] IMSSOFFLIN14_A88DFElemId ;
-   protected int[] IMSSOFFLIN14_A87DFFormVer ;
-   protected int[] IMSSOFFLIN14_A86DFFormId ;
-   protected String[] IMSSOFFLIN15_A147DFElemFormInstFileName ;
-   protected boolean[] IMSSOFFLIN15_n147DFElemFormInstFileName ;
-   protected String[] IMSSOFFLIN15_A146DFElemFormInstFileType ;
-   protected boolean[] IMSSOFFLIN15_n146DFElemFormInstFileType ;
-   protected String[] IMSSOFFLIN15_A145DFElemFormInstBlob ;
-   protected boolean[] IMSSOFFLIN15_n145DFElemFormInstBlob ;
-   protected String[] IMSSOFFLIN15_A143DFElemFormInstVal ;
-   protected boolean[] IMSSOFFLIN15_n143DFElemFormInstVal ;
-   protected int[] IMSSOFFLIN15_A89DFElemVer ;
-   protected int[] IMSSOFFLIN15_A88DFElemId ;
-   protected long[] IMSSOFFLIN15_A90DFFormInstId ;
-   protected String[] IMSSOFFLIN16_A150DFElemFormInstSubElemFileName ;
-   protected boolean[] IMSSOFFLIN16_n150DFElemFormInstSubElemFileName ;
-   protected String[] IMSSOFFLIN16_A149DFElemFormInstSubElemFileType ;
-   protected boolean[] IMSSOFFLIN16_n149DFElemFormInstSubElemFileType ;
-   protected int[] IMSSOFFLIN16_A108DFSubElemFormElemId ;
-   protected int[] IMSSOFFLIN16_A109DFSubElemFormElemVer ;
-   protected int[] IMSSOFFLIN16_A110DFElemFormInstSubElemRow ;
-   protected String[] IMSSOFFLIN16_A144DFElemFormInstSubElemVal ;
-   protected boolean[] IMSSOFFLIN16_n144DFElemFormInstSubElemVal ;
-   protected String[] IMSSOFFLIN16_A148DFElemFormInstSubElemBlob ;
-   protected boolean[] IMSSOFFLIN16_n148DFElemFormInstSubElemBlob ;
-   protected int[] IMSSOFFLIN16_A107DFElemFormInstSubElemId ;
-   protected int[] IMSSOFFLIN16_A89DFElemVer ;
-   protected int[] IMSSOFFLIN16_A88DFElemId ;
-   protected long[] IMSSOFFLIN16_A90DFFormInstId ;
-   protected String[] IMSSOFFLIN17_A290DFTempFm ;
-   protected String[] IMSSOFFLIN17_A287DFTempOutFm ;
-   protected String[] IMSSOFFLIN17_A281DFTempAddParmPrgName ;
-   protected String[] IMSSOFFLIN17_A280DFTempBlob ;
-   protected String[] IMSSOFFLIN17_A286DFTempDsc ;
-   protected String[] IMSSOFFLIN17_A136DFTempName ;
-   protected int[] IMSSOFFLIN17_A87DFFormVer ;
-   protected int[] IMSSOFFLIN17_A86DFFormId ;
-   protected String[] IMSSOFFLIN18_A225DFDomStaValOptDsc ;
-   protected int[] IMSSOFFLIN18_A113DFDomStaValOptOrd ;
-   protected String[] IMSSOFFLIN18_A112DFDomStaValOptCod ;
-   protected int[] IMSSOFFLIN18_A111DFDomId ;
-   protected boolean[] IMSSOFFLIN18_n111DFDomId ;
-   protected String[] IMSSOFFLIN19_A200DFFormInstSignedPDF ;
-   protected boolean[] IMSSOFFLIN19_n200DFFormInstSignedPDF ;
-   protected String[] IMSSOFFLIN19_A201DFFormInstSignedBy ;
-   protected boolean[] IMSSOFFLIN19_n201DFFormInstSignedBy ;
-   protected java.util.Date[] IMSSOFFLIN19_A157DFFormInstDT ;
-   protected int[] IMSSOFFLIN19_A106DFFormInstFormVer ;
-   protected int[] IMSSOFFLIN19_A105DFFormInstFormId ;
-   protected long[] IMSSOFFLIN19_A90DFFormInstId ;
-   protected boolean[] IMSSOFFLIN20_A314DFElemReq ;
-   protected String[] IMSSOFFLIN20_A315DFElemPrtPic ;
-   protected String[] IMSSOFFLIN20_A308DFElemLoadRule ;
-   protected boolean[] IMSSOFFLIN20_n308DFElemLoadRule ;
-   protected String[] IMSSOFFLIN20_A268DFElemMetadata ;
-   protected boolean[] IMSSOFFLIN20_n268DFElemMetadata ;
-   protected boolean[] IMSSOFFLIN20_A241DFElemIsColap ;
-   protected boolean[] IMSSOFFLIN20_A283DFElemPrtShwNbr ;
-   protected int[] IMSSOFFLIN20_A282DFElemPrtNumColSkip ;
-   protected int[] IMSSOFFLIN20_A277DFElemPrtNumRowSkip ;
-   protected boolean[] IMSSOFFLIN20_A275DFElemPrtAddRows ;
-   protected String[] IMSSOFFLIN20_A272DFElemPrtName ;
-   protected boolean[] IMSSOFFLIN20_A263DFElemIsVisPrt ;
-   protected boolean[] IMSSOFFLIN20_A240DFElemIsVis ;
-   protected String[] IMSSOFFLIN20_A260DFElemLblWth ;
-   protected boolean[] IMSSOFFLIN20_n260DFElemLblWth ;
-   protected String[] IMSSOFFLIN20_A246DFElemCmpWth ;
-   protected boolean[] IMSSOFFLIN20_n246DFElemCmpWth ;
-   protected String[] IMSSOFFLIN20_A245DFElemIsFlt ;
-   protected boolean[] IMSSOFFLIN20_n245DFElemIsFlt ;
-   protected String[] IMSSOFFLIN20_A259DFElemFileType ;
-   protected boolean[] IMSSOFFLIN20_n259DFElemFileType ;
-   protected String[] IMSSOFFLIN20_A257DFElemRegexVal ;
-   protected boolean[] IMSSOFFLIN20_n257DFElemRegexVal ;
-   protected boolean[] IMSSOFFLIN20_A256DFElemAllowDlt ;
-   protected boolean[] IMSSOFFLIN20_n256DFElemAllowDlt ;
-   protected boolean[] IMSSOFFLIN20_A255DFElemAllowUpd ;
-   protected boolean[] IMSSOFFLIN20_n255DFElemAllowUpd ;
-   protected boolean[] IMSSOFFLIN20_A254DFElemAllowIns ;
-   protected boolean[] IMSSOFFLIN20_n254DFElemAllowIns ;
-   protected boolean[] IMSSOFFLIN20_A253DFElemUseBtns ;
-   protected boolean[] IMSSOFFLIN20_n253DFElemUseBtns ;
-   protected boolean[] IMSSOFFLIN20_A252DFElemIsOrd ;
-   protected boolean[] IMSSOFFLIN20_n252DFElemIsOrd ;
-   protected int[] IMSSOFFLIN20_A251DFElemMaxSuggRes ;
-   protected boolean[] IMSSOFFLIN20_n251DFElemMaxSuggRes ;
-   protected boolean[] IMSSOFFLIN20_A250DFElemForceSuggSel ;
-   protected boolean[] IMSSOFFLIN20_n250DFElemForceSuggSel ;
-   protected int[] IMSSOFFLIN20_A249DFElemMinCntCharSugg ;
-   protected boolean[] IMSSOFFLIN20_n249DFElemMinCntCharSugg ;
-   protected String[] IMSSOFFLIN20_A261DFElemDscPrgName ;
-   protected String[] IMSSOFFLIN20_A248DFElemLoadPrgName ;
-   protected boolean[] IMSSOFFLIN20_n248DFElemLoadPrgName ;
-   protected String[] IMSSOFFLIN20_A270DFElemBtnPos ;
-   protected boolean[] IMSSOFFLIN20_n270DFElemBtnPos ;
-   protected String[] IMSSOFFLIN20_A271DFElemShwNbrLbl ;
-   protected boolean[] IMSSOFFLIN20_n271DFElemShwNbrLbl ;
-   protected boolean[] IMSSOFFLIN20_A269DFElemShwNbr ;
-   protected boolean[] IMSSOFFLIN20_n269DFElemShwNbr ;
-   protected boolean[] IMSSOFFLIN20_A264DFElemDateSel ;
-   protected boolean[] IMSSOFFLIN20_n264DFElemDateSel ;
-   protected boolean[] IMSSOFFLIN20_A247DFElemHasPmpt ;
-   protected boolean[] IMSSOFFLIN20_n247DFElemHasPmpt ;
-   protected String[] IMSSOFFLIN20_A183DFElemDftVal ;
-   protected boolean[] IMSSOFFLIN20_n183DFElemDftVal ;
-   protected int[] IMSSOFFLIN20_A244DFElemCntCols ;
-   protected boolean[] IMSSOFFLIN20_n244DFElemCntCols ;
-   protected int[] IMSSOFFLIN20_A243DFElemCntRows ;
-   protected boolean[] IMSSOFFLIN20_n243DFElemCntRows ;
-   protected int[] IMSSOFFLIN20_A242DFElemCntDec ;
-   protected boolean[] IMSSOFFLIN20_n242DFElemCntDec ;
-   protected int[] IMSSOFFLIN20_A258DFElemWth ;
-   protected boolean[] IMSSOFFLIN20_n258DFElemWth ;
-   protected int[] IMSSOFFLIN20_A239DFElemLen ;
-   protected boolean[] IMSSOFFLIN20_n239DFElemLen ;
-   protected String[] IMSSOFFLIN20_A199DFElemDsp ;
-   protected boolean[] IMSSOFFLIN20_n199DFElemDsp ;
-   protected String[] IMSSOFFLIN20_A181DFElemType ;
-   protected int[] IMSSOFFLIN20_A111DFDomId ;
-   protected boolean[] IMSSOFFLIN20_n111DFDomId ;
-   protected String[] IMSSOFFLIN20_A195DFElemClsName ;
-   protected boolean[] IMSSOFFLIN20_n195DFElemClsName ;
-   protected String[] IMSSOFFLIN20_A238DFElemDsc ;
-   protected boolean[] IMSSOFFLIN20_n238DFElemDsc ;
-   protected String[] IMSSOFFLIN20_A151DFElemName ;
-   protected java.util.UUID[] IMSSOFFLIN20_A114DFElemGuid ;
-   protected int[] IMSSOFFLIN20_A89DFElemVer ;
-   protected int[] IMSSOFFLIN20_A88DFElemId ;
-   protected String[] IMSSOFFLIN21_A93DFFormRstVal ;
-   protected int[] IMSSOFFLIN21_A92DFFormRstId ;
-   protected int[] IMSSOFFLIN21_A87DFFormVer ;
-   protected int[] IMSSOFFLIN21_A86DFFormId ;
-   protected boolean[] IMSSOFFLIN22_A166DFUserRstPwdIni ;
-   protected String[] IMSSOFFLIN22_A101DFUserRstVal ;
-   protected int[] IMSSOFFLIN22_A100DFUserRstId ;
-   protected String[] IMSSOFFLIN22_A99DFUserExtId ;
-   protected boolean[] IMSSOFFLIN23_A319DFDomPrtDsc ;
-   protected boolean[] IMSSOFFLIN23_n319DFDomPrtDsc ;
-   protected String[] IMSSOFFLIN23_A226DFDomLblWth ;
-   protected boolean[] IMSSOFFLIN23_n226DFDomLblWth ;
-   protected String[] IMSSOFFLIN23_A222DFDomCmpWth ;
-   protected boolean[] IMSSOFFLIN23_n222DFDomCmpWth ;
-   protected String[] IMSSOFFLIN23_A221DFDomIsFlt ;
-   protected boolean[] IMSSOFFLIN23_n221DFDomIsFlt ;
-   protected String[] IMSSOFFLIN23_A224DFDomFileType ;
-   protected boolean[] IMSSOFFLIN23_n224DFDomFileType ;
-   protected String[] IMSSOFFLIN23_A220DFDomRegexVal ;
-   protected boolean[] IMSSOFFLIN23_A216DFDomAllowDlt ;
-   protected boolean[] IMSSOFFLIN23_n216DFDomAllowDlt ;
-   protected boolean[] IMSSOFFLIN23_A215DFDomAllowUpd ;
-   protected boolean[] IMSSOFFLIN23_n215DFDomAllowUpd ;
-   protected boolean[] IMSSOFFLIN23_A214DFDomAllowIns ;
-   protected boolean[] IMSSOFFLIN23_n214DFDomAllowIns ;
-   protected boolean[] IMSSOFFLIN23_A213DFDomUseBtns ;
-   protected boolean[] IMSSOFFLIN23_n213DFDomUseBtns ;
-   protected boolean[] IMSSOFFLIN23_A212DFDomIsOrd ;
-   protected boolean[] IMSSOFFLIN23_n212DFDomIsOrd ;
-   protected int[] IMSSOFFLIN23_A210DFDomMaxSuggRes ;
-   protected boolean[] IMSSOFFLIN23_n210DFDomMaxSuggRes ;
-   protected boolean[] IMSSOFFLIN23_A209DFDomForceSuggSel ;
-   protected boolean[] IMSSOFFLIN23_n209DFDomForceSuggSel ;
-   protected int[] IMSSOFFLIN23_A208DFDomMinCntCharSugg ;
-   protected boolean[] IMSSOFFLIN23_n208DFDomMinCntCharSugg ;
-   protected String[] IMSSOFFLIN23_A211DFDomDftVal ;
-   protected boolean[] IMSSOFFLIN23_n211DFDomDftVal ;
-   protected int[] IMSSOFFLIN23_A219DFDomCntCols ;
-   protected int[] IMSSOFFLIN23_A218DFDomCntRows ;
-   protected int[] IMSSOFFLIN23_A217DFDomCntDec ;
-   protected int[] IMSSOFFLIN23_A223DFDomWth ;
-   protected int[] IMSSOFFLIN23_A207DFDomLen ;
-   protected String[] IMSSOFFLIN23_A198DFDomDsp ;
-   protected boolean[] IMSSOFFLIN23_n198DFDomDsp ;
-   protected String[] IMSSOFFLIN23_A197DFDomType ;
-   protected java.util.UUID[] IMSSOFFLIN23_A227DFDomGUID ;
-   protected String[] IMSSOFFLIN23_A206DFDomDsc ;
-   protected int[] IMSSOFFLIN23_A111DFDomId ;
-   protected boolean[] IMSSOFFLIN23_n111DFDomId ;
-   protected int[] IMSSOFFLIN24_A117DFSubElemFormPos ;
-   protected boolean[] IMSSOFFLIN24_n117DFSubElemFormPos ;
-   protected int[] IMSSOFFLIN24_A109DFSubElemFormElemVer ;
-   protected int[] IMSSOFFLIN24_A108DFSubElemFormElemId ;
-   protected int[] IMSSOFFLIN24_A89DFElemVer ;
-   protected int[] IMSSOFFLIN24_A88DFElemId ;
-   protected int[] IMSSOFFLIN24_A87DFFormVer ;
-   protected int[] IMSSOFFLIN24_A86DFFormId ;
-   protected int[] IMSSOFFLIN25_A120DFFilElemFormElemVer ;
-   protected int[] IMSSOFFLIN25_A119DFFilElemFormElemId ;
-   protected short[] IMSSOFFLIN25_A121DFFilElemFormPos ;
-   protected int[] IMSSOFFLIN25_A118DFFilElemFormId ;
-   protected int[] IMSSOFFLIN25_A89DFElemVer ;
-   protected int[] IMSSOFFLIN25_A88DFElemId ;
-   protected int[] IMSSOFFLIN25_A87DFFormVer ;
-   protected int[] IMSSOFFLIN25_A86DFFormId ;
-   protected short[] IMSSOFFLIN26_A288HospitalId ;
-   protected boolean[] IMSSOFFLIN26_n288HospitalId ;
-   protected String[] IMSSOFFLIN26_A36ServicioDescripcion ;
-   protected short[] IMSSOFFLIN26_A6ServicioId ;
-   protected int[] IMSSOFFLIN27_A105DFFormInstFormId ;
-   protected String[] IMSSOFFLIN27_A141DFUplFileExt ;
-   protected String[] IMSSOFFLIN27_A142DFUplFileName ;
-   protected String[] IMSSOFFLIN27_A140DFUplFile ;
-   protected String[] IMSSOFFLIN27_A91DFUplKey ;
-   protected long[] IMSSOFFLIN27_A90DFFormInstId ;
+   protected String[] IMSSOFFLIN11_A297ExtensionNombre ;
+   protected short[] IMSSOFFLIN11_A296ExtensionTipo ;
+   protected short[] IMSSOFFLIN11_A66ExtensionId ;
+   protected long[] IMSSOFFLIN12_A136FormatoPacienteMedicoMatricula ;
+   protected String[] IMSSOFFLIN12_A137FormatoPacienteMedicoNombre ;
+   protected long[] IMSSOFFLIN12_A9DFFormInstId ;
+   protected String[] IMSSOFFLIN12_A63FormatoPacienteAgregado ;
+   protected String[] IMSSOFFLIN12_A62FormatoPacienteNSS ;
+   protected boolean[] IMSSOFFLIN13_A304DFElemFormReq ;
+   protected String[] IMSSOFFLIN13_A299DFElemFormLoadRule ;
+   protected boolean[] IMSSOFFLIN13_n299DFElemFormLoadRule ;
+   protected String[] IMSSOFFLIN13_A263DFElemFormMetadata ;
+   protected boolean[] IMSSOFFLIN13_n263DFElemFormMetadata ;
+   protected boolean[] IMSSOFFLIN13_A264DFElemFormShwNbr ;
+   protected boolean[] IMSSOFFLIN13_n264DFElemFormShwNbr ;
+   protected boolean[] IMSSOFFLIN13_A262DFElemFormDateSel ;
+   protected boolean[] IMSSOFFLIN13_n262DFElemFormDateSel ;
+   protected boolean[] IMSSOFFLIN13_A259DFElemFormHasPmpt ;
+   protected boolean[] IMSSOFFLIN13_n259DFElemFormHasPmpt ;
+   protected String[] IMSSOFFLIN13_A184DFElemFormIsFlt ;
+   protected boolean[] IMSSOFFLIN13_n184DFElemFormIsFlt ;
+   protected String[] IMSSOFFLIN13_A183DFElemFormCmpWth ;
+   protected boolean[] IMSSOFFLIN13_n183DFElemFormCmpWth ;
+   protected String[] IMSSOFFLIN13_A182DFElemFormLblWth ;
+   protected boolean[] IMSSOFFLIN13_n182DFElemFormLblWth ;
+   protected String[] IMSSOFFLIN13_A307DFElemFormPrtPic ;
+   protected boolean[] IMSSOFFLIN13_A282DFElemFormPrtShwNbr ;
+   protected int[] IMSSOFFLIN13_A281DFElemFormPrtNumColSkip ;
+   protected int[] IMSSOFFLIN13_A273DFElemFormPrtNumRowSkip ;
+   protected boolean[] IMSSOFFLIN13_A271DFElemFormPrtAddRows ;
+   protected String[] IMSSOFFLIN13_A270DFElemFormPrtName ;
+   protected boolean[] IMSSOFFLIN13_A191DFElemFormIsVisPrt ;
+   protected boolean[] IMSSOFFLIN13_A190DFElemFormIsVis ;
+   protected boolean[] IMSSOFFLIN13_A189DFElemFormIsColap ;
+   protected boolean[] IMSSOFFLIN13_A188DFElemFormAllowIns ;
+   protected boolean[] IMSSOFFLIN13_n188DFElemFormAllowIns ;
+   protected boolean[] IMSSOFFLIN13_A187DFElemFormAllowUpd ;
+   protected boolean[] IMSSOFFLIN13_n187DFElemFormAllowUpd ;
+   protected boolean[] IMSSOFFLIN13_A186DFElemFormAllowDlt ;
+   protected boolean[] IMSSOFFLIN13_n186DFElemFormAllowDlt ;
+   protected String[] IMSSOFFLIN13_A181DFElemFormInhType ;
+   protected int[] IMSSOFFLIN13_A36DFElemFormPos ;
+   protected String[] IMSSOFFLIN13_A185DFElemFormName ;
+   protected int[] IMSSOFFLIN13_A19DFElemVer ;
+   protected int[] IMSSOFFLIN13_A18DFElemId ;
+   protected int[] IMSSOFFLIN13_A12DFFormVer ;
+   protected int[] IMSSOFFLIN13_A11DFFormId ;
+   protected String[] IMSSOFFLIN14_A145DFElemFormInstFileName ;
+   protected boolean[] IMSSOFFLIN14_n145DFElemFormInstFileName ;
+   protected String[] IMSSOFFLIN14_A144DFElemFormInstFileType ;
+   protected boolean[] IMSSOFFLIN14_n144DFElemFormInstFileType ;
+   protected String[] IMSSOFFLIN14_A143DFElemFormInstBlob ;
+   protected boolean[] IMSSOFFLIN14_n143DFElemFormInstBlob ;
+   protected String[] IMSSOFFLIN14_A141DFElemFormInstVal ;
+   protected boolean[] IMSSOFFLIN14_n141DFElemFormInstVal ;
+   protected int[] IMSSOFFLIN14_A19DFElemVer ;
+   protected int[] IMSSOFFLIN14_A18DFElemId ;
+   protected long[] IMSSOFFLIN14_A9DFFormInstId ;
+   protected String[] IMSSOFFLIN15_A148DFElemFormInstSubElemFileName ;
+   protected boolean[] IMSSOFFLIN15_n148DFElemFormInstSubElemFileName ;
+   protected String[] IMSSOFFLIN15_A147DFElemFormInstSubElemFileType ;
+   protected boolean[] IMSSOFFLIN15_n147DFElemFormInstSubElemFileType ;
+   protected int[] IMSSOFFLIN15_A37DFSubElemFormElemId ;
+   protected int[] IMSSOFFLIN15_A38DFSubElemFormElemVer ;
+   protected int[] IMSSOFFLIN15_A69DFElemFormInstSubElemRow ;
+   protected String[] IMSSOFFLIN15_A142DFElemFormInstSubElemVal ;
+   protected boolean[] IMSSOFFLIN15_n142DFElemFormInstSubElemVal ;
+   protected String[] IMSSOFFLIN15_A146DFElemFormInstSubElemBlob ;
+   protected boolean[] IMSSOFFLIN15_n146DFElemFormInstSubElemBlob ;
+   protected int[] IMSSOFFLIN15_A68DFElemFormInstSubElemId ;
+   protected int[] IMSSOFFLIN15_A19DFElemVer ;
+   protected int[] IMSSOFFLIN15_A18DFElemId ;
+   protected long[] IMSSOFFLIN15_A9DFFormInstId ;
+   protected String[] IMSSOFFLIN16_A284DFTempOutFm ;
+   protected String[] IMSSOFFLIN16_A278DFTempAddParmPrgName ;
+   protected String[] IMSSOFFLIN16_A277DFTempBlob ;
+   protected String[] IMSSOFFLIN16_A286DFTempFm ;
+   protected String[] IMSSOFFLIN16_A283DFTempDsc ;
+   protected String[] IMSSOFFLIN16_A55DFTempName ;
+   protected int[] IMSSOFFLIN16_A12DFFormVer ;
+   protected int[] IMSSOFFLIN16_A11DFFormId ;
+   protected boolean[] IMSSOFFLIN17_A298DFFormIsSD ;
+   protected boolean[] IMSSOFFLIN17_A157DFFormRunDLT ;
+   protected String[] IMSSOFFLIN17_A233DFFormHelpURL ;
+   protected String[] IMSSOFFLIN17_A173DFFormPrefix ;
+   protected int[] IMSSOFFLIN17_A232DFFormPmtHgh ;
+   protected boolean[] IMSSOFFLIN17_n232DFFormPmtHgh ;
+   protected int[] IMSSOFFLIN17_A231DFFormPmtWth ;
+   protected boolean[] IMSSOFFLIN17_n231DFFormPmtWth ;
+   protected boolean[] IMSSOFFLIN17_A234DFFormAct ;
+   protected String[] IMSSOFFLIN17_A308DFFormDsc ;
+   protected String[] IMSSOFFLIN17_A31DFFormName ;
+   protected java.util.UUID[] IMSSOFFLIN17_A30DFFormGuid ;
+   protected int[] IMSSOFFLIN17_A12DFFormVer ;
+   protected int[] IMSSOFFLIN17_A11DFFormId ;
+   protected String[] IMSSOFFLIN18_A222DFDomStaValOptDsc ;
+   protected int[] IMSSOFFLIN18_A34DFDomStaValOptOrd ;
+   protected String[] IMSSOFFLIN18_A33DFDomStaValOptCod ;
+   protected int[] IMSSOFFLIN18_A32DFDomId ;
+   protected boolean[] IMSSOFFLIN18_n32DFDomId ;
+   protected String[] IMSSOFFLIN19_A197DFFormInstSignedPDF ;
+   protected boolean[] IMSSOFFLIN19_n197DFFormInstSignedPDF ;
+   protected String[] IMSSOFFLIN19_A198DFFormInstSignedBy ;
+   protected boolean[] IMSSOFFLIN19_n198DFFormInstSignedBy ;
+   protected java.util.Date[] IMSSOFFLIN19_A155DFFormInstDT ;
+   protected int[] IMSSOFFLIN19_A29DFFormInstFormVer ;
+   protected int[] IMSSOFFLIN19_A28DFFormInstFormId ;
+   protected long[] IMSSOFFLIN19_A9DFFormInstId ;
+   protected boolean[] IMSSOFFLIN20_A305DFElemReq ;
+   protected String[] IMSSOFFLIN20_A300DFElemLoadRule ;
+   protected boolean[] IMSSOFFLIN20_n300DFElemLoadRule ;
+   protected String[] IMSSOFFLIN20_A265DFElemMetadata ;
+   protected boolean[] IMSSOFFLIN20_n265DFElemMetadata ;
+   protected boolean[] IMSSOFFLIN20_A238DFElemIsColap ;
+   protected String[] IMSSOFFLIN20_A306DFElemPrtPic ;
+   protected boolean[] IMSSOFFLIN20_A280DFElemPrtShwNbr ;
+   protected int[] IMSSOFFLIN20_A279DFElemPrtNumColSkip ;
+   protected int[] IMSSOFFLIN20_A274DFElemPrtNumRowSkip ;
+   protected boolean[] IMSSOFFLIN20_A272DFElemPrtAddRows ;
+   protected String[] IMSSOFFLIN20_A269DFElemPrtName ;
+   protected boolean[] IMSSOFFLIN20_A260DFElemIsVisPrt ;
+   protected boolean[] IMSSOFFLIN20_A237DFElemIsVis ;
+   protected String[] IMSSOFFLIN20_A257DFElemLblWth ;
+   protected boolean[] IMSSOFFLIN20_n257DFElemLblWth ;
+   protected String[] IMSSOFFLIN20_A243DFElemCmpWth ;
+   protected boolean[] IMSSOFFLIN20_n243DFElemCmpWth ;
+   protected String[] IMSSOFFLIN20_A242DFElemIsFlt ;
+   protected boolean[] IMSSOFFLIN20_n242DFElemIsFlt ;
+   protected String[] IMSSOFFLIN20_A256DFElemFileType ;
+   protected boolean[] IMSSOFFLIN20_n256DFElemFileType ;
+   protected String[] IMSSOFFLIN20_A254DFElemRegexVal ;
+   protected boolean[] IMSSOFFLIN20_n254DFElemRegexVal ;
+   protected boolean[] IMSSOFFLIN20_A253DFElemAllowDlt ;
+   protected boolean[] IMSSOFFLIN20_n253DFElemAllowDlt ;
+   protected boolean[] IMSSOFFLIN20_A252DFElemAllowUpd ;
+   protected boolean[] IMSSOFFLIN20_n252DFElemAllowUpd ;
+   protected boolean[] IMSSOFFLIN20_A251DFElemAllowIns ;
+   protected boolean[] IMSSOFFLIN20_n251DFElemAllowIns ;
+   protected boolean[] IMSSOFFLIN20_A250DFElemUseBtns ;
+   protected boolean[] IMSSOFFLIN20_n250DFElemUseBtns ;
+   protected boolean[] IMSSOFFLIN20_A249DFElemIsOrd ;
+   protected boolean[] IMSSOFFLIN20_n249DFElemIsOrd ;
+   protected int[] IMSSOFFLIN20_A248DFElemMaxSuggRes ;
+   protected boolean[] IMSSOFFLIN20_n248DFElemMaxSuggRes ;
+   protected boolean[] IMSSOFFLIN20_A247DFElemForceSuggSel ;
+   protected boolean[] IMSSOFFLIN20_n247DFElemForceSuggSel ;
+   protected int[] IMSSOFFLIN20_A246DFElemMinCntCharSugg ;
+   protected boolean[] IMSSOFFLIN20_n246DFElemMinCntCharSugg ;
+   protected String[] IMSSOFFLIN20_A258DFElemDscPrgName ;
+   protected String[] IMSSOFFLIN20_A245DFElemLoadPrgName ;
+   protected boolean[] IMSSOFFLIN20_n245DFElemLoadPrgName ;
+   protected String[] IMSSOFFLIN20_A267DFElemBtnPos ;
+   protected boolean[] IMSSOFFLIN20_n267DFElemBtnPos ;
+   protected String[] IMSSOFFLIN20_A268DFElemShwNbrLbl ;
+   protected boolean[] IMSSOFFLIN20_n268DFElemShwNbrLbl ;
+   protected boolean[] IMSSOFFLIN20_A266DFElemShwNbr ;
+   protected boolean[] IMSSOFFLIN20_n266DFElemShwNbr ;
+   protected boolean[] IMSSOFFLIN20_A261DFElemDateSel ;
+   protected boolean[] IMSSOFFLIN20_n261DFElemDateSel ;
+   protected boolean[] IMSSOFFLIN20_A244DFElemHasPmpt ;
+   protected boolean[] IMSSOFFLIN20_n244DFElemHasPmpt ;
+   protected String[] IMSSOFFLIN20_A180DFElemDftVal ;
+   protected boolean[] IMSSOFFLIN20_n180DFElemDftVal ;
+   protected int[] IMSSOFFLIN20_A241DFElemCntCols ;
+   protected boolean[] IMSSOFFLIN20_n241DFElemCntCols ;
+   protected int[] IMSSOFFLIN20_A240DFElemCntRows ;
+   protected boolean[] IMSSOFFLIN20_n240DFElemCntRows ;
+   protected int[] IMSSOFFLIN20_A239DFElemCntDec ;
+   protected boolean[] IMSSOFFLIN20_n239DFElemCntDec ;
+   protected int[] IMSSOFFLIN20_A255DFElemWth ;
+   protected boolean[] IMSSOFFLIN20_n255DFElemWth ;
+   protected int[] IMSSOFFLIN20_A236DFElemLen ;
+   protected boolean[] IMSSOFFLIN20_n236DFElemLen ;
+   protected String[] IMSSOFFLIN20_A196DFElemDsp ;
+   protected boolean[] IMSSOFFLIN20_n196DFElemDsp ;
+   protected String[] IMSSOFFLIN20_A178DFElemType ;
+   protected int[] IMSSOFFLIN20_A32DFDomId ;
+   protected boolean[] IMSSOFFLIN20_n32DFDomId ;
+   protected String[] IMSSOFFLIN20_A192DFElemClsName ;
+   protected boolean[] IMSSOFFLIN20_n192DFElemClsName ;
+   protected String[] IMSSOFFLIN20_A235DFElemDsc ;
+   protected boolean[] IMSSOFFLIN20_n235DFElemDsc ;
+   protected String[] IMSSOFFLIN20_A149DFElemName ;
+   protected java.util.UUID[] IMSSOFFLIN20_A35DFElemGuid ;
+   protected int[] IMSSOFFLIN20_A19DFElemVer ;
+   protected int[] IMSSOFFLIN20_A18DFElemId ;
+   protected String[] IMSSOFFLIN21_A71cveEspecialidad ;
+   protected int[] IMSSOFFLIN21_A12DFFormVer ;
+   protected int[] IMSSOFFLIN21_A11DFFormId ;
+   protected java.util.Date[] IMSSOFFLIN22_A348PXDXFechaAsignacion ;
+   protected short[] IMSSOFFLIN22_A347OcaSer ;
+   protected short[] IMSSOFFLIN22_A346TpoDX ;
+   protected int[] IMSSOFFLIN22_A345DX ;
+   protected String[] IMSSOFFLIN22_A353IDEEPaciente ;
+   protected boolean[] IMSSOFFLIN23_A310DFDomPrtDsc ;
+   protected boolean[] IMSSOFFLIN23_n310DFDomPrtDsc ;
+   protected String[] IMSSOFFLIN23_A223DFDomLblWth ;
+   protected boolean[] IMSSOFFLIN23_n223DFDomLblWth ;
+   protected String[] IMSSOFFLIN23_A219DFDomCmpWth ;
+   protected boolean[] IMSSOFFLIN23_n219DFDomCmpWth ;
+   protected String[] IMSSOFFLIN23_A218DFDomIsFlt ;
+   protected boolean[] IMSSOFFLIN23_n218DFDomIsFlt ;
+   protected String[] IMSSOFFLIN23_A221DFDomFileType ;
+   protected boolean[] IMSSOFFLIN23_n221DFDomFileType ;
+   protected String[] IMSSOFFLIN23_A217DFDomRegexVal ;
+   protected boolean[] IMSSOFFLIN23_A213DFDomAllowDlt ;
+   protected boolean[] IMSSOFFLIN23_n213DFDomAllowDlt ;
+   protected boolean[] IMSSOFFLIN23_A212DFDomAllowUpd ;
+   protected boolean[] IMSSOFFLIN23_n212DFDomAllowUpd ;
+   protected boolean[] IMSSOFFLIN23_A211DFDomAllowIns ;
+   protected boolean[] IMSSOFFLIN23_n211DFDomAllowIns ;
+   protected boolean[] IMSSOFFLIN23_A210DFDomUseBtns ;
+   protected boolean[] IMSSOFFLIN23_n210DFDomUseBtns ;
+   protected boolean[] IMSSOFFLIN23_A209DFDomIsOrd ;
+   protected boolean[] IMSSOFFLIN23_n209DFDomIsOrd ;
+   protected int[] IMSSOFFLIN23_A207DFDomMaxSuggRes ;
+   protected boolean[] IMSSOFFLIN23_n207DFDomMaxSuggRes ;
+   protected boolean[] IMSSOFFLIN23_A206DFDomForceSuggSel ;
+   protected boolean[] IMSSOFFLIN23_n206DFDomForceSuggSel ;
+   protected int[] IMSSOFFLIN23_A205DFDomMinCntCharSugg ;
+   protected boolean[] IMSSOFFLIN23_n205DFDomMinCntCharSugg ;
+   protected String[] IMSSOFFLIN23_A208DFDomDftVal ;
+   protected boolean[] IMSSOFFLIN23_n208DFDomDftVal ;
+   protected int[] IMSSOFFLIN23_A216DFDomCntCols ;
+   protected int[] IMSSOFFLIN23_A215DFDomCntRows ;
+   protected int[] IMSSOFFLIN23_A214DFDomCntDec ;
+   protected int[] IMSSOFFLIN23_A220DFDomWth ;
+   protected int[] IMSSOFFLIN23_A204DFDomLen ;
+   protected String[] IMSSOFFLIN23_A195DFDomDsp ;
+   protected boolean[] IMSSOFFLIN23_n195DFDomDsp ;
+   protected String[] IMSSOFFLIN23_A194DFDomType ;
+   protected java.util.UUID[] IMSSOFFLIN23_A224DFDomGUID ;
+   protected String[] IMSSOFFLIN23_A203DFDomDsc ;
+   protected int[] IMSSOFFLIN23_A32DFDomId ;
+   protected boolean[] IMSSOFFLIN23_n32DFDomId ;
+   protected String[] IMSSOFFLIN24_A14DFFormRstVal ;
+   protected int[] IMSSOFFLIN24_A13DFFormRstId ;
+   protected int[] IMSSOFFLIN24_A12DFFormVer ;
+   protected int[] IMSSOFFLIN24_A11DFFormId ;
+   protected boolean[] IMSSOFFLIN25_A164DFUserRstPwdIni ;
+   protected String[] IMSSOFFLIN25_A24DFUserRstVal ;
+   protected int[] IMSSOFFLIN25_A23DFUserRstId ;
+   protected String[] IMSSOFFLIN25_A22DFUserExtId ;
+   protected int[] IMSSOFFLIN26_A39DFSubElemFormPos ;
+   protected boolean[] IMSSOFFLIN26_n39DFSubElemFormPos ;
+   protected int[] IMSSOFFLIN26_A38DFSubElemFormElemVer ;
+   protected int[] IMSSOFFLIN26_A37DFSubElemFormElemId ;
+   protected int[] IMSSOFFLIN26_A19DFElemVer ;
+   protected int[] IMSSOFFLIN26_A18DFElemId ;
+   protected int[] IMSSOFFLIN26_A12DFFormVer ;
+   protected int[] IMSSOFFLIN26_A11DFFormId ;
+   protected int[] IMSSOFFLIN27_A42DFFilElemFormElemVer ;
+   protected int[] IMSSOFFLIN27_A41DFFilElemFormElemId ;
+   protected short[] IMSSOFFLIN27_A43DFFilElemFormPos ;
+   protected int[] IMSSOFFLIN27_A40DFFilElemFormId ;
+   protected int[] IMSSOFFLIN27_A19DFElemVer ;
+   protected int[] IMSSOFFLIN27_A18DFElemId ;
+   protected int[] IMSSOFFLIN27_A12DFFormVer ;
+   protected int[] IMSSOFFLIN27_A11DFFormId ;
+   protected short[] IMSSOFFLIN28_A7HospitalId ;
+   protected boolean[] IMSSOFFLIN28_n7HospitalId ;
+   protected String[] IMSSOFFLIN28_A104ServicioDescripcion ;
+   protected short[] IMSSOFFLIN28_A6ServicioId ;
+   protected int[] IMSSOFFLIN29_A12DFFormVer ;
+   protected int[] IMSSOFFLIN29_A11DFFormId ;
+   protected java.util.Date[] IMSSOFFLIN29_A321fecBajaEspecialidad ;
+   protected boolean[] IMSSOFFLIN29_n321fecBajaEspecialidad ;
+   protected String[] IMSSOFFLIN29_A320desEspecialidad ;
+   protected String[] IMSSOFFLIN29_A71cveEspecialidad ;
+   protected int[] IMSSOFFLIN30_A28DFFormInstFormId ;
+   protected String[] IMSSOFFLIN30_A139DFUplFileExt ;
+   protected String[] IMSSOFFLIN30_A140DFUplFileName ;
+   protected String[] IMSSOFFLIN30_A138DFUplFile ;
+   protected String[] IMSSOFFLIN30_A10DFUplKey ;
+   protected long[] IMSSOFFLIN30_A9DFFormInstId ;
    protected GxObjectCollection AV2ColDFFormInstId ;
    protected GxObjectCollection AV3ColPacienteNSSAgregado ;
    protected GxObjectCollection GXt_objcol_int3 ;
@@ -4921,9 +5405,9 @@ final  class imssofflinedatabase__default extends DataStoreHelperBase implements
    protected Object[] conditional_IMSSOFFLIN3( ModelContext context ,
                                                int remoteHandle ,
                                                com.genexus.internet.HttpContext httpContext ,
-                                               String A75PacienteNSSAgregado ,
+                                               String A133PacienteNSSAgregado ,
                                                GxObjectCollection AV3ColPacienteNSSAgregado ,
-                                               String A81Matricula ,
+                                               String A8Matricula ,
                                                String AV4Matricula )
    {
       String sWhereString = "" ;
@@ -4944,10 +5428,10 @@ final  class imssofflinedatabase__default extends DataStoreHelperBase implements
       return GXv_Object10 ;
    }
 
-   protected Object[] conditional_IMSSOFFLIN5( ModelContext context ,
+   protected Object[] conditional_IMSSOFFLIN6( ModelContext context ,
                                                int remoteHandle ,
                                                com.genexus.internet.HttpContext httpContext ,
-                                               String A75PacienteNSSAgregado ,
+                                               String A133PacienteNSSAgregado ,
                                                GxObjectCollection AV3ColPacienteNSSAgregado )
    {
       String sWhereString = "" ;
@@ -4956,10 +5440,10 @@ final  class imssofflinedatabase__default extends DataStoreHelperBase implements
       GXv_Object12 = new Object [2] ;
       scmdbuf = "SELECT T2.PacienteNSSAgregado, T1.MMatricula, T1.MApMat, T1.MApPat, T1.MNombre, T1.MBMatricula," ;
       scmdbuf = scmdbuf + " T1.MBApMat, T1.MBApPat, T1.MBNombre, T1.JSMatricula, T1.JSApMat, T1.JSApPat, T1.JSNombre," ;
-      scmdbuf = scmdbuf + " T1.DiagnosticoCirugiaFecha, T1.DiagnosticoCirugia, T1.Cama, T1.ServicioId, T1.DiagnosticoResumen," ;
-      scmdbuf = scmdbuf + " T1.DiagnosticoComplemento, T1.DiagnosticoFechaAlta, T1.DiagnosticoFechaIngreso," ;
-      scmdbuf = scmdbuf + " T1.CIE10Id, T1.PacienteAgregado, T1.PacienteNSS FROM (ExpedienteDiagnostico T1 INNER" ;
-      scmdbuf = scmdbuf + " JOIN Paciente T2 ON T2.PacienteNSS = T1.PacienteNSS AND T2.PacienteAgregado = T1.PacienteAgregado)" ;
+      scmdbuf = scmdbuf + " T1.DiagnosticoCirugiaFecha, T1.DiagnosticoCirugia, T1.Cama, T1.ServicioId, T1.DiagnosticoComplemento," ;
+      scmdbuf = scmdbuf + " T1.DiagnosticoResumen, T1.DiagnosticoFechaAlta, T1.DiagnosticoFechaIngreso, T1.CIE10Id," ;
+      scmdbuf = scmdbuf + " T1.PacienteAgregado, T1.PacienteNSS FROM (ExpedienteDiagnostico T1 INNER JOIN Paciente" ;
+      scmdbuf = scmdbuf + " T2 ON T2.PacienteNSS = T1.PacienteNSS AND T2.PacienteAgregado = T1.PacienteAgregado)" ;
       scmdbuf = scmdbuf + " WHERE (" + GXutil.toValueList("postgresql", AV3ColPacienteNSSAgregado, "T2.PacienteNSSAgregado IN (", ")") + ")" ;
       scmdbuf = scmdbuf + sWhereString ;
       scmdbuf = scmdbuf + " ORDER BY T1.PacienteNSS, T1.PacienteAgregado, T1.CIE10Id" ;
@@ -4970,15 +5454,15 @@ final  class imssofflinedatabase__default extends DataStoreHelperBase implements
    protected Object[] conditional_IMSSOFFLIN8( ModelContext context ,
                                                int remoteHandle ,
                                                com.genexus.internet.HttpContext httpContext ,
-                                               String A75PacienteNSSAgregado ,
+                                               String A133PacienteNSSAgregado ,
                                                GxObjectCollection AV3ColPacienteNSSAgregado )
    {
       String sWhereString = "" ;
       String scmdbuf ;
       Object[] GXv_Object15 ;
       GXv_Object15 = new Object [2] ;
-      scmdbuf = "SELECT T2.PacienteNSSAgregado, T1.DXAuxImagenImg_GXI, T1.DXAuxImagenExtension, T1.DXAuxImagenNombre," ;
-      scmdbuf = scmdbuf + " T1.DXAuxImagenUserAlta, T1.DXAuxImagenFechaAlta, T1.DXAuxImagenImg, T1.DXAuxImagenId," ;
+      scmdbuf = "SELECT T2.PacienteNSSAgregado, T1.DXAuxImagenImg_GXI, T1.DXAuxImagenUserAlta, T1.DXAuxImagenFechaAlta," ;
+      scmdbuf = scmdbuf + " T1.DXAuxImagenImg, T1.DXAuxImagenExtension, T1.DXAuxImagenNombre, T1.DXAuxImagenId," ;
       scmdbuf = scmdbuf + " T1.CIE10Id, T1.PacienteAgregado, T1.PacienteNSS FROM (DXAuxImagen T1 INNER JOIN" ;
       scmdbuf = scmdbuf + " Paciente T2 ON T2.PacienteNSS = T1.PacienteNSS AND T2.PacienteAgregado = T1.PacienteAgregado)" ;
       scmdbuf = scmdbuf + " WHERE (" + GXutil.toValueList("postgresql", AV3ColPacienteNSSAgregado, "T2.PacienteNSSAgregado IN (", ")") + ")" ;
@@ -4991,7 +5475,7 @@ final  class imssofflinedatabase__default extends DataStoreHelperBase implements
    protected Object[] conditional_IMSSOFFLIN9( ModelContext context ,
                                                int remoteHandle ,
                                                com.genexus.internet.HttpContext httpContext ,
-                                               String A75PacienteNSSAgregado ,
+                                               String A133PacienteNSSAgregado ,
                                                GxObjectCollection AV3ColPacienteNSSAgregado )
    {
       String sWhereString = "" ;
@@ -5012,18 +5496,19 @@ final  class imssofflinedatabase__default extends DataStoreHelperBase implements
    protected Object[] conditional_IMSSOFFLIN10( ModelContext context ,
                                                 int remoteHandle ,
                                                 com.genexus.internet.HttpContext httpContext ,
-                                                String A75PacienteNSSAgregado ,
+                                                String A133PacienteNSSAgregado ,
                                                 GxObjectCollection AV3ColPacienteNSSAgregado )
    {
       String sWhereString = "" ;
       String scmdbuf ;
       Object[] GXv_Object21 ;
       GXv_Object21 = new Object [2] ;
-      scmdbuf = "SELECT PacienteServicioId, PacienteDiagnosticoPhone, PacienteCie10Id, PAcienteFechaIngreso," ;
-      scmdbuf = scmdbuf + " PacienteNSSAgregado, PacienteCama, PacienteDiagnosticoResumido, PacienteDiagnostico," ;
-      scmdbuf = scmdbuf + " PacienteFechaNacimiento, PacienteNombreCompleto, PacienteReferencia, PacienteFamiliar," ;
-      scmdbuf = scmdbuf + " PacienteTelefono, PacienteGenero, PacienteEdad, PacienteApMat, PacienteApPat, PacienteNombre," ;
-      scmdbuf = scmdbuf + " PacienteAgregado, PacienteNSS FROM Paciente" ;
+      scmdbuf = "SELECT ClavePresupuestal, IDEE, CURP, DhUMF, DhDeleg, Consultorio, ConDerechoSm," ;
+      scmdbuf = scmdbuf + " ConDerechoInc, PacienteServicioId, PacienteCie10Id, PacienteNSSAgregado, PacienteCama," ;
+      scmdbuf = scmdbuf + " PacienteDiagnosticoPhone, PacienteDiagnosticoResumido, PacienteDiagnostico, PAcienteFechaIngreso," ;
+      scmdbuf = scmdbuf + " PacienteNombreCompleto, PacienteReferencia, PacienteFamiliar, PacienteTelefono," ;
+      scmdbuf = scmdbuf + " PacienteGenero, PacienteEdad, PacienteFechaNacimiento, PacienteApMat, PacienteApPat," ;
+      scmdbuf = scmdbuf + " PacienteNombre, PacienteAgregado, PacienteNSS FROM Paciente" ;
       scmdbuf = scmdbuf + " WHERE (" + GXutil.toValueList("postgresql", AV3ColPacienteNSSAgregado, "PacienteNSSAgregado IN (", ")") + ")" ;
       scmdbuf = scmdbuf + sWhereString ;
       scmdbuf = scmdbuf + " ORDER BY PacienteNSS, PacienteAgregado" ;
@@ -5034,14 +5519,14 @@ final  class imssofflinedatabase__default extends DataStoreHelperBase implements
    protected Object[] conditional_IMSSOFFLIN12( ModelContext context ,
                                                 int remoteHandle ,
                                                 com.genexus.internet.HttpContext httpContext ,
-                                                long A90DFFormInstId ,
+                                                long A9DFFormInstId ,
                                                 GxObjectCollection AV2ColDFFormInstId )
    {
       String sWhereString = "" ;
       String scmdbuf ;
       Object[] GXv_Object24 ;
       GXv_Object24 = new Object [2] ;
-      scmdbuf = "SELECT FormatoPacienteMedicoNombre, FormatoPacienteMedicoMatricula, DFFormInstId," ;
+      scmdbuf = "SELECT FormatoPacienteMedicoMatricula, FormatoPacienteMedicoNombre, DFFormInstId," ;
       scmdbuf = scmdbuf + " FormatoPacienteAgregado, FormatoPacienteNSS FROM FormatoPaciente" ;
       scmdbuf = scmdbuf + " WHERE (" + GXutil.toValueList("postgresql", AV2ColDFFormInstId, "DFFormInstId IN (", ")") + ")" ;
       scmdbuf = scmdbuf + sWhereString ;
@@ -5050,10 +5535,10 @@ final  class imssofflinedatabase__default extends DataStoreHelperBase implements
       return GXv_Object24 ;
    }
 
-   protected Object[] conditional_IMSSOFFLIN15( ModelContext context ,
+   protected Object[] conditional_IMSSOFFLIN14( ModelContext context ,
                                                 int remoteHandle ,
                                                 com.genexus.internet.HttpContext httpContext ,
-                                                long A90DFFormInstId ,
+                                                long A9DFFormInstId ,
                                                 GxObjectCollection AV2ColDFFormInstId )
    {
       String sWhereString = "" ;
@@ -5069,10 +5554,10 @@ final  class imssofflinedatabase__default extends DataStoreHelperBase implements
       return GXv_Object27 ;
    }
 
-   protected Object[] conditional_IMSSOFFLIN16( ModelContext context ,
+   protected Object[] conditional_IMSSOFFLIN15( ModelContext context ,
                                                 int remoteHandle ,
                                                 com.genexus.internet.HttpContext httpContext ,
-                                                long A90DFFormInstId ,
+                                                long A9DFFormInstId ,
                                                 GxObjectCollection AV2ColDFFormInstId )
    {
       String sWhereString = "" ;
@@ -5092,7 +5577,7 @@ final  class imssofflinedatabase__default extends DataStoreHelperBase implements
    protected Object[] conditional_IMSSOFFLIN19( ModelContext context ,
                                                 int remoteHandle ,
                                                 com.genexus.internet.HttpContext httpContext ,
-                                                long A90DFFormInstId ,
+                                                long A9DFFormInstId ,
                                                 GxObjectCollection AV2ColDFFormInstId )
    {
       String sWhereString = "" ;
@@ -5108,10 +5593,10 @@ final  class imssofflinedatabase__default extends DataStoreHelperBase implements
       return GXv_Object33 ;
    }
 
-   protected Object[] conditional_IMSSOFFLIN27( ModelContext context ,
+   protected Object[] conditional_IMSSOFFLIN30( ModelContext context ,
                                                 int remoteHandle ,
                                                 com.genexus.internet.HttpContext httpContext ,
-                                                long A90DFFormInstId ,
+                                                long A9DFFormInstId ,
                                                 GxObjectCollection AV2ColDFFormInstId )
    {
       String sWhereString = "" ;
@@ -5140,8 +5625,8 @@ final  class imssofflinedatabase__default extends DataStoreHelperBase implements
       {
             case 1 :
                   return conditional_IMSSOFFLIN3(context, remoteHandle, httpContext, (String)dynConstraints[0] , (GxObjectCollection)dynConstraints[1] , (String)dynConstraints[2] , (String)dynConstraints[3] );
-            case 3 :
-                  return conditional_IMSSOFFLIN5(context, remoteHandle, httpContext, (String)dynConstraints[0] , (GxObjectCollection)dynConstraints[1] );
+            case 4 :
+                  return conditional_IMSSOFFLIN6(context, remoteHandle, httpContext, (String)dynConstraints[0] , (GxObjectCollection)dynConstraints[1] );
             case 6 :
                   return conditional_IMSSOFFLIN8(context, remoteHandle, httpContext, (String)dynConstraints[0] , (GxObjectCollection)dynConstraints[1] );
             case 7 :
@@ -5150,14 +5635,14 @@ final  class imssofflinedatabase__default extends DataStoreHelperBase implements
                   return conditional_IMSSOFFLIN10(context, remoteHandle, httpContext, (String)dynConstraints[0] , (GxObjectCollection)dynConstraints[1] );
             case 10 :
                   return conditional_IMSSOFFLIN12(context, remoteHandle, httpContext, ((Number) dynConstraints[0]).longValue() , (GxObjectCollection)dynConstraints[1] );
+            case 12 :
+                  return conditional_IMSSOFFLIN14(context, remoteHandle, httpContext, ((Number) dynConstraints[0]).longValue() , (GxObjectCollection)dynConstraints[1] );
             case 13 :
                   return conditional_IMSSOFFLIN15(context, remoteHandle, httpContext, ((Number) dynConstraints[0]).longValue() , (GxObjectCollection)dynConstraints[1] );
-            case 14 :
-                  return conditional_IMSSOFFLIN16(context, remoteHandle, httpContext, ((Number) dynConstraints[0]).longValue() , (GxObjectCollection)dynConstraints[1] );
             case 17 :
                   return conditional_IMSSOFFLIN19(context, remoteHandle, httpContext, ((Number) dynConstraints[0]).longValue() , (GxObjectCollection)dynConstraints[1] );
-            case 25 :
-                  return conditional_IMSSOFFLIN27(context, remoteHandle, httpContext, ((Number) dynConstraints[0]).longValue() , (GxObjectCollection)dynConstraints[1] );
+            case 28 :
+                  return conditional_IMSSOFFLIN30(context, remoteHandle, httpContext, ((Number) dynConstraints[0]).longValue() , (GxObjectCollection)dynConstraints[1] );
       }
       return super.getDynamicStatement(cursor, context, remoteHandle, httpContext, dynConstraints);
    }
@@ -5165,32 +5650,35 @@ final  class imssofflinedatabase__default extends DataStoreHelperBase implements
    public Cursor[] getCursors( )
    {
       return new Cursor[] {
-          new ForEachCursor("IMSSOFFLIN2", "SELECT MedicoDebeMostarTerm, MedicoDebeValidarDatos, MedicoUltimaActualizacion, MedicoMatricula, MedicoApellidoMaterno, MedicoApellidoPaterno, MedicoSegundoNombre, MedicoPrimerNombre, UserMedico FROM Medico WHERE UserMedico = ( ?) ORDER BY UserMedico ",false, GX_NOMASK + GX_MASKLOOPLOCK, false, this,1,0,true )
+          new ForEachCursor("IMSSOFFLIN2", "SELECT FecBajaMed, MedDebMosTerm, MedDebValDat, MedUltAct, MedCedProf, MedApMat, MedApPat, MedNom, UserMed, MedMatricula FROM Medico WHERE UserMed = ( ?) ORDER BY MedMatricula ",false, GX_NOMASK + GX_MASKLOOPLOCK, false, this,100,0,false )
          ,new ForEachCursor("IMSSOFFLIN3", "scmdbuf",false, GX_NOMASK + GX_MASKLOOPLOCK, false, this,100,0,false )
-         ,new ForEachCursor("IMSSOFFLIN4", "SELECT CIECodigo, CIE10Descripcion, CIE10Id FROM CIE10 ORDER BY CIE10Id ",false, GX_NOMASK + GX_MASKLOOPLOCK, false, this,100,0,false )
-         ,new ForEachCursor("IMSSOFFLIN5", "scmdbuf",false, GX_NOMASK + GX_MASKLOOPLOCK, false, this,100,0,false )
-         ,new ForEachCursor("IMSSOFFLIN6", "SELECT nada, TextoDescripcion, TextoTitulo, TextoId FROM Texto ORDER BY TextoId ",false, GX_NOMASK + GX_MASKLOOPLOCK, false, this,100,0,false )
-         ,new ForEachCursor("IMSSOFFLIN7", "SELECT DFParmIsMetaData, DFParmVal, DFParmName, DFParmId FROM DFParm ORDER BY DFParmId ",false, GX_NOMASK + GX_MASKLOOPLOCK, false, this,100,0,false )
+         ,new ForEachCursor("IMSSOFFLIN4", "SELECT DFParmIsMetaData, DFParmVal, DFParmName, DFParmId FROM DFParm ORDER BY DFParmId ",false, GX_NOMASK + GX_MASKLOOPLOCK, false, this,100,0,false )
+         ,new ForEachCursor("IMSSOFFLIN5", "SELECT CIE10Descripcion, CIECodigo, CIE10Id FROM CIE10 ORDER BY CIE10Id ",false, GX_NOMASK + GX_MASKLOOPLOCK, false, this,100,0,false )
+         ,new ForEachCursor("IMSSOFFLIN6", "scmdbuf",false, GX_NOMASK + GX_MASKLOOPLOCK, false, this,100,0,false )
+         ,new ForEachCursor("IMSSOFFLIN7", "SELECT nada, TextoDescripcion, TextoTitulo, TextoId FROM Texto ORDER BY TextoId ",false, GX_NOMASK + GX_MASKLOOPLOCK, false, this,100,0,false )
          ,new ForEachCursor("IMSSOFFLIN8", "scmdbuf",false, GX_NOMASK + GX_MASKLOOPLOCK, false, this,100,0,false )
          ,new ForEachCursor("IMSSOFFLIN9", "scmdbuf",false, GX_NOMASK + GX_MASKLOOPLOCK, false, this,100,0,false )
          ,new ForEachCursor("IMSSOFFLIN10", "scmdbuf",false, GX_NOMASK + GX_MASKLOOPLOCK, false, this,100,0,false )
-         ,new ForEachCursor("IMSSOFFLIN11", "SELECT DFFormDsc, DFFormIsSD, DFFormRunDLT, DFFormHelpURL, DFFormPrefix, DFFormPmtHgh, DFFormPmtWth, DFFormAct, DFFormName, DFFormGuid, DFFormVer, DFFormId FROM DFForm ORDER BY DFFormId, DFFormVer ",false, GX_NOMASK + GX_MASKLOOPLOCK, false, this,100,0,false )
+         ,new ForEachCursor("IMSSOFFLIN11", "SELECT ExtensionNombre, ExtensionTipo, ExtensionId FROM Extension ORDER BY ExtensionId ",false, GX_NOMASK + GX_MASKLOOPLOCK, false, this,100,0,false )
          ,new ForEachCursor("IMSSOFFLIN12", "scmdbuf",false, GX_NOMASK + GX_MASKLOOPLOCK, false, this,100,0,false )
-         ,new ForEachCursor("IMSSOFFLIN13", "SELECT ExtensionNombre, ExtensionTipo, ExtensionId FROM Extension ORDER BY ExtensionId ",false, GX_NOMASK + GX_MASKLOOPLOCK, false, this,100,0,false )
-         ,new ForEachCursor("IMSSOFFLIN14", "SELECT DFElemFormReq, DFElemFormPrtPic, DFElemFormLoadRule, DFElemFormMetadata, DFElemFormShwNbr, DFElemFormDateSel, DFElemFormHasPmpt, DFElemFormIsFlt, DFElemFormCmpWth, DFElemFormLblWth, DFElemFormPrtShwNbr, DFElemFormPrtNumColSkip, DFElemFormPrtNumRowSkip, DFElemFormPrtAddRows, DFElemFormPrtName, DFElemFormIsVisPrt, DFElemFormIsVis, DFElemFormIsColap, DFElemFormAllowIns, DFElemFormAllowUpd, DFElemFormAllowDlt, DFElemFormInhType, DFElemFormPos, DFElemFormName, DFElemVer, DFElemId, DFFormVer, DFFormId FROM DFElemForm ORDER BY DFFormId, DFFormVer, DFElemId, DFElemVer ",false, GX_NOMASK + GX_MASKLOOPLOCK, false, this,100,0,false )
+         ,new ForEachCursor("IMSSOFFLIN13", "SELECT DFElemFormReq, DFElemFormLoadRule, DFElemFormMetadata, DFElemFormShwNbr, DFElemFormDateSel, DFElemFormHasPmpt, DFElemFormIsFlt, DFElemFormCmpWth, DFElemFormLblWth, DFElemFormPrtPic, DFElemFormPrtShwNbr, DFElemFormPrtNumColSkip, DFElemFormPrtNumRowSkip, DFElemFormPrtAddRows, DFElemFormPrtName, DFElemFormIsVisPrt, DFElemFormIsVis, DFElemFormIsColap, DFElemFormAllowIns, DFElemFormAllowUpd, DFElemFormAllowDlt, DFElemFormInhType, DFElemFormPos, DFElemFormName, DFElemVer, DFElemId, DFFormVer, DFFormId FROM DFElemForm ORDER BY DFFormId, DFFormVer, DFElemId, DFElemVer ",false, GX_NOMASK + GX_MASKLOOPLOCK, false, this,100,0,false )
+         ,new ForEachCursor("IMSSOFFLIN14", "scmdbuf",false, GX_NOMASK + GX_MASKLOOPLOCK, false, this,100,0,false )
          ,new ForEachCursor("IMSSOFFLIN15", "scmdbuf",false, GX_NOMASK + GX_MASKLOOPLOCK, false, this,100,0,false )
-         ,new ForEachCursor("IMSSOFFLIN16", "scmdbuf",false, GX_NOMASK + GX_MASKLOOPLOCK, false, this,100,0,false )
-         ,new ForEachCursor("IMSSOFFLIN17", "SELECT DFTempFm, DFTempOutFm, DFTempAddParmPrgName, DFTempBlob, DFTempDsc, DFTempName, DFFormVer, DFFormId FROM DFTemp ORDER BY DFFormId, DFFormVer, DFTempName ",false, GX_NOMASK + GX_MASKLOOPLOCK, false, this,100,0,false )
+         ,new ForEachCursor("IMSSOFFLIN16", "SELECT DFTempOutFm, DFTempAddParmPrgName, DFTempBlob, DFTempFm, DFTempDsc, DFTempName, DFFormVer, DFFormId FROM DFTemp ORDER BY DFFormId, DFFormVer, DFTempName ",false, GX_NOMASK + GX_MASKLOOPLOCK, false, this,100,0,false )
+         ,new ForEachCursor("IMSSOFFLIN17", "SELECT DFFormIsSD, DFFormRunDLT, DFFormHelpURL, DFFormPrefix, DFFormPmtHgh, DFFormPmtWth, DFFormAct, DFFormDsc, DFFormName, DFFormGuid, DFFormVer, DFFormId FROM DFForm ORDER BY DFFormId, DFFormVer ",false, GX_NOMASK + GX_MASKLOOPLOCK, false, this,100,0,false )
          ,new ForEachCursor("IMSSOFFLIN18", "SELECT DFDomStaValOptDsc, DFDomStaValOptOrd, DFDomStaValOptCod, DFDomId FROM DFDomStaVals ORDER BY DFDomId, DFDomStaValOptCod ",false, GX_NOMASK + GX_MASKLOOPLOCK, false, this,100,0,false )
          ,new ForEachCursor("IMSSOFFLIN19", "scmdbuf",false, GX_NOMASK + GX_MASKLOOPLOCK, false, this,100,0,false )
-         ,new ForEachCursor("IMSSOFFLIN20", "SELECT DFElemReq, DFElemPrtPic, DFElemLoadRule, DFElemMetadata, DFElemIsColap, DFElemPrtShwNbr, DFElemPrtNumColSkip, DFElemPrtNumRowSkip, DFElemPrtAddRows, DFElemPrtName, DFElemIsVisPrt, DFElemIsVis, DFElemLblWth, DFElemCmpWth, DFElemIsFlt, DFElemFileType, DFElemRegexVal, DFElemAllowDlt, DFElemAllowUpd, DFElemAllowIns, DFElemUseBtns, DFElemIsOrd, DFElemMaxSuggRes, DFElemForceSuggSel, DFElemMinCntCharSugg, DFElemDscPrgName, DFElemLoadPrgName, DFElemBtnPos, DFElemShwNbrLbl, DFElemShwNbr, DFElemDateSel, DFElemHasPmpt, DFElemDftVal, DFElemCntCols, DFElemCntRows, DFElemCntDec, DFElemWth, DFElemLen, DFElemDsp, DFElemType, DFDomId, DFElemClsName, DFElemDsc, DFElemName, DFElemGuid, DFElemVer, DFElemId FROM DFElem ORDER BY DFElemId, DFElemVer ",false, GX_NOMASK + GX_MASKLOOPLOCK, false, this,100,0,false )
-         ,new ForEachCursor("IMSSOFFLIN21", "SELECT DFFormRstVal, DFFormRstId, DFFormVer, DFFormId FROM DFFormRst ORDER BY DFFormId, DFFormVer, DFFormRstId, DFFormRstVal ",false, GX_NOMASK + GX_MASKLOOPLOCK, false, this,100,0,false )
-         ,new ForEachCursor("IMSSOFFLIN22", "SELECT DFUserRstPwdIni, DFUserRstVal, DFUserRstId, DFUserExtId FROM DFUserRst ORDER BY DFUserExtId, DFUserRstId, DFUserRstVal ",false, GX_NOMASK + GX_MASKLOOPLOCK, false, this,100,0,false )
+         ,new ForEachCursor("IMSSOFFLIN20", "SELECT DFElemReq, DFElemLoadRule, DFElemMetadata, DFElemIsColap, DFElemPrtPic, DFElemPrtShwNbr, DFElemPrtNumColSkip, DFElemPrtNumRowSkip, DFElemPrtAddRows, DFElemPrtName, DFElemIsVisPrt, DFElemIsVis, DFElemLblWth, DFElemCmpWth, DFElemIsFlt, DFElemFileType, DFElemRegexVal, DFElemAllowDlt, DFElemAllowUpd, DFElemAllowIns, DFElemUseBtns, DFElemIsOrd, DFElemMaxSuggRes, DFElemForceSuggSel, DFElemMinCntCharSugg, DFElemDscPrgName, DFElemLoadPrgName, DFElemBtnPos, DFElemShwNbrLbl, DFElemShwNbr, DFElemDateSel, DFElemHasPmpt, DFElemDftVal, DFElemCntCols, DFElemCntRows, DFElemCntDec, DFElemWth, DFElemLen, DFElemDsp, DFElemType, DFDomId, DFElemClsName, DFElemDsc, DFElemName, DFElemGuid, DFElemVer, DFElemId FROM DFElem ORDER BY DFElemId, DFElemVer ",false, GX_NOMASK + GX_MASKLOOPLOCK, false, this,100,0,false )
+         ,new ForEachCursor("IMSSOFFLIN21", "SELECT cveEspecialidad, DFFormVer, DFFormId FROM EspecialidadFormato ORDER BY DFFormId, DFFormVer, cveEspecialidad ",false, GX_NOMASK + GX_MASKLOOPLOCK, false, this,100,0,false )
+         ,new ForEachCursor("IMSSOFFLIN22", "SELECT PXDXFechaAsignacion, OcaSer, TpoDX, DX, IDEEPaciente FROM PacienteDiagnostico ORDER BY IDEEPaciente, DX ",false, GX_NOMASK + GX_MASKLOOPLOCK, false, this,100,0,false )
          ,new ForEachCursor("IMSSOFFLIN23", "SELECT DFDomPrtDsc, DFDomLblWth, DFDomCmpWth, DFDomIsFlt, DFDomFileType, DFDomRegexVal, DFDomAllowDlt, DFDomAllowUpd, DFDomAllowIns, DFDomUseBtns, DFDomIsOrd, DFDomMaxSuggRes, DFDomForceSuggSel, DFDomMinCntCharSugg, DFDomDftVal, DFDomCntCols, DFDomCntRows, DFDomCntDec, DFDomWth, DFDomLen, DFDomDsp, DFDomType, DFDomGUID, DFDomDsc, DFDomId FROM DFDom ORDER BY DFDomId ",false, GX_NOMASK + GX_MASKLOOPLOCK, false, this,100,0,false )
-         ,new ForEachCursor("IMSSOFFLIN24", "SELECT DFSubElemFormPos, DFSubElemFormElemVer, DFSubElemFormElemId, DFElemVer, DFElemId, DFFormVer, DFFormId FROM DFSubElemForm ORDER BY DFFormId, DFFormVer, DFElemId, DFElemVer, DFSubElemFormElemId, DFSubElemFormElemVer ",false, GX_NOMASK + GX_MASKLOOPLOCK, false, this,100,0,false )
-         ,new ForEachCursor("IMSSOFFLIN25", "SELECT DFFilElemFormElemVer, DFFilElemFormElemId, DFFilElemFormPos, DFFilElemFormId, DFElemVer, DFElemId, DFFormVer, DFFormId FROM DFFilElemForm ORDER BY DFFormId, DFFormVer, DFElemId, DFElemVer, DFFilElemFormId ",false, GX_NOMASK + GX_MASKLOOPLOCK, false, this,100,0,false )
-         ,new ForEachCursor("IMSSOFFLIN26", "SELECT HospitalId, ServicioDescripcion, ServicioId FROM Servicio ORDER BY ServicioId ",false, GX_NOMASK + GX_MASKLOOPLOCK, false, this,100,0,false )
-         ,new ForEachCursor("IMSSOFFLIN27", "scmdbuf",false, GX_NOMASK + GX_MASKLOOPLOCK, false, this,100,0,false )
+         ,new ForEachCursor("IMSSOFFLIN24", "SELECT DFFormRstVal, DFFormRstId, DFFormVer, DFFormId FROM DFFormRst ORDER BY DFFormId, DFFormVer, DFFormRstId, DFFormRstVal ",false, GX_NOMASK + GX_MASKLOOPLOCK, false, this,100,0,false )
+         ,new ForEachCursor("IMSSOFFLIN25", "SELECT DFUserRstPwdIni, DFUserRstVal, DFUserRstId, DFUserExtId FROM DFUserRst ORDER BY DFUserExtId, DFUserRstId, DFUserRstVal ",false, GX_NOMASK + GX_MASKLOOPLOCK, false, this,100,0,false )
+         ,new ForEachCursor("IMSSOFFLIN26", "SELECT DFSubElemFormPos, DFSubElemFormElemVer, DFSubElemFormElemId, DFElemVer, DFElemId, DFFormVer, DFFormId FROM DFSubElemForm ORDER BY DFFormId, DFFormVer, DFElemId, DFElemVer, DFSubElemFormElemId, DFSubElemFormElemVer ",false, GX_NOMASK + GX_MASKLOOPLOCK, false, this,100,0,false )
+         ,new ForEachCursor("IMSSOFFLIN27", "SELECT DFFilElemFormElemVer, DFFilElemFormElemId, DFFilElemFormPos, DFFilElemFormId, DFElemVer, DFElemId, DFFormVer, DFFormId FROM DFFilElemForm ORDER BY DFFormId, DFFormVer, DFElemId, DFElemVer, DFFilElemFormId ",false, GX_NOMASK + GX_MASKLOOPLOCK, false, this,100,0,false )
+         ,new ForEachCursor("IMSSOFFLIN28", "SELECT HospitalId, ServicioDescripcion, ServicioId FROM Servicio ORDER BY ServicioId ",false, GX_NOMASK + GX_MASKLOOPLOCK, false, this,100,0,false )
+         ,new ForEachCursor("IMSSOFFLIN29", "SELECT DISTINCT NULL AS DFFormVer, NULL AS DFFormId, fecBajaEspecialidad, desEspecialidad, cveEspecialidad FROM ( SELECT T1.DFFormVer, T1.DFFormId, T2.fecBajaEspecialidad, T2.desEspecialidad, T1.cveEspecialidad FROM (EspecialidadFormato T1 INNER JOIN SIC_ESPECIALIDAD T2 ON T2.cveEspecialidad = T1.cveEspecialidad) ORDER BY T1.cveEspecialidad) DistinctT ORDER BY cveEspecialidad ",false, GX_NOMASK + GX_MASKLOOPLOCK, false, this,100,0,false )
+         ,new ForEachCursor("IMSSOFFLIN30", "scmdbuf",false, GX_NOMASK + GX_MASKLOOPLOCK, false, this,100,0,false )
       };
    }
 
@@ -5201,16 +5689,18 @@ final  class imssofflinedatabase__default extends DataStoreHelperBase implements
       switch ( cursor )
       {
             case 0 :
-               ((boolean[]) buf[0])[0] = rslt.getBoolean(1) ;
-               ((boolean[]) buf[1])[0] = rslt.getBoolean(2) ;
-               ((java.util.Date[]) buf[2])[0] = rslt.getGXDateTime(3) ;
-               ((long[]) buf[3])[0] = rslt.getLong(4) ;
-               ((boolean[]) buf[4])[0] = rslt.wasNull();
-               ((String[]) buf[5])[0] = rslt.getString(5, 40) ;
-               ((String[]) buf[6])[0] = rslt.getString(6, 40) ;
-               ((String[]) buf[7])[0] = rslt.getString(7, 40) ;
-               ((String[]) buf[8])[0] = rslt.getString(8, 40) ;
-               ((String[]) buf[9])[0] = rslt.getString(9, 30) ;
+               ((java.util.Date[]) buf[0])[0] = rslt.getGXDate(1) ;
+               ((boolean[]) buf[1])[0] = rslt.wasNull();
+               ((boolean[]) buf[2])[0] = rslt.getBoolean(2) ;
+               ((boolean[]) buf[3])[0] = rslt.wasNull();
+               ((boolean[]) buf[4])[0] = rslt.getBoolean(3) ;
+               ((java.util.Date[]) buf[5])[0] = rslt.getGXDateTime(4) ;
+               ((String[]) buf[6])[0] = rslt.getString(5, 10) ;
+               ((String[]) buf[7])[0] = rslt.getString(6, 40) ;
+               ((String[]) buf[8])[0] = rslt.getString(7, 40) ;
+               ((String[]) buf[9])[0] = rslt.getString(8, 40) ;
+               ((String[]) buf[10])[0] = rslt.getString(9, 30) ;
+               ((long[]) buf[11])[0] = rslt.getLong(10) ;
                return;
             case 1 :
                ((String[]) buf[0])[0] = rslt.getVarchar(1) ;
@@ -5219,21 +5709,27 @@ final  class imssofflinedatabase__default extends DataStoreHelperBase implements
                ((String[]) buf[3])[0] = rslt.getString(4, 11) ;
                return;
             case 2 :
+               ((boolean[]) buf[0])[0] = rslt.getBoolean(1) ;
+               ((String[]) buf[1])[0] = rslt.getString(2, 200) ;
+               ((String[]) buf[2])[0] = rslt.getString(3, 100) ;
+               ((int[]) buf[3])[0] = rslt.getInt(4) ;
+               return;
+            case 3 :
                ((String[]) buf[0])[0] = rslt.getVarchar(1) ;
                ((String[]) buf[1])[0] = rslt.getVarchar(2) ;
                ((int[]) buf[2])[0] = rslt.getInt(3) ;
                return;
-            case 3 :
+            case 4 :
                ((String[]) buf[0])[0] = rslt.getVarchar(1) ;
-               ((long[]) buf[1])[0] = rslt.getLong(2) ;
+               ((short[]) buf[1])[0] = rslt.getShort(2) ;
                ((boolean[]) buf[2])[0] = rslt.wasNull();
-               ((String[]) buf[3])[0] = rslt.getString(3, 40) ;
+               ((short[]) buf[3])[0] = rslt.getShort(3) ;
                ((boolean[]) buf[4])[0] = rslt.wasNull();
-               ((String[]) buf[5])[0] = rslt.getString(4, 40) ;
+               ((short[]) buf[5])[0] = rslt.getShort(4) ;
                ((boolean[]) buf[6])[0] = rslt.wasNull();
-               ((String[]) buf[7])[0] = rslt.getVarchar(5) ;
+               ((short[]) buf[7])[0] = rslt.getShort(5) ;
                ((boolean[]) buf[8])[0] = rslt.wasNull();
-               ((long[]) buf[9])[0] = rslt.getLong(6) ;
+               ((short[]) buf[9])[0] = rslt.getShort(6) ;
                ((boolean[]) buf[10])[0] = rslt.wasNull();
                ((String[]) buf[11])[0] = rslt.getString(7, 40) ;
                ((boolean[]) buf[12])[0] = rslt.wasNull();
@@ -5241,7 +5737,7 @@ final  class imssofflinedatabase__default extends DataStoreHelperBase implements
                ((boolean[]) buf[14])[0] = rslt.wasNull();
                ((String[]) buf[15])[0] = rslt.getString(9, 40) ;
                ((boolean[]) buf[16])[0] = rslt.wasNull();
-               ((long[]) buf[17])[0] = rslt.getLong(10) ;
+               ((short[]) buf[17])[0] = rslt.getShort(10) ;
                ((boolean[]) buf[18])[0] = rslt.wasNull();
                ((String[]) buf[19])[0] = rslt.getString(11, 40) ;
                ((boolean[]) buf[20])[0] = rslt.wasNull();
@@ -5268,26 +5764,20 @@ final  class imssofflinedatabase__default extends DataStoreHelperBase implements
                ((String[]) buf[41])[0] = rslt.getString(23, 8) ;
                ((String[]) buf[42])[0] = rslt.getString(24, 11) ;
                return;
-            case 4 :
+            case 5 :
                ((short[]) buf[0])[0] = rslt.getShort(1) ;
                ((String[]) buf[1])[0] = rslt.getLongVarchar(2) ;
                ((String[]) buf[2])[0] = rslt.getVarchar(3) ;
                ((short[]) buf[3])[0] = rslt.getShort(4) ;
                return;
-            case 5 :
-               ((boolean[]) buf[0])[0] = rslt.getBoolean(1) ;
-               ((String[]) buf[1])[0] = rslt.getString(2, 200) ;
-               ((String[]) buf[2])[0] = rslt.getString(3, 100) ;
-               ((int[]) buf[3])[0] = rslt.getInt(4) ;
-               return;
             case 6 :
                ((String[]) buf[0])[0] = rslt.getVarchar(1) ;
                ((String[]) buf[1])[0] = rslt.getMultimediaUri(2) ;
-               ((String[]) buf[2])[0] = rslt.getString(3, 10) ;
-               ((String[]) buf[3])[0] = rslt.getString(4, 40) ;
-               ((String[]) buf[4])[0] = rslt.getString(5, 30) ;
-               ((java.util.Date[]) buf[5])[0] = rslt.getGXDateTime(6) ;
-               ((String[]) buf[6])[0] = rslt.getMultimediaFile(7, rslt.getVarchar(2)) ;
+               ((String[]) buf[2])[0] = rslt.getString(3, 30) ;
+               ((java.util.Date[]) buf[3])[0] = rslt.getGXDateTime(4) ;
+               ((String[]) buf[4])[0] = rslt.getMultimediaFile(5, rslt.getVarchar(2)) ;
+               ((String[]) buf[5])[0] = rslt.getString(6, 10) ;
+               ((String[]) buf[6])[0] = rslt.getString(7, 40) ;
                ((short[]) buf[7])[0] = rslt.getShort(8) ;
                ((int[]) buf[8])[0] = rslt.getInt(9) ;
                ((String[]) buf[9])[0] = rslt.getString(10, 8) ;
@@ -5306,79 +5796,78 @@ final  class imssofflinedatabase__default extends DataStoreHelperBase implements
                ((String[]) buf[9])[0] = rslt.getString(10, 11) ;
                return;
             case 8 :
-               ((short[]) buf[0])[0] = rslt.getShort(1) ;
-               ((String[]) buf[1])[0] = rslt.getVarchar(2) ;
-               ((int[]) buf[2])[0] = rslt.getInt(3) ;
-               ((java.util.Date[]) buf[3])[0] = rslt.getGXDate(4) ;
-               ((String[]) buf[4])[0] = rslt.getVarchar(5) ;
-               ((String[]) buf[5])[0] = rslt.getString(6, 6) ;
-               ((String[]) buf[6])[0] = rslt.getVarchar(7) ;
-               ((String[]) buf[7])[0] = rslt.getVarchar(8) ;
-               ((java.util.Date[]) buf[8])[0] = rslt.getGXDate(9) ;
-               ((String[]) buf[9])[0] = rslt.getString(10, 150) ;
-               ((String[]) buf[10])[0] = rslt.getString(11, 50) ;
-               ((boolean[]) buf[11])[0] = rslt.wasNull();
-               ((String[]) buf[12])[0] = rslt.getVarchar(12) ;
-               ((boolean[]) buf[13])[0] = rslt.wasNull();
-               ((String[]) buf[14])[0] = rslt.getString(13, 20) ;
-               ((boolean[]) buf[15])[0] = rslt.wasNull();
-               ((String[]) buf[16])[0] = rslt.getString(14, 1) ;
-               ((boolean[]) buf[17])[0] = rslt.wasNull();
-               ((short[]) buf[18])[0] = rslt.getShort(15) ;
-               ((String[]) buf[19])[0] = rslt.getString(16, 40) ;
-               ((boolean[]) buf[20])[0] = rslt.wasNull();
-               ((String[]) buf[21])[0] = rslt.getString(17, 40) ;
-               ((String[]) buf[22])[0] = rslt.getString(18, 40) ;
-               ((String[]) buf[23])[0] = rslt.getString(19, 8) ;
-               ((String[]) buf[24])[0] = rslt.getString(20, 11) ;
+               ((String[]) buf[0])[0] = rslt.getString(1, 18) ;
+               ((String[]) buf[1])[0] = rslt.getString(2, 18) ;
+               ((boolean[]) buf[2])[0] = rslt.wasNull();
+               ((String[]) buf[3])[0] = rslt.getString(3, 18) ;
+               ((boolean[]) buf[4])[0] = rslt.wasNull();
+               ((String[]) buf[5])[0] = rslt.getString(4, 3) ;
+               ((boolean[]) buf[6])[0] = rslt.wasNull();
+               ((String[]) buf[7])[0] = rslt.getString(5, 2) ;
+               ((boolean[]) buf[8])[0] = rslt.wasNull();
+               ((String[]) buf[9])[0] = rslt.getString(6, 14) ;
+               ((boolean[]) buf[10])[0] = rslt.wasNull();
+               ((String[]) buf[11])[0] = rslt.getString(7, 2) ;
+               ((boolean[]) buf[12])[0] = rslt.wasNull();
+               ((String[]) buf[13])[0] = rslt.getString(8, 2) ;
+               ((boolean[]) buf[14])[0] = rslt.wasNull();
+               ((short[]) buf[15])[0] = rslt.getShort(9) ;
+               ((int[]) buf[16])[0] = rslt.getInt(10) ;
+               ((String[]) buf[17])[0] = rslt.getVarchar(11) ;
+               ((String[]) buf[18])[0] = rslt.getString(12, 6) ;
+               ((String[]) buf[19])[0] = rslt.getVarchar(13) ;
+               ((String[]) buf[20])[0] = rslt.getVarchar(14) ;
+               ((String[]) buf[21])[0] = rslt.getVarchar(15) ;
+               ((java.util.Date[]) buf[22])[0] = rslt.getGXDate(16) ;
+               ((String[]) buf[23])[0] = rslt.getString(17, 150) ;
+               ((String[]) buf[24])[0] = rslt.getString(18, 50) ;
+               ((boolean[]) buf[25])[0] = rslt.wasNull();
+               ((String[]) buf[26])[0] = rslt.getVarchar(19) ;
+               ((boolean[]) buf[27])[0] = rslt.wasNull();
+               ((String[]) buf[28])[0] = rslt.getString(20, 20) ;
+               ((boolean[]) buf[29])[0] = rslt.wasNull();
+               ((String[]) buf[30])[0] = rslt.getString(21, 1) ;
+               ((boolean[]) buf[31])[0] = rslt.wasNull();
+               ((short[]) buf[32])[0] = rslt.getShort(22) ;
+               ((java.util.Date[]) buf[33])[0] = rslt.getGXDate(23) ;
+               ((String[]) buf[34])[0] = rslt.getString(24, 40) ;
+               ((boolean[]) buf[35])[0] = rslt.wasNull();
+               ((String[]) buf[36])[0] = rslt.getString(25, 40) ;
+               ((String[]) buf[37])[0] = rslt.getString(26, 40) ;
+               ((String[]) buf[38])[0] = rslt.getString(27, 8) ;
+               ((String[]) buf[39])[0] = rslt.getString(28, 11) ;
                return;
             case 9 :
-               ((String[]) buf[0])[0] = rslt.getVarchar(1) ;
-               ((boolean[]) buf[1])[0] = rslt.getBoolean(2) ;
-               ((boolean[]) buf[2])[0] = rslt.getBoolean(3) ;
-               ((String[]) buf[3])[0] = rslt.getVarchar(4) ;
-               ((String[]) buf[4])[0] = rslt.getVarchar(5) ;
-               ((int[]) buf[5])[0] = rslt.getInt(6) ;
-               ((boolean[]) buf[6])[0] = rslt.wasNull();
-               ((int[]) buf[7])[0] = rslt.getInt(7) ;
-               ((boolean[]) buf[8])[0] = rslt.wasNull();
-               ((boolean[]) buf[9])[0] = rslt.getBoolean(8) ;
-               ((String[]) buf[10])[0] = rslt.getString(9, 100) ;
-               ((java.util.UUID[]) buf[11])[0] = rslt.getGUID(10) ;
-               ((int[]) buf[12])[0] = rslt.getInt(11) ;
-               ((int[]) buf[13])[0] = rslt.getInt(12) ;
+               ((String[]) buf[0])[0] = rslt.getString(1, 40) ;
+               ((short[]) buf[1])[0] = rslt.getShort(2) ;
+               ((short[]) buf[2])[0] = rslt.getShort(3) ;
                return;
             case 10 :
-               ((String[]) buf[0])[0] = rslt.getVarchar(1) ;
-               ((long[]) buf[1])[0] = rslt.getLong(2) ;
+               ((long[]) buf[0])[0] = rslt.getLong(1) ;
+               ((String[]) buf[1])[0] = rslt.getVarchar(2) ;
                ((long[]) buf[2])[0] = rslt.getLong(3) ;
                ((String[]) buf[3])[0] = rslt.getString(4, 8) ;
                ((String[]) buf[4])[0] = rslt.getString(5, 11) ;
                return;
             case 11 :
-               ((String[]) buf[0])[0] = rslt.getString(1, 40) ;
-               ((short[]) buf[1])[0] = rslt.getShort(2) ;
-               ((short[]) buf[2])[0] = rslt.getShort(3) ;
-               return;
-            case 12 :
                ((boolean[]) buf[0])[0] = rslt.getBoolean(1) ;
                ((String[]) buf[1])[0] = rslt.getVarchar(2) ;
-               ((String[]) buf[2])[0] = rslt.getVarchar(3) ;
-               ((boolean[]) buf[3])[0] = rslt.wasNull();
-               ((String[]) buf[4])[0] = rslt.getVarchar(4) ;
-               ((boolean[]) buf[5])[0] = rslt.wasNull();
-               ((boolean[]) buf[6])[0] = rslt.getBoolean(5) ;
-               ((boolean[]) buf[7])[0] = rslt.wasNull();
-               ((boolean[]) buf[8])[0] = rslt.getBoolean(6) ;
-               ((boolean[]) buf[9])[0] = rslt.wasNull();
-               ((boolean[]) buf[10])[0] = rslt.getBoolean(7) ;
-               ((boolean[]) buf[11])[0] = rslt.wasNull();
-               ((String[]) buf[12])[0] = rslt.getString(8, 20) ;
-               ((boolean[]) buf[13])[0] = rslt.wasNull();
-               ((String[]) buf[14])[0] = rslt.getString(9, 20) ;
-               ((boolean[]) buf[15])[0] = rslt.wasNull();
-               ((String[]) buf[16])[0] = rslt.getString(10, 20) ;
-               ((boolean[]) buf[17])[0] = rslt.wasNull();
+               ((boolean[]) buf[2])[0] = rslt.wasNull();
+               ((String[]) buf[3])[0] = rslt.getVarchar(3) ;
+               ((boolean[]) buf[4])[0] = rslt.wasNull();
+               ((boolean[]) buf[5])[0] = rslt.getBoolean(4) ;
+               ((boolean[]) buf[6])[0] = rslt.wasNull();
+               ((boolean[]) buf[7])[0] = rslt.getBoolean(5) ;
+               ((boolean[]) buf[8])[0] = rslt.wasNull();
+               ((boolean[]) buf[9])[0] = rslt.getBoolean(6) ;
+               ((boolean[]) buf[10])[0] = rslt.wasNull();
+               ((String[]) buf[11])[0] = rslt.getString(7, 20) ;
+               ((boolean[]) buf[12])[0] = rslt.wasNull();
+               ((String[]) buf[13])[0] = rslt.getString(8, 20) ;
+               ((boolean[]) buf[14])[0] = rslt.wasNull();
+               ((String[]) buf[15])[0] = rslt.getString(9, 20) ;
+               ((boolean[]) buf[16])[0] = rslt.wasNull();
+               ((String[]) buf[17])[0] = rslt.getVarchar(10) ;
                ((boolean[]) buf[18])[0] = rslt.getBoolean(11) ;
                ((int[]) buf[19])[0] = rslt.getInt(12) ;
                ((int[]) buf[20])[0] = rslt.getInt(13) ;
@@ -5401,7 +5890,7 @@ final  class imssofflinedatabase__default extends DataStoreHelperBase implements
                ((int[]) buf[37])[0] = rslt.getInt(27) ;
                ((int[]) buf[38])[0] = rslt.getInt(28) ;
                return;
-            case 13 :
+            case 12 :
                ((String[]) buf[0])[0] = rslt.getString(1, 200) ;
                ((boolean[]) buf[1])[0] = rslt.wasNull();
                ((String[]) buf[2])[0] = rslt.getString(2, 20) ;
@@ -5414,7 +5903,7 @@ final  class imssofflinedatabase__default extends DataStoreHelperBase implements
                ((int[]) buf[9])[0] = rslt.getInt(6) ;
                ((long[]) buf[10])[0] = rslt.getLong(7) ;
                return;
-            case 14 :
+            case 13 :
                ((String[]) buf[0])[0] = rslt.getString(1, 200) ;
                ((boolean[]) buf[1])[0] = rslt.wasNull();
                ((String[]) buf[2])[0] = rslt.getString(2, 20) ;
@@ -5431,15 +5920,31 @@ final  class imssofflinedatabase__default extends DataStoreHelperBase implements
                ((int[]) buf[13])[0] = rslt.getInt(10) ;
                ((long[]) buf[14])[0] = rslt.getLong(11) ;
                return;
-            case 15 :
+            case 14 :
                ((String[]) buf[0])[0] = rslt.getString(1, 1) ;
-               ((String[]) buf[1])[0] = rslt.getString(2, 1) ;
-               ((String[]) buf[2])[0] = rslt.getVarchar(3) ;
-               ((String[]) buf[3])[0] = rslt.getBLOBFile(4, "tmp", "") ;
+               ((String[]) buf[1])[0] = rslt.getVarchar(2) ;
+               ((String[]) buf[2])[0] = rslt.getBLOBFile(3, "tmp", "") ;
+               ((String[]) buf[3])[0] = rslt.getString(4, 1) ;
                ((String[]) buf[4])[0] = rslt.getVarchar(5) ;
                ((String[]) buf[5])[0] = rslt.getString(6, 100) ;
                ((int[]) buf[6])[0] = rslt.getInt(7) ;
                ((int[]) buf[7])[0] = rslt.getInt(8) ;
+               return;
+            case 15 :
+               ((boolean[]) buf[0])[0] = rslt.getBoolean(1) ;
+               ((boolean[]) buf[1])[0] = rslt.getBoolean(2) ;
+               ((String[]) buf[2])[0] = rslt.getVarchar(3) ;
+               ((String[]) buf[3])[0] = rslt.getVarchar(4) ;
+               ((int[]) buf[4])[0] = rslt.getInt(5) ;
+               ((boolean[]) buf[5])[0] = rslt.wasNull();
+               ((int[]) buf[6])[0] = rslt.getInt(6) ;
+               ((boolean[]) buf[7])[0] = rslt.wasNull();
+               ((boolean[]) buf[8])[0] = rslt.getBoolean(7) ;
+               ((String[]) buf[9])[0] = rslt.getVarchar(8) ;
+               ((String[]) buf[10])[0] = rslt.getString(9, 100) ;
+               ((java.util.UUID[]) buf[11])[0] = rslt.getGUID(10) ;
+               ((int[]) buf[12])[0] = rslt.getInt(11) ;
+               ((int[]) buf[13])[0] = rslt.getInt(12) ;
                return;
             case 16 :
                ((String[]) buf[0])[0] = rslt.getString(1, 200) ;
@@ -5460,11 +5965,11 @@ final  class imssofflinedatabase__default extends DataStoreHelperBase implements
             case 18 :
                ((boolean[]) buf[0])[0] = rslt.getBoolean(1) ;
                ((String[]) buf[1])[0] = rslt.getVarchar(2) ;
-               ((String[]) buf[2])[0] = rslt.getVarchar(3) ;
-               ((boolean[]) buf[3])[0] = rslt.wasNull();
-               ((String[]) buf[4])[0] = rslt.getVarchar(4) ;
-               ((boolean[]) buf[5])[0] = rslt.wasNull();
-               ((boolean[]) buf[6])[0] = rslt.getBoolean(5) ;
+               ((boolean[]) buf[2])[0] = rslt.wasNull();
+               ((String[]) buf[3])[0] = rslt.getVarchar(3) ;
+               ((boolean[]) buf[4])[0] = rslt.wasNull();
+               ((boolean[]) buf[5])[0] = rslt.getBoolean(4) ;
+               ((String[]) buf[6])[0] = rslt.getVarchar(5) ;
                ((boolean[]) buf[7])[0] = rslt.getBoolean(6) ;
                ((int[]) buf[8])[0] = rslt.getInt(7) ;
                ((int[]) buf[9])[0] = rslt.getInt(8) ;
@@ -5538,16 +6043,16 @@ final  class imssofflinedatabase__default extends DataStoreHelperBase implements
                ((int[]) buf[77])[0] = rslt.getInt(47) ;
                return;
             case 19 :
-               ((String[]) buf[0])[0] = rslt.getString(1, 200) ;
+               ((String[]) buf[0])[0] = rslt.getString(1, 4) ;
                ((int[]) buf[1])[0] = rslt.getInt(2) ;
                ((int[]) buf[2])[0] = rslt.getInt(3) ;
-               ((int[]) buf[3])[0] = rslt.getInt(4) ;
                return;
             case 20 :
-               ((boolean[]) buf[0])[0] = rslt.getBoolean(1) ;
-               ((String[]) buf[1])[0] = rslt.getString(2, 200) ;
-               ((int[]) buf[2])[0] = rslt.getInt(3) ;
-               ((String[]) buf[3])[0] = rslt.getVarchar(4) ;
+               ((java.util.Date[]) buf[0])[0] = rslt.getGXDateTime(1) ;
+               ((short[]) buf[1])[0] = rslt.getShort(2) ;
+               ((short[]) buf[2])[0] = rslt.getShort(3) ;
+               ((int[]) buf[3])[0] = rslt.getInt(4) ;
+               ((String[]) buf[4])[0] = rslt.getString(5, 18) ;
                return;
             case 21 :
                ((boolean[]) buf[0])[0] = rslt.getBoolean(1) ;
@@ -5592,6 +6097,18 @@ final  class imssofflinedatabase__default extends DataStoreHelperBase implements
                ((int[]) buf[39])[0] = rslt.getInt(25) ;
                return;
             case 22 :
+               ((String[]) buf[0])[0] = rslt.getString(1, 200) ;
+               ((int[]) buf[1])[0] = rslt.getInt(2) ;
+               ((int[]) buf[2])[0] = rslt.getInt(3) ;
+               ((int[]) buf[3])[0] = rslt.getInt(4) ;
+               return;
+            case 23 :
+               ((boolean[]) buf[0])[0] = rslt.getBoolean(1) ;
+               ((String[]) buf[1])[0] = rslt.getString(2, 200) ;
+               ((int[]) buf[2])[0] = rslt.getInt(3) ;
+               ((String[]) buf[3])[0] = rslt.getVarchar(4) ;
+               return;
+            case 24 :
                ((int[]) buf[0])[0] = rslt.getInt(1) ;
                ((boolean[]) buf[1])[0] = rslt.wasNull();
                ((int[]) buf[2])[0] = rslt.getInt(2) ;
@@ -5601,7 +6118,7 @@ final  class imssofflinedatabase__default extends DataStoreHelperBase implements
                ((int[]) buf[6])[0] = rslt.getInt(6) ;
                ((int[]) buf[7])[0] = rslt.getInt(7) ;
                return;
-            case 23 :
+            case 25 :
                ((int[]) buf[0])[0] = rslt.getInt(1) ;
                ((int[]) buf[1])[0] = rslt.getInt(2) ;
                ((short[]) buf[2])[0] = rslt.getShort(3) ;
@@ -5611,13 +6128,21 @@ final  class imssofflinedatabase__default extends DataStoreHelperBase implements
                ((int[]) buf[6])[0] = rslt.getInt(7) ;
                ((int[]) buf[7])[0] = rslt.getInt(8) ;
                return;
-            case 24 :
+            case 26 :
                ((short[]) buf[0])[0] = rslt.getShort(1) ;
                ((boolean[]) buf[1])[0] = rslt.wasNull();
                ((String[]) buf[2])[0] = rslt.getString(2, 30) ;
                ((short[]) buf[3])[0] = rslt.getShort(3) ;
                return;
-            case 25 :
+            case 27 :
+               ((int[]) buf[0])[0] = rslt.getInt(1) ;
+               ((int[]) buf[1])[0] = rslt.getInt(2) ;
+               ((java.util.Date[]) buf[2])[0] = rslt.getGXDate(3) ;
+               ((boolean[]) buf[3])[0] = rslt.wasNull();
+               ((String[]) buf[4])[0] = rslt.getVarchar(4) ;
+               ((String[]) buf[5])[0] = rslt.getString(5, 4) ;
+               return;
+            case 28 :
                ((int[]) buf[0])[0] = rslt.getInt(1) ;
                ((String[]) buf[1])[0] = rslt.getString(2, 20) ;
                ((String[]) buf[2])[0] = rslt.getString(3, 200) ;
