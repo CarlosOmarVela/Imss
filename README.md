@@ -1,6 +1,3 @@
-# Imss
-comparar
-
 /*
                File: IMSSOfflineDatabase
         Description: IMSSOffline Database
